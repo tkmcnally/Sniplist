@@ -1,7 +1,7 @@
 [0m[[0mdebug[0m] [0mCopy play resource mappings: [0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\fonts\segoeui.ttf,C:\Projects\Sniplist\target\scala-2.10\classes\public\fonts\segoeui.ttf)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\fonts\segoe_ui_light.ttf,C:\Projects\Sniplist\target\scala-2.10\classes\public\fonts\segoe_ui_light.ttf)[0m
-[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\images\favicon.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\images\favicon.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\images\favicon.ico,C:\Projects\Sniplist\target\scala-2.10\classes\public\images\favicon.ico)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\images\music.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\images\music.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\javascripts\jquery-1.9.0.min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\javascripts\jquery-1.9.0.min.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\stylesheets\main.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\stylesheets\main.css)[0m
