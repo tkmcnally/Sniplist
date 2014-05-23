@@ -1,2 +1,2 @@
-[debug] Subclass fingerprints: Stream((junit.framework.TestCase,false,sbt.SubclassFingerprintWrapper@1bdaad60), ?)
-[debug] Annotation fingerprints: Stream((org.junit.Test,false,sbt.AnnotatedFingerprintWrapper@3532a880), ?)
+[debug] Subclass fingerprints: Stream((junit.framework.TestCase,false,sbt.SubclassFingerprintWrapper@384daf96), ?)
+[debug] Annotation fingerprints: Stream((org.junit.Test,false,sbt.AnnotatedFingerprintWrapper@31ac87e9), ?)

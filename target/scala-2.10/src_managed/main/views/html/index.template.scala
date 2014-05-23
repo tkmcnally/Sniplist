@@ -21,11 +21,24 @@ object index extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,
 
 Seq[Any](format.raw/*1.19*/("""
 
-"""),_display_(Seq[Any](/*3.2*/main("SNIPLIST")/*3.18*/ {_display_(Seq[Any](format.raw/*3.20*/("""
+<!DOCTYPE html>
 
-    """),_display_(Seq[Any](/*5.6*/play20/*5.12*/.welcome(message))),format.raw/*5.29*/("""
+<head>
+    <link href=""""),_display_(Seq[Any](/*6.18*/routes/*6.24*/.Assets.at("stylesheets/main.css"))),format.raw/*6.58*/("""" rel="stylesheet" type="text/css" />
+    <title>Sniplist</title>
+</head>
 
-""")))})),format.raw/*7.2*/("""
+<html>
+    <body>
+        <div class="middle-wrapper">
+           <h1>Sniplist</h1>
+           <h2>under construction.</h2><br>
+            <img style="padding-right: 3%" src=""""),_display_(Seq[Any](/*15.50*/routes/*15.56*/.Assets.at("images/music.png"))),format.raw/*15.86*/("""">
+        </div>
+    </body>
+</html>
+
+
 """))}
     }
     
@@ -38,11 +51,11 @@ Seq[Any](format.raw/*1.19*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri May 23 16:43:41 EDT 2014
+                    DATE: Fri May 23 18:06:24 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/index.scala.html
-                    HASH: 5d8eb9a79d05351dd3f2ba0cbf051638cd235f2d
-                    MATRIX: 556->1|667->18|704->21|728->37|767->39|808->46|822->52|860->69|893->72
-                    LINES: 19->1|22->1|24->3|24->3|24->3|26->5|26->5|26->5|28->7
+                    HASH: bc42e18d7b4d6baf2b797ad101599f5c0dda7fca
+                    MATRIX: 556->1|667->18|745->61|759->67|814->101|1102->353|1117->359|1169->389
+                    LINES: 19->1|22->1|27->6|27->6|27->6|36->15|36->15|36->15
                     -- GENERATED --
                 */
             
