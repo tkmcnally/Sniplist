@@ -5,6 +5,7 @@
 *.iml
 *.ipr
 .idea
+.idea_modules
 
 #################
 ## Eclipse
