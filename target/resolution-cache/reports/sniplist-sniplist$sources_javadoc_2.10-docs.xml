@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="docs"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140523164001"/>
+		date="20140526175150"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="play-docs_2.10">
 			<revision name="2.2.3" status="release" pubdate="20140430215313" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="41">
@@ -514,7 +514,7 @@
 			<revision name="2.10.3" status="release" pubdate="20130927054529" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.3/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="20">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
 				<metadata-artifact status="no" details="" size="2779" time="0" location="C:\Users\Thomas\.ivy2\cache\org.scala-lang\scala-reflect\ivy-2.10.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.3/scala-reflect-2.10.3.pom"/>
-				<caller organisation="sniplist" name="sniplist$sources_javadoc_2.10" conf="docs" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.10.3/"/>
+				<caller organisation="sniplist" name="sniplist$sources_javadoc_2.10" conf="docs" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="scala-reflect" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="33911475" time="0" location="C:\Users\Thomas\.ivy2\cache\org.scala-lang\scala-reflect\docs\scala-reflect-2.10.3-javadoc.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.10.3/scala-reflect-2.10.3-javadoc.jar"/>
@@ -824,7 +824,7 @@
 			<revision name="2.10.3" status="release" pubdate="20130927054454" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.10.3/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="0">
 				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
 				<metadata-artifact status="no" details="" size="2616" time="0" location="C:\Users\Thomas\.ivy2\cache\org.scala-lang\scala-library\ivy-2.10.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.3/scala-library-2.10.3.pom"/>
-				<caller organisation="sniplist" name="sniplist$sources_javadoc_2.10" conf="docs" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.10.3/"/>
+				<caller organisation="sniplist" name="sniplist$sources_javadoc_2.10" conf="docs" rev="2.10.3" rev-constraint-default="2.10.3" rev-constraint-dynamic="2.10.3" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="7126003" time="0" location="C:\Users\Thomas\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.10.3.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.10.3/scala-library-2.10.3.jar"/>

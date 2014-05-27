@@ -4,7 +4,7 @@
 		module="sniplist$sources_javadoc_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140523164001"
+		publication="20140526175150"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -24,9 +24,17 @@
 	<publications>
 	</publications>
 	<dependencies>
-		<dependency org="org.scala-lang" name="scala-library" rev="2.10.3" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile);docs->default(compile);scala-tool->default(compile)" info.apiURL="http://www.scala-lang.org/api/2.10.3/">
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.3" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile);docs->default(compile);scala-tool->default(compile)">
 			<artifact name="scala-library" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="scala-library" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="org.mongodb.morphia" name="morphia" rev="0.107" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="morphia" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="morphia" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="org.mongodb" name="mongo-java-driver" rev="2.12.2" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="mongo-java-driver" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="mongo-java-driver" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
 		<dependency org="com.typesafe.play" name="play_2.10" rev="2.2.3" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile);docs->default(compile)">
 			<artifact name="play_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
@@ -95,7 +103,7 @@
 			<artifact name="jackson-databind" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="jackson-databind" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
-		<dependency org="org.scala-lang" name="scala-reflect" rev="2.10.3" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile);docs->default(compile);scala-tool->default(compile)" info.apiURL="http://www.scala-lang.org/api/2.10.3/">
+		<dependency org="org.scala-lang" name="scala-reflect" rev="2.10.3" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile);docs->default(compile);scala-tool->default(compile)">
 			<artifact name="scala-reflect" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="scala-reflect" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
@@ -176,6 +184,52 @@
 		<dependency org="javax.transaction" name="jta" rev="1.1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile);docs->default(compile)">
 			<artifact name="jta" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
+		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.2.3" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="play-java_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="org.yaml" name="snakeyaml" rev="1.12" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="snakeyaml" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="snakeyaml" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="org.hibernate" name="hibernate-validator" rev="5.0.1.Final" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="hibernate-validator" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="hibernate-validator" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="javax.validation" name="validation-api" rev="1.1.0.Final" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="validation-api" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="validation-api" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="org.jboss.logging" name="jboss-logging" rev="3.1.1.GA" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="jboss-logging" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="com.fasterxml" name="classmate" rev="0.8.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="classmate" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="classmate" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="org.springframework" name="spring-context" rev="3.2.3.RELEASE" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="spring-context" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="spring-context" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="org.springframework" name="spring-core" rev="3.2.3.RELEASE" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="spring-core" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="spring-core" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="org.springframework" name="spring-beans" rev="3.2.3.RELEASE" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="spring-beans" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="spring-beans" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="org.reflections" name="reflections" rev="0.9.8" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="reflections" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="reflections" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="com.google.guava" name="guava" rev="14.0.1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="guava" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="guava" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="javax.servlet" name="javax.servlet-api" rev="3.0.1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="javax.servlet-api" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="javax.servlet-api" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
 		<dependency org="com.typesafe.play" name="play-test_2.10" rev="2.2.3" transitive="false" conf="test->default(compile);test-internal->default(compile)">
 			<artifact name="play-test_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
@@ -206,10 +260,6 @@
 		<dependency org="com.novocode" name="junit-interface" rev="0.10" transitive="false" conf="test->default(compile);test-internal->default(compile)">
 			<artifact name="junit-interface" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="junit-interface" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
-		</dependency>
-		<dependency org="com.google.guava" name="guava" rev="14.0.1" transitive="false" conf="test->default(compile);test-internal->default(compile)">
-			<artifact name="guava" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-			<artifact name="guava" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
 		<dependency org="org.fluentlenium" name="fluentlenium-festassert" rev="0.8.0" transitive="false" conf="test->default(compile);test-internal->default(compile)">
 			<artifact name="fluentlenium-festassert" type="src" ext="jar" conf="sources" e:classifier="sources"/>

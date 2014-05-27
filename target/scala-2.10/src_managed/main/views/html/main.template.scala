@@ -8,9 +8,16 @@ import play.api.templates._
 import play.api.templates.PlayMagic._
 import models._
 import controllers._
+import java.lang._
+import java.util._
+import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
 import play.api.i18n._
-import play.api.mvc._
-import play.api.data._
+import play.core.j.PlayMagicForJava._
+import play.mvc._
+import play.data._
+import play.api.data.Field
+import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
 object main extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[String,Html,play.api.templates.HtmlFormat.Appendable] {
@@ -46,11 +53,11 @@ Seq[Any](format.raw/*1.32*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri May 23 18:16:13 EDT 2014
+                    DATE: Mon May 26 16:58:16 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/main.scala.html
-                    HASH: 5a9ae248ec59a15053350b498626ba6282a96103
-                    MATRIX: 560->1|684->31|772->84|798->89|895->151|909->157|964->191|1060->252|1074->258|1141->303|1202->328|1217->334|1284->379|1387->446|1416->453
-                    LINES: 19->1|22->1|28->7|28->7|29->8|29->8|29->8|30->9|30->9|30->9|31->10|31->10|31->10|34->13|34->13
+                    HASH: 3d1254d4a2744be7edd47b0315ddfe37d149c47a
+                    MATRIX: 778->1|902->31|990->84|1016->89|1113->151|1127->157|1182->191|1278->252|1292->258|1359->303|1420->328|1435->334|1502->379|1605->446|1634->453
+                    LINES: 26->1|29->1|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|41->13|41->13
                     -- GENERATED --
                 */
             

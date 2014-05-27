@@ -1276,9 +1276,9 @@
 [debug] 	[NOT REQUIRED] args4j#args4j;2.0.16!args4j.jar
 [debug] 	[NOT REQUIRED] com.google.protobuf#protobuf-java;2.4.1!protobuf-java.jar
 [debug] 	[NOT REQUIRED] com.google.code.findbugs#jsr305;1.3.9!jsr305.jar
-[debug] :: resolution report :: resolve 411ms :: artifacts dl 31ms
+[debug] :: resolution report :: resolve 556ms :: artifacts dl 44ms
 [debug] 	report for sniplist#sniplist$sbt_2.10;1.0 default produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist$sbt_2.10-default.xml
-[debug] 	resolve done (411ms resolve - 31ms download)
+[debug] 	resolve done (556ms resolve - 44ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: sniplist#sniplist$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -1888,6 +1888,6 @@
 [debug] 	[NOT REQUIRED] org.tukaani#xz;1.0!xz.jar(src)
 [debug] 	[NOT REQUIRED] org.specs2#specs2_2.10;2.1.1!specs2_2.10.jar(src)
 [debug] 	[NOT REQUIRED] org.scalaz#scalaz-concurrent_2.10;7.0.2!scalaz-concurrent_2.10.jar(src)
-[debug] :: resolution report :: resolve 131ms :: artifacts dl 33ms
+[debug] :: resolution report :: resolve 161ms :: artifacts dl 39ms
 [debug] 	report for sniplist#sniplist$sources_2.10;1.0 default produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist$sources_2.10-default.xml
-[debug] 	resolve done (131ms resolve - 33ms download)
+[debug] 	resolve done (161ms resolve - 39ms download)
