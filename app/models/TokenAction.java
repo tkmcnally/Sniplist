@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Converters;
 import org.mongodb.morphia.converters.SimpleValueConverter;
 import org.mongodb.morphia.converters.TypeConverter;
@@ -60,7 +61,7 @@ public class TokenAction {
     private final static long VERIFICATION_TIME = 7 * 24 * 3600;
 
     @Id
-    public Long id;
+    public ObjectId id;
 
     @Column(unique = true)
     public String token;

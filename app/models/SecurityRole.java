@@ -19,6 +19,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import be.objectify.deadbolt.core.models.Role;
+import org.bson.types.ObjectId;
 import util.MorphiaUtil;
 
 /**
@@ -32,7 +33,7 @@ public class SecurityRole implements Role {
     private static final long serialVersionUID = 1L;
 
     @Id
-    public Long id;
+    public ObjectId id;
 
     public String roleName;
 

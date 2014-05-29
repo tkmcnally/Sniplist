@@ -20,51 +20,54 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object index extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[String,play.api.templates.HtmlFormat.Appendable] {
+object index extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(testing: String):play.api.templates.HtmlFormat.Appendable = {
+    def apply():play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*1.19*/("""
+Seq[Any](_display_(Seq[Any](/*2.2*/main(Messages("playauthenticate.index.title"))/*2.48*/ {_display_(Seq[Any](format.raw/*2.50*/("""
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h1>"""),_display_(Seq[Any](/*5.14*/Messages("playauthenticate.index.intro"))),format.raw/*5.54*/("""</h1>
+        <p>"""),_display_(Seq[Any](/*6.13*/Messages("playauthenticate.index.intro_2"))),format.raw/*6.55*/(""" <br/>"""),_display_(Seq[Any](/*6.62*/Messages("playauthenticate.index.intro_3"))),format.raw/*6.104*/("""</p>
+      </div>
 
-<!DOCTYPE html>
-
-<head>
-    <link href=""""),_display_(Seq[Any](/*6.18*/routes/*6.24*/.Assets.at("stylesheets/main.css"))),format.raw/*6.58*/("""" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href=""""),_display_(Seq[Any](/*7.38*/routes/*7.44*/.Assets.at("images/favicon.ico"))),format.raw/*7.76*/(""""/>
-    <title>Sniplist</title>
-</head>
-
-<html>
-    <body>
-        <div class="middle-wrapper">
-            <h1>Sniplist</h1>
-            <h2>under construction.</h2>
-            <h3>"""),_display_(Seq[Any](/*16.18*/testing)),format.raw/*16.25*/("""</h3>
-            <img style="padding-right: 3%" src=""""),_display_(Seq[Any](/*17.50*/routes/*17.56*/.Assets.at("images/music.png"))),format.raw/*17.86*/("""">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>"""),_display_(Seq[Any](/*12.16*/Messages("playauthenticate.index.heading"))),format.raw/*12.58*/("""</h2>
+           <p>Cupcake ipsum dolor sit amet. Pastry pie powder biscuit bear claw. Jelly-o chocolate bar sweet roll sugar plum chocolate. Biscuit brownie chupa chups macaroon ice cream halvah sugar plum oat cake ice cream.</p>
+          <p><a class="btn" href="#">"""),_display_(Seq[Any](/*14.39*/Messages("playauthenticate.index.details"))),format.raw/*14.81*/(""" &raquo;</a></p>
         </div>
-    </body>
-</html>
-
-
-"""))}
+        <div class="span4">
+          <h2>Heading</h2>
+           <p>Applicake macaroon caramels gummi bears pastry. Cake liquorice carrot cake chocolate lollipop dessert. Halvah fruitcake marshmallow pie gummi bears pie marzipan.</p>
+          <p><a class="btn" href="#">"""),_display_(Seq[Any](/*19.39*/Messages("playauthenticate.index.details"))),format.raw/*19.81*/(""" &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>Heading</h2>
+          <p>Wafer halvah jujubes lollipop liquorice jelly-o pastry. Pie halvah toffee. Candy canes donut sugar plum. Chocolate cake powder tart liquorice cotton candy pudding sweet.</p>
+          <p><a class="btn" href="#">"""),_display_(Seq[Any](/*24.39*/Messages("playauthenticate.index.details"))),format.raw/*24.81*/(""" &raquo;</a></p>
+        </div>
+      </div>
+    """)))})))}
     }
     
-    def render(testing:String): play.api.templates.HtmlFormat.Appendable = apply(testing)
+    def render(): play.api.templates.HtmlFormat.Appendable = apply()
     
-    def f:((String) => play.api.templates.HtmlFormat.Appendable) = (testing) => apply(testing)
+    def f:(() => play.api.templates.HtmlFormat.Appendable) = () => apply()
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon May 26 17:46:04 EDT 2014
+                    DATE: Thu May 29 15:29:04 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/index.scala.html
-                    HASH: 36ed7cc7736960ae951145f38117e8ca7c10acff
-                    MATRIX: 774->1|885->18|963->61|977->67|1032->101|1142->176|1156->182|1209->214|1429->398|1458->405|1549->460|1564->466|1616->496
-                    LINES: 26->1|29->1|34->6|34->6|34->6|35->7|35->7|35->7|44->16|44->16|45->17|45->17|45->17
+                    HASH: acce07eebf2108c572a4a5c8f1ce52894ef74f49
+                    MATRIX: 864->3|918->49|957->51|1119->178|1180->218|1234->237|1297->279|1339->286|1403->328|1569->458|1633->500|1940->771|2004->813|2350->1123|2414->1165|2766->1481|2830->1523
+                    LINES: 29->2|29->2|29->2|32->5|32->5|33->6|33->6|33->6|33->6|39->12|39->12|41->14|41->14|46->19|46->19|51->24|51->24
                     -- GENERATED --
                 */
             

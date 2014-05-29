@@ -10,6 +10,7 @@ import com.feth.play.module.pa.user.EmailIdentity;
 import com.feth.play.module.pa.user.NameIdentity;
 import com.feth.play.module.pa.user.FirstLastNameIdentity;
 import models.TokenAction.Type;
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.Morphia;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.query.Query;
@@ -39,7 +40,7 @@ public class User implements Subject {
     private static final long serialVersionUID = 1L;
 
     @Id
-    public Long id;
+    public ObjectId id;
 
     @Constraints.Email
     // if you make this unique, keep in mind that users *must* merge/link their
@@ -213,6 +214,39 @@ public class User implements Subject {
 
         TokenAction.deleteByUser(unverified, Type.EMAIL_VERIFICATION);
     }
+
+    public Set<String> getProviders() {
+        final Set<String> providerKeys = new HashSet<String>(
+                linkedAccounts.size());
+        for (final LinkedAccount acc : linkedAccounts) {
+            providerKeys.add(acc.providerKey);
+        }
+        return providerKeys;
+    }
+
+    public void changePassword(final UsernamePasswordAuthUser authUser,
+                               final boolean create) {
+        LinkedAccount a = this.getAccountByProvider(authUser.getProvider());
+        if (a == null) {
+            if (create) {
+                a = LinkedAccount.create(authUser);
+                a.user = this;
+            } else {
+                throw new RuntimeException(
+                        "Account not enabled for password usage");
+            }
+        }
+        a.providerUserId = authUser.getHashedPassword();
+        MorphiaUtil.getDatastore().save(a);
+    }
+
+    public void resetPassword(final UsernamePasswordAuthUser authUser,
+                              final boolean create) {
+        // You might want to wrap this into a transaction
+        this.changePassword(authUser, create);
+        TokenAction.deleteByUser(this, Type.PASSWORD_RESET);
+    }
+
 
 
 }

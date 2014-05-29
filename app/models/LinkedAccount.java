@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.feth.play.module.pa.user.AuthUser;
+import org.bson.types.ObjectId;
 import util.MorphiaUtil;
 
 @Entity
@@ -16,7 +17,7 @@ public class LinkedAccount {
     private static final long serialVersionUID = 1L;
 
     @Id
-    public Long id;
+    public ObjectId id;
 
     @ManyToOne
     public User user;
