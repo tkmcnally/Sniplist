@@ -2,7 +2,7 @@ package util;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import models.User;
+import models.*;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 import play.Logger;
@@ -71,6 +71,10 @@ public class MorphiaUtil {
     public static void mapModels() {
         //ADD MODELS AS THEY ARE CREATED
         morphia.map(User.class);
+        morphia.map(UserPermission.class);
+        morphia.map(TokenAction.class);
+        morphia.map(SecurityRole.class);
+        morphia.map(LinkedAccount.class);
     }
 
     public static Datastore getDatastore() {

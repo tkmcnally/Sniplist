@@ -1,9 +1,10 @@
 package models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
 
 import be.objectify.deadbolt.core.models.Permission;
+import org.bson.types.ObjectId;
 import util.MorphiaUtil;
 
 /**
@@ -18,7 +19,7 @@ public class UserPermission implements Permission {
     private static final long serialVersionUID = 1L;
 
     @Id
-    public Long id;
+    public ObjectId id;
 
     public String value;
 

@@ -3,13 +3,13 @@ package models;
 import java.util.Date;
 import java.util.Iterator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
 
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Converters;
+import org.mongodb.morphia.annotations.Indexed;
+import org.mongodb.morphia.annotations.Reference;
 import org.mongodb.morphia.converters.SimpleValueConverter;
 import org.mongodb.morphia.converters.TypeConverter;
 import org.mongodb.morphia.mapping.MappedField;
@@ -63,10 +63,10 @@ public class TokenAction {
     @Id
     public ObjectId id;
 
-    @Column(unique = true)
+    @Indexed(unique = true)
     public String token;
 
-    @ManyToOne
+    @Reference
     public User targetUser;
 
     public Type type;

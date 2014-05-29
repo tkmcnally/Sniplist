@@ -11,8 +11,9 @@ import com.feth.play.module.pa.user.NameIdentity;
 import com.feth.play.module.pa.user.FirstLastNameIdentity;
 import models.TokenAction.Type;
 import org.bson.types.ObjectId;
-import org.mongodb.morphia.Morphia;
+
 import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Reference;
 import org.mongodb.morphia.query.Query;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
@@ -23,10 +24,6 @@ import java.util.*;
 import org.mongodb.morphia.annotations.Entity;
 import util.Constants;
 import util.MorphiaUtil;
-
-import javax.persistence.CascadeType;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 /**
  * Initial version based on work by Steve Chaloner (steve@objectify.be) for
@@ -61,10 +58,10 @@ public class User implements Subject {
 
     public boolean emailValidated;
 
-    @ManyToMany
+
     public List<SecurityRole> roles;
 
-    @OneToMany(cascade = CascadeType.ALL)
+
     public List<LinkedAccount> linkedAccounts;
 
     public static boolean existsByAuthUserIdentity(
@@ -147,7 +144,7 @@ public class User implements Subject {
             }
         }
 
-
+        MorphiaUtil.getDatastore().save(user.roles);
         MorphiaUtil.getDatastore().save(user);
        // user.saveManyToManyAssociations("roles");
         // user.saveManyToManyAssociations("permissions");

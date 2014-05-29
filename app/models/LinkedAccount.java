@@ -1,11 +1,11 @@
 package models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
 
 import com.feth.play.module.pa.user.AuthUser;
 import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Reference;
 import util.MorphiaUtil;
 
 @Entity
@@ -19,7 +19,7 @@ public class LinkedAccount {
     @Id
     public ObjectId id;
 
-    @ManyToOne
+    @Reference
     public User user;
 
     public String providerUserId;

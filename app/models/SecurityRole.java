@@ -15,11 +15,12 @@
  */
 package models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
 
 import be.objectify.deadbolt.core.models.Role;
 import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
 import util.MorphiaUtil;
 
 /**
