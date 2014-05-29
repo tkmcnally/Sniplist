@@ -8,7 +8,8 @@ libraryDependencies ++= Seq(
   "org.mongodb.morphia" % "morphia" % "0.107",
   "org.mongodb" % "mongo-java-driver" % "2.12.2",
   "be.objectify" %% "deadbolt-java" % "2.2.1-RC2",
-  "com.feth" %% "play-authenticate" % "0.5.2-SNAPSHOT"
+  "com.feth" %% "play-authenticate" % "0.5.2-SNAPSHOT",
+  javaCore
 )
 
 resolvers ++= Seq(

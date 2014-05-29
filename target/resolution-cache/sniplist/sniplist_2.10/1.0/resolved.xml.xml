@@ -4,7 +4,7 @@
 		module="sniplist_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140527152503"
+		publication="20140527154642"
 	>
 		<description>
 		Sniplist
@@ -38,9 +38,9 @@
 		<dependency org="org.mongodb" name="mongo-java-driver" rev="2.12.2" conf="compile->default(compile)"/>
 		<dependency org="be.objectify" name="deadbolt-java_2.10" rev="2.2.1-RC2" conf="compile->default(compile)"/>
 		<dependency org="com.feth" name="play-authenticate_2.10" rev="0.5.2-SNAPSHOT" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.2.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play_2.10" rev="2.2.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-test_2.10" rev="2.2.3" conf="test->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-docs_2.10" rev="2.2.3" conf="docs->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.2.3" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="default"
 		confs="default"
-		date="20140527152506"/>
+		date="20140529020511"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="sbt-plugin">
 			<revision name="2.2.3" status="release" pubdate="20140501101824" resolver="sbt-chain" artresolver="sbt-chain" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="42">
@@ -564,12 +564,12 @@
 			</revision>
 		</module>
 		<module organisation="org.jetbrains" name="sbt-structure">
-			<revision name="2.3.1" status="release" pubdate="20140313145800" resolver="sbt-chain" artresolver="sbt-chain" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="41">
-				<metadata-artifact status="no" details="" size="1531" time="0" location="C:\Users\Thomas\.ivy2\cache\scala_2.10\sbt_0.13\org.jetbrains\sbt-structure\ivy-2.3.1.xml" searched="false" origin-is-local="false" origin-location="http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.jetbrains/sbt-structure/scala_2.10/sbt_0.13/2.3.1/ivys/ivy.xml"/>
-				<caller organisation="sniplist" name="sniplist$sbt_2.10" conf="default" rev="2.3.1" rev-constraint-default="2.3.1" rev-constraint-dynamic="2.3.1" callerrev="1.0" extra-sbtVersion="0.13" extra-scalaVersion="2.10"/>
+			<revision name="2.3.2" status="release" pubdate="20140402125817" resolver="sbt-chain" artresolver="sbt-chain" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="41">
+				<metadata-artifact status="no" details="" size="1531" time="0" location="C:\Users\Thomas\.ivy2\cache\scala_2.10\sbt_0.13\org.jetbrains\sbt-structure\ivy-2.3.2.xml" searched="false" origin-is-local="false" origin-location="http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.jetbrains/sbt-structure/scala_2.10/sbt_0.13/2.3.2/ivys/ivy.xml"/>
+				<caller organisation="sniplist" name="sniplist$sbt_2.10" conf="default" rev="2.3.2" rev-constraint-default="2.3.2" rev-constraint-dynamic="2.3.2" callerrev="1.0" extra-sbtVersion="0.13" extra-scalaVersion="2.10"/>
 				<artifacts>
-					<artifact name="sbt-structure" type="jar" ext="jar" status="no" details="" size="202695" time="0" location="C:\Users\Thomas\.ivy2\cache\scala_2.10\sbt_0.13\org.jetbrains\sbt-structure\jars\sbt-structure-2.3.1.jar">
-						<origin-location is-local="false" location="http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.jetbrains/sbt-structure/scala_2.10/sbt_0.13/2.3.1/jars/sbt-structure.jar"/>
+					<artifact name="sbt-structure" type="jar" ext="jar" status="no" details="" size="200266" time="0" location="C:\Users\Thomas\.ivy2\cache\scala_2.10\sbt_0.13\org.jetbrains\sbt-structure\jars\sbt-structure-2.3.2.jar">
+						<origin-location is-local="false" location="http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.jetbrains/sbt-structure/scala_2.10/sbt_0.13/2.3.2/jars/sbt-structure.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

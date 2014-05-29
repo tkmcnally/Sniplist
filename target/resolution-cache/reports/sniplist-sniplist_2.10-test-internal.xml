@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140527152503"/>
+		date="20140527154642"/>
 	<dependencies>
 		<module organisation="com.feth" name="play-authenticate_2.10">
 			<revision name="0.5.2-SNAPSHOT" status="integration" pubdate="20131111230314" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="true" default="false" conf="default(compile), compile" position="57">
