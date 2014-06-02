@@ -1,6 +1,6 @@
 // @SOURCE:C:/Projects/Sniplist/conf/routes
 // @HASH:8a640a80a766559bc679c490a239ca8407edffdb
-// @DATE:Fri May 30 15:47:50 EDT 2014
+// @DATE:Sun Jun 01 21:40:17 EDT 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._

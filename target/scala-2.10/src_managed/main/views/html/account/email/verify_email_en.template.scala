@@ -49,7 +49,7 @@ Howdy """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri May 30 10:15:31 EDT 2014
+                    DATE: Sun Jun 01 21:40:18 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/email/verify_email_en.scala.html
                     HASH: d73b5a5ea1409031e924abfa0b12d0993cd29596
                     MATRIX: 819->1|982->70|1025->79|1050->83|1151->149|1187->164

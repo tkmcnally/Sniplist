@@ -63,7 +63,7 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main(Messages("playauthenticate.index.title")
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri May 30 10:15:30 EDT 2014
+                    DATE: Sun Jun 01 21:40:18 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/index.scala.html
                     HASH: acce07eebf2108c572a4a5c8f1ce52894ef74f49
                     MATRIX: 864->3|918->49|957->51|1119->178|1180->218|1234->237|1297->279|1339->286|1403->328|1569->458|1633->500|1940->771|2004->813|2350->1123|2414->1165|2766->1481|2830->1523

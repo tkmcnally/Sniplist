@@ -60,7 +60,7 @@ Seq[Any](format.raw/*1.19*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri May 30 10:15:30 EDT 2014
+                    DATE: Sun Jun 01 21:40:18 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/index1.scala.html
                     HASH: ae646c51cfed0109730cbfa2f4840cdcd0d12127
                     MATRIX: 775->1|886->18|964->61|978->67|1050->118|1160->193|1174->199|1227->231|1447->415|1476->422|1567->477|1582->483|1634->513
