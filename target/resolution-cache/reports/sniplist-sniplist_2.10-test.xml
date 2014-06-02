@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140601203904"/>
+		date="20140601204131"/>
 	<dependencies>
 		<module organisation="commons-lang" name="commons-lang">
 			<revision name="2.6" status="release" pubdate="20110116172147" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/lang/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="66">
@@ -46,6 +46,7 @@
 		<module organisation="com.typesafe" name="play-plugins-mailer_2.10">
 			<revision name="2.2.0" status="release" pubdate="20130927053254" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="60">
 				<metadata-artifact status="no" details="" size="2898" time="0" location="C:\Users\Thomas\.ivy2\cache\com.typesafe\play-plugins-mailer_2.10\ivy-2.2.0.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play-plugins-mailer_2.10/2.2.0/play-plugins-mailer_2.10-2.2.0.pom"/>
+				<caller organisation="sniplist" name="sniplist_2.10" conf="test, compile, runtime" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0"/>
 				<caller organisation="com.feth" name="play-easymail_2.10" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="0.5-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-plugins-mailer_2.10" type="jar" ext="jar" status="no" details="" size="51174" time="0" location="C:\Users\Thomas\.ivy2\cache\com.typesafe\play-plugins-mailer_2.10\jars\play-plugins-mailer_2.10-2.2.0.jar">

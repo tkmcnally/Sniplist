@@ -4,7 +4,7 @@
 		module="sniplist-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20140601203700"
+		publication="20140601204509"
 		e:scalaVersion="2.10" e:sbtVersion="0.13"
 	>
 		<description>
@@ -43,5 +43,6 @@
 			<artifact name="global-plugins" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
 		<dependency org="com.typesafe.play" name="sbt-plugin" rev="2.2.3" conf="compile->default(compile)" e:scalaVersion="2.10" e:sbtVersion="0.13"/>
+		<dependency org="com.typesafe" name="play-plugins-mailer" rev="2.2.0" conf="compile->default(compile)" e:scalaVersion="2.10" e:sbtVersion="0.13"/>
 	</dependencies>
 </ivy-module>
