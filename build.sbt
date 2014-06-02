@@ -23,7 +23,7 @@ resolvers ++= Seq(
   Resolver.url("play-easymail (release)", url("http://joscha.github.com/play-easymail/repo/releases/"))(Resolver.ivyStylePatterns),
   Resolver.url("play-easymail (snapshot)", url("http://joscha.github.com/play-easymail/repo/snapshots/"))(Resolver.ivyStylePatterns),
   Resolver.url("jBCrypt Repository", url("http://repo1.maven.org/maven2/org/"))(Resolver.ivyStylePatterns),
-  Resolver.url("Apache", url("http://repo1.maven.org/maven2/"))(Resolver.ivyStylePatterns),
+  Resolver.url("Apache", url("http://repo1.maven.org/maven2/"))(Resolver.ivyStylePatterns)
 )
 
 playJavaSettings
