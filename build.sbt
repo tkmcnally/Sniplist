@@ -7,7 +7,7 @@ version := "1.0"
 libraryDependencies ++= Seq(
   "org.mongodb.morphia" % "morphia" % "0.107",
   "org.mongodb" % "mongo-java-driver" % "2.12.2",
-  "be.objectify" %% "deadbolt-java" % "2.2.1-RC2",
+  "be.objectify" %% "deadbolt-java" % "2.2.1-RC2" exclude("com.typesafe.play", "play-cache_2.10"),
   "com.feth" %% "play-easymail" % "0.5-SNAPSHOT",
   "org.mindrot" % "jbcrypt" % "0.3m",
   "org.apache.httpcomponents" % "httpclient" % "4.3",
