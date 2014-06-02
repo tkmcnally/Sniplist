@@ -12,7 +12,7 @@ libraryDependencies ++= Seq(
   "org.mindrot" % "jbcrypt" % "0.3m",
   "org.apache.httpcomponents" % "httpclient" % "4.3",
   "commons-lang" % "commons-lang" % "2.6",
-  "com.typesafe" % "play-plugins-mailer" % "2.2.0",
+  "com.typesafe" %% "play-plugins-mailer" % "2.2.0",
   //"com.feth" %% "play-authenticate" % "0.5.2-SNAPSHOT" withSources(),
   javaCore
 )

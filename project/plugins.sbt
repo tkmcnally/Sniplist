@@ -4,5 +4,5 @@ resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/release
 
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.2.3")
 
-addSbtPlugin("com.typesafe" % "play-plugins-mailer" % "2.2.0")
+addSbtPlugin("com.typesafe" %% "play-plugins-mailer" % "2.2.0")
 
