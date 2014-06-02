@@ -4,7 +4,7 @@
 		module="sniplist_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140601204131"
+		publication="20140601211815"
 	>
 		<description>
 		Sniplist
@@ -32,8 +32,9 @@
 		<artifact name="sniplist_2.10" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 	</publications>
 	<dependencies>
-		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.3" conf="scala-tool->default,optional(default)"/>
-		<dependency org="org.scala-lang" name="scala-library" rev="2.10.3" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.2" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.2" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="com.typesafe" name="play-plugins-mailer_2.10" rev="2.2.0" conf="compile->default(compile)"/>
 		<dependency org="org.mongodb.morphia" name="morphia" rev="0.107" conf="compile->default(compile)"/>
 		<dependency org="org.mongodb" name="mongo-java-driver" rev="2.12.2" conf="compile->default(compile)"/>
 		<dependency org="be.objectify" name="deadbolt-java_2.10" rev="2.2.1-RC2" conf="compile->default(compile)">
@@ -45,10 +46,9 @@
 		<dependency org="org.mindrot" name="jbcrypt" rev="0.3m" conf="compile->default(compile)"/>
 		<dependency org="org.apache.httpcomponents" name="httpclient" rev="4.3" conf="compile->default(compile)"/>
 		<dependency org="commons-lang" name="commons-lang" rev="2.6" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe" name="play-plugins-mailer_2.10" rev="2.2.0" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.2.3" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play_2.10" rev="2.2.3" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-test_2.10" rev="2.2.3" conf="test->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-docs_2.10" rev="2.2.3" conf="docs->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.2.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play_2.10" rev="2.2.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-test_2.10" rev="2.2.1" conf="test->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-docs_2.10" rev="2.2.1" conf="docs->default(compile)"/>
 	</dependencies>
 </ivy-module>
