@@ -5,7 +5,7 @@ name := "Sniplist"
 version := "1.0"
 
 libraryDependencies ++= Seq(
-  "com.typesafe" % "play-plugins-mailer_2.10" % "2.1.0",
+  "com.typesafe" %% "play-plugins-mailer" % "2.2.0",
   "org.mongodb.morphia" % "morphia" % "0.107",
   "org.mongodb" % "mongo-java-driver" % "2.12.2",
   "be.objectify" %% "deadbolt-java" % "2.2.1-RC2" exclude("com.typesafe.play", "play-cache_2.10"),
@@ -18,16 +18,12 @@ libraryDependencies ++= Seq(
 )
 
 resolvers ++= Seq(
-  Resolver.url("typesafe plugins", url("http://repo.typesafe.com/typesafe/releases/"))(Resolver.ivyStylePatterns),
-  Resolver.url("sbt-plugin-snapshots", url("http://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots/"))(Resolver.ivyStylePatterns),
   Resolver.url("Objectify Play Repository (release)", url("http://schaloner.github.com/releases/"))(Resolver.ivyStylePatterns),
   Resolver.url("Objectify Play Repository (snapshot)", url("http://schaloner.github.com/snapshots/"))(Resolver.ivyStylePatterns),
   Resolver.url("play-easymail (release)", url("http://joscha.github.com/play-easymail/repo/releases/"))(Resolver.ivyStylePatterns),
   Resolver.url("play-easymail (snapshot)", url("http://joscha.github.com/play-easymail/repo/snapshots/"))(Resolver.ivyStylePatterns),
   Resolver.url("jBCrypt Repository", url("http://repo1.maven.org/maven2/org/"))(Resolver.ivyStylePatterns),
   Resolver.url("Apache", url("http://repo1.maven.org/maven2/"))(Resolver.ivyStylePatterns),
-  Resolver.url("play-authenticate (release)", url("http://joscha.github.com/play-authenticate/repo/releases/"))(Resolver.ivyStylePatterns),
-  Resolver.url("play-authenticate (snapshot)", url("http://joscha.github.com/play-authenticate/repo/snapshots/"))(Resolver.ivyStylePatterns)
 )
 
 playJavaSettings

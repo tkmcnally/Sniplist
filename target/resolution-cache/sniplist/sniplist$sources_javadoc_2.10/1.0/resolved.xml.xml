@@ -4,7 +4,7 @@
 		module="sniplist$sources_javadoc_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140601212750"
+		publication="20140601213050"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -27,24 +27,6 @@
 		<dependency org="org.scala-lang" name="scala-library" rev="2.10.2" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile);docs->default(compile);scala-tool->default(compile)">
 			<artifact name="scala-library" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="scala-library" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
-		</dependency>
-		<dependency org="com.typesafe" name="play-plugins-mailer_2.10" rev="2.2.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="play-plugins-mailer_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-			<artifact name="play-plugins-mailer_2.10" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
-		</dependency>
-		<dependency org="org.apache.commons" name="commons-email" rev="1.2" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="commons-email" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-			<artifact name="commons-email" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
-		</dependency>
-		<dependency org="javax.mail" name="mail" rev="1.4.1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="mail" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
-		<dependency org="javax.activation" name="activation" rev="1.1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="activation" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
-		<dependency org="com.typesafe" name="play-plugins-util_2.10" rev="2.2.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="play-plugins-util_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-			<artifact name="play-plugins-util_2.10" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
 		<dependency org="org.mongodb.morphia" name="morphia" rev="0.107" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="morphia" type="src" ext="jar" conf="sources" e:classifier="sources"/>
@@ -247,6 +229,24 @@
 		</dependency>
 		<dependency org="com.feth" name="play-easymail_2.10" rev="0.5-SNAPSHOT" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="play-easymail_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="com.typesafe" name="play-plugins-mailer_2.10" rev="2.2.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="play-plugins-mailer_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="play-plugins-mailer_2.10" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-email" rev="1.2" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="commons-email" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="commons-email" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="javax.mail" name="mail" rev="1.4.1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="mail" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="javax.activation" name="activation" rev="1.1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="activation" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="com.typesafe" name="play-plugins-util_2.10" rev="2.2.0" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="play-plugins-util_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="play-plugins-util_2.10" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
 		<dependency org="org.mindrot" name="jbcrypt" rev="0.3m" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="jbcrypt" type="src" ext="jar" conf="sources" e:classifier="sources"/>

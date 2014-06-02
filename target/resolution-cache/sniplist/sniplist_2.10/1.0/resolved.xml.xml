@@ -4,7 +4,7 @@
 		module="sniplist_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140601212746"
+		publication="20140601213030"
 	>
 		<description>
 		Sniplist
@@ -34,7 +34,6 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.2" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.10.2" conf="scala-tool->default,optional(default);compile->default(compile)"/>
-		<dependency org="com.typesafe" name="play-plugins-mailer_2.10" rev="2.2.0" conf="compile->default(compile)"/>
 		<dependency org="org.mongodb.morphia" name="morphia" rev="0.107" conf="compile->default(compile)"/>
 		<dependency org="org.mongodb" name="mongo-java-driver" rev="2.12.2" conf="compile->default(compile)"/>
 		<dependency org="be.objectify" name="deadbolt-java_2.10" rev="2.2.1-RC2" conf="compile->default(compile)">
