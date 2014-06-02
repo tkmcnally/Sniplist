@@ -66,7 +66,6 @@ public class TokenAction {
     @Indexed(unique = true)
     public String token;
 
-    @Reference
     public User targetUser;
 
     public Type type;
