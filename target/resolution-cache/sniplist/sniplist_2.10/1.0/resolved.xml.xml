@@ -4,7 +4,7 @@
 		module="sniplist_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140601203704"
+		publication="20140601203904"
 	>
 		<description>
 		Sniplist
@@ -39,7 +39,9 @@
 		<dependency org="be.objectify" name="deadbolt-java_2.10" rev="2.2.1-RC2" conf="compile->default(compile)">
 			<exclude org="com.typesafe.play" module="play-cache_2.10" name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
-		<dependency org="com.feth" name="play-easymail_2.10" rev="0.5-SNAPSHOT" conf="compile->default(compile)"/>
+		<dependency org="com.feth" name="play-easymail_2.10" rev="0.5-SNAPSHOT" conf="compile->default(compile)">
+			<exclude org="com.typesafe.play" module="play-cache_2.10" name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
 		<dependency org="org.mindrot" name="jbcrypt" rev="0.3m" conf="compile->default(compile)"/>
 		<dependency org="org.apache.httpcomponents" name="httpclient" rev="4.3" conf="compile->default(compile)"/>
 		<dependency org="commons-lang" name="commons-lang" rev="2.6" conf="compile->default(compile)"/>
