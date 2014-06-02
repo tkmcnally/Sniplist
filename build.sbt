@@ -5,7 +5,7 @@ name := "Sniplist"
 version := "1.0"
 
 libraryDependencies ++= Seq(
-  "com.typesafe" %% "play-plugins-mailer" % "2.2.0",
+  "com.typesafe" %% "play-plugins-mailer" % "2.1.0",
   "org.mongodb.morphia" % "morphia" % "0.107",
   "org.mongodb" % "mongo-java-driver" % "2.12.2",
   "be.objectify" %% "deadbolt-java" % "2.2.1-RC2" exclude("com.typesafe.play", "play-cache_2.10"),
