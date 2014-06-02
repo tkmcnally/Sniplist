@@ -4,7 +4,7 @@
 		module="sniplist$sources_javadoc_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140601201625"
+		publication="20140601203707"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -39,13 +39,6 @@
 		<dependency org="be.objectify" name="deadbolt-java_2.10" rev="2.2.1-RC2" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="deadbolt-java_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="deadbolt-java_2.10" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
-		</dependency>
-		<dependency org="com.typesafe.play" name="play-cache_2.10" rev="2.2.1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="play-cache_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-		</dependency>
-		<dependency org="net.sf.ehcache" name="ehcache-core" rev="2.6.6" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
-			<artifact name="ehcache-core" type="src" ext="jar" conf="sources" e:classifier="sources"/>
-			<artifact name="ehcache-core" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
 		<dependency org="be.objectify" name="deadbolt-core_2.10" rev="2.2.1-RC1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="deadbolt-core_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
