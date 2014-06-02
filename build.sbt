@@ -26,7 +26,8 @@ resolvers ++= Seq(
   Resolver.url("Apache", url("http://repo1.maven.org/maven2/"))(Resolver.ivyStylePatterns),
   Resolver.url("play-authenticate (release)", url("http://joscha.github.com/play-authenticate/repo/releases/"))(Resolver.ivyStylePatterns),
   Resolver.url("play-authenticate (snapshot)", url("http://joscha.github.com/play-authenticate/repo/snapshots/"))(Resolver.ivyStylePatterns),
-  Resolver.url("typesafe plugins", url("http://repo.typesafe.com/typesafe/releases/"))(Resolver.ivyStylePatterns)
+  Resolver.url("typesafe plugins", url("http://repo.typesafe.com/typesafe/releases/"))(Resolver.ivyStylePatterns),
+  Resolver.url("sbt-plugin-snapshots", url("http://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots/"))(Resolver.ivyStylePatterns)
 
 )
 
