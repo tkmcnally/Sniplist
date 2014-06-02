@@ -4,7 +4,7 @@
 		module="sniplist$sbt_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140529161103"
+		publication="20140601201624"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>

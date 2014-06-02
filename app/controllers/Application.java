@@ -35,7 +35,9 @@ public class Application extends Controller {
 	public static User getLocalUser(final Session session) {
 		final AuthUser currentAuthUser = PlayAuthenticate.getUser(session);
 		final User localUser = User.findByAuthUserIdentity(currentAuthUser);
-		return localUser;
+
+        return localUser;
+
 	}
 
 	@Restrict(@Group(Application.USER_ROLE))
@@ -68,7 +70,8 @@ public class Application extends Controller {
 	}
 
 	public static Result signup() {
-		return ok(signup.render(MyUsernamePasswordAuthProvider.SIGNUP_FORM));
+
+        return ok(signup.render(MyUsernamePasswordAuthProvider.SIGNUP_FORM));
 	}
 
 	public static Result jsRoutes() {

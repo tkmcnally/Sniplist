@@ -1,6 +1,6 @@
 // @SOURCE:C:/Projects/Sniplist/conf/routes
-// @HASH:0aa6faf1cc1a12975caebdb982025b2dcfd2960b
-// @DATE:Thu May 29 15:29:03 EDT 2014
+// @HASH:8a640a80a766559bc679c490a239ca8407edffdb
+// @DATE:Fri May 30 15:47:50 EDT 2014
 
 package controllers;
 

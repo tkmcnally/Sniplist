@@ -20,6 +20,7 @@ import play.data.validation.Constraints;
 
 
 import java.util.*;
+import java.util.logging.Logger;
 
 import org.mongodb.morphia.annotations.Entity;
 import util.Constants;
@@ -61,6 +62,7 @@ public class User implements Subject {
 
     public List<SecurityRole> roles;
 
+    public List<UserPermission> permissions;
 
     public List<LinkedAccount> linkedAccounts;
 
@@ -91,12 +93,12 @@ public class User implements Subject {
 
     @Override
     public List<? extends Role> getRoles() {
-        return null;
+        return roles;
     }
 
     @Override
     public List<? extends Permission> getPermissions() {
-        return null;
+        return permissions;
     }
 
     @Override
@@ -158,6 +160,8 @@ public class User implements Subject {
         if (identity instanceof UsernamePasswordAuthUser) {
             return findByUsernamePasswordIdentity((UsernamePasswordAuthUser) identity);
         } else {
+           getAuthUserFind(identity);
+
             return getAuthUserFind(identity).get();
         }
     }
@@ -187,6 +191,18 @@ public class User implements Subject {
                                         final AuthUser newUser) {
         final User u = User.findByAuthUserIdentity(oldUser);
         u.linkedAccounts.add(LinkedAccount.create(newUser));
+        MorphiaUtil.getDatastore().save(u);
+    }
+
+    public static void removeProvider(final AuthUser user, String oldProviderKey) {
+        final User u = User.findByAuthUserIdentity(user);
+
+        for(LinkedAccount la: u.linkedAccounts) {
+            if(la.providerKey.equals(oldProviderKey)) {
+                u.linkedAccounts.remove(la);
+                break;
+            }
+        }
         MorphiaUtil.getDatastore().save(u);
     }
 

@@ -46,7 +46,7 @@ El equipo de PlayAuthenticate.
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu May 29 15:29:05 EDT 2014
+                    DATE: Fri May 30 10:15:31 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/email/verify_email_es.scala.txt
                     HASH: c1fcfd58ca46511c1b6443aaa6d9767feeac6230
                     MATRIX: 813->1|975->70|1016->76|1041->80|1133->138|1169->153

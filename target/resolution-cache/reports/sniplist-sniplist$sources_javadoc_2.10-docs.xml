@@ -7,10 +7,10 @@
 		revision="1.0"
 		conf="docs"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140529161104"/>
+		date="20140601201625"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="play-docs_2.10">
-			<revision name="2.2.3" status="release" pubdate="20140430215313" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="37">
+			<revision name="2.2.3" status="release" pubdate="20140430215313" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="38">
 				<metadata-artifact status="no" details="" size="2580" time="0" location="C:\Users\Thomas\.ivy2\cache\com.typesafe.play\play-docs_2.10\ivy-2.2.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-docs_2.10/2.2.3/play-docs_2.10-2.2.3.pom"/>
 				<caller organisation="sniplist" name="sniplist$sources_javadoc_2.10" conf="docs" rev="2.2.3" rev-constraint-default="2.2.3" rev-constraint-dynamic="2.2.3" callerrev="1.0"/>
 				<artifacts>
@@ -231,11 +231,14 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.httpcomponents" name="httpcore">
-			<revision name="4.0.1" status="release" pubdate="20090621070836" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-core/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="39">
+			<revision name="4.0.1" status="release" pubdate="20090621070836" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-core/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="37">
 				<license name="Apache License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="4367" time="0" location="C:\Users\Thomas\.ivy2\cache\org.apache.httpcomponents\httpcore\ivy-4.0.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.pom"/>
 				<caller organisation="sniplist" name="sniplist$sources_javadoc_2.10" conf="docs" rev="4.0.1" rev-constraint-default="4.0.1" rev-constraint-dynamic="4.0.1" callerrev="1.0"/>
 				<artifacts>
+					<artifact name="httpcore" type="jar" ext="jar" status="no" details="" size="172888" time="0" location="C:\Users\Thomas\.ivy2\cache\org.apache.httpcomponents\httpcore\jars\httpcore-4.0.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar"/>
+					</artifact>
 					<artifact name="httpcore" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="291844" time="0" location="C:\Users\Thomas\.ivy2\cache\org.apache.httpcomponents\httpcore\srcs\httpcore-4.0.1-sources.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1-sources.jar"/>
 					</artifact>
@@ -260,7 +263,7 @@
 			</revision>
 		</module>
 		<module organisation="commons-codec" name="commons-codec">
-			<revision name="1.3" status="release" pubdate="20051108172951" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jakarta.apache.org/commons/codec/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="38">
+			<revision name="1.3" status="release" pubdate="20051108172951" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jakarta.apache.org/commons/codec/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="39">
 				<license name="The Apache Software License, Version 2.0" url="/LICENSE.txt"/>
 				<metadata-artifact status="no" details="" size="2824" time="0" location="C:\Users\Thomas\.ivy2\cache\commons-codec\commons-codec\ivy-1.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/commons-codec/commons-codec/1.3/commons-codec-1.3.pom"/>
 				<caller organisation="sniplist" name="sniplist$sources_javadoc_2.10" conf="docs" rev="1.3" rev-constraint-default="1.3" rev-constraint-dynamic="1.3" callerrev="1.0"/>

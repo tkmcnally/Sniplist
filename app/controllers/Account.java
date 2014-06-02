@@ -1,5 +1,6 @@
 package controllers;
 
+import com.feth.play.module.pa.controllers.Authenticate;
 import models.User;
 import be.objectify.deadbolt.java.actions.Restrict;
 import be.objectify.deadbolt.java.actions.Group;
@@ -19,6 +20,7 @@ import providers.MyUsernamePasswordAuthProvider;
 import providers.MyUsernamePasswordAuthUser;
 import views.html.account.*;
 import views.html.account.link;
+import views.html.index;
 
 import static play.data.Form.form;
 
@@ -80,7 +82,8 @@ public class Account extends Controller {
 	@SubjectPresent
 	public static Result link() {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
-		return ok(link.render());
+        final User user = Application.getLocalUser(session());
+		return ok(link.render(user));
 	}
 
 	@Restrict(@Group(Application.USER_ROLE))
@@ -217,4 +220,23 @@ public class Account extends Controller {
 		}
 	}
 
+    @SubjectPresent
+    public static Result unlink(String provider) {
+
+        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
+        final AuthUser u = PlayAuthenticate.getUser(session());
+        User.removeProvider(u, provider);
+
+        //TODO if failed
+        boolean unlink = true;
+        if (unlink) {
+            flash(Application.FLASH_MESSAGE_KEY, provider + " " +
+                    Messages.get("playauthenticate.unlink.account.success"));
+        } else {
+            flash(Application.FLASH_ERROR_KEY, provider + " " +
+                    Messages.get("playauthenticate.unlink.account.remove"));
+        }
+        com.feth.play.module.pa.controllers.Authenticate.logout();
+        return redirect(routes.Application.index());
+    }
 }

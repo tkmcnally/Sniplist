@@ -83,10 +83,15 @@ playauthenticate.merge.accounts.false=No, exit my current session and log in as 
 playauthenticate.merge.accounts.ok=OK
 
 playauthenticate.link.account.title=Link account
+
 playauthenticate.link.account.question=Link ({0}) with your user?
 playauthenticate.link.account.true=Yes, link this account
 playauthenticate.link.account.false=No, log out and create a new user with this account
 playauthenticate.link.account.ok=OK
+
+playauthenticate.unlink.account.remove=Remove account
+playauthenticate.unlink.account.success=has been successfully removed from your account. Please log back in.
+playauthenticate.unlink.account.failure=could not be removed.
 
 # play-authenticate: Signup folder translations
 
