@@ -1,47 +1,47 @@
 @(signupForm: Form[_])
 
 @import helper._
-@import helper.twitterBootstrap._
 
-@main(Messages("playauthenticate.signup.title"),"signup") {
-    
-  <div class="row">
-    <div class="span6">
-      <h1>@Messages("playauthenticate.signup.title")</h1>
+@implicitField = @{ FieldConstructor(signupField.f) }
+
+
+@main("Signup", "signup") {
+    <div class="container mt">
+        <div class="row">
+            <div class="centered">
+                <div class="col-md-12">
+                    <h1>@Messages("playauthenticate.signup.title")</h1>
+                    @* Display proprietary login form *@
+                    @form(routes.Application.doSignup, 'id -> "signUpForm", 'class -> "col-md-12 form-inline form-horizontal") {
+
+                        @if(signupForm.hasGlobalErrors) {
+
+                            <div class="alert alert-danger">@signupForm.globalError.message</div>
+
+                        }
+                        @signUpFormFields(signupForm)
+                        @signupForm.error("password")
+                        <input type="submit" value="@Messages("playauthenticate.signup.now")" class="btn btn-primary top-buffer-sm">
+                        }
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="centered mt">
+                    <div class="col-md-12">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="hline"><h4 class="top-buffer-sm bottom-buffer-sm">or</h4></div>
+                            <h3 class="top-buffer-sm bottom-buffer-sm">Connect using:</h3>
+
+                            <ul>
+                            @_providerPartial(skipCurrent=false)
+                            </ul>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div><! --/row -->
     </div>
-  </div>
-
-  <div id="signup" class="row">
-
-    <div class="span3">
-        @* Display proprietary login form *@
-    	@helper.form(routes.Application.doSignup) {
-    	
-            @if(signupForm.hasGlobalErrors) { 
-                <p class="error">
-		            <span class="label label-important">@signupForm.globalError.message</span>
-		        </p>
-            }
-            
-             @inputText(
-                signupForm("name"),
-                '_label -> Messages("playauthenticate.signup.name")
-             )
-             
-             @_emailPartial(signupForm)
-             
-             @_passwordPartial(signupForm)
-
-            <input type="submit" value="@Messages("playauthenticate.signup.now")" class="btn btn-primary">
-    	}
-    </div>
-
-    <div class="span3">
-        @Messages("playauthenticate.signup.oauth")
-        @* Display list of available providers *@
-        @_providerPartial(skipCurrent=false)
-    </div>
-
-  </div>
-
 }

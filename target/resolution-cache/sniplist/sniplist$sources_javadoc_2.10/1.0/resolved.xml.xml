@@ -4,7 +4,7 @@
 		module="sniplist$sources_javadoc_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140601214838"
+		publication="20140605160536"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -271,6 +271,13 @@
 		<dependency org="javax.servlet" name="javax.servlet-api" rev="3.0.1" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="javax.servlet-api" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="javax.servlet-api" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="com.typesafe.play" name="play-cache_2.10" rev="2.2.3" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="play-cache_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="net.sf.ehcache" name="ehcache-core" rev="2.6.6" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="ehcache-core" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="ehcache-core" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
 		<dependency org="org.apache.httpcomponents" name="httpcore" rev="4.0.1" transitive="false" conf="runtime->default(compile);docs->default(compile)">
 			<artifact name="httpcore" type="src" ext="jar" conf="sources" e:classifier="sources"/>

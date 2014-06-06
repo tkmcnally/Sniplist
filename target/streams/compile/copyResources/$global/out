@@ -1,0 +1,16 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\target\scala-2.10\resource_managed\main\public\stylesheets\main.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\stylesheets\main.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\target\scala-2.10\resource_managed\main\public\stylesheets\main.min.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\stylesheets\main.min.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\application.conf,C:\Projects\Sniplist\target\scala-2.10\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\messages.de,C:\Projects\Sniplist\target\scala-2.10\classes\messages.de)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\messages.en,C:\Projects\Sniplist\target\scala-2.10\classes\messages.en)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\messages.es,C:\Projects\Sniplist\target\scala-2.10\classes\messages.es)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\messages.fr,C:\Projects\Sniplist\target\scala-2.10\classes\messages.fr)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\messages.ja,C:\Projects\Sniplist\target\scala-2.10\classes\messages.ja)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\messages.pl,C:\Projects\Sniplist\target\scala-2.10\classes\messages.pl)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\play-authenticate,C:\Projects\Sniplist\target\scala-2.10\classes\play-authenticate)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\play.plugins,C:\Projects\Sniplist\target\scala-2.10\classes\play.plugins)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\routes,C:\Projects\Sniplist\target\scala-2.10\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\play-authenticate\deadbolt.conf,C:\Projects\Sniplist\target\scala-2.10\classes\play-authenticate\deadbolt.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\play-authenticate\mine.conf,C:\Projects\Sniplist\target\scala-2.10\classes\play-authenticate\mine.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\conf\play-authenticate\smtp.conf,C:\Projects\Sniplist\target\scala-2.10\classes\play-authenticate\smtp.conf)[0m

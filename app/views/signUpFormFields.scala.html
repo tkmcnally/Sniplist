@@ -1,0 +1,29 @@
+@(userForm: Form[_], constraints: Boolean = false)
+
+@import helper._
+    @implicitField = @{ FieldConstructor(signupField.f) }
+
+@inputText(
+    userForm("name"),
+    '_label -> Messages("playauthenticate.signup.name"),
+    'showConstraints -> false
+)
+
+@inputText(
+    userForm("email"),
+    '_showConstraints -> constraints,
+    '_label -> Messages("playauthenticate.login.email.placeholder"),
+    'type -> "email"
+)
+
+@inputPassword(
+    userForm("password"),
+    '_label -> Messages("playauthenticate.login.password.placeholder")
+)
+
+@inputPassword(
+    userForm("repeatPassword"),
+    '_label -> Messages("playauthenticate.login.password.repeat"),
+    '_showConstraints -> false,
+    '_error -> userForm.error("password")
+)

@@ -39,7 +39,7 @@ Howdy """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 </p>
 <p>
 	Cheers,<br /> 
-	<i>The PlayAuthenticate Team</i>
+	<i>The Sniplist Team</i>
 </p>"""))}
     }
     
@@ -52,9 +52,9 @@ Howdy """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 01 21:40:18 EDT 2014
+                    DATE: Fri Jun 06 02:00:45 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/email/password_reset_en.scala.html
-                    HASH: 7d7fccc5d4cbbc0341408b8de1e92083d6e094d5
+                    HASH: 23ae973b8b9433a980683147d3a80ba9eb289a84
                     MATRIX: 821->1|972->58|1015->67|1040->71|1334->329|1359->332
                     LINES: 26->1|29->1|30->2|30->2|38->10|38->10
                     -- GENERATED --

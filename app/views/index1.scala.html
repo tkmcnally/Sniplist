@@ -1,22 +1,217 @@
-@(testing: String)
+@(title: String, nav: String = "")(content: Html)
+
+@import be.objectify.deadbolt.java.views.html._
+@import be.objectify.deadbolt.core.utils.TemplateUtils._
+
 
 <!DOCTYPE html>
+<html lang="@lang().code()">
+    <head>
+        <title>@title</title>
 
-<head>
-    <link href="@routes.Assets.at("../../public/stylesheets/main_one.css")" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="@routes.Assets.at("images/favicon.ico")"/>
-    <title>Sniplist</title>
-</head>
+        <!-- Meta values -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-<html>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="@routes.Assets.at("ico/favicon.ico")">
+
+        <!-- Bootstrap core CSS -->
+        <link href="@routes.Assets.at("css/bootstrap.css")" rel="stylesheet">
+        <link href="@routes.Assets.at("css/font-awesome.min.css")" rel="stylesheet">
+
+        <link href="@routes.Assets.at("css/transparent.css")" rel="stylesheet"/>
+
+        <!-- Custom styles for this template -->
+        <link href="@routes.Assets.at("css/style.css")" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
     <body>
-        <div class="middle-wrapper">
-            <h1>Sniplist</h1>
-            <h2>under construction.</h2>
-            <h3>@testing</h3>
-            <img style="padding-right: 3%" src="@routes.Assets.at("images/music.png")">
+
+            <!-- Fixed navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@routes.Application.index()">SNIPLIST.</a>
+                </div>
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <!-- Determine which page is currently active -->
+                        @generators.navbarMenu(routes.Application.index(), "HOME")
+                        @generators.navbarMenu(routes.Application.about(), "ABOUT")
+                        @generators.navbarMenu(routes.Application.contact(), "CONTACT")
+                        @subjectPresentOr() {
+                            @defining(Application.getLocalUser(session())) { user =>
+                                <li><div class="dropdown">
+                                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="icon-user"></i> @user.name.toUpperCase()
+                                        <span class="caret"></span>
+                                    </a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a href="@routes.Application.profile()">@Messages("playauthenticate.navigation.profile").toUpperCase()</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="@com.feth.play.module.pa.controllers.routes.Authenticate.logout()"><i class="icon-off"></i> @Messages("playauthenticate.navigation.logout").toUpperCase()</a></li>
+                                </ul>
+                                </div>
+                              </li>
+                            }
+                        }{
+                            @generators.navbarMenu(routes.Application.login(), "SIGN IN")
+                        }
+
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
         </div>
+
+        <div id="wrapper-content">
+            <div id="container">
+
+            <!-- INSERTED CONTENT GOES HERE -->
+                @content
+            </div>
+        </div>
+        <!-- *****************************************************************************************************************
+        FOOTER
+        ***************************************************************************************************************** -->
+        <div id="footerwrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h4>About</h4>
+                        <div class="hline-w"></div>
+                        <p>Created in 2014, Sniplist provides a new way of sharing music with your friends.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4>Social Links</h4>
+                        <div class="hline-w"></div>
+                        <p>
+                            <a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                            <a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a>
+                            <a href="http://www.instagram.com"><i class="fa fa-instagram"></i></a>
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4>Our Location</h4>
+                        <div class="hline-w"></div>
+                        <p>
+                            Ottawa, Canada
+                        </p>
+                    </div>
+                </div><! --/row -->
+            </div><! --/container -->
+        </div><! --/footerwrap -->
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="@routes.Assets.at("js/bootstrap.min.js")"></script>
+        <script src="@routes.Assets.at("js/retina-1.1.0.js")"></script>
+        <script src="@routes.Assets.at("js/jquery.hoverdir.js")"></script>
+        <script src="@routes.Assets.at("js/jquery.hoverex.min.js")"></script>
+        <script src="@routes.Assets.at("js/jquery.prettyPhoto.js")"></script>
+        <script src="@routes.Assets.at("js/jquery.isotope.min.js")"></script>
+        <script src="@routes.Assets.at("js/custom.js")"></script>
+
+        <script>
+        // Portfolio
+        (function($) {
+        "use strict";
+        var $container = $('.portfolio'),
+        $items = $container.find('.portfolio-item'),
+        portfolioLayout = 'fitRows';
+
+        if( $container.hasClass('portfolio-centered') ) {
+        portfolioLayout = 'masonry';
+        }
+
+        $container.isotope({
+        filter: '*',
+        animationEngine: 'best-available',
+        layoutMode: portfolioLayout,
+        animationOptions: {
+        duration: 750,
+        easing: 'linear',
+        queue: false
+        },
+        masonry: {
+        }
+        }, refreshWaypoints());
+
+        function refreshWaypoints() {
+        setTimeout(function() {
+        }, 1000);
+        }
+
+        $('nav.portfolio-filter ul a').on('click', function() {
+        var selector = $(this).attr('data-filter');
+        $container.isotope({ filter: selector }, refreshWaypoints());
+        $('nav.portfolio-filter ul a').removeClass('active');
+        $(this).addClass('active');
+        return false;
+        });
+
+        function getColumnNumber() {
+        var winWidth = $(window).width(),
+        columnNumber = 1;
+
+        if (winWidth > 1200) {
+        columnNumber = 5;
+        } else if (winWidth > 950) {
+        columnNumber = 4;
+        } else if (winWidth > 600) {
+        columnNumber = 3;
+        } else if (winWidth > 400) {
+        columnNumber = 2;
+        } else if (winWidth > 250) {
+        columnNumber = 1;
+        }
+        return columnNumber;
+        }
+
+        function setColumns() {
+        var winWidth = $(window).width(),
+        columnNumber = getColumnNumber(),
+        itemWidth = Math.floor(winWidth / columnNumber);
+
+        $container.find('.portfolio-item').each(function() {
+        $(this).css( {
+        width : itemWidth + 'px'
+        });
+        });
+        }
+
+        function setPortfolio() {
+        setColumns();
+        $container.isotope('reLayout');
+        }
+
+        $container.imagesLoaded(function () {
+        setPortfolio();
+        });
+
+        $(window).on('resize', function () {
+        setPortfolio();
+        });
+        })(jQuery);
+        </script>
     </body>
 </html>
-
-

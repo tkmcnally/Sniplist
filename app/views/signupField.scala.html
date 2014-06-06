@@ -1,0 +1,18 @@
+@(elements: views.html.helper.FieldElements)
+
+@import views.html.helper._
+
+<div class="control-group row top-buffer-sm @if(elements.hasErrors) {has-error}">
+    <label class="control-label  col-sm-3" for="@elements.id">@elements.label</label>
+    <div class="input-group  col-sm-6">
+
+        @if(elements.hasErrors) {
+            @Html(elements.input.body.dropRight(2)+" class='form-control has-error'>")
+            <span class="help-inline form-error">@elements.errors.mkString(", ")</span>
+        } else {
+            @Html(elements.input.body.dropRight(2)+" class='form-control'>")
+            <span class="help-inline top-buffer-xsm">@elements.infos.mkString(", ")</span>
+        }
+    </div>
+    <div class="col-md-3"></div>
+</div>

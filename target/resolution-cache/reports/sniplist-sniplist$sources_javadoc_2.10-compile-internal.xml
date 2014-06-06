@@ -7,8 +7,40 @@
 		revision="1.0"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140601214838"/>
+		date="20140605160537"/>
 	<dependencies>
+		<module organisation="com.typesafe.play" name="play-cache_2.10">
+			<revision name="2.2.3" status="release" pubdate="20140604011727" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="66">
+				<metadata-artifact status="no" details="" size="2813" time="0" location="C:\Users\Thomas\.ivy2\cache\com.typesafe.play\play-cache_2.10\ivy-2.2.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.10/2.2.3/play-cache_2.10-2.2.3.pom"/>
+				<caller organisation="sniplist" name="sniplist$sources_javadoc_2.10" conf="optional, compile, provided, compile-internal" rev="2.2.3" rev-constraint-default="2.2.3" rev-constraint-dynamic="2.2.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="play-cache_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="6080" time="0" location="C:\Users\Thomas\.ivy2\cache\com.typesafe.play\play-cache_2.10\srcs\play-cache_2.10-2.2.3-sources.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.10/2.2.3/play-cache_2.10-2.2.3-sources.jar"/>
+					</artifact>
+					<artifact name="play-cache_2.10" type="jar" ext="jar" status="no" details="" size="35156" time="0" location="C:\Users\Thomas\.ivy2\cache\com.typesafe.play\play-cache_2.10\jars\play-cache_2.10-2.2.3.jar">
+						<origin-location is-local="false" location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-cache_2.10/2.2.3/play-cache_2.10-2.2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.sf.ehcache" name="ehcache-core">
+			<revision name="2.6.6" status="release" pubdate="20130507143745" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://ehcache.org" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="67">
+				<license name="The Apache Software License, Version 2.0" url="src/assemble/EHCACHE-CORE-LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="14914" time="0" location="C:\Users\Thomas\.ivy2\cache\net.sf.ehcache\ehcache-core\ivy-2.6.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/net/sf/ehcache/ehcache-core/2.6.6/ehcache-core-2.6.6.pom"/>
+				<caller organisation="sniplist" name="sniplist$sources_javadoc_2.10" conf="optional, compile, provided, compile-internal" rev="2.6.6" rev-constraint-default="2.6.6" rev-constraint-dynamic="2.6.6" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="ehcache-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1008140" time="0" location="C:\Users\Thomas\.ivy2\cache\net.sf.ehcache\ehcache-core\srcs\ehcache-core-2.6.6-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/net/sf/ehcache/ehcache-core/2.6.6/ehcache-core-2.6.6-sources.jar"/>
+					</artifact>
+					<artifact name="ehcache-core" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="4141714" time="0" location="C:\Users\Thomas\.ivy2\cache\net.sf.ehcache\ehcache-core\docs\ehcache-core-2.6.6-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/net/sf/ehcache/ehcache-core/2.6.6/ehcache-core-2.6.6-javadoc.jar"/>
+					</artifact>
+					<artifact name="ehcache-core" type="jar" ext="jar" status="no" details="" size="1346296" time="0" location="C:\Users\Thomas\.ivy2\cache\net.sf.ehcache\ehcache-core\jars\ehcache-core-2.6.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/net/sf/ehcache/ehcache-core/2.6.6/ehcache-core-2.6.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="com.typesafe.play" name="play-java_2.10">
 			<revision name="2.2.3" status="release" pubdate="20140430234037" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="17">
 				<metadata-artifact status="no" details="" size="5283" time="0" location="C:\Users\Thomas\.ivy2\cache\com.typesafe.play\play-java_2.10\ivy-2.2.3.xml" searched="false" origin-is-local="false" origin-location="http://repo.typesafe.com/typesafe/releases/com/typesafe/play/play-java_2.10/2.2.3/play-java_2.10-2.2.3.pom"/>

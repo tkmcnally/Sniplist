@@ -36,7 +36,7 @@ If you wish to reset your password, all you need to do is follow this link to re
 """),_display_(Seq[Any](/*8.2*/url)),format.raw/*8.5*/("""
 
 Cheers,
-The PlayAuthenticate Team"""))}
+The Sniplist Team"""))}
     }
     
     def render(url:String,token:String,name:String,email:String): play.api.templates.TxtFormat.Appendable = apply(url,token,name,email)
@@ -48,9 +48,9 @@ The PlayAuthenticate Team"""))}
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 01 21:40:18 EDT 2014
+                    DATE: Fri Jun 06 02:00:23 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/email/password_reset_en.scala.txt
-                    HASH: 0dd6ea152080f6e13ebc71fa0c5c2697016658cf
+                    HASH: 3d73519aaae783ed34c457d64cd93d00f1a311f6
                     MATRIX: 815->1|965->58|1007->65|1032->69|1316->319|1339->322
                     LINES: 26->1|29->1|29->1|29->1|36->8|36->8
                     -- GENERATED --

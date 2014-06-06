@@ -31,36 +31,37 @@ Seq[Any](format.raw/*1.33*/("""
 
 """),format.raw/*4.1*/("""
 """),_display_(Seq[Any](/*5.2*/main(Messages("playauthenticate.link.account.title"))/*5.55*/ {_display_(Seq[Any](format.raw/*5.57*/("""
-    
-    <h1>"""),_display_(Seq[Any](/*7.10*/Messages("playauthenticate.link.account.title"))),format.raw/*7.57*/("""</h1>
-    
-    <p>
-        <ul class="providers">
-        """),_display_(Seq[Any](/*11.10*/forProviders(skipCurrent = true)/*11.42*/ { p =>_display_(Seq[Any](format.raw/*11.49*/("""
-          """),_display_(Seq[Any](/*12.12*/if(!localUser.getProviders().contains(p.getKey))/*12.60*/ {_display_(Seq[Any](format.raw/*12.62*/("""
-              <li>
-                  <a href="/authenticate/"""),_display_(Seq[Any](/*14.43*/p/*14.44*/.getKey)),format.raw/*14.51*/("""">
-                  """),_display_(Seq[Any](/*15.20*/_providerIcon(p.getKey))),format.raw/*15.43*/("""</a>
-              </li>
-          """)))})),format.raw/*17.12*/("""
-        """)))})),format.raw/*18.10*/("""
+
+    <div class="container mtb">
+        <h1>"""),_display_(Seq[Any](/*8.14*/Messages("playauthenticate.link.account.title"))),format.raw/*8.61*/("""</h1>
+
+        <p>
+            <ul class="providers list-unstyled">
+            """),_display_(Seq[Any](/*12.14*/forProviders(skipCurrent = true)/*12.46*/ { p =>_display_(Seq[Any](format.raw/*12.53*/("""
+              """),_display_(Seq[Any](/*13.16*/if(!localUser.getProviders().contains(p.getKey))/*13.64*/ {_display_(Seq[Any](format.raw/*13.66*/("""
+                  <li>
+                      <a href="/authenticate/"""),_display_(Seq[Any](/*15.47*/p/*15.48*/.getKey)),format.raw/*15.55*/("""">
+                      """),_display_(Seq[Any](/*16.24*/_providerIcon(p.getKey))),format.raw/*16.47*/("""</a>
+                  </li>
+              """)))})),format.raw/*18.16*/("""
+            """)))})),format.raw/*19.14*/("""
+            </ul>
+
+        </p>
+
+
+        <h1>"""),_display_(Seq[Any](/*25.14*/Messages("playauthenticate.unlink.account.remove"))),format.raw/*25.64*/("""</h1>
+        <ul class="providers list-unstyled list-inline">
+        """),_display_(Seq[Any](/*27.10*/defining(localUser.getProviders())/*27.44*/ { providers =>_display_(Seq[Any](format.raw/*27.59*/("""
+            """),_display_(Seq[Any](/*28.14*/for(p <- providers) yield /*28.33*/ {_display_(Seq[Any](format.raw/*28.35*/("""
+                <li>
+                    <a href="/accounts/unlink/"""),_display_(Seq[Any](/*30.48*/p)),format.raw/*30.49*/("""">
+                    """),_display_(Seq[Any](/*31.22*/_providerIcon(p))),format.raw/*31.38*/("""</a>
+                </li>
+            """)))})),format.raw/*33.14*/("""
+        """)))})),format.raw/*34.10*/("""
         </ul>
-    <br/>
-    </p>
-
-
-    <h1>"""),_display_(Seq[Any](/*24.10*/Messages("playauthenticate.unlink.account.remove"))),format.raw/*24.60*/("""</h1>
-    <ul class="providers">
-    """),_display_(Seq[Any](/*26.6*/defining(localUser.getProviders())/*26.40*/ { providers =>_display_(Seq[Any](format.raw/*26.55*/("""
-        """),_display_(Seq[Any](/*27.10*/for(p <- providers) yield /*27.29*/ {_display_(Seq[Any](format.raw/*27.31*/("""
-            <li>
-                <a href="/accounts/unlink/"""),_display_(Seq[Any](/*29.44*/p)),format.raw/*29.45*/("""">
-                """),_display_(Seq[Any](/*30.18*/_providerIcon(p))),format.raw/*30.34*/("""</a>
-            </li>
-        """)))})),format.raw/*32.10*/("""
-    """)))})),format.raw/*33.6*/("""
-    </ul>
-
+    </div>
 """)))})))}
     }
     
@@ -73,11 +74,11 @@ Seq[Any](format.raw/*1.33*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 01 21:40:18 EDT 2014
+                    DATE: Fri Jun 06 01:39:56 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/link.scala.html
-                    HASH: d6f17bc886b5ea1900e3ef609ca160b9554fa32b
-                    MATRIX: 786->1|956->32|986->82|1023->85|1084->138|1123->140|1175->157|1243->204|1342->267|1383->299|1428->306|1477->319|1534->367|1574->369|1674->433|1684->434|1713->441|1772->464|1817->487|1887->525|1930->536|2017->587|2089->637|2164->677|2207->711|2260->726|2307->737|2342->756|2382->758|2481->821|2504->822|2561->843|2599->859|2665->893|2703->900
-                    LINES: 26->1|30->1|32->4|33->5|33->5|33->5|35->7|35->7|39->11|39->11|39->11|40->12|40->12|40->12|42->14|42->14|42->14|43->15|43->15|45->17|46->18|52->24|52->24|54->26|54->26|54->26|55->27|55->27|55->27|57->29|57->29|58->30|58->30|60->32|61->33
+                    HASH: 08af51478a2aad4a067c8036f5cde8d8fc209256
+                    MATRIX: 786->1|956->32|986->82|1023->85|1084->138|1123->140|1208->190|1276->237|1397->322|1438->354|1483->361|1536->378|1593->426|1633->428|1741->500|1751->501|1780->508|1843->535|1888->558|1966->604|2013->619|2103->673|2175->723|2285->797|2328->831|2381->846|2432->861|2467->880|2507->882|2614->953|2637->954|2698->979|2736->995|2810->1037|2853->1048
+                    LINES: 26->1|30->1|32->4|33->5|33->5|33->5|36->8|36->8|40->12|40->12|40->12|41->13|41->13|41->13|43->15|43->15|43->15|44->16|44->16|46->18|47->19|53->25|53->25|55->27|55->27|55->27|56->28|56->28|56->28|58->30|58->30|59->31|59->31|61->33|62->34
                     -- GENERATED --
                 */
             

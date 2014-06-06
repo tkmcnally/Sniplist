@@ -29,10 +29,18 @@ public class Application extends Controller {
 	public static final String USER_ROLE = "user";
 	
 	public static Result index() {
-		return ok(index.render());
+		return ok(home.render());
 	}
 
-	public static User getLocalUser(final Session session) {
+    public static Result about() {
+        return ok(about.render());
+    }
+
+    public static Result contact() {
+        return ok(contact.render());
+    }
+
+    public static User getLocalUser(final Session session) {
 		final AuthUser currentAuthUser = PlayAuthenticate.getUser(session);
 		final User localUser = User.findByAuthUserIdentity(currentAuthUser);
 

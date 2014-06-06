@@ -33,7 +33,7 @@ To verify your e-mail address, follow this link now:
 """),_display_(Seq[Any](/*5.2*/verificationUrl)),format.raw/*5.17*/("""
 
 Cheers,
-The PlayAuthenticate Team"""))}
+The Sniplist Team"""))}
     }
     
     def render(verificationUrl:String,token:String,name:String,email:String): play.api.templates.TxtFormat.Appendable = apply(verificationUrl,token,name,email)
@@ -45,9 +45,9 @@ The PlayAuthenticate Team"""))}
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 01 21:40:18 EDT 2014
+                    DATE: Fri Jun 06 02:00:52 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/email/verify_email_en.scala.txt
-                    HASH: 8df637b102593bae5cd22ad524bac3e4fc659679
+                    HASH: 049d9f73af9540d59048cd5c9122a3f4faa96a48
                     MATRIX: 813->1|975->70|1017->77|1042->81|1139->144|1175->159
                     LINES: 26->1|29->1|29->1|29->1|33->5|33->5
                     -- GENERATED --

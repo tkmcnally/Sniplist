@@ -4,7 +4,7 @@
 		module="sniplist_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140601214821"
+		publication="20140605160947"
 	>
 		<description>
 		Sniplist
@@ -45,6 +45,7 @@
 		<dependency org="org.apache.httpcomponents" name="httpclient" rev="4.3" conf="compile->default(compile)"/>
 		<dependency org="commons-lang" name="commons-lang" rev="2.6" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.2.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.play" name="play-cache_2.10" rev="2.2.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play_2.10" rev="2.2.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-test_2.10" rev="2.2.3" conf="test->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-docs_2.10" rev="2.2.3" conf="docs->default(compile)"/>

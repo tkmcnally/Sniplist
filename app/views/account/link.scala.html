@@ -3,34 +3,35 @@
 @import com.feth.play.module.pa.views.html._
 
 @main(Messages("playauthenticate.link.account.title")) {
-    
-    <h1>@Messages("playauthenticate.link.account.title")</h1>
-    
-    <p>
-        <ul class="providers">
-        @forProviders(skipCurrent = true) { p =>
-          @if(!localUser.getProviders().contains(p.getKey)) {
-              <li>
-                  <a href="/authenticate/@p.getKey">
-                  @_providerIcon(p.getKey)</a>
-              </li>
-          }
+
+    <div class="container mtb">
+        <h1>@Messages("playauthenticate.link.account.title")</h1>
+
+        <p>
+            <ul class="providers list-unstyled">
+            @forProviders(skipCurrent = true) { p =>
+              @if(!localUser.getProviders().contains(p.getKey)) {
+                  <li>
+                      <a href="/authenticate/@p.getKey">
+                      @_providerIcon(p.getKey)</a>
+                  </li>
+              }
+            }
+            </ul>
+
+        </p>
+
+
+        <h1>@Messages("playauthenticate.unlink.account.remove")</h1>
+        <ul class="providers list-unstyled list-inline">
+        @defining(localUser.getProviders()) { providers =>
+            @for(p <- providers) {
+                <li>
+                    <a href="/accounts/unlink/@p">
+                    @_providerIcon(p)</a>
+                </li>
+            }
         }
         </ul>
-    <br/>
-    </p>
-
-
-    <h1>@Messages("playauthenticate.unlink.account.remove")</h1>
-    <ul class="providers">
-    @defining(localUser.getProviders()) { providers =>
-        @for(p <- providers) {
-            <li>
-                <a href="/accounts/unlink/@p">
-                @_providerIcon(p)</a>
-            </li>
-        }
-    }
-    </ul>
-
+    </div>
 }

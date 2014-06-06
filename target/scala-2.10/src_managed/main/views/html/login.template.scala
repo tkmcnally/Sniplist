@@ -28,54 +28,57 @@ object login extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,
     def apply/*1.2*/(loginForm: Form[_]):play.api.templates.HtmlFormat.Appendable = {
         _display_ {import helper._
 
-import helper.twitterBootstrap._
-
-
+implicit def /*6.6*/implicitField/*6.19*/ = {{ FieldConstructor(signupField.f) }};
 Seq[Any](format.raw/*1.22*/("""
 
-"""),format.raw/*5.1*/("""
-"""),_display_(Seq[Any](/*6.2*/main(Messages("playauthenticate.login.title"),"login")/*6.56*/ {_display_(Seq[Any](format.raw/*6.58*/("""
+"""),format.raw/*4.1*/("""
 
-  <div class="row">
-    <div class="span6">
-      <h1>"""),_display_(Seq[Any](/*10.12*/Messages("playauthenticate.login.title"))),format.raw/*10.52*/("""</h1>
+    """),format.raw/*6.58*/("""
+
+
+"""),_display_(Seq[Any](/*9.2*/main(Messages("playauthenticate.login.title"),"login")/*9.56*/ {_display_(Seq[Any](format.raw/*9.58*/("""
+
+    <div class="container mtb">
+        <div class="row">
+            <div class="centered">
+                <div class="col-md-6" style="padding-right:20px; border-right: 1px solid #ccc;">
+                    <h3>Use a sniplist account</h3>
+                    """),_display_(Seq[Any](/*16.22*/helper/*16.28*/.form(routes.Application.doLogin)/*16.61*/ {_display_(Seq[Any](format.raw/*16.63*/("""
+
+                        """),_display_(Seq[Any](/*18.26*/if(loginForm.hasGlobalErrors)/*18.55*/ {_display_(Seq[Any](format.raw/*18.57*/("""
+
+                            <div class="alert alert-danger">"""),_display_(Seq[Any](/*20.62*/loginForm/*20.71*/.globalError.message)),format.raw/*20.91*/("""</div>
+
+                        """)))})),format.raw/*22.26*/("""
+
+
+                        """),_display_(Seq[Any](/*25.26*/inputText(
+                            loginForm("email"),
+                            '_showConstraints -> false,
+                            '_label -> Messages("playauthenticate.login.email.placeholder"),
+                            'type -> "email"
+                        ))),format.raw/*30.26*/("""
+                        """),_display_(Seq[Any](/*31.26*/inputPassword(
+                            loginForm("password"),
+                            '_showConstraints -> false,
+                            '_label -> Messages("playauthenticate.login.password.placeholder")
+                        ))),format.raw/*35.26*/("""
+
+                        <input type="submit" value=""""),_display_(Seq[Any](/*37.54*/Messages("playauthenticate.login.now"))),format.raw/*37.92*/("""" class="btn btn-primary top-buffer-sm"><br/>
+                        <br/>
+                        <a href="javascript:void(0);" onclick="window.location.href = jsRoutes.controllers.Signup.forgotPassword($('#email').val() || null).absoluteURL();">"""),_display_(Seq[Any](/*39.174*/Messages("playauthenticate.login.forgot.password"))),format.raw/*39.224*/("""</a>
+
+                    """)))})),format.raw/*41.22*/("""
+
+                 </div>
+                <div class="col-md-6">
+                    <h3>Use another account</h3>
+                    """),format.raw/*46.62*/("""
+                    """),_display_(Seq[Any](/*47.22*/_providerPartial(skipCurrent=false))),format.raw/*47.57*/("""
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-    
-  <div id="login" class="row">
-
-    <div class="span3">
-      """),format.raw/*17.43*/("""
-    	"""),_display_(Seq[Any](/*18.7*/helper/*18.13*/.form(routes.Application.doLogin)/*18.46*/ {_display_(Seq[Any](format.raw/*18.48*/("""
-    	
-        """),_display_(Seq[Any](/*20.10*/if(loginForm.hasGlobalErrors)/*20.39*/ {_display_(Seq[Any](format.raw/*20.41*/(""" 
-          <p class="error">
-            <span class="label label-important">"""),_display_(Seq[Any](/*22.50*/loginForm/*22.59*/.globalError.message)),format.raw/*22.79*/("""</span>
-          </p>
-        """)))})),format.raw/*24.10*/("""
-        
-        """),_display_(Seq[Any](/*26.10*/_emailPartial(loginForm))),format.raw/*26.34*/("""
-          
-        """),_display_(Seq[Any](/*28.10*/inputPassword(
-          loginForm("password"),
-          '_showConstraints -> false,
-          '_label -> Messages("playauthenticate.login.password.placeholder")
-        ))),format.raw/*32.10*/("""
-          
-        <input type="submit" value=""""),_display_(Seq[Any](/*34.38*/Messages("playauthenticate.login.now"))),format.raw/*34.76*/("""" class="btn btn-primary"><br/>
-        <br/>
-        <a href="javascript:void(0);" onclick="window.location.href = jsRoutes.controllers.Signup.forgotPassword($('#email').val() || null).absoluteURL();">"""),_display_(Seq[Any](/*36.158*/Messages("playauthenticate.login.forgot.password"))),format.raw/*36.208*/("""</a>
-
-    	""")))})),format.raw/*38.7*/("""
-    </div>
-
-    <div class="span3">
-      """),_display_(Seq[Any](/*42.8*/Messages("playauthenticate.login.oauth"))),format.raw/*42.48*/("""
-      """),format.raw/*43.48*/("""
-      """),_display_(Seq[Any](/*44.8*/_providerPartial(skipCurrent=false))),format.raw/*44.43*/("""
-    </div>
-
-  </div>
 
 """)))})))}
     }
@@ -93,11 +96,11 @@ Seq[Any](format.raw/*1.22*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 01 21:40:18 EDT 2014
+                    DATE: Fri Jun 06 02:03:30 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/login.scala.html
-                    HASH: 1ba52292e6d63eda0c7b27aaa43cf7ab8a09a86e
-                    MATRIX: 848->1|1014->21|1044->78|1081->81|1143->135|1182->137|1279->198|1341->238|1469->374|1512->382|1527->388|1569->421|1609->423|1663->441|1701->470|1741->472|1858->553|1876->562|1918->582|1984->616|2041->637|2087->661|2146->684|2344->860|2431->911|2491->949|2733->1154|2806->1204|2851->1218|2934->1266|2996->1306|3032->1355|3076->1364|3133->1399
-                    LINES: 28->1|34->1|36->5|37->6|37->6|37->6|41->10|41->10|48->17|49->18|49->18|49->18|49->18|51->20|51->20|51->20|53->22|53->22|53->22|55->24|57->26|57->26|59->28|63->32|65->34|65->34|67->36|67->36|69->38|73->42|73->42|74->43|75->44|75->44
+                    HASH: 447db9f666b7f68d132a3857d7cabc73c70c2c9e
+                    MATRIX: 848->1|971->52|992->65|1061->21|1091->43|1126->104|1167->111|1229->165|1268->167|1576->439|1591->445|1633->478|1673->480|1738->509|1776->538|1816->540|1917->605|1935->614|1977->634|2044->669|2111->700|2416->983|2479->1010|2747->1256|2840->1313|2900->1351|3188->1602|3261->1652|3322->1681|3489->1861|3548->1884|3605->1919
+                    LINES: 28->1|31->6|31->6|32->1|34->4|36->6|39->9|39->9|39->9|46->16|46->16|46->16|46->16|48->18|48->18|48->18|50->20|50->20|50->20|52->22|55->25|60->30|61->31|65->35|67->37|67->37|69->39|69->39|71->41|76->46|77->47|77->47
                     -- GENERATED --
                 */
             

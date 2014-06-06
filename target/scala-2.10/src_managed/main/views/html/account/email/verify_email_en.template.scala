@@ -31,12 +31,12 @@ Howdy """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 <br />
 <br />
 <p>
-	To verify your e-mail address, <a href=""""),_display_(Seq[Any](/*6.43*/verificationUrl)),format.raw/*6.58*/("""">now follow this link</a>.
+	To verify your e-mail address, <a href=""""),_display_(Seq[Any](/*6.43*/verificationUrl)),format.raw/*6.58*/(""""> click this link</a>.
 </p>
 <br />
 <p>
-	Cheers,<br /> 
-	<i>The PlayAuthenticate Team</i>
+	Thanks,<br />
+	<i>The Sniplist Team</i>
 </p>"""))}
     }
     
@@ -49,9 +49,9 @@ Howdy """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 01 21:40:18 EDT 2014
+                    DATE: Fri Jun 06 02:00:06 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/email/verify_email_en.scala.html
-                    HASH: d73b5a5ea1409031e924abfa0b12d0993cd29596
+                    HASH: e513b0070d0ced8c44a7add33a6d372c95bbc4f9
                     MATRIX: 819->1|982->70|1025->79|1050->83|1151->149|1187->164
                     LINES: 26->1|29->1|30->2|30->2|34->6|34->6
                     -- GENERATED --

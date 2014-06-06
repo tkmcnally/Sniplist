@@ -10,14 +10,15 @@ function askOpenID(url) {
 	}
 }
 </script>
-<ul class="providers">
+<ul class="providers list-inline list-unstyled bottom-buffer-sm">
 	@forProviders(skipCurrent) { p =>
-		<li>
+		<li class=" bottom-buffer-sm ">
 		@if(p.getKey() == "openid") {
 			<a href="javascript:void(0);" onclick="askOpenID('@p.getUrl()');">
 		} else {
-			<a href="@p.getUrl()">
+			<a class="social-icon" href="@p.getUrl()">
 		}
+
 		@_providerIcon(p.getKey())</a>
 		</li>
 	}

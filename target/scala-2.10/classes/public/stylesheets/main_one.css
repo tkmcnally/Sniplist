@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "Segoe UI Light";
+    src: url(../fonts/segoe_ui_light.ttf);
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(../fonts/segoeui.ttf);
+}
+
+html {
+    background-color: #7f8c8d;
+}
+
+body {
+    margin: 0 0 0 0;
+}
+
+h1 {
+    color: #ecf0f1;
+    font-family: "Segoe UI";
+    font-size:500%
+}
+
+h2 {
+    color: #ecf0f1;
+    font-family: "Segoe UI Light";
+    margin-top: -25px;
+}
+
+.middle-wrapper {
+    width: 50%;
+    height: 50%;
+    padding-top: 3%;
+    margin: auto;
+    text-align: center;
+}

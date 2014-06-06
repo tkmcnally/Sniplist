@@ -1,49 +1,53 @@
 @(loginForm: Form[_])
 
 @import helper._
-@import helper.twitterBootstrap._
+
+
+    @implicitField = @{ FieldConstructor(signupField.f) }
+
 
 @main(Messages("playauthenticate.login.title"),"login") {
 
-  <div class="row">
-    <div class="span6">
-      <h1>@Messages("playauthenticate.login.title")</h1>
+    <div class="container mtb">
+        <div class="row">
+            <div class="centered">
+                <div class="col-md-6" style="padding-right:20px; border-right: 1px solid #ccc;">
+                    <h3>Use a sniplist account</h3>
+                    @helper.form(routes.Application.doLogin) {
+
+                        @if(loginForm.hasGlobalErrors) {
+
+                            <div class="alert alert-danger">@loginForm.globalError.message</div>
+
+                        }
+
+
+                        @inputText(
+                            loginForm("email"),
+                            '_showConstraints -> false,
+                            '_label -> Messages("playauthenticate.login.email.placeholder"),
+                            'type -> "email"
+                        )
+                        @inputPassword(
+                            loginForm("password"),
+                            '_showConstraints -> false,
+                            '_label -> Messages("playauthenticate.login.password.placeholder")
+                        )
+
+                        <input type="submit" value="@Messages("playauthenticate.login.now")" class="btn btn-primary top-buffer-sm"><br/>
+                        <br/>
+                        <a href="javascript:void(0);" onclick="window.location.href = jsRoutes.controllers.Signup.forgotPassword($('#email').val() || null).absoluteURL();">@Messages("playauthenticate.login.forgot.password")</a>
+
+                    }
+
+                 </div>
+                <div class="col-md-6">
+                    <h3>Use another account</h3>
+                    @* Display list of available providers *@
+                    @_providerPartial(skipCurrent=false)
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-    
-  <div id="login" class="row">
-
-    <div class="span3">
-      @* Display proprietary login form *@
-    	@helper.form(routes.Application.doLogin) {
-    	
-        @if(loginForm.hasGlobalErrors) { 
-          <p class="error">
-            <span class="label label-important">@loginForm.globalError.message</span>
-          </p>
-        }
-        
-        @_emailPartial(loginForm)
-          
-        @inputPassword(
-          loginForm("password"),
-          '_showConstraints -> false,
-          '_label -> Messages("playauthenticate.login.password.placeholder")
-        )
-          
-        <input type="submit" value="@Messages("playauthenticate.login.now")" class="btn btn-primary"><br/>
-        <br/>
-        <a href="javascript:void(0);" onclick="window.location.href = jsRoutes.controllers.Signup.forgotPassword($('#email').val() || null).absoluteURL();">@Messages("playauthenticate.login.forgot.password")</a>
-
-    	}
-    </div>
-
-    <div class="span3">
-      @Messages("playauthenticate.login.oauth")
-      @* Display list of available providers *@
-      @_providerPartial(skipCurrent=false)
-    </div>
-
-  </div>
 
 }

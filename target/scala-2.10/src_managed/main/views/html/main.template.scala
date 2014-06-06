@@ -31,106 +31,217 @@ import be.objectify.deadbolt.core.utils.TemplateUtils._
 
 Seq[Any](format.raw/*1.50*/("""
 
-"""),format.raw/*5.1*/("""
+    """),format.raw/*4.1*/("""    """),format.raw/*5.1*/("""
+
 <!DOCTYPE html>
-<html lang=""""),_display_(Seq[Any](/*7.14*/lang()/*7.20*/.code())),format.raw/*7.27*/("""">
-  <head>
-    <title>"""),_display_(Seq[Any](/*9.13*/title)),format.raw/*9.18*/("""</title>
-    
-    <!-- Le meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play Authenticate - an authentication module for the Play! Framework 2.0">
-    <meta name="author" content="The Play Authenticate Team">
-    
-    <!-- Le scripts -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src=""""),_display_(Seq[Any](/*19.16*/routes/*19.22*/.Assets.at("js/bootstrap.min.js"))),format.raw/*19.55*/(""""></script>
-	<script src=""""),_display_(Seq[Any](/*20.16*/routes/*20.22*/.Application.jsRoutes)),format.raw/*20.43*/("""" defer="defer"></script>
-	
-    <!-- Le styles -->
-    <link href=""""),_display_(Seq[Any](/*23.18*/routes/*23.24*/.Assets.at("stylesheets/main.min.css"))),format.raw/*23.62*/("""" rel="stylesheet">
-    <link href=""""),_display_(Seq[Any](/*24.18*/routes/*24.24*/.Assets.at("css/bootstrap.min.css"))),format.raw/*24.59*/("""" rel="stylesheet">
-    
+    <html lang=""""),_display_(Seq[Any](/*8.18*/lang()/*8.24*/.code())),format.raw/*8.31*/("""">
+        <head>
+            <title>"""),_display_(Seq[Any](/*10.21*/title)),format.raw/*10.26*/("""</title>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+                <!-- Meta values -->
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="description" content="">
+            <meta name="author" content="">
 
-  </head>
+                <!-- Favicon -->
+            <link rel="shortcut icon" href=""""),_display_(Seq[Any](/*20.46*/routes/*20.52*/.Assets.at("ico/favicon.ico"))),format.raw/*20.81*/("""">
 
-  <body>
+                <!-- Bootstrap core CSS -->
+            <link href=""""),_display_(Seq[Any](/*23.26*/routes/*23.32*/.Assets.at("css/bootstrap.css"))),format.raw/*23.63*/("""" rel="stylesheet">
+            <link href=""""),_display_(Seq[Any](/*24.26*/routes/*24.32*/.Assets.at("css/font-awesome.min.css"))),format.raw/*24.70*/("""" rel="stylesheet">
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href=""""),_display_(Seq[Any](/*44.35*/routes/*44.41*/.Application.index())),format.raw/*44.61*/("""">Play! Authenticate</a>
-          
-          <div class="btn-group pull-right">
-          """),_display_(Seq[Any](/*47.12*/subjectPresentOr()/*47.30*/ {_display_(Seq[Any](format.raw/*47.32*/("""
-          	"""),_display_(Seq[Any](/*48.13*/defining(Application.getLocalUser(session()))/*48.58*/ { user =>_display_(Seq[Any](format.raw/*48.68*/("""
-            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-              <i class="icon-user"></i> """),_display_(Seq[Any](/*50.42*/user/*50.46*/.name)),format.raw/*50.51*/("""
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href=""""),_display_(Seq[Any](/*54.29*/routes/*54.35*/.Application.profile())),format.raw/*54.57*/("""">"""),_display_(Seq[Any](/*54.60*/Messages("playauthenticate.navigation.profile"))),format.raw/*54.107*/("""</a></li>
-              <li><a href=""""),_display_(Seq[Any](/*55.29*/routes/*55.35*/.Account.link())),format.raw/*55.50*/("""">"""),_display_(Seq[Any](/*55.53*/Messages("playauthenticate.navigation.link_more"))),format.raw/*55.102*/("""</a></li>
-              <li class="divider"></li>
-              <li><a href=""""),_display_(Seq[Any](/*57.29*/com/*57.32*/.feth.play.module.pa.controllers.routes.Authenticate.logout())),format.raw/*57.93*/(""""><i class="icon-off"></i> """),_display_(Seq[Any](/*57.121*/Messages("playauthenticate.navigation.logout"))),format.raw/*57.167*/("""</a></li>
-            </ul>
-            """)))})),format.raw/*59.14*/("""
-          """)))}/*60.12*/{_display_(Seq[Any](format.raw/*60.13*/("""
-            <a href=""""),_display_(Seq[Any](/*61.23*/routes/*61.29*/.Application.login())),format.raw/*61.49*/("""" class="btn btn-primary btn-mini """),_display_(Seq[Any](/*61.84*/("disabled".when(nav == "login")))),format.raw/*61.117*/("""">"""),_display_(Seq[Any](/*61.120*/Messages("playauthenticate.navigation.login"))),format.raw/*61.165*/("""</a>
-          """)))})),format.raw/*62.12*/("""
-          </div>
+            <link href=""""),_display_(Seq[Any](/*26.26*/routes/*26.32*/.Assets.at("css/transparent.css"))),format.raw/*26.65*/("""" rel="stylesheet"/>
 
-          
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class=""""),_display_(Seq[Any](/*68.27*/("active".when(nav == "")))),format.raw/*68.53*/(""""><a href=""""),_display_(Seq[Any](/*68.65*/routes/*68.71*/.Application.index())),format.raw/*68.91*/("""">"""),_display_(Seq[Any](/*68.94*/Messages("playauthenticate.navigation.home"))),format.raw/*68.138*/("""</a></li>
-              <li class=""""),_display_(Seq[Any](/*69.27*/("active".when(nav == "restricted")))),format.raw/*69.63*/(""""><a href=""""),_display_(Seq[Any](/*69.75*/routes/*69.81*/.Application.restricted())),format.raw/*69.106*/("""">"""),_display_(Seq[Any](/*69.109*/Messages("playauthenticate.navigation.restricted"))),format.raw/*69.159*/("""</a></li>
-                
-                """),_display_(Seq[Any](/*71.18*/subjectNotPresent()/*71.37*/ {_display_(Seq[Any](format.raw/*71.39*/("""
-			    	<li class=""""),_display_(Seq[Any](/*72.21*/("active".when(nav == "signup")))),format.raw/*72.53*/(""""><a href=""""),_display_(Seq[Any](/*72.65*/routes/*72.71*/.Application.signup())),format.raw/*72.92*/("""">"""),_display_(Seq[Any](/*72.95*/Messages("playauthenticate.navigation.signup"))),format.raw/*72.141*/("""</a></li>
-			    """)))})),format.raw/*73.9*/("""
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+                <!-- Custom styles for this template -->
+            <link href=""""),_display_(Seq[Any](/*29.26*/routes/*29.32*/.Assets.at("css/style.css"))),format.raw/*29.59*/("""" rel="stylesheet">
 
-    <div class="container">
-	    """),_display_(Seq[Any](/*81.7*/if(flash.contains(Application.FLASH_ERROR_KEY))/*81.54*/ {_display_(Seq[Any](format.raw/*81.56*/("""
-	      <div class="alert alert-error">
-	      	"""),_display_(Seq[Any](/*83.10*/flash()/*83.17*/.get(Application.FLASH_ERROR_KEY))),format.raw/*83.50*/("""
-	      </div>
-	    """)))})),format.raw/*85.7*/("""
-	    """),_display_(Seq[Any](/*86.7*/if(flash.contains(Application.FLASH_MESSAGE_KEY))/*86.56*/ {_display_(Seq[Any](format.raw/*86.58*/("""
-	      <div class="alert alert-success">
-	      	"""),_display_(Seq[Any](/*88.10*/flash()/*88.17*/.get(Application.FLASH_MESSAGE_KEY))),format.raw/*88.52*/("""
-	      </div>
-	    """)))})),format.raw/*90.7*/("""
-		"""),_display_(Seq[Any](/*91.4*/content)),format.raw/*91.11*/("""
-		
-    <hr>
+                <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+                <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-      <footer>
-        <p>&copy; 2012-2013 Play! Authenticate. Licensed under Apache License, Version 2.0. View details <a href="https://github.com/joscha/play-authenticate/blob/master/LICENSE">here</a>.</p>
-        <p>
-        <small>Styles by <a href="http://twitter.github.com/bootstrap/index.html" target="_blank">Twitter Bootstrap</a> &middot; Provider icons by <a href="https://github.com/paulrobertlloyd/socialmediaicons/" target="_blank">Paul Robert Lloyd</a></small></p>
-      </footer>
-    </div> <!-- /container -->
+        </head>
 
-  </body>
-</html>
-"""))}
+        <body>
+
+                <!-- Fixed navbar -->
+            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href=""""),_display_(Seq[Any](/*51.56*/routes/*51.62*/.Application.index())),format.raw/*51.82*/("""">SNIPLIST.</a>
+                    </div>
+                    <div class="navbar-collapse collapse navbar-right">
+                        <ul class="nav navbar-nav">
+                                <!-- Determine which page is currently active -->
+                            """),_display_(Seq[Any](/*56.30*/generators/*56.40*/.navbarMenu(routes.Application.index(), "HOME"))),format.raw/*56.87*/("""
+                            """),_display_(Seq[Any](/*57.30*/generators/*57.40*/.navbarMenu(routes.Application.about(), "ABOUT"))),format.raw/*57.88*/("""
+                            """),_display_(Seq[Any](/*58.30*/generators/*58.40*/.navbarMenu(routes.Application.contact(), "CONTACT"))),format.raw/*58.92*/("""
+                            """),_display_(Seq[Any](/*59.30*/subjectPresentOr()/*59.48*/ {_display_(Seq[Any](format.raw/*59.50*/("""
+                                """),_display_(Seq[Any](/*60.34*/defining(Application.getLocalUser(session()))/*60.79*/ { user =>_display_(Seq[Any](format.raw/*60.89*/("""
+                                    <li><div class="dropdown">
+                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <i class="icon-user"></i> """),_display_(Seq[Any](/*63.72*/user/*63.76*/.name.toUpperCase())),format.raw/*63.95*/("""
+                                        <span class="caret"></span>
+                                        </a>
+
+                                        <ul class="dropdown-menu">
+                                            <li><a href=""""),_display_(Seq[Any](/*68.59*/routes/*68.65*/.Application.profile())),format.raw/*68.87*/("""">"""),_display_(Seq[Any](/*68.90*/Messages("playauthenticate.navigation.profile")/*68.137*/.toUpperCase())),format.raw/*68.151*/("""</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href=""""),_display_(Seq[Any](/*70.59*/com/*70.62*/.feth.play.module.pa.controllers.routes.Authenticate.logout())),format.raw/*70.123*/(""""><i class="icon-off"></i> """),_display_(Seq[Any](/*70.151*/Messages("playauthenticate.navigation.logout")/*70.197*/.toUpperCase())),format.raw/*70.211*/("""</a></li>
+                                        </ul>
+                                    </div>
+                                    </li>
+                                """)))})),format.raw/*74.34*/("""
+                            """)))}/*75.30*/{_display_(Seq[Any](format.raw/*75.31*/("""
+                                """),_display_(Seq[Any](/*76.34*/generators/*76.44*/.navbarMenu(routes.Application.login(), "SIGN IN"))),format.raw/*76.94*/("""
+                            """)))})),format.raw/*77.30*/("""
+
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+
+            <div id="wrapper-content">
+
+                        <!-- INSERTED CONTENT GOES HERE -->
+                    """),_display_(Seq[Any](/*87.22*/content)),format.raw/*87.29*/("""
+            </div>
+                <!-- *****************************************************************************************************************
+        FOOTER
+        ***************************************************************************************************************** -->
+            <div id="footerwrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <h4>About</h4>
+                            <div class="hline-w"></div>
+                            <p>Created in 2014, Sniplist provides a new way of sharing music with your friends.</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4>Social Links</h4>
+                            <div class="hline-w"></div>
+                            <p>
+                                <a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                                <a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a>
+                                <a href="http://www.instagram.com"><i class="fa fa-instagram"></i></a>
+                            </p>
+                        </div>
+                        <div class="col-lg-4">
+                            <h4>Our Location</h4>
+                            <div class="hline-w"></div>
+                            <p>
+                            Ottawa, Canada
+                            </p>
+                        </div>
+                    </div><! --/row -->
+                </div><! --/container -->
+            </div><! --/footerwrap -->
+
+            <!-- Bootstrap core JavaScript
+        ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <script src=""""),_display_(Seq[Any](/*124.27*/routes/*124.33*/.Assets.at("js/bootstrap.min.js"))),format.raw/*124.66*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*125.27*/routes/*125.33*/.Assets.at("js/retina-1.1.0.js"))),format.raw/*125.65*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*126.27*/routes/*126.33*/.Assets.at("js/jquery.hoverdir.js"))),format.raw/*126.68*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*127.27*/routes/*127.33*/.Assets.at("js/jquery.hoverex.min.js"))),format.raw/*127.71*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*128.27*/routes/*128.33*/.Assets.at("js/jquery.prettyPhoto.js"))),format.raw/*128.71*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*129.27*/routes/*129.33*/.Assets.at("js/jquery.isotope.min.js"))),format.raw/*129.71*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*130.27*/routes/*130.33*/.Assets.at("js/custom.js"))),format.raw/*130.59*/(""""></script>
+
+            <script>
+            // Portfolio
+            (function($) """),format.raw/*134.26*/("""{"""),format.raw/*134.27*/("""
+            "use strict";
+            var $container = $('.portfolio'),
+            $items = $container.find('.portfolio-item'),
+            portfolioLayout = 'fitRows';
+
+            if( $container.hasClass('portfolio-centered') ) """),format.raw/*140.61*/("""{"""),format.raw/*140.62*/("""
+            portfolioLayout = 'masonry';
+            """),format.raw/*142.13*/("""}"""),format.raw/*142.14*/("""
+
+            $container.isotope("""),format.raw/*144.32*/("""{"""),format.raw/*144.33*/("""
+            filter: '*',
+            animationEngine: 'best-available',
+            layoutMode: portfolioLayout,
+            animationOptions: """),format.raw/*148.31*/("""{"""),format.raw/*148.32*/("""
+            duration: 750,
+            easing: 'linear',
+            queue: false
+            """),format.raw/*152.13*/("""}"""),format.raw/*152.14*/(""",
+            masonry: """),format.raw/*153.22*/("""{"""),format.raw/*153.23*/("""
+            """),format.raw/*154.13*/("""}"""),format.raw/*154.14*/("""
+            """),format.raw/*155.13*/("""}"""),format.raw/*155.14*/(""", refreshWaypoints());
+
+            function refreshWaypoints() """),format.raw/*157.41*/("""{"""),format.raw/*157.42*/("""
+            setTimeout(function() """),format.raw/*158.35*/("""{"""),format.raw/*158.36*/("""
+            """),format.raw/*159.13*/("""}"""),format.raw/*159.14*/(""", 1000);
+            """),format.raw/*160.13*/("""}"""),format.raw/*160.14*/("""
+
+            $('nav.portfolio-filter ul a').on('click', function() """),format.raw/*162.67*/("""{"""),format.raw/*162.68*/("""
+            var selector = $(this).attr('data-filter');
+            $container.isotope("""),format.raw/*164.32*/("""{"""),format.raw/*164.33*/(""" filter: selector """),format.raw/*164.51*/("""}"""),format.raw/*164.52*/(""", refreshWaypoints());
+            $('nav.portfolio-filter ul a').removeClass('active');
+            $(this).addClass('active');
+            return false;
+            """),format.raw/*168.13*/("""}"""),format.raw/*168.14*/(""");
+
+            function getColumnNumber() """),format.raw/*170.40*/("""{"""),format.raw/*170.41*/("""
+            var winWidth = $(window).width(),
+            columnNumber = 1;
+
+            if (winWidth > 1200) """),format.raw/*174.34*/("""{"""),format.raw/*174.35*/("""
+            columnNumber = 5;
+            """),format.raw/*176.13*/("""}"""),format.raw/*176.14*/(""" else if (winWidth > 950) """),format.raw/*176.40*/("""{"""),format.raw/*176.41*/("""
+            columnNumber = 4;
+            """),format.raw/*178.13*/("""}"""),format.raw/*178.14*/(""" else if (winWidth > 600) """),format.raw/*178.40*/("""{"""),format.raw/*178.41*/("""
+            columnNumber = 3;
+            """),format.raw/*180.13*/("""}"""),format.raw/*180.14*/(""" else if (winWidth > 400) """),format.raw/*180.40*/("""{"""),format.raw/*180.41*/("""
+            columnNumber = 2;
+            """),format.raw/*182.13*/("""}"""),format.raw/*182.14*/(""" else if (winWidth > 250) """),format.raw/*182.40*/("""{"""),format.raw/*182.41*/("""
+            columnNumber = 1;
+            """),format.raw/*184.13*/("""}"""),format.raw/*184.14*/("""
+            return columnNumber;
+            """),format.raw/*186.13*/("""}"""),format.raw/*186.14*/("""
+
+            function setColumns() """),format.raw/*188.35*/("""{"""),format.raw/*188.36*/("""
+            var winWidth = $(window).width(),
+            columnNumber = getColumnNumber(),
+            itemWidth = Math.floor(winWidth / columnNumber);
+
+            $container.find('.portfolio-item').each(function() """),format.raw/*193.64*/("""{"""),format.raw/*193.65*/("""
+            $(this).css( """),format.raw/*194.26*/("""{"""),format.raw/*194.27*/("""
+            width : itemWidth + 'px'
+            """),format.raw/*196.13*/("""}"""),format.raw/*196.14*/(""");
+            """),format.raw/*197.13*/("""}"""),format.raw/*197.14*/(""");
+            """),format.raw/*198.13*/("""}"""),format.raw/*198.14*/("""
+
+            function setPortfolio() """),format.raw/*200.37*/("""{"""),format.raw/*200.38*/("""
+            setColumns();
+            $container.isotope('reLayout');
+            """),format.raw/*203.13*/("""}"""),format.raw/*203.14*/("""
+
+            $container.imagesLoaded(function () """),format.raw/*205.49*/("""{"""),format.raw/*205.50*/("""
+            setPortfolio();
+            """),format.raw/*207.13*/("""}"""),format.raw/*207.14*/(""");
+
+            $(window).on('resize', function () """),format.raw/*209.48*/("""{"""),format.raw/*209.49*/("""
+            setPortfolio();
+            """),format.raw/*211.13*/("""}"""),format.raw/*211.14*/(""");
+            """),format.raw/*212.13*/("""}"""),format.raw/*212.14*/(""")(jQuery);
+            </script>
+        </body>
+    </html>"""))}
     }
     
     def render(title:String,nav:String,content:Html): play.api.templates.HtmlFormat.Appendable = apply(title,nav)(content)
@@ -142,11 +253,11 @@ Seq[Any](format.raw/*1.50*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 01 21:40:18 EDT 2014
+                    DATE: Fri Jun 06 02:10:29 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/main.scala.html
-                    HASH: ac3ed5ba0414d7e192bb4851e8dc09fd847c2909
-                    MATRIX: 785->1|1033->49|1063->160|1130->192|1144->198|1172->205|1233->231|1259->236|1745->686|1760->692|1815->725|1879->753|1894->759|1937->780|2044->851|2059->857|2119->895|2193->933|2208->939|2265->974|2926->1599|2941->1605|2983->1625|3114->1720|3141->1738|3181->1740|3231->1754|3285->1799|3333->1809|3489->1929|3502->1933|3529->1938|3696->2069|3711->2075|3755->2097|3794->2100|3864->2147|3939->2186|3954->2192|3991->2207|4030->2210|4102->2259|4218->2339|4230->2342|4313->2403|4378->2431|4447->2477|4522->2520|4554->2533|4593->2534|4653->2558|4668->2564|4710->2584|4781->2619|4837->2652|4877->2655|4945->2700|4994->2717|5158->2845|5206->2871|5254->2883|5269->2889|5311->2909|5350->2912|5417->2956|5490->2993|5548->3029|5596->3041|5611->3047|5659->3072|5699->3075|5772->3125|5854->3171|5882->3190|5922->3192|5980->3214|6034->3246|6082->3258|6097->3264|6140->3285|6179->3288|6248->3334|6298->3353|6473->3493|6529->3540|6569->3542|6656->3593|6672->3600|6727->3633|6781->3656|6824->3664|6882->3713|6922->3715|7011->3768|7027->3775|7084->3810|7138->3833|7178->3838|7207->3845
-                    LINES: 26->1|32->1|34->5|36->7|36->7|36->7|38->9|38->9|48->19|48->19|48->19|49->20|49->20|49->20|52->23|52->23|52->23|53->24|53->24|53->24|73->44|73->44|73->44|76->47|76->47|76->47|77->48|77->48|77->48|79->50|79->50|79->50|83->54|83->54|83->54|83->54|83->54|84->55|84->55|84->55|84->55|84->55|86->57|86->57|86->57|86->57|86->57|88->59|89->60|89->60|90->61|90->61|90->61|90->61|90->61|90->61|90->61|91->62|97->68|97->68|97->68|97->68|97->68|97->68|97->68|98->69|98->69|98->69|98->69|98->69|98->69|98->69|100->71|100->71|100->71|101->72|101->72|101->72|101->72|101->72|101->72|101->72|102->73|110->81|110->81|110->81|112->83|112->83|112->83|114->85|115->86|115->86|115->86|117->88|117->88|117->88|119->90|120->91|120->91
+                    HASH: 028cc896ec0964024dbc9dff65988013a8dd518e
+                    MATRIX: 785->1|1033->49|1067->106|1097->168|1170->206|1184->212|1212->219|1288->259|1315->264|1762->675|1777->681|1828->710|1940->786|1955->792|2008->823|2090->869|2105->875|2165->913|2249->961|2264->967|2319->1000|2462->1107|2477->1113|2526->1140|3663->2241|3678->2247|3720->2267|4039->2550|4058->2560|4127->2607|4194->2638|4213->2648|4283->2696|4350->2727|4369->2737|4443->2789|4510->2820|4537->2838|4577->2840|4648->2875|4702->2920|4750->2930|5028->3172|5041->3176|5082->3195|5363->3440|5378->3446|5422->3468|5461->3471|5518->3518|5555->3532|5731->3672|5743->3675|5827->3736|5892->3764|5948->3810|5985->3824|6195->4002|6245->4033|6284->4034|6355->4069|6374->4079|6446->4129|6509->4160|6800->4415|6829->4422|8884->6440|8900->6446|8956->6479|9032->6518|9048->6524|9103->6556|9179->6595|9195->6601|9253->6636|9329->6675|9345->6681|9406->6719|9482->6758|9498->6764|9559->6802|9635->6841|9651->6847|9712->6885|9788->6924|9804->6930|9853->6956|9970->7044|10000->7045|10267->7283|10297->7284|10382->7340|10412->7341|10476->7376|10506->7377|10683->7525|10713->7526|10841->7625|10871->7626|10924->7650|10954->7651|10997->7665|11027->7666|11070->7680|11100->7681|11195->7747|11225->7748|11290->7784|11320->7785|11363->7799|11393->7800|11444->7822|11474->7823|11573->7893|11603->7894|11722->7984|11752->7985|11799->8003|11829->8004|12029->8175|12059->8176|12133->8221|12163->8222|12307->8337|12337->8338|12411->8383|12441->8384|12496->8410|12526->8411|12600->8456|12630->8457|12685->8483|12715->8484|12789->8529|12819->8530|12874->8556|12904->8557|12978->8602|13008->8603|13063->8629|13093->8630|13167->8675|13197->8676|13274->8724|13304->8725|13371->8763|13401->8764|13653->8987|13683->8988|13739->9015|13769->9016|13850->9068|13880->9069|13925->9085|13955->9086|14000->9102|14030->9103|14099->9143|14129->9144|14244->9230|14274->9231|14355->9283|14385->9284|14457->9327|14487->9328|14569->9381|14599->9382|14671->9425|14701->9426|14746->9442|14776->9443
+                    LINES: 26->1|32->1|34->4|34->5|37->8|37->8|37->8|39->10|39->10|49->20|49->20|49->20|52->23|52->23|52->23|53->24|53->24|53->24|55->26|55->26|55->26|58->29|58->29|58->29|80->51|80->51|80->51|85->56|85->56|85->56|86->57|86->57|86->57|87->58|87->58|87->58|88->59|88->59|88->59|89->60|89->60|89->60|92->63|92->63|92->63|97->68|97->68|97->68|97->68|97->68|97->68|99->70|99->70|99->70|99->70|99->70|99->70|103->74|104->75|104->75|105->76|105->76|105->76|106->77|116->87|116->87|153->124|153->124|153->124|154->125|154->125|154->125|155->126|155->126|155->126|156->127|156->127|156->127|157->128|157->128|157->128|158->129|158->129|158->129|159->130|159->130|159->130|163->134|163->134|169->140|169->140|171->142|171->142|173->144|173->144|177->148|177->148|181->152|181->152|182->153|182->153|183->154|183->154|184->155|184->155|186->157|186->157|187->158|187->158|188->159|188->159|189->160|189->160|191->162|191->162|193->164|193->164|193->164|193->164|197->168|197->168|199->170|199->170|203->174|203->174|205->176|205->176|205->176|205->176|207->178|207->178|207->178|207->178|209->180|209->180|209->180|209->180|211->182|211->182|211->182|211->182|213->184|213->184|215->186|215->186|217->188|217->188|222->193|222->193|223->194|223->194|225->196|225->196|226->197|226->197|227->198|227->198|229->200|229->200|232->203|232->203|234->205|234->205|236->207|236->207|238->209|238->209|240->211|240->211|241->212|241->212
                     -- GENERATED --
                 */
             

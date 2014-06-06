@@ -14,16 +14,20 @@ import org.mongodb.morphia.converters.SimpleValueConverter;
 import org.mongodb.morphia.converters.TypeConverter;
 import org.mongodb.morphia.mapping.MappedField;
 import org.mongodb.morphia.mapping.MappingException;
+import org.mongodb.morphia.query.MorphiaIterator;
+import org.mongodb.morphia.query.Query;
 import play.data.format.Formats;
 import util.MorphiaUtil;
+
+
 
 @Converters(TokenAction.EnumTypeConverter.class)
 @Entity
 public class TokenAction {
 
     public enum Type {
-        EMAIL_VERIFICATION,
-        PASSWORD_RESET
+        PASSWORD_RESET,
+        EMAIL_VERIFICATION
     }
     @SuppressWarnings({"rawtypes", "unused"})
     static public class EnumTypeConverter extends TypeConverter implements SimpleValueConverter {
@@ -81,8 +85,8 @@ public class TokenAction {
     }
 
     public static void deleteByUser(final User u, final Type type) {
-        Iterator<TokenAction> iterator = MorphiaUtil.getDatastore().find(TokenAction.class).field("targetUser.id").equal(u.id).field("type").equal(type).iterator();
-        MorphiaUtil.getDatastore().delete(iterator);
+        Query q = MorphiaUtil.getDatastore().createQuery(TokenAction.class).field("targetUser.id").equal(u.id).field("type").equal(type);
+        MorphiaUtil.getDatastore().delete(q);
     }
 
     public boolean isValid() {

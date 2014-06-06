@@ -14,7 +14,8 @@ libraryDependencies ++= Seq(
   "org.apache.httpcomponents" % "httpclient" % "4.3",
   "commons-lang" % "commons-lang" % "2.6",
   //"com.feth" %% "play-authenticate" % "0.5.2-SNAPSHOT" withSources(),
-  javaCore
+  javaCore,
+  cache
 )
 
 resolvers ++= Seq(
