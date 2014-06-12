@@ -33,22 +33,30 @@ Seq[Any](format.raw/*1.56*/("""
 
 """),format.raw/*5.1*/("""
 """),_display_(Seq[Any](/*6.2*/main(Messages("playauthenticate.change.password.title"))/*6.58*/ {_display_(Seq[Any](format.raw/*6.60*/("""
+    <div class="container mtb">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h1>"""),_display_(Seq[Any](/*11.22*/Messages("playauthenticate.change.password.title"))),format.raw/*11.72*/("""</h1>
+                <p>
+                """),_display_(Seq[Any](/*13.18*/form(routes.Account.doChangePassword)/*13.55*/ {_display_(Seq[Any](format.raw/*13.57*/("""
 
-	<h1>"""),_display_(Seq[Any](/*8.7*/Messages("playauthenticate.change.password.title"))),format.raw/*8.57*/("""</h1>
-	<p>
-	"""),_display_(Seq[Any](/*10.3*/form(routes.Account.doChangePassword)/*10.40*/ {_display_(Seq[Any](format.raw/*10.42*/("""
-	   
-       """),_display_(Seq[Any](/*12.9*/if(changeForm.hasGlobalErrors)/*12.39*/ {_display_(Seq[Any](format.raw/*12.41*/(""" 
-        <p class="error">
-          <span class="label label-important">"""),_display_(Seq[Any](/*14.48*/changeForm/*14.58*/.globalError.message)),format.raw/*14.78*/("""</span>
-     	</p>
-       """)))})),format.raw/*16.9*/("""
+                   """),_display_(Seq[Any](/*15.21*/if(changeForm.hasGlobalErrors)/*15.51*/ {_display_(Seq[Any](format.raw/*15.53*/("""
+                    <p class="error">
+                      <span class="label label-important">"""),_display_(Seq[Any](/*17.60*/changeForm/*17.70*/.globalError.message)),format.raw/*17.90*/("""</span>
+                    </p>
+                   """)))})),format.raw/*19.21*/("""
 
-	   """),_display_(Seq[Any](/*18.6*/_passwordPartial(changeForm))),format.raw/*18.34*/("""
-           
-		<input type="submit" value=""""),_display_(Seq[Any](/*20.32*/Messages("playauthenticate.change.password.cta"))),format.raw/*20.80*/("""" class="btn btn-primary"> 
-	""")))})),format.raw/*21.3*/("""
-	</p>
+                   """),_display_(Seq[Any](/*21.21*/_passwordPartial(changeForm))),format.raw/*21.49*/("""
+
+                    <input type="submit" value=""""),_display_(Seq[Any](/*23.50*/Messages("playauthenticate.change.password.cta"))),format.raw/*23.98*/("""" class="btn btn-primary">
+                """)))})),format.raw/*24.18*/("""
+                </p>
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
 """)))})))}
     }
     
@@ -61,11 +69,11 @@ Seq[Any](format.raw/*1.56*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 04 20:00:56 EDT 2014
+                    DATE: Thu Jun 12 16:24:32 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/password_change.scala.html
-                    HASH: 6ea58edafae6f8f1253b5c09bd522e24ebc2498c
-                    MATRIX: 826->1|1026->55|1056->112|1093->115|1157->171|1196->173|1240->183|1311->233|1361->248|1407->285|1447->287|1498->303|1537->333|1577->335|1690->412|1709->422|1751->442|1811->471|1855->480|1905->508|1987->554|2057->602|2119->633
-                    LINES: 26->1|32->1|34->5|35->6|35->6|35->6|37->8|37->8|39->10|39->10|39->10|41->12|41->12|41->12|43->14|43->14|43->14|45->16|47->18|47->18|49->20|49->20|50->21
+                    HASH: 95762e150a4fcba6a919b670406bbd62a9dfa09e
+                    MATRIX: 826->1|1026->55|1056->112|1093->115|1157->171|1196->173|1393->334|1465->384|1546->429|1592->466|1632->468|1692->492|1731->522|1771->524|1907->624|1926->634|1968->654|2055->709|2115->733|2165->761|2254->814|2324->862|2401->907
+                    LINES: 26->1|32->1|34->5|35->6|35->6|35->6|40->11|40->11|42->13|42->13|42->13|44->15|44->15|44->15|46->17|46->17|46->17|48->19|50->21|50->21|52->23|52->23|53->24
                     -- GENERATED --
                 */
             

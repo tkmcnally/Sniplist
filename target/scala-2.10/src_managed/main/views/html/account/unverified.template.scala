@@ -28,10 +28,12 @@ object unverified extends BaseScalaTemplate[play.api.templates.HtmlFormat.Append
 
 Seq[Any](_display_(Seq[Any](/*2.2*/main(Messages("playauthenticate.verify.account.title"))/*2.57*/ {_display_(Seq[Any](format.raw/*2.59*/("""
 
-	<h1>"""),_display_(Seq[Any](/*4.7*/Messages("playauthenticate.verify.account.title"))),format.raw/*4.56*/("""</h1>
+    <div class="container">
+	<h1>"""),_display_(Seq[Any](/*5.7*/Messages("playauthenticate.verify.account.title"))),format.raw/*5.56*/("""</h1>
 	<p>
-	"""),_display_(Seq[Any](/*6.3*/Messages("playauthenticate.verify.account.before"))),format.raw/*6.53*/(""" <a href=""""),_display_(Seq[Any](/*6.64*/routes/*6.70*/.Account.verifyEmail)),format.raw/*6.90*/("""">"""),_display_(Seq[Any](/*6.93*/Messages("playauthenticate.verify.account.first"))),format.raw/*6.142*/("""</a>.<br/>
+	"""),_display_(Seq[Any](/*7.3*/Messages("playauthenticate.verify.account.before"))),format.raw/*7.53*/(""" <a href=""""),_display_(Seq[Any](/*7.64*/routes/*7.70*/.Account.verifyEmail)),format.raw/*7.90*/("""">"""),_display_(Seq[Any](/*7.93*/Messages("playauthenticate.verify.account.first"))),format.raw/*7.142*/("""</a>.<br/>
 	</p>
+    </div>
 """)))})))}
     }
     
@@ -44,11 +46,11 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main(Messages("playauthenticate.verify.accoun
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 04 20:00:56 EDT 2014
+                    DATE: Thu Jun 12 15:41:05 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/unverified.scala.html
-                    HASH: 27c005b15d50bc1b0d3acbfc8bfe66f78c7b85f1
-                    MATRIX: 877->3|940->58|979->60|1023->70|1093->119|1142->134|1213->184|1259->195|1273->201|1314->221|1352->224|1423->273
-                    LINES: 29->2|29->2|29->2|31->4|31->4|33->6|33->6|33->6|33->6|33->6|33->6|33->6
+                    HASH: 8213e94adc742d5d35e27cce14ca13f60ed773fe
+                    MATRIX: 877->3|940->58|979->60|1052->99|1122->148|1171->163|1242->213|1288->224|1302->230|1343->250|1381->253|1452->302
+                    LINES: 29->2|29->2|29->2|32->5|32->5|34->7|34->7|34->7|34->7|34->7|34->7|34->7
                     -- GENERATED --
                 */
             

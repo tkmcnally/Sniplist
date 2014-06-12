@@ -64,6 +64,7 @@ public class User implements Subject {
 
     public List<UserPermission> permissions;
 
+    @Reference
     public List<LinkedAccount> linkedAccounts;
 
     public static boolean existsByAuthUserIdentity(
@@ -249,6 +250,7 @@ public class User implements Subject {
                         "Account not enabled for password usage");
             }
         }
+        System.out.println("a.provider = " + a.providerUserId + " \n authUser = " + authUser.getHashedPassword());
         a.providerUserId = authUser.getHashedPassword();
         MorphiaUtil.getDatastore().save(a);
     }

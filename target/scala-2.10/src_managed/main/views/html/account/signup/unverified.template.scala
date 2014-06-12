@@ -27,14 +27,21 @@ object unverified extends BaseScalaTemplate[play.api.templates.HtmlFormat.Append
         _display_ {
 
 Seq[Any](_display_(Seq[Any](/*2.2*/main(Messages("playauthenticate.verify.email.title"))/*2.55*/ {_display_(Seq[Any](format.raw/*2.57*/("""
+    <div class="container mtb">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h1>"""),_display_(Seq[Any](/*7.22*/Messages("playauthenticate.verify.email.title"))),format.raw/*7.69*/("""</h1>
+                <p>
+                    """),_display_(Seq[Any](/*9.22*/Messages("playauthenticate.verify.email.requirement"))),format.raw/*9.75*/("""</br>
+                    """),_display_(Seq[Any](/*10.22*/Messages("playauthenticate.verify.email.cta"))),format.raw/*10.67*/("""
+                <br/>
 
-	<h1>"""),_display_(Seq[Any](/*4.7*/Messages("playauthenticate.verify.email.title"))),format.raw/*4.54*/("""</h1>
-	<p>
-		"""),_display_(Seq[Any](/*6.4*/Messages("playauthenticate.verify.email.requirement"))),format.raw/*6.57*/("""</br>
-		"""),_display_(Seq[Any](/*7.4*/Messages("playauthenticate.verify.email.cta"))),format.raw/*7.49*/("""
-	<br/>
-	
-	</p>
+                </p>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
 """)))})))}
     }
     
@@ -47,11 +54,11 @@ Seq[Any](_display_(Seq[Any](/*2.2*/main(Messages("playauthenticate.verify.email.
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 04 20:00:56 EDT 2014
+                    DATE: Thu Jun 12 15:45:12 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/signup/unverified.scala.html
-                    HASH: 3e7bcf135309d1ef7651f8a48c7ea7f2ee83ebc3
-                    MATRIX: 884->3|945->56|984->58|1028->68|1096->115|1146->131|1220->184|1264->194|1330->239
-                    LINES: 29->2|29->2|29->2|31->4|31->4|33->6|33->6|34->7|34->7
+                    HASH: 145f08c812b510ec2cbed8b803be0d9f15dd8ea8
+                    MATRIX: 884->3|945->56|984->58|1180->219|1248->266|1332->315|1406->368|1470->396|1537->441
+                    LINES: 29->2|29->2|29->2|34->7|34->7|36->9|36->9|37->10|37->10
                     -- GENERATED --
                 */
             

@@ -26,9 +26,7 @@ public class LinkedAccount {
     public String providerKey;
 
     public static LinkedAccount findByProviderKey(final User user, String key) {
-        System.out.println("USER: " + user.name + " PROVIER: " + key);
-        //return MorphiaUtil.getDatastore().find(LinkedAccount.class).field("user").equal(user).field("providerKey").equal(key).get();
-        return null;
+        return MorphiaUtil.getDatastore().find(LinkedAccount.class).field("user").equal(user).field("providerKey").equal(key).get();
     }
 
     public static LinkedAccount create(final AuthUser authUser) {

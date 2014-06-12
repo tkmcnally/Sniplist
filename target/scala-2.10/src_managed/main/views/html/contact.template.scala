@@ -58,7 +58,7 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Contact Us", "contact")/*1.31*/ {_displ
                     Ottawa, Ontario, Canada
                 </p>
                 <p>
-                    Email: tk.mcnally@gmail.com<br/>
+                    Email: noreply.sniplist@gmail.com<br/>
                 </p>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
                 massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -79,9 +79,9 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Contact Us", "contact")/*1.31*/ {_displ
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 12 15:15:32 EDT 2014
+                    DATE: Thu Jun 12 15:38:16 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/contact.scala.html
-                    HASH: c9fa8a3b1a03b4a3e48a99e231d932814341b3c2
+                    HASH: 73e386e52e0e9a3b19797078f8d24cfcd962bd06
                     MATRIX: 866->1|903->30|942->32
                     LINES: 29->1|29->1|29->1
                     -- GENERATED --

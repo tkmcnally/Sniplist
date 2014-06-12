@@ -166,6 +166,7 @@ public class MyUsernamePasswordAuthProvider
 							// you would allow the user to have
 							// multiple passwords defined
 							// usually we don't want this
+                            System.out.println("PPPP: " + authUser.getPassword() + " OOOO: " + acc.providerUserId);
 							return LoginResult.WRONG_PASSWORD;
 						}
 					}
@@ -215,6 +216,7 @@ public class MyUsernamePasswordAuthProvider
 		context.flash()
 				.put(controllers.Application.FLASH_ERROR_KEY,
 						Messages.get("playauthenticate.password.login.unknown_user_or_pw"));
+
 		return super.onLoginUserNotFound(context);
 	}
 
