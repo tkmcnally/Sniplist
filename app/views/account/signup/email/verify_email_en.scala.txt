@@ -7,4 +7,4 @@ To activate your account, follow this link now:
 @verificationUrl
 
 Cheers,
-The PlayAuthenticate Team
+The Sniplist Team

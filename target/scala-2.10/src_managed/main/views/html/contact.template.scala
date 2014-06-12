@@ -50,45 +50,20 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Contact Us", "contact")/*1.31*/ {_displ
 
     <div class="container mtb">
         <div class="row">
+            <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <h4>Just Get In Touch!</h4>
-                <div class="hline"></div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                <form role="form">
-                    <div class="form-group">
-                        <label for="InputName1">Your Name</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1">
-                    </div>
-                    <div class="form-group">
-                        <label for="InputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1">
-                    </div>
-                    <div class="form-group">
-                        <label for="InputSubject1">Subject</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1">
-                    </div>
-                    <div class="form-group">
-                        <label for="message1">Message</label>
-                        <textarea class="form-control" id="message1" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-theme">Submit</button>
-                </form>
-            </div><! --/col-lg-8 -->
-
-            <div class="col-lg-4">
-                <h4>Our Address</h4>
+                <h4>Our location</h4>
                 <div class="hline"></div>
                 <p>
-                    Some Ave, 987,<br/>
-                    23890, New York,<br/>
-                    United States.<br/>
+                    Ottawa, Ontario, Canada
                 </p>
                 <p>
-                    Email: hello@solidtheme.com<br/>
-                    Tel: +34 8493-4893
+                    Email: tk.mcnally@gmail.com<br/>
                 </p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+                massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
             </div>
+            <div class="col-lg-2"></div>
         </div><! --/row -->
     </div><! --/container -->
 
@@ -104,9 +79,9 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Contact Us", "contact")/*1.31*/ {_displ
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Jun 06 01:40:28 EDT 2014
+                    DATE: Thu Jun 12 15:15:32 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/contact.scala.html
-                    HASH: 7f42369e623155e69a55e990f01287b50a4ac5c6
+                    HASH: c9fa8a3b1a03b4a3e48a99e231d932814341b3c2
                     MATRIX: 866->1|903->30|942->32
                     LINES: 29->1|29->1|29->1
                     -- GENERATED --

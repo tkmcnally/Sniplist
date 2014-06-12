@@ -35,7 +35,7 @@ To activate your account, follow this link now:
 """),_display_(Seq[Any](/*7.2*/verificationUrl)),format.raw/*7.17*/("""
 
 Cheers,
-The PlayAuthenticate Team"""))}
+The Sniplist Team"""))}
     }
     
     def render(verificationUrl:String,token:String,name:String,email:String): play.api.templates.TxtFormat.Appendable = apply(verificationUrl,token,name,email)
@@ -47,9 +47,9 @@ The PlayAuthenticate Team"""))}
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 04 20:00:56 EDT 2014
+                    DATE: Mon Jun 09 22:04:08 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/signup/email/verify_email_en.scala.txt
-                    HASH: 6768d9b668f5386ce5f3c79d6c69dd63e5a512b3
+                    HASH: 3bf3ad73309e120f7606f3749ba18202c2abd183
                     MATRIX: 820->1|982->70|1024->77|1049->81|1188->186|1224->201
                     LINES: 26->1|29->1|29->1|29->1|35->7|35->7
                     -- GENERATED --

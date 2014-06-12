@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140605160537"/>
+		date="20140612141357"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="play-cache_2.10">
 			<revision name="2.2.3" status="release" pubdate="20140604011727" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="66">
@@ -1664,7 +1664,7 @@
 				<metadata-artifact status="no" details="" size="1670" time="0" location="C:\Users\Thomas\.ivy2\cache\com.feth\play-easymail_2.10\ivy-0.5-SNAPSHOT.xml" searched="true" origin-is-local="false" origin-location="http://joscha.github.com/play-easymail/repo/snapshots/com.feth/play-easymail_2.10/0.5-SNAPSHOT/ivys/ivy.xml"/>
 				<caller organisation="sniplist" name="sniplist$sources_javadoc_2.10" conf="test-internal, test, optional, compile, provided, runtime" rev="0.5-SNAPSHOT" rev-constraint-default="0.5-SNAPSHOT" rev-constraint-dynamic="0.5-SNAPSHOT" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="play-easymail_2.10" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3440" time="0" location="C:\Users\Thomas\.ivy2\cache\com.feth\play-easymail_2.10\srcs\play-easymail_2.10-0.5-SNAPSHOT-sources.jar">
+					<artifact name="play-easymail_2.10" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="3440" time="808" location="C:\Users\Thomas\.ivy2\cache\com.feth\play-easymail_2.10\srcs\play-easymail_2.10-0.5-SNAPSHOT-sources.jar">
 						<origin-location is-local="false" location="http://joscha.github.com/play-easymail/repo/snapshots/com.feth/play-easymail_2.10/0.5-SNAPSHOT/srcs/play-easymail_2.10-sources.jar"/>
 					</artifact>
 					<artifact name="play-easymail_2.10" type="jar" ext="jar" status="no" details="" size="8691" time="0" location="C:\Users\Thomas\.ivy2\cache\com.feth\play-easymail_2.10\jars\play-easymail_2.10-0.5-SNAPSHOT.jar">

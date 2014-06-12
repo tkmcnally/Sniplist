@@ -31,14 +31,14 @@ Howdy """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 <br />
 <br />
 <p>
-	You recently signed up for PlayAuthenticate.<br />
+	You recently signed up for <b>Sniplist</b>.<br />
 	<br />
-	Follow this link to <a href=""""),_display_(Seq[Any](/*8.32*/verificationUrl)),format.raw/*8.47*/("""">activate your account</a> now.
+	Follow this link to <a href=""""),_display_(Seq[Any](/*8.32*/verificationUrl)),format.raw/*8.47*/("""">activate your account</a>.
 </p>
 <br />
 <p>
 	Cheers,<br /> 
-	<i>The PlayAuthenticate Team</i>
+	<i>The <b>Sniplist</b> Team</i>
 </p>"""))}
     }
     
@@ -51,10 +51,10 @@ Howdy """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 04 20:00:56 EDT 2014
+                    DATE: Thu Jun 12 15:29:19 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/signup/email/verify_email_en.scala.html
-                    HASH: 064449f65a1076f3b0ca0751c76b1d8bcb6f355e
-                    MATRIX: 826->1|989->70|1032->79|1057->83|1209->200|1245->215
+                    HASH: 307ae785e22c0fb0a11e6c04f63d94f0e19efe75
+                    MATRIX: 826->1|989->70|1032->79|1057->83|1208->199|1244->214
                     LINES: 26->1|29->1|30->2|30->2|36->8|36->8
                     -- GENERATED --
                 */

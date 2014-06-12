@@ -47,15 +47,24 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("About Us", "about")/*1.27*/ {_display_(
     <div class="container mtb">
         <div class="row">
             <div class="col-lg-6">
-                <img class="img-responsive" src="assets/img/agency.jpg" alt="">
+                <img class="img-responsive" src="http://placehold.it/800x600" alt="">
             </div>
 
             <div class="col-lg-6">
-                <h4>More About Our Agency.</h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-                <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <p>Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-                <p><br/><a href="contact.html" class="btn btn-theme">Contact Us</a></p>
+                <h4>Who we are.</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+                aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam
+                dictum felis eu pede mollis pretium.</p>
+
+                <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius
+                laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
+                ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam
+                semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit
+                id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.</p>
             </div>
         </div><! --/row -->
     </div><! --/container -->
@@ -70,7 +79,7 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("About Us", "about")/*1.27*/ {_display_(
             <div class="col-lg-3 col-md-3 col-sm-3"></div>
             <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="he-wrap tpl6">
-                    <img src=""""),_display_(Seq[Any](/*45.32*/routes/*45.38*/.Assets.at("img/team/thomas.jpg"))),format.raw/*45.71*/("""" alt="">
+                    <img src=""""),_display_(Seq[Any](/*54.32*/routes/*54.38*/.Assets.at("img/team/thomas.jpg"))),format.raw/*54.71*/("""" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
@@ -88,7 +97,7 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("About Us", "about")/*1.27*/ {_display_(
 
             <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="he-wrap tpl6">
-                    <img src=""""),_display_(Seq[Any](/*63.32*/routes/*63.38*/.Assets.at("img/team/mathew.jpg"))),format.raw/*63.71*/("""" alt="">
+                    <img src=""""),_display_(Seq[Any](/*72.32*/routes/*72.38*/.Assets.at("img/team/mathew.jpg"))),format.raw/*72.71*/("""" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
@@ -117,11 +126,11 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("About Us", "about")/*1.27*/ {_display_(
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Jun 06 01:56:56 EDT 2014
+                    DATE: Thu Jun 12 15:13:51 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/about.scala.html
-                    HASH: ec2f3ab9efd522db3450a1a5c768c15ed0b79ff2
-                    MATRIX: 864->1|897->26|936->28|3649->2705|3664->2711|3719->2744|4712->3701|4727->3707|4782->3740
-                    LINES: 29->1|29->1|29->1|73->45|73->45|73->45|91->63|91->63|91->63
+                    HASH: b93605626b7e2203fd2f24ceb3c34624cfd9b5a6
+                    MATRIX: 864->1|897->26|936->28|4020->3076|4035->3082|4090->3115|5083->4072|5098->4078|5153->4111
+                    LINES: 29->1|29->1|29->1|82->54|82->54|82->54|100->72|100->72|100->72
                     -- GENERATED --
                 */
             
