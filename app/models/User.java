@@ -85,7 +85,11 @@ public class User implements Subject {
 
     private static Query<User> getUsernamePasswordAuthUserFind(
             final UsernamePasswordAuthUser identity) {
-        return getEmailUserFind(identity.getEmail()).field("linkedAccounts.providerKey").equal(identity.getProvider());
+        Query<User> emailUsers = getEmailUserFind(identity.getEmail());
+        Query<LinkedAccount> linkedAccounts = MorphiaUtil.getDatastore().find(LinkedAccount.class).field("providerKey").equal(identity.getProvider());
+        Query<User> join = emailUsers.field("linkedAccounts").equal(linkedAccounts);
+
+        return join;
     }
 
     private static Query<User> getEmailUserFind(final String email) {

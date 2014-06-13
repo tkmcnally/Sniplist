@@ -17,7 +17,7 @@ public class LinkedAccount {
     private static final long serialVersionUID = 1L;
 
     @Id
-    public ObjectId id;
+    public ObjectId id = new ObjectId();
 
     @Reference
     public User user;
