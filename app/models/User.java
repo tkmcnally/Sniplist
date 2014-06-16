@@ -14,6 +14,7 @@ import org.bson.types.ObjectId;
 
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
+import org.mongodb.morphia.query.CriteriaContainer;
 import org.mongodb.morphia.query.Query;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
@@ -80,16 +81,26 @@ public class User implements Subject {
 
     private static Query<User> getAuthUserFind(
             final AuthUserIdentity identity) {
-        return MorphiaUtil.getDatastore().find(User.class).field("active").equal(true).field("linkedAccounts.providerUserId").equal(identity.getId()).field("linkedAccounts.providerKey").equal(identity.getProvider());
+
+        Query<LinkedAccount> linkedAccounts = MorphiaUtil.getDatastore().find(LinkedAccount.class).field("providerUserId").equal(identity.getId()).field("providerKey").equal(identity.getProvider());
+
+        ObjectId oid = null;
+        if(linkedAccounts.get() != null) {
+            oid = linkedAccounts.get().user.id;
+        }
+        Query<User> users = MorphiaUtil.getDatastore().find(User.class).field("active").equal(true).field("_id").equal(oid);
+
+        return users;
+
     }
 
     private static Query<User> getUsernamePasswordAuthUserFind(
             final UsernamePasswordAuthUser identity) {
         Query<User> emailUsers = getEmailUserFind(identity.getEmail());
         Query<LinkedAccount> linkedAccounts = MorphiaUtil.getDatastore().find(LinkedAccount.class).field("providerKey").equal(identity.getProvider());
-        Query<User> join = emailUsers.field("linkedAccounts").equal(linkedAccounts);
+        emailUsers.and(emailUsers.criteria("linkedAccounts").in(linkedAccounts.asKeyList()));
 
-        return join;
+        return emailUsers;
     }
 
     private static Query<User> getEmailUserFind(final String email) {
@@ -120,7 +131,7 @@ public class User implements Subject {
         user.active = true;
         user.lastLogin = new Date();
         user.linkedAccounts = Collections.singletonList(LinkedAccount
-                .create(authUser));
+                .create(user, authUser));
 
         if (authUser instanceof EmailIdentity) {
             final EmailIdentity identity = (EmailIdentity) authUser;
@@ -150,11 +161,10 @@ public class User implements Subject {
                 user.lastName = lastName;
             }
         }
-
-        MorphiaUtil.getDatastore().save(user.roles);
         MorphiaUtil.getDatastore().save(user);
-       // user.saveManyToManyAssociations("roles");
-        // user.saveManyToManyAssociations("permissions");
+        MorphiaUtil.getDatastore().save(user.roles);
+        MorphiaUtil.getDatastore().save(user.linkedAccounts);
+
         return user;
     }
 
@@ -165,8 +175,6 @@ public class User implements Subject {
         if (identity instanceof UsernamePasswordAuthUser) {
             return findByUsernamePasswordIdentity((UsernamePasswordAuthUser) identity);
         } else {
-           getAuthUserFind(identity);
-
             return getAuthUserFind(identity).get();
         }
     }
@@ -178,7 +186,7 @@ public class User implements Subject {
 
     public void merge(final User otherUser) {
         for (final LinkedAccount acc : otherUser.linkedAccounts) {
-            this.linkedAccounts.add(LinkedAccount.create(acc));
+            this.linkedAccounts.add(LinkedAccount.create(otherUser, acc));
         }
         // do all other merging stuff here - like resources, etc.
 
@@ -195,7 +203,8 @@ public class User implements Subject {
     public static void addLinkedAccount(final AuthUser oldUser,
                                         final AuthUser newUser) {
         final User u = User.findByAuthUserIdentity(oldUser);
-        u.linkedAccounts.add(LinkedAccount.create(newUser));
+        u.linkedAccounts.add(LinkedAccount.create(u, newUser));
+        MorphiaUtil.getDatastore().save(u.linkedAccounts);
         MorphiaUtil.getDatastore().save(u);
     }
 
@@ -205,9 +214,11 @@ public class User implements Subject {
         for(LinkedAccount la: u.linkedAccounts) {
             if(la.providerKey.equals(oldProviderKey)) {
                 u.linkedAccounts.remove(la);
+                MorphiaUtil.getDatastore().delete(la);
                 break;
             }
         }
+        MorphiaUtil.getDatastore().save(u.linkedAccounts);
         MorphiaUtil.getDatastore().save(u);
     }
 
@@ -247,14 +258,13 @@ public class User implements Subject {
         LinkedAccount a = this.getAccountByProvider(authUser.getProvider());
         if (a == null) {
             if (create) {
-                a = LinkedAccount.create(authUser);
+                a = LinkedAccount.create(this, authUser);
                 a.user = this;
             } else {
                 throw new RuntimeException(
                         "Account not enabled for password usage");
             }
         }
-        System.out.println("a.provider = " + a.providerUserId + " \n authUser = " + authUser.getHashedPassword());
         a.providerUserId = authUser.getHashedPassword();
         MorphiaUtil.getDatastore().save(a);
     }

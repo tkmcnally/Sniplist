@@ -90,6 +90,7 @@ public class Account extends Controller {
 	public static Result verifyEmail() {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
 		final User user = Application.getLocalUser(session());
+
 		if (user.emailValidated) {
 			// E-Mail has been validated already
 			flash(Application.FLASH_MESSAGE_KEY,
@@ -98,6 +99,7 @@ public class Account extends Controller {
 			flash(Application.FLASH_MESSAGE_KEY, Messages.get(
 					"playauthenticate.verify_email.message.instructions_sent",
 					user.email));
+
 			MyUsernamePasswordAuthProvider.getProvider()
 					.sendVerifyEmailMailingAfterSignup(user, ctx());
 		} else {
@@ -142,6 +144,7 @@ public class Account extends Controller {
 	@SubjectPresent
 	public static Result askLink() {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
+
 		final AuthUser u = PlayAuthenticate.getLinkUser(session());
 		if (u == null) {
 			// account to link could not be found, silently redirect to login
@@ -177,6 +180,7 @@ public class Account extends Controller {
 	@SubjectPresent
 	public static Result askMerge() {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
+
 		// this is the currently logged in user
 		final AuthUser aUser = PlayAuthenticate.getUser(session());
 
@@ -195,6 +199,7 @@ public class Account extends Controller {
 	@SubjectPresent
 	public static Result doMerge() {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
+
 		// this is the currently logged in user
 		final AuthUser aUser = PlayAuthenticate.getUser(session());
 

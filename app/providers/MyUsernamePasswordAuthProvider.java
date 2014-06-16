@@ -148,7 +148,9 @@ public class MyUsernamePasswordAuthProvider
 	@Override
 	protected com.feth.play.module.pa.providers.password.UsernamePasswordAuthProvider.LoginResult loginUser(
 			final MyLoginUsernamePasswordAuthUser authUser) {
+
 		final User u = User.findByUsernamePasswordIdentity(authUser);
+
 		if (u == null) {
 			return LoginResult.NOT_FOUND;
 		} else {
@@ -249,6 +251,7 @@ public class MyUsernamePasswordAuthProvider
 	@Override
 	protected String generateVerificationRecord(
 			final MyUsernamePasswordAuthUser user) {
+        System.out.println("tagret2 user: " + User.findByAuthUserIdentity(user));
 		return generateVerificationRecord(User.findByAuthUserIdentity(user));
 	}
 
@@ -377,6 +380,7 @@ public class MyUsernamePasswordAuthProvider
 
 		final String subject = getVerifyEmailMailingSubjectAfterSignup(user,
 				ctx);
+
 		final String token = generateVerificationRecord(user);
 		final Body body = getVerifyEmailMailingBodyAfterSignup(token, user, ctx);
 		sendMail(subject, body, getEmailName(user));

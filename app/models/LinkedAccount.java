@@ -29,22 +29,23 @@ public class LinkedAccount {
         return MorphiaUtil.getDatastore().find(LinkedAccount.class).field("user").equal(user).field("providerKey").equal(key).get();
     }
 
-    public static LinkedAccount create(final AuthUser authUser) {
+    public static LinkedAccount create(final User user, final AuthUser authUser) {
         final LinkedAccount ret = new LinkedAccount();
-        ret.update(authUser);
+        ret.update(user, authUser);
         return ret;
     }
 
-    public void update(final AuthUser authUser) {
+    public void update(final User user, final AuthUser authUser) {
         this.providerKey = authUser.getProvider();
         this.providerUserId = authUser.getId();
+        this.user = user;
     }
 
-    public static LinkedAccount create(final LinkedAccount acc) {
+    public static LinkedAccount create(final User user, final LinkedAccount acc) {
         final LinkedAccount ret = new LinkedAccount();
         ret.providerKey = acc.providerKey;
         ret.providerUserId = acc.providerUserId;
-
+        ret.user = user;
         return ret;
     }
 }
