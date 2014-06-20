@@ -27,6 +27,11 @@
 
                 <!-- Custom styles for this template -->
             <link href="@routes.Assets.at("css/style.css")" rel="stylesheet">
+            <link href="@routes.Assets.at("css/responsive-video.css")" rel="stylesheet">
+
+                <!-- Custom styles for snips -->
+            <link href="@routes.Assets.at("css/prettify.css")" rel="stylesheet">
+            <link href="@routes.Assets.at("css/tablecloth.css")" rel="stylesheet">
 
                 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
                 <!--[if lt IE 9]>
@@ -49,30 +54,49 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="@routes.Application.index()">SNIPLIST.</a>
+                        @subjectPresent() {
+                            <form class="navbar-form navbar-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </form>
+                        }
                     </div>
                     <div class="navbar-collapse collapse navbar-right">
                         <ul class="nav navbar-nav">
                                 <!-- Determine which page is currently active -->
-                            @generators.navbarMenu(routes.Application.index(), "HOME")
-                            @generators.navbarMenu(routes.Application.about(), "ABOUT")
-                            @generators.navbarMenu(routes.Application.contact(), "CONTACT")
+                            @subjectPresentOr() {
+                                @generators.navbarMenu(routes.Snips.add(), "ADD SNIP")
+                                @generators.navbarMenu(routes.Snips.mySnips(), "MY SNIPS")
+                            } {
+                                @generators.navbarMenu(routes.Application.index(), "HOME")
+                            }
+                            @subjectNotPresent() {
+                                @generators.navbarMenu(routes.Application.about(), "ABOUT")
+                                @generators.navbarMenu(routes.Application.contact(), "CONTACT")
+                            }
+
                             @subjectPresentOr() {
                                 @defining(Application.getLocalUser(session())) { user =>
-                                    <li><div class="dropdown">
-                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="icon-user"></i> @user.name.toUpperCase()
-                                        <span class="caret"></span>
-                                        </a>
+                                    <li>
+                                        <div class="dropdown">
+                                            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                                <i class="icon-user"></i> @user.name.toUpperCase()
+                                                <span class="caret"></span>
+                                            </a>
 
-                                        <ul class="dropdown-menu">
-                                            <li><a href="@routes.Application.profile()">@Messages("playauthenticate.navigation.profile").toUpperCase()</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="@com.feth.play.module.pa.controllers.routes.Authenticate.logout()"><i class="icon-off"></i> @Messages("playauthenticate.navigation.logout").toUpperCase()</a></li>
-                                        </ul>
-                                    </div>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="@routes.Application.profile()">@Messages("playauthenticate.navigation.profile").toUpperCase()</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="@com.feth.play.module.pa.controllers.routes.Authenticate.logout()"><i class="icon-off"></i> @Messages("playauthenticate.navigation.logout").toUpperCase()</a></li>
+                                            </ul>
+                                        </div>
                                     </li>
                                 }
+                                @generators.navbarMenu(routes.Application.about(), "ABOUT")
                             }{
+
                                 @generators.navbarMenu(routes.Application.login(), "SIGN IN")
                             }
 
@@ -128,6 +152,47 @@
             <script src="@routes.Assets.at("js/jquery.prettyPhoto.js")"></script>
             <script src="@routes.Assets.at("js/jquery.isotope.min.js")"></script>
             <script src="@routes.Assets.at("js/custom.js")"></script>
+
+            <script src="@routes.Assets.at("js/jquery-1.7.2.min.js")"></script>
+            <script src="@routes.Assets.at("js/jquery.metadata.js")"></script>
+            <script src="@routes.Assets.at("js/jquery.tablesorter.min.js")"></script>
+            <script src="@routes.Assets.at("js/jquery.tablecloth.js")"></script>
+            <script src="@routes.Assets.at("js/bootstrap.js")"></script>
+
+            <script src="@routes.Assets.at("js/youtube_embed_formatter.js")"></script>
+            <script type="text/javascript" src='@routes.Application.javascriptRoutes()'></script>
+
+            <script type="text/javascript" charset="utf-8">
+            $(document).ready(function() {
+                $("table").tablecloth({
+                    theme: "dark",
+                    bordered: true,
+                    condensed: true,
+                    striped: true,
+                    sortable: true,
+                    clean: true,
+                    cleanElements: "th td",
+                    customClass: "my-table"
+                });
+
+                $('#url-input').keypress(function(e) {
+                    if( e.which == 13) {
+                        getVideo ( $ ( this ).val ( ) ) ;
+
+                    }
+                });
+
+                $('#url-input-btn').click(function() {
+                        getVideo($('#url-input').val());
+                })
+
+
+                $('#save_snip_btn').click(function() {
+                    saveSnip();
+                });
+
+            });
+            </script>
 
             <script>
             // Portfolio
@@ -209,7 +274,13 @@
             $(window).on('resize', function () {
             setPortfolio();
             });
+
+
+
             })(jQuery);
+
+
+
             </script>
         </body>
     </html>

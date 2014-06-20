@@ -567,3 +567,13 @@ body {
     text-decoration:none;
     color:#DED843;
 }
+
+
+.embeded-video {
+    margin-top: 10px;
+}
+
+.input-group-addon {
+    min-width:80px;
+    text-align:left;
+}

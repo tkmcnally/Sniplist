@@ -9,6 +9,8 @@ public class Constants {
 
         public static String MONGO_DB_URI = "mongohq.db.uri";
 
+        public static String YOUTUBE_APIKEY = "google.api.youtube.apikey";
+
     }
     public static class Security {
 

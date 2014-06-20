@@ -13,6 +13,11 @@ libraryDependencies ++= Seq(
   "org.mindrot" % "jbcrypt" % "0.3m",
   "org.apache.httpcomponents" % "httpclient" % "4.3",
   "commons-lang" % "commons-lang" % "2.6",
+  "com.google.api-client" % "google-api-client" % "1.18.0-rc",
+  "com.google.apis" % "google-api-services-youtube" % "v3-rev107-1.18.0-rc",
+  "com.google.oauth-client" % "google-oauth-client-jetty" % "1.18.0-rc",
+  "com.google.collections" % "google-collections" % "1.0",
+  "com.google.http-client" % "google-http-client-jackson2" % "1.18.0-rc",
   //"com.feth" %% "play-authenticate" % "0.5.2-SNAPSHOT" withSources(),
   javaCore,
   cache

@@ -1,10 +1,14 @@
 [0m[[0mdebug[0m] [0mCopy play resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\bootstrap-tables.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\bootstrap-tables.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\bootstrap.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\bootstrap.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\bootstrap.min.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\bootstrap.min.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\font-awesome.min.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\font-awesome.min.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\hoverex-all.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\hoverex-all.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\prettify.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\prettify.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\prettyPhoto.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\prettyPhoto.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\responsive-video.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\responsive-video.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\style.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\style.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\tablecloth.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\tablecloth.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\transparent.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\transparent.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\images\prettyPhoto\dark_rounded\btnNext.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\images\prettyPhoto\dark_rounded\btnNext.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\images\prettyPhoto\dark_rounded\btnPrevious.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\images\prettyPhoto\dark_rounded\btnPrevious.png)[0m
@@ -71,8 +75,12 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\images\favicon.ico,C:\Projects\Sniplist\target\scala-2.10\classes\public\images\favicon.ico)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\images\music.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\images\music.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\agency.jpg,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\agency.jpg)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\asc.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\asc.gif)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\asc_light.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\asc_light.gif)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\browser.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\browser.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\contact.jpg,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\contact.jpg)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\desc.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\desc.gif)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\desc_light.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\desc_light.gif)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\glyphicons-halflings-white.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\glyphicons-halflings-white.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\glyphicons-halflings.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\glyphicons-halflings.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\post01.jpg,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\post01.jpg)[0m
@@ -108,11 +116,17 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\bootstrap.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\bootstrap.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\bootstrap.min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\bootstrap.min.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\custom.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\custom.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery-1.7.2.min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery-1.7.2.min.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery.hoverdir.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery.hoverdir.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery.hoverex.min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery.hoverex.min.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery.isotope.min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery.isotope.min.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery.metadata.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery.metadata.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery.prettyPhoto.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery.prettyPhoto.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery.tablecloth.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery.tablecloth.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery.tablesorter.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery.tablesorter.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery.tablesorter.min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery.tablesorter.min.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\retina-1.1.0.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\retina-1.1.0.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\youtube_embed_formatter.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\youtube_embed_formatter.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\stylesheets\main_one.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\stylesheets\main_one.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\target\scala-2.10\resource_managed\main\public\stylesheets\main.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\stylesheets\main.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\target\scala-2.10\resource_managed\main\public\stylesheets\main.min.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\stylesheets\main.min.css)[0m

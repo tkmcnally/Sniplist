@@ -75,6 +75,7 @@ public class MorphiaUtil {
         morphia.map(TokenAction.class);
         morphia.map(SecurityRole.class);
         morphia.map(LinkedAccount.class);
+        morphia.map(Snip.class);
     }
 
     public static Datastore getDatastore() {

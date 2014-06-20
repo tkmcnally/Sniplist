@@ -1,6 +1,6 @@
 // @SOURCE:C:/Projects/Sniplist/conf/routes
-// @HASH:3acea66c7be6cd639258f860883dfdc915190f5e
-// @DATE:Wed Jun 04 20:55:53 EDT 2014
+// @HASH:b43580ea6e784ba6dd6dc7fd43f99a539e906aca
+// @DATE:Thu Jun 19 23:38:59 EDT 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -39,7 +39,12 @@ def authenticate(provider:String): Call = {
 }
                   
 
-// @LINE:53
+// @LINE:64
+// @LINE:61
+// @LINE:58
+// @LINE:56
+// @LINE:54
+// @LINE:52
 // @LINE:50
 // @LINE:49
 // @LINE:47
@@ -68,6 +73,102 @@ def authenticate(provider:String): Call = {
 // @LINE:7
 // @LINE:6
 package controllers {
+
+// @LINE:64
+class ReverseAssets {
+    
+
+// @LINE:64
+def at(file:String): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
+}
+                                                
+    
+}
+                          
+
+// @LINE:61
+// @LINE:23
+// @LINE:22
+// @LINE:17
+// @LINE:16
+// @LINE:14
+// @LINE:12
+// @LINE:10
+// @LINE:8
+// @LINE:7
+// @LINE:6
+class ReverseApplication {
+    
+
+// @LINE:23
+def doSignup(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "signup")
+}
+                                                
+
+// @LINE:10
+def profile(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "profile")
+}
+                                                
+
+// @LINE:8
+def jsRoutes(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "assets/javascript/routes.js")
+}
+                                                
+
+// @LINE:22
+def signup(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "signup")
+}
+                                                
+
+// @LINE:12
+def about(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "about")
+}
+                                                
+
+// @LINE:17
+def doLogin(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "login")
+}
+                                                
+
+// @LINE:7
+def restricted(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "restricted")
+}
+                                                
+
+// @LINE:6
+def index(): Call = {
+   Call("GET", _prefix)
+}
+                                                
+
+// @LINE:14
+def contact(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "contact")
+}
+                                                
+
+// @LINE:61
+def javascriptRoutes(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "assets/javascripts/routes")
+}
+                                                
+
+// @LINE:16
+def login(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "login")
+}
+                                                
+    
+}
+                          
 
 // @LINE:50
 // @LINE:49
@@ -131,13 +232,34 @@ def forgotPassword(email:String = ""): Call = {
 }
                           
 
-// @LINE:53
-class ReverseAssets {
+// @LINE:58
+// @LINE:56
+// @LINE:54
+// @LINE:52
+class ReverseSnips {
     
 
-// @LINE:53
-def at(file:String): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
+// @LINE:56
+def getVideo(songUrl:String): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "snips/add/getVideo/" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("songUrl", songUrl)))))
+}
+                                                
+
+// @LINE:52
+def mySnips(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "snips/")
+}
+                                                
+
+// @LINE:54
+def add(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "snips/add")
+}
+                                                
+
+// @LINE:58
+def saveSnip(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "snips/add/saveSnip")
 }
                                                 
     
@@ -212,82 +334,6 @@ def doChangePassword(): Call = {
     
 }
                           
-
-// @LINE:23
-// @LINE:22
-// @LINE:17
-// @LINE:16
-// @LINE:14
-// @LINE:12
-// @LINE:10
-// @LINE:8
-// @LINE:7
-// @LINE:6
-class ReverseApplication {
-    
-
-// @LINE:23
-def doSignup(): Call = {
-   Call("POST", _prefix + { _defaultPrefix } + "signup")
-}
-                                                
-
-// @LINE:10
-def profile(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "profile")
-}
-                                                
-
-// @LINE:8
-def jsRoutes(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "assets/javascript/routes.js")
-}
-                                                
-
-// @LINE:22
-def signup(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "signup")
-}
-                                                
-
-// @LINE:12
-def about(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "about")
-}
-                                                
-
-// @LINE:17
-def doLogin(): Call = {
-   Call("POST", _prefix + { _defaultPrefix } + "login")
-}
-                                                
-
-// @LINE:7
-def restricted(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "restricted")
-}
-                                                
-
-// @LINE:6
-def index(): Call = {
-   Call("GET", _prefix)
-}
-                                                
-
-// @LINE:14
-def contact(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "contact")
-}
-                                                
-
-// @LINE:16
-def login(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "login")
-}
-                                                
-    
-}
-                          
 }
                   
 
@@ -328,7 +374,12 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 }
         
 
-// @LINE:53
+// @LINE:64
+// @LINE:61
+// @LINE:58
+// @LINE:56
+// @LINE:54
+// @LINE:52
 // @LINE:50
 // @LINE:49
 // @LINE:47
@@ -357,6 +408,162 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 // @LINE:7
 // @LINE:6
 package controllers.javascript {
+
+// @LINE:64
+class ReverseAssets {
+    
+
+// @LINE:64
+def at : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Assets.at",
+   """
+      function(file) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("file", file)})
+      }
+   """
+)
+                        
+    
+}
+              
+
+// @LINE:61
+// @LINE:23
+// @LINE:22
+// @LINE:17
+// @LINE:16
+// @LINE:14
+// @LINE:12
+// @LINE:10
+// @LINE:8
+// @LINE:7
+// @LINE:6
+class ReverseApplication {
+    
+
+// @LINE:23
+def doSignup : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.doSignup",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "signup"})
+      }
+   """
+)
+                        
+
+// @LINE:10
+def profile : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.profile",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "profile"})
+      }
+   """
+)
+                        
+
+// @LINE:8
+def jsRoutes : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.jsRoutes",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/javascript/routes.js"})
+      }
+   """
+)
+                        
+
+// @LINE:22
+def signup : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.signup",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "signup"})
+      }
+   """
+)
+                        
+
+// @LINE:12
+def about : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.about",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "about"})
+      }
+   """
+)
+                        
+
+// @LINE:17
+def doLogin : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.doLogin",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
+      }
+   """
+)
+                        
+
+// @LINE:7
+def restricted : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.restricted",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restricted"})
+      }
+   """
+)
+                        
+
+// @LINE:6
+def index : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.index",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + """"})
+      }
+   """
+)
+                        
+
+// @LINE:14
+def contact : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.contact",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "contact"})
+      }
+   """
+)
+                        
+
+// @LINE:61
+def javascriptRoutes : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.javascriptRoutes",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/javascripts/routes"})
+      }
+   """
+)
+                        
+
+// @LINE:16
+def login : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.login",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
+      }
+   """
+)
+                        
+    
+}
+              
 
 // @LINE:50
 // @LINE:49
@@ -460,16 +667,52 @@ def forgotPassword : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:53
-class ReverseAssets {
+// @LINE:58
+// @LINE:56
+// @LINE:54
+// @LINE:52
+class ReverseSnips {
     
 
-// @LINE:53
-def at : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Assets.at",
+// @LINE:56
+def getVideo : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Snips.getVideo",
    """
-      function(file) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("file", file)})
+      function(songUrl) {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "snips/add/getVideo/" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("songUrl", songUrl)])})
+      }
+   """
+)
+                        
+
+// @LINE:52
+def mySnips : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Snips.mySnips",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "snips/"})
+      }
+   """
+)
+                        
+
+// @LINE:54
+def add : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Snips.add",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "snips/add"})
+      }
+   """
+)
+                        
+
+// @LINE:58
+def saveSnip : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Snips.saveSnip",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "snips/add/saveSnip"})
       }
    """
 )
@@ -591,132 +834,6 @@ def doChangePassword : JavascriptReverseRoute = JavascriptReverseRoute(
     
 }
               
-
-// @LINE:23
-// @LINE:22
-// @LINE:17
-// @LINE:16
-// @LINE:14
-// @LINE:12
-// @LINE:10
-// @LINE:8
-// @LINE:7
-// @LINE:6
-class ReverseApplication {
-    
-
-// @LINE:23
-def doSignup : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.doSignup",
-   """
-      function() {
-      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "signup"})
-      }
-   """
-)
-                        
-
-// @LINE:10
-def profile : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.profile",
-   """
-      function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "profile"})
-      }
-   """
-)
-                        
-
-// @LINE:8
-def jsRoutes : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.jsRoutes",
-   """
-      function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/javascript/routes.js"})
-      }
-   """
-)
-                        
-
-// @LINE:22
-def signup : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.signup",
-   """
-      function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "signup"})
-      }
-   """
-)
-                        
-
-// @LINE:12
-def about : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.about",
-   """
-      function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "about"})
-      }
-   """
-)
-                        
-
-// @LINE:17
-def doLogin : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.doLogin",
-   """
-      function() {
-      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
-      }
-   """
-)
-                        
-
-// @LINE:7
-def restricted : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.restricted",
-   """
-      function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "restricted"})
-      }
-   """
-)
-                        
-
-// @LINE:6
-def index : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.index",
-   """
-      function() {
-      return _wA({method:"GET", url:"""" + _prefix + """"})
-      }
-   """
-)
-                        
-
-// @LINE:14
-def contact : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.contact",
-   """
-      function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "contact"})
-      }
-   """
-)
-                        
-
-// @LINE:16
-def login : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.login",
-   """
-      function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
-      }
-   """
-)
-                        
-    
-}
-              
 }
         
 
@@ -748,7 +865,12 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 }
         
 
-// @LINE:53
+// @LINE:64
+// @LINE:61
+// @LINE:58
+// @LINE:56
+// @LINE:54
+// @LINE:52
 // @LINE:50
 // @LINE:49
 // @LINE:47
@@ -778,6 +900,102 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 // @LINE:6
 package controllers.ref {
 
+
+// @LINE:64
+class ReverseAssets {
+    
+
+// @LINE:64
+def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
+)
+                      
+    
+}
+                          
+
+// @LINE:61
+// @LINE:23
+// @LINE:22
+// @LINE:17
+// @LINE:16
+// @LINE:14
+// @LINE:12
+// @LINE:10
+// @LINE:8
+// @LINE:7
+// @LINE:6
+class ReverseApplication {
+    
+
+// @LINE:23
+def doSignup(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.doSignup(), HandlerDef(this, "controllers.Application", "doSignup", Seq(), "POST", """""", _prefix + """signup""")
+)
+                      
+
+// @LINE:10
+def profile(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.profile(), HandlerDef(this, "controllers.Application", "profile", Seq(), "GET", """""", _prefix + """profile""")
+)
+                      
+
+// @LINE:8
+def jsRoutes(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.jsRoutes(), HandlerDef(this, "controllers.Application", "jsRoutes", Seq(), "GET", """""", _prefix + """assets/javascript/routes.js""")
+)
+                      
+
+// @LINE:22
+def signup(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.signup(), HandlerDef(this, "controllers.Application", "signup", Seq(), "GET", """""", _prefix + """signup""")
+)
+                      
+
+// @LINE:12
+def about(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.about(), HandlerDef(this, "controllers.Application", "about", Seq(), "GET", """""", _prefix + """about""")
+)
+                      
+
+// @LINE:17
+def doLogin(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.doLogin(), HandlerDef(this, "controllers.Application", "doLogin", Seq(), "POST", """""", _prefix + """login""")
+)
+                      
+
+// @LINE:7
+def restricted(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.restricted(), HandlerDef(this, "controllers.Application", "restricted", Seq(), "GET", """""", _prefix + """restricted""")
+)
+                      
+
+// @LINE:6
+def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """""")
+)
+                      
+
+// @LINE:14
+def contact(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.contact(), HandlerDef(this, "controllers.Application", "contact", Seq(), "GET", """""", _prefix + """contact""")
+)
+                      
+
+// @LINE:61
+def javascriptRoutes(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.javascriptRoutes(), HandlerDef(this, "controllers.Application", "javascriptRoutes", Seq(), "GET", """ Javascript routing""", _prefix + """assets/javascripts/routes""")
+)
+                      
+
+// @LINE:16
+def login(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.login(), HandlerDef(this, "controllers.Application", "login", Seq(), "GET", """""", _prefix + """login""")
+)
+                      
+    
+}
+                          
 
 // @LINE:50
 // @LINE:49
@@ -841,13 +1059,34 @@ def forgotPassword(email:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
-// @LINE:53
-class ReverseAssets {
+// @LINE:58
+// @LINE:56
+// @LINE:54
+// @LINE:52
+class ReverseSnips {
     
 
-// @LINE:53
-def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
+// @LINE:56
+def getVideo(songUrl:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Snips.getVideo(songUrl), HandlerDef(this, "controllers.Snips", "getVideo", Seq(classOf[String]), "POST", """""", _prefix + """snips/add/getVideo/""")
+)
+                      
+
+// @LINE:52
+def mySnips(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Snips.mySnips(), HandlerDef(this, "controllers.Snips", "mySnips", Seq(), "GET", """""", _prefix + """snips/""")
+)
+                      
+
+// @LINE:54
+def add(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Snips.add(), HandlerDef(this, "controllers.Snips", "add", Seq(), "GET", """""", _prefix + """snips/add""")
+)
+                      
+
+// @LINE:58
+def saveSnip(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Snips.saveSnip(), HandlerDef(this, "controllers.Snips", "saveSnip", Seq(), "POST", """""", _prefix + """snips/add/saveSnip""")
 )
                       
     
@@ -917,82 +1156,6 @@ def link(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:35
 def doChangePassword(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Account.doChangePassword(), HandlerDef(this, "controllers.Account", "doChangePassword", Seq(), "POST", """""", _prefix + """accounts/password/change""")
-)
-                      
-    
-}
-                          
-
-// @LINE:23
-// @LINE:22
-// @LINE:17
-// @LINE:16
-// @LINE:14
-// @LINE:12
-// @LINE:10
-// @LINE:8
-// @LINE:7
-// @LINE:6
-class ReverseApplication {
-    
-
-// @LINE:23
-def doSignup(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.doSignup(), HandlerDef(this, "controllers.Application", "doSignup", Seq(), "POST", """""", _prefix + """signup""")
-)
-                      
-
-// @LINE:10
-def profile(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.profile(), HandlerDef(this, "controllers.Application", "profile", Seq(), "GET", """""", _prefix + """profile""")
-)
-                      
-
-// @LINE:8
-def jsRoutes(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.jsRoutes(), HandlerDef(this, "controllers.Application", "jsRoutes", Seq(), "GET", """""", _prefix + """assets/javascript/routes.js""")
-)
-                      
-
-// @LINE:22
-def signup(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.signup(), HandlerDef(this, "controllers.Application", "signup", Seq(), "GET", """""", _prefix + """signup""")
-)
-                      
-
-// @LINE:12
-def about(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.about(), HandlerDef(this, "controllers.Application", "about", Seq(), "GET", """""", _prefix + """about""")
-)
-                      
-
-// @LINE:17
-def doLogin(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.doLogin(), HandlerDef(this, "controllers.Application", "doLogin", Seq(), "POST", """""", _prefix + """login""")
-)
-                      
-
-// @LINE:7
-def restricted(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.restricted(), HandlerDef(this, "controllers.Application", "restricted", Seq(), "GET", """""", _prefix + """restricted""")
-)
-                      
-
-// @LINE:6
-def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """""")
-)
-                      
-
-// @LINE:14
-def contact(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.contact(), HandlerDef(this, "controllers.Application", "contact", Seq(), "GET", """""", _prefix + """contact""")
-)
-                      
-
-// @LINE:16
-def login(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.login(), HandlerDef(this, "controllers.Application", "login", Seq(), "GET", """""", _prefix + """login""")
 )
                       
     
