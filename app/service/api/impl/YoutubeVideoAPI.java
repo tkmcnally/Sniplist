@@ -35,6 +35,7 @@ public class YoutubeVideoAPI {
 
         try {
 
+            YoutubeAuth.proxySetup();
             // This object is used to make YouTube Data API requests. The last
             // argument is required, but since we don't need anything
             // initialized when the HttpRequest is initialized, we override
@@ -65,7 +66,6 @@ public class YoutubeVideoAPI {
             SearchListResponse searchResponse = search.execute();
             List<SearchResult> searchResultList = searchResponse.getItems();
             results = searchResultList;
-
 
         } catch (GoogleJsonResponseException e) {
             e.printStackTrace();

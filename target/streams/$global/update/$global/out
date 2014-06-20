@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for sniplist#sniplist_2.10;1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@309331dc[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2e4886f2[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -314,26 +314,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google.apis\google-api-services-youtube\v3-rev107-1.18.0-rc\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.pom (v3-rev107-1.18.0-rc)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc!google-api-services-youtube.pom(pom.original) (197ms)[0m
-[0m[[0minfo[0m] [0mResolving org.sonatype.oss#oss-parent;7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.sonatype.oss#oss-parent;7 {}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.sonatype.oss#oss-parent;7[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.sonatype.oss#oss-parent;7[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google.apis\google-api-services-youtube\v3-rev107-1.18.0-rc\jars\google-api-services-youtube.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m	found com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc[0m
+[0m[[0mdebug[0m] [0m	found com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc->com.google.api-client#google-api-client;1.18.0-rc [compile->master(*)][0m
@@ -344,51 +327,17 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google.oauth-client\google-oauth-client-jetty\1.18.0-rc\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.pom (1.18.0-rc)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc!google-oauth-client-jetty.pom(pom.original) (216ms)[0m
-[0m[[0minfo[0m] [0mResolving com.google.oauth-client#google-oauth-client-parent;1.18.0-rc ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.oauth-client#google-oauth-client-parent;1.18.0-rc {}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.oauth-client#google-oauth-client-parent;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.oauth-client#google-oauth-client-parent;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google.oauth-client\google-oauth-client-jetty\1.18.0-rc\jars\google-oauth-client-jetty.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m	found com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc[0m
+[0m[[0mdebug[0m] [0m	found com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc->com.google.oauth-client#google-oauth-client-java6;1.18.0-rc [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving com.google.oauth-client#google-oauth-client-java6;1.18.0-rc ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.oauth-client#google-oauth-client-java6;1.18.0-rc {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google.oauth-client\google-oauth-client-java6\1.18.0-rc\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for com.google.oauth-client#google-oauth-client-java6;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for com.google.oauth-client#google-oauth-client-java6;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for com.google.oauth-client#google-oauth-client-java6;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.pom (1.18.0-rc)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google.oauth-client#google-oauth-client-java6;1.18.0-rc!google-oauth-client-java6.pom(pom.original) (199ms)[0m
-[0m[[0minfo[0m] [0mResolving com.google.oauth-client#google-oauth-client-parent;1.18.0-rc ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.oauth-client#google-oauth-client-parent;1.18.0-rc {}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.oauth-client#google-oauth-client-parent;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.oauth-client#google-oauth-client-parent;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google.oauth-client\google-oauth-client-java6\1.18.0-rc\jars\google-oauth-client-java6.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m	found com.google.oauth-client#google-oauth-client-java6;1.18.0-rc in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.oauth-client#google-oauth-client-java6;1.18.0-rc[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.oauth-client#google-oauth-client-java6;1.18.0-rc[0m
+[0m[[0mdebug[0m] [0m	found com.google.oauth-client#google-oauth-client-java6;1.18.0-rc in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc->com.google.oauth-client#google-oauth-client-java6;1.18.0-rc [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.oauth-client#google-oauth-client-java6;1.18.0-rc->com.google.oauth-client#google-oauth-client;1.18.0-rc [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.oauth-client#google-oauth-client-java6;1.18.0-rc->com.google.oauth-client#google-oauth-client;1.18.0-rc [compile->compile(*)][0m
@@ -399,118 +348,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc->org.mortbay.jetty#jetty;6.1.26 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.mortbay.jetty#jetty;6.1.26 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mortbay.jetty#jetty;6.1.26 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\jetty\6.1.26\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.mortbay.jetty#jetty;6.1.26[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.mortbay.jetty#jetty;6.1.26[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.mortbay.jetty#jetty;6.1.26[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.pom (6.1.26)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.mortbay.jetty#jetty;6.1.26!jetty.pom(pom.original) (192ms)[0m
-[0m[[0minfo[0m] [0mResolving org.mortbay.jetty#project;6.1.26 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mortbay.jetty#project;6.1.26 {}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\project\6.1.26\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.mortbay.jetty#project;6.1.26[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/project/6.1.26/project-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.mortbay.jetty#project;6.1.26[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.26/project-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.mortbay.jetty#project;6.1.26[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.26/project-6.1.26.pom (6.1.26)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.26/project-6.1.26.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.26/project-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.26/project-6.1.26.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.26/project-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.mortbay.jetty#project;6.1.26!project.pom(pom.original) (220ms)[0m
-[0m[[0minfo[0m] [0mResolving org.mortbay.jetty#jetty-parent;10 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mortbay.jetty#jetty-parent;10 {}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\jetty-parent\10\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.mortbay.jetty#jetty-parent;10[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.mortbay.jetty#jetty-parent;10[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.mortbay.jetty#jetty-parent;10[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom (10)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.mortbay.jetty#jetty-parent;10!jetty-parent.pom(pom.original) (199ms)[0m
-[0m[[0minfo[0m] [0mResolving org.eclipse.jetty#jetty-parent;14 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.eclipse.jetty#jetty-parent;14 {}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.eclipse.jetty\jetty-parent\14\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.eclipse.jetty#jetty-parent;14[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.eclipse.jetty#jetty-parent;14[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.eclipse.jetty#jetty-parent;14[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom (14)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.eclipse.jetty#jetty-parent;14!jetty-parent.pom(pom.original) (236ms)[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.eclipse.jetty\jetty-parent\14\jars\jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/releases/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/releases/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/snapshots/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/snapshots/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/releases/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/releases/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/snapshots/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/snapshots/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org.eclipse.jetty/jetty-parent/14/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/eclipse/jetty/jetty-parent/14/jetty-parent-14.jar[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\jetty-parent\10\jars\jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/releases/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/releases/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/snapshots/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/snapshots/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/releases/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/releases/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/snapshots/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/snapshots/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org.mortbay.jetty/jetty-parent/10/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/mortbay/jetty/jetty-parent/10/jetty-parent-10.jar[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\project\6.1.26\jars\project.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/project/6.1.26/project-6.1.26.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.26/project-6.1.26.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.26/project-6.1.26.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/releases/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/releases/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/snapshots/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/snapshots/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/releases/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/releases/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/snapshots/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/snapshots/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org.mortbay.jetty/project/6.1.26/jars/project.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/mortbay/jetty/project/6.1.26/project-6.1.26.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/mortbay/jetty/project/6.1.26/project-6.1.26.jar[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\jetty\6.1.26\jars\jetty.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar[0m
-[0m[[0mdebug[0m] [0m	found org.mortbay.jetty#jetty;6.1.26 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.mortbay.jetty#jetty;6.1.26[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.mortbay.jetty#jetty;6.1.26[0m
+[0m[[0mdebug[0m] [0m	found org.mortbay.jetty#jetty;6.1.26 in sbt-chain[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;3.8.2 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.8.2 {test=[runtime(*), master(*)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc->org.mortbay.jetty#jetty;6.1.26 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;3.8.2 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.8.2 {test=[runtime(*), master(*)]}[0m
@@ -518,26 +358,9 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;3.8.2 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.8.2 {test=[runtime(*), master(*)]}[0m
 [0m[[0minfo[0m] [0mResolving org.mortbay.jetty#jetty-util;6.1.26 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mortbay.jetty#jetty-util;6.1.26 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\jetty-util\6.1.26\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.mortbay.jetty#jetty-util;6.1.26[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.mortbay.jetty#jetty-util;6.1.26[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.mortbay.jetty#jetty-util;6.1.26[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.pom (6.1.26)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.mortbay.jetty#jetty-util;6.1.26!jetty-util.pom(pom.original) (201ms)[0m
-[0m[[0minfo[0m] [0mResolving org.mortbay.jetty#project;6.1.26 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mortbay.jetty#project;6.1.26 {}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.mortbay.jetty#project;6.1.26[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.mortbay.jetty#project;6.1.26[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\jetty-util\6.1.26\jars\jetty-util.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar[0m
-[0m[[0mdebug[0m] [0m	found org.mortbay.jetty#jetty-util;6.1.26 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.mortbay.jetty#jetty-util;6.1.26[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.mortbay.jetty#jetty-util;6.1.26[0m
+[0m[[0mdebug[0m] [0m	found org.mortbay.jetty#jetty-util;6.1.26 in sbt-chain[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;3.8.2 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.8.2 {test=[runtime(*), master(*)]}[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mortbay.jetty#jetty;6.1.26->org.mortbay.jetty#jetty-util;6.1.26 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;3.8.2 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.8.2 {test=[runtime(*), master(*)]}[0m
@@ -545,54 +368,9 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;3.8.2 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.8.2 {test=[runtime(*), master(*)]}[0m
 [0m[[0minfo[0m] [0mResolving org.mortbay.jetty#servlet-api;2.5-20081211 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mortbay.jetty#servlet-api;2.5-20081211 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\servlet-api\2.5-20081211\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.mortbay.jetty#servlet-api;2.5-20081211[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.mortbay.jetty#servlet-api;2.5-20081211[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.mortbay.jetty#servlet-api;2.5-20081211[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom (2.5-20081211)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.mortbay.jetty#servlet-api;2.5-20081211!servlet-api.pom(pom.original) (212ms)[0m
-[0m[[0minfo[0m] [0mResolving org.mortbay.jetty#jetty-parent;7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mortbay.jetty#jetty-parent;7 {}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\jetty-parent\7\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for org.mortbay.jetty#jetty-parent;7[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for org.mortbay.jetty#jetty-parent;7[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for org.mortbay.jetty#jetty-parent;7[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom (7)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] org.mortbay.jetty#jetty-parent;7!jetty-parent.pom(pom.original) (203ms)[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\jetty-parent\7\jars\jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/releases/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/releases/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/snapshots/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/snapshots/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/releases/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/releases/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/snapshots/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/snapshots/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org.mortbay.jetty/jetty-parent/7/jars/jetty-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.jar[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\org.mortbay.jetty\servlet-api\2.5-20081211\jars\servlet-api.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar[0m
-[0m[[0mdebug[0m] [0m	found org.mortbay.jetty#servlet-api;2.5-20081211 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.mortbay.jetty#servlet-api;2.5-20081211[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: org.mortbay.jetty#servlet-api;2.5-20081211[0m
+[0m[[0mdebug[0m] [0m	found org.mortbay.jetty#servlet-api;2.5-20081211 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.mortbay.jetty#jetty;6.1.26->org.mortbay.jetty#servlet-api;2.5-20081211 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc->org.mortbay.jetty#jetty;6.1.26 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc->org.mortbay.jetty#jetty;6.1.26 [compile->compile][0m
@@ -610,80 +388,18 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.collections#google-collections;1.0 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.google.collections#google-collections;1.0 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.collections#google-collections;1.0 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google.collections\google-collections\1.0\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for com.google.collections#google-collections;1.0[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/collections/google-collections/1.0/google-collections-1.0.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for com.google.collections#google-collections;1.0[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for com.google.collections#google-collections;1.0[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.pom (1.0)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google.collections#google-collections;1.0!google-collections.pom(pom.original) (209ms)[0m
-[0m[[0minfo[0m] [0mResolving com.google#google;1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google#google;1 {}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google\google\1\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for com.google#google;1[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/google/1/google-1.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for com.google#google;1[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/google/1/google-1.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for com.google#google;1[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/google/google/1/google-1.pom (1)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/google/1/google-1.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/google/1/google-1.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/google/1/google-1.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/google/1/google-1.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google#google;1!google.pom(pom.original) (204ms)[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google\google\1\jars\google.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/google/1/google-1.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/google/1/google-1.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/com/google/google/1/google-1.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/releases/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/releases/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/snapshots/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/snapshots/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/releases/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/releases/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/snapshots/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/snapshots/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/com.google/google/1/jars/google.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/google/google/1/google-1.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/google/google/1/google-1.jar[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google.collections\google-collections\1.0\jars\google-collections.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/collections/google-collections/1.0/google-collections-1.0.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.jar[0m
-[0m[[0mdebug[0m] [0m	found com.google.collections#google-collections;1.0 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.collections#google-collections;1.0[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.collections#google-collections;1.0[0m
+[0m[[0mdebug[0m] [0m	found com.google.collections#google-collections;1.0 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.collections#google-collections;1.0 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.collections#google-collections;1.0 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.collections#google-collections;1.0 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.http-client#google-http-client-jackson2;1.18.0-rc [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.google.http-client#google-http-client-jackson2;1.18.0-rc ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.http-client#google-http-client-jackson2;1.18.0-rc {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google.http-client\google-http-client-jackson2\1.18.0-rc\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for com.google.http-client#google-http-client-jackson2;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for com.google.http-client#google-http-client-jackson2;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for com.google.http-client#google-http-client-jackson2;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.pom (1.18.0-rc)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.google.http-client#google-http-client-jackson2;1.18.0-rc!google-http-client-jackson2.pom(pom.original) (195ms)[0m
-[0m[[0minfo[0m] [0mResolving com.google.http-client#google-http-client-parent;1.18.0-rc ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.http-client#google-http-client-parent;1.18.0-rc {}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.http-client#google-http-client-parent;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.http-client#google-http-client-parent;1.18.0-rc[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.google.http-client\google-http-client-jackson2\1.18.0-rc\jars\google-http-client-jackson2.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m	found com.google.http-client#google-http-client-jackson2;1.18.0-rc in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.http-client#google-http-client-jackson2;1.18.0-rc[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.http-client#google-http-client-jackson2;1.18.0-rc[0m
+[0m[[0mdebug[0m] [0m	found com.google.http-client#google-http-client-jackson2;1.18.0-rc in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.http-client#google-http-client-jackson2;1.18.0-rc [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.http-client#google-http-client-jackson2;1.18.0-rc [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.http-client#google-http-client-jackson2;1.18.0-rc->com.google.http-client#google-http-client;1.18.0-rc [compile->master(*)][0m
@@ -692,54 +408,9 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.apache.httpcomponents#httpclient;4.3 {compile=[default(compile)]} => dependency: org.apache.httpcomponents#httpclient;4.0.1 {compile=[default(compile)]}[0m
 [0m[[0minfo[0m] [0mResolving com.fasterxml.jackson.core#jackson-core;2.1.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml.jackson.core#jackson-core;2.1.3 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.fasterxml.jackson.core\jackson-core\2.1.3\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for com.fasterxml.jackson.core#jackson-core;2.1.3[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.1.3/jackson-core-2.1.3.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for com.fasterxml.jackson.core#jackson-core;2.1.3[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.1.3/jackson-core-2.1.3.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for com.fasterxml.jackson.core#jackson-core;2.1.3[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.1.3/jackson-core-2.1.3.pom (2.1.3)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.1.3/jackson-core-2.1.3.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.1.3/jackson-core-2.1.3.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.1.3/jackson-core-2.1.3.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.1.3/jackson-core-2.1.3.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.fasterxml.jackson.core#jackson-core;2.1.3!jackson-core.pom(pom.original) (210ms)[0m
-[0m[[0minfo[0m] [0mResolving com.fasterxml#oss-parent;4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.fasterxml#oss-parent;4 {}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.fasterxml\oss-parent\4\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for com.fasterxml#oss-parent;4[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/fasterxml/oss-parent/4/oss-parent-4.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for com.fasterxml#oss-parent;4[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/oss-parent/4/oss-parent-4.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for com.fasterxml#oss-parent;4[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/com/fasterxml/oss-parent/4/oss-parent-4.pom (4)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/com/fasterxml/oss-parent/4/oss-parent-4.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/oss-parent/4/oss-parent-4.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/fasterxml/oss-parent/4/oss-parent-4.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/fasterxml/oss-parent/4/oss-parent-4.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.fasterxml#oss-parent;4!oss-parent.pom(pom.original) (200ms)[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.fasterxml\oss-parent\4\jars\oss-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/fasterxml/oss-parent/4/oss-parent-4.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/oss-parent/4/oss-parent-4.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/com/fasterxml/oss-parent/4/oss-parent-4.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/releases/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/releases/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://schaloner.github.com/snapshots/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://schaloner.github.com/snapshots/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/releases/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/releases/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/snapshots/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://joscha.github.com/play-easymail/repo/snapshots/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/org/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo1.maven.org/maven2/com.fasterxml/oss-parent/4/jars/oss-parent.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/releases/com/fasterxml/oss-parent/4/oss-parent-4.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/releases/com/fasterxml/oss-parent/4/oss-parent-4.jar[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\com.fasterxml.jackson.core\jackson-core\2.1.3\jars\jackson-core.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.1.3/jackson-core-2.1.3.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.1.3/jackson-core-2.1.3.jar[0m
-[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.core#jackson-core;2.1.3 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.fasterxml.jackson.core#jackson-core;2.1.3[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: com.fasterxml.jackson.core#jackson-core;2.1.3[0m
+[0m[[0mdebug[0m] [0m	found com.fasterxml.jackson.core#jackson-core;2.1.3 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.http-client#google-http-client-jackson2;1.18.0-rc->com.fasterxml.jackson.core#jackson-core;2.1.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.http-client#google-http-client-jackson2;1.18.0-rc->com.google.http-client#google-http-client;1.18.0-rc [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.google.http-client#google-http-client-jackson2;1.18.0-rc->com.google.http-client#google-http-client;1.18.0-rc [runtime->compile][0m
@@ -748,7 +419,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.google.http-client#google-http-client-jackson2;1.18.0-rc [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-java_2.10;2.2.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@43256374[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2bc2c731[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-java_2.10;2.2.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: com.typesafe.play#play-java_2.10;2.2.3[0m
 [0m[[0mdebug[0m] [0m	found com.typesafe.play#play-java_2.10;2.2.3 in sbt-chain[0m
@@ -7717,30 +7388,10 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.httpcomponents#httpclient;4.3!httpclient.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-lang#commons-lang;2.6!commons-lang.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.api-client#google-api-client;1.18.0-rc!google-api-client.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/apis/google-api-services-youtube/v3-rev107-1.18.0-rc/google-api-services-youtube-v3-rev107-1.18.0-rc.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc!google-api-services-youtube.jar (427ms)[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-jetty/1.18.0-rc/google-oauth-client-jetty-1.18.0-rc.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc!google-oauth-client-jetty.jar (230ms)[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/collections/google-collections/1.0/google-collections-1.0.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.google.collections#google-collections;1.0!google-collections.jar (454ms)[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/http-client/google-http-client-jackson2/1.18.0-rc/google-http-client-jackson2-1.18.0-rc.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.google.http-client#google-http-client-jackson2;1.18.0-rc!google-http-client-jackson2.jar (206ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.apis#google-api-services-youtube;v3-rev107-1.18.0-rc!google-api-services-youtube.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc!google-oauth-client-jetty.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.collections#google-collections;1.0!google-collections.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.http-client#google-http-client-jackson2;1.18.0-rc!google-http-client-jackson2.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java_2.10;2.2.3!play-java_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-cache_2.10;2.2.3!play-cache_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play_2.10;2.2.3!play_2.10.jar[0m
@@ -7755,30 +7406,10 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.oauth-client#google-oauth-client;1.18.0-rc!google-oauth-client.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.http-client#google-http-client;1.18.0-rc!google-http-client.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.httpcomponents#httpclient;4.0.1!httpclient.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/com/google/oauth-client/google-oauth-client-java6/1.18.0-rc/google-oauth-client-java6-1.18.0-rc.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] com.google.oauth-client#google-oauth-client-java6;1.18.0-rc!google-oauth-client-java6.jar (192ms)[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/mortbay/jetty/jetty/6.1.26/jetty-6.1.26.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.mortbay.jetty#jetty;6.1.26!jetty.jar (349ms)[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.mortbay.jetty#jetty-util;6.1.26!jetty-util.jar (237ms)[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.mortbay.jetty#servlet-api;2.5-20081211!servlet-api.jar (212ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.oauth-client#google-oauth-client-java6;1.18.0-rc!google-oauth-client-java6.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mortbay.jetty#jetty;6.1.26!jetty.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mortbay.jetty#jetty-util;6.1.26!jetty-util.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mortbay.jetty#servlet-api;2.5-20081211!servlet-api.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.yaml#snakeyaml;1.12!snakeyaml.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.hibernate#hibernate-validator;5.0.1.Final!hibernate-validator.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.springframework#spring-context;3.2.3.RELEASE!spring-context.jar[0m
@@ -7887,7 +7518,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 13118ms :: artifacts dl 2399ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4069ms :: artifacts dl 102ms[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 compile produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 runtime produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 test produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-test.xml[0m
@@ -7901,5 +7532,5 @@
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 docs produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 pom produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 scala-tool produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (13118ms resolve - 2399ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (4069ms resolve - 102ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

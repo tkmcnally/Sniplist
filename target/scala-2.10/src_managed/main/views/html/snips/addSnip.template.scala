@@ -48,7 +48,7 @@ Seq[Any](format.raw/*1.28*/("""
         <section class="row embeded-video">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <div class="flex-video widescreen"><iframe id="add-snip-iframe" src="//www.youtube.com/embed/U5GxFK99Zxs" frameborder="0" allowfullscreen=""></iframe></div>
+                <div class="flex-video widescreen"><iframe id="add-snip-iframe" src="//www.youtube.com/embed/" frameborder="0" allowfullscreen=""></iframe></div>
             </div>
             <div class="col-md-3"></div>
         </section>
@@ -91,9 +91,9 @@ Seq[Any](format.raw/*1.28*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Jun 20 01:17:19 EDT 2014
+                    DATE: Fri Jun 20 15:00:52 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snips/addSnip.scala.html
-                    HASH: 7ff90b1f7bb681cae0b50f5afd429bd27f4ba9e1
+                    HASH: cd9286496c9b5e7a67e85c0331e9ad709d4acad0
                     MATRIX: 787->1|907->27|944->30|979->57|1018->59
                     LINES: 26->1|29->1|31->3|31->3|31->3
                     -- GENERATED --

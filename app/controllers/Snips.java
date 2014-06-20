@@ -94,8 +94,7 @@ public class Snips extends Controller {
         List<SearchResult> results = (List<SearchResult>) YoutubeVideoAPI.executeSearch(url);
         Result responseResult = badRequest();
 
-        if(url.contains(results.get(0).getId().getVideoId()))
-        if(results.isEmpty() || !url.contains(results.get(0).getId().getVideoId())) {
+        if (results.isEmpty() || !url.contains(results.get(0).getId().getVideoId())) {
             responseResult = badRequest("Invalid URL");
         } else {
             SearchResult result = results.get(0);

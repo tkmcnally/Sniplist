@@ -8,15 +8,21 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.DataStore;
 import com.google.api.client.util.store.FileDataStoreFactory;
 
+import javax.xml.ws.http.HTTPBinding;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.Authenticator;
+import java.net.InetSocketAddress;
+import java.net.PasswordAuthentication;
+import java.net.Proxy;
 import java.util.List;
 
 /**
@@ -24,10 +30,15 @@ import java.util.List;
  */
 public class YoutubeAuth  {
 
+
+
+
     /**
      * Define a global instance of the HTTP transport.
      */
-    public static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
+    public static final Proxy proxy = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("54.213.247.105",1080));
+
+    public static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport.Builder().setProxy(proxy).build();
 
     /**
      * Define a global instance of the JSON factory.
@@ -73,6 +84,28 @@ public class YoutubeAuth  {
 
         // Authorize.
         return new AuthorizationCodeInstalledApp(flow, localReceiver).authorize("user");
+    }
+
+    public static void proxySetup() {
+
+
+
+        final String authUser = "ubuntu";
+        final String authPassword = "";
+        Authenticator.setDefault(
+                new Authenticator() {
+                    public PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(
+                                authUser, authPassword.toCharArray());
+                    }
+                }
+        );
+
+       // System.setProperty("http.proxyHost", "ec2-54-213-127-249.us-west-2.compute.amazonaws.com");
+       // System.setProperty("http.proxyPort", "1080");
+        System.setProperty("http.proxyUser", authUser);
+        System.setProperty("http.proxyPassword", authPassword);
+
     }
 
 }
