@@ -4,7 +4,7 @@
 		module="sniplist$sources_javadoc_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140620131214"
+		publication="20140620152924"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -132,6 +132,10 @@
 		<dependency org="com.google.http-client" name="google-http-client-jackson2" rev="1.18.0-rc" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="google-http-client-jackson2" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="google-http-client-jackson2" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
+		</dependency>
+		<dependency org="de.u-mass" name="lastfm-java" rev="0.1.2" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
+			<artifact name="lastfm-java" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+			<artifact name="lastfm-java" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
 		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.2.3" transitive="false" conf="compile->default(compile);runtime->default(compile);test->default(compile);compile-internal->default(compile);runtime-internal->default(compile);test-internal->default(compile)">
 			<artifact name="play-java_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>

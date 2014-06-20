@@ -4,7 +4,7 @@
 		module="sniplist_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140620131302"
+		publication="20140620153835"
 	>
 		<description>
 		Sniplist
@@ -49,6 +49,7 @@
 		<dependency org="com.google.oauth-client" name="google-oauth-client-jetty" rev="1.18.0-rc" conf="compile->default(compile)"/>
 		<dependency org="com.google.collections" name="google-collections" rev="1.0" conf="compile->default(compile)"/>
 		<dependency org="com.google.http-client" name="google-http-client-jackson2" rev="1.18.0-rc" conf="compile->default(compile)"/>
+		<dependency org="de.u-mass" name="lastfm-java" rev="0.1.2" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java_2.10" rev="2.2.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.10" rev="2.2.3" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play_2.10" rev="2.2.3" conf="compile->default(compile)"/>

@@ -2,6 +2,9 @@
 
 @main("My Snips", "mySnips") {
     <div class="container mtb">
+        <div id="global-message" class="alert alert-danger hidden">
+
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <h1>Snips</h1>
@@ -15,9 +18,11 @@
                         <tr>
                             <th title="Song" align="right">Song</th>
                             <th title="Artist" align="right">Artist</th>
+                            <th title="Album" align="right">Album</th>
                             <th class="{sorter: false}" title="Sniplists" align="right">Sniplists</th>
                             <th class="{sorter: false}" title="*" align="center">*</th>
                             <th class="{sorter: false}" title="Play" align="right">Play</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -25,17 +30,22 @@
                             <tr class="evenrow">
                                 <td align="center" class="right">@snip.song_name</td>
                                 <td align="right" class="right">@snip.artist_name</td>
+                                <td align="right" class="right">@snip.album_name</td>
                                 <td align="right" class="right">-></td>
                                 <td align="right" class="right">
                                     <div class="dropdown">
-                                        <a class="btn btn-sm dropdown-toggle" data-toggle="dropdown" href="#">+
+
+                                        <a id="@snip.id" class="btn btn-sm dropdown-toggle" data-toggle="dropdown" href="#">+
                                         </a>
 
                                         <ul class="dropdown-menu">
+                                            
                                             <li><a align="left" href="">Add to Playlist -></a></li>
                                             <li><a align="left" href=""><i class="icon-off"></i>Save as Snip</a></li>
                                             <li><a align="left" href=""><i class="icon-off"></i>Share on Sniplist</a></li>
                                             <li><a align="left" href=""><i class="icon-off"></i>Share on -></a></li>
+                                            <li class="divider"></li>
+                                            <li><a align="left" href="#" class="dropdown-delete-snip"><i class="icon-off"></i>Delete</a></li>
                                         </ul>
                                     </div>
 
@@ -43,6 +53,7 @@
 
                                 </td>
                                 <td align="right" class="right"><a href="http://www.youtube.com/watch?v=@snip.url">Play!</a></td>
+                                <td class="hidden snip-id" id="@snip.id" ></td>
                             </tr>
                         }
                     </tbody>

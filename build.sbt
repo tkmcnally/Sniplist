@@ -18,6 +18,7 @@ libraryDependencies ++= Seq(
   "com.google.oauth-client" % "google-oauth-client-jetty" % "1.18.0-rc",
   "com.google.collections" % "google-collections" % "1.0",
   "com.google.http-client" % "google-http-client-jackson2" % "1.18.0-rc",
+  "de.u-mass" % "lastfm-java" % "0.1.2",
   //"com.feth" %% "play-authenticate" % "0.5.2-SNAPSHOT" withSources(),
   javaCore,
   cache

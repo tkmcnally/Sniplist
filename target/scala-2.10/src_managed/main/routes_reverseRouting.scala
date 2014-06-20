@@ -1,6 +1,6 @@
 // @SOURCE:C:/Projects/Sniplist/conf/routes
-// @HASH:b43580ea6e784ba6dd6dc7fd43f99a539e906aca
-// @DATE:Thu Jun 19 23:38:59 EDT 2014
+// @HASH:c32a365121f206af180c2dd74e0ca500da18f2c1
+// @DATE:Fri Jun 20 18:16:50 EDT 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -39,8 +39,9 @@ def authenticate(provider:String): Call = {
 }
                   
 
-// @LINE:64
-// @LINE:61
+// @LINE:68
+// @LINE:65
+// @LINE:60
 // @LINE:58
 // @LINE:56
 // @LINE:54
@@ -74,11 +75,11 @@ def authenticate(provider:String): Call = {
 // @LINE:6
 package controllers {
 
-// @LINE:64
+// @LINE:68
 class ReverseAssets {
     
 
-// @LINE:64
+// @LINE:68
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -87,7 +88,7 @@ def at(file:String): Call = {
 }
                           
 
-// @LINE:61
+// @LINE:65
 // @LINE:23
 // @LINE:22
 // @LINE:17
@@ -155,7 +156,7 @@ def contact(): Call = {
 }
                                                 
 
-// @LINE:61
+// @LINE:65
 def javascriptRoutes(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/javascripts/routes")
 }
@@ -232,6 +233,7 @@ def forgotPassword(email:String = ""): Call = {
 }
                           
 
+// @LINE:60
 // @LINE:58
 // @LINE:56
 // @LINE:54
@@ -241,7 +243,7 @@ class ReverseSnips {
 
 // @LINE:56
 def getVideo(songUrl:String): Call = {
-   Call("POST", _prefix + { _defaultPrefix } + "snips/add/getVideo/" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("songUrl", songUrl)))))
+   Call("POST", _prefix + { _defaultPrefix } + "snips/add/getVideo" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("songUrl", songUrl)))))
 }
                                                 
 
@@ -260,6 +262,12 @@ def add(): Call = {
 // @LINE:58
 def saveSnip(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "snips/add/saveSnip")
+}
+                                                
+
+// @LINE:60
+def deleteSnip(id:String): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "snips/add/deleteSnip" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("id", id)))))
 }
                                                 
     
@@ -374,8 +382,9 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 }
         
 
-// @LINE:64
-// @LINE:61
+// @LINE:68
+// @LINE:65
+// @LINE:60
 // @LINE:58
 // @LINE:56
 // @LINE:54
@@ -409,11 +418,11 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:64
+// @LINE:68
 class ReverseAssets {
     
 
-// @LINE:64
+// @LINE:68
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -427,7 +436,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:61
+// @LINE:65
 // @LINE:23
 // @LINE:22
 // @LINE:17
@@ -540,7 +549,7 @@ def contact : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:61
+// @LINE:65
 def javascriptRoutes : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.javascriptRoutes",
    """
@@ -667,6 +676,7 @@ def forgotPassword : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:60
 // @LINE:58
 // @LINE:56
 // @LINE:54
@@ -679,7 +689,7 @@ def getVideo : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Snips.getVideo",
    """
       function(songUrl) {
-      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "snips/add/getVideo/" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("songUrl", songUrl)])})
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "snips/add/getVideo" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("songUrl", songUrl)])})
       }
    """
 )
@@ -713,6 +723,17 @@ def saveSnip : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function() {
       return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "snips/add/saveSnip"})
+      }
+   """
+)
+                        
+
+// @LINE:60
+def deleteSnip : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Snips.deleteSnip",
+   """
+      function(id) {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "snips/add/deleteSnip" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id)])})
       }
    """
 )
@@ -865,8 +886,9 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 }
         
 
-// @LINE:64
-// @LINE:61
+// @LINE:68
+// @LINE:65
+// @LINE:60
 // @LINE:58
 // @LINE:56
 // @LINE:54
@@ -901,11 +923,11 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 package controllers.ref {
 
 
-// @LINE:64
+// @LINE:68
 class ReverseAssets {
     
 
-// @LINE:64
+// @LINE:68
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -914,7 +936,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
-// @LINE:61
+// @LINE:65
 // @LINE:23
 // @LINE:22
 // @LINE:17
@@ -982,7 +1004,7 @@ def contact(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:61
+// @LINE:65
 def javascriptRoutes(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.javascriptRoutes(), HandlerDef(this, "controllers.Application", "javascriptRoutes", Seq(), "GET", """ Javascript routing""", _prefix + """assets/javascripts/routes""")
 )
@@ -1059,6 +1081,7 @@ def forgotPassword(email:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:60
 // @LINE:58
 // @LINE:56
 // @LINE:54
@@ -1068,7 +1091,7 @@ class ReverseSnips {
 
 // @LINE:56
 def getVideo(songUrl:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Snips.getVideo(songUrl), HandlerDef(this, "controllers.Snips", "getVideo", Seq(classOf[String]), "POST", """""", _prefix + """snips/add/getVideo/""")
+   controllers.Snips.getVideo(songUrl), HandlerDef(this, "controllers.Snips", "getVideo", Seq(classOf[String]), "POST", """""", _prefix + """snips/add/getVideo""")
 )
                       
 
@@ -1087,6 +1110,12 @@ def add(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:58
 def saveSnip(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Snips.saveSnip(), HandlerDef(this, "controllers.Snips", "saveSnip", Seq(), "POST", """""", _prefix + """snips/add/saveSnip""")
+)
+                      
+
+// @LINE:60
+def deleteSnip(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Snips.deleteSnip(id), HandlerDef(this, "controllers.Snips", "deleteSnip", Seq(classOf[String]), "POST", """""", _prefix + """snips/add/deleteSnip""")
 )
                       
     

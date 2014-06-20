@@ -3,9 +3,7 @@
 @main("Add Snip", "addSnip") {
     <div class="container mtb">
         <div class="row">
-            <div id="global-message" class="alert alert-danger hidden">
-                asd
-            </div>
+            <div id="global-message" class="alert alert-danger hidden"></div>
             <h1>Add Snip</h1>
         </div>
         <div class="row">
@@ -40,7 +38,14 @@
         </div>
         <div class="row">
             <div class="col-md-3"></div>
-            <div class="centered col-md-6">
+            <div class="input-group col-md-6">
+                <span class="input-group-addon">Album</span>
+                <input id="album-input" type="text" class="form-control" placeholder="Ex. Elephant Shell">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="centered col-md-6 top-buffer-sm">
                 <button id="save_snip_btn" type="button" class="btn btn-primary">Save Snip</button>
             </div>
             <div class="col-md-3"></div>
@@ -49,6 +54,7 @@
             <input name="snip_title" type="text" value="">
             <input name="snip_video_id" type="text" value="">
             <input name="snip_artist" type="text" value="">
+            <input name="snip_album" type="text" value="">
         </form>
     </div>
 }

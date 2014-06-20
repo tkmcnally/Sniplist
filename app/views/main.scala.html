@@ -163,6 +163,30 @@
             <script type="text/javascript" src='@routes.Application.javascriptRoutes()'></script>
 
             <script type="text/javascript" charset="utf-8">
+
+
+            $('.dropdown-delete-snip').click(function(e) {
+                e.preventDefault();
+                deleteSnip($(this));
+            });
+
+            $('#url-input').keypress(function(e) {
+            if( e.which == 13) {
+            getVideo ( $ ( this ).val ( ) ) ;
+
+            }
+            });
+
+            $('#url-input-btn').click(function() {
+            getVideo($('#url-input').val());
+            });
+
+
+            $('#save_snip_btn').click(function() {
+            saveSnip();
+            });
+
+
             $(document).ready(function() {
                 $("table").tablecloth({
                     theme: "dark",
@@ -174,23 +198,6 @@
                     cleanElements: "th td",
                     customClass: "my-table"
                 });
-
-                $('#url-input').keypress(function(e) {
-                    if( e.which == 13) {
-                        getVideo ( $ ( this ).val ( ) ) ;
-
-                    }
-                });
-
-                $('#url-input-btn').click(function() {
-                        getVideo($('#url-input').val());
-                })
-
-
-                $('#save_snip_btn').click(function() {
-                    saveSnip();
-                });
-
             });
             </script>
 

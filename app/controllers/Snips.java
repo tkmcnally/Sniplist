@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.api.client.json.Json;
 import com.google.api.services.youtube.model.SearchResult;
+import de.umass.lastfm.Track;
 import models.Snip;
 import models.User;
 import play.data.Form;
@@ -18,9 +19,11 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import providers.MyUsernamePasswordAuthProvider;
 import service.api.VideoAPI;
+import service.api.impl.LastFMAPI;
 import service.api.impl.YoutubeVideoAPI;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import static play.data.Form.*;
@@ -42,6 +45,8 @@ public class Snips extends Controller {
         public String snip_video_id;
 
         public String snip_artist;
+
+        public String snip_album;
 
         public String validate() {
             if (snip_title == null || YoutubeVideoAPI.executeSearch(snip_video_id).size() == 0) {
@@ -99,16 +104,49 @@ public class Snips extends Controller {
         } else {
             SearchResult result = results.get(0);
 
-            ObjectMapper mapper = new ObjectMapper();
+            Snip snip = LastFMAPI.executeSearch(result.getSnippet().getTitle());
 
+            ObjectMapper mapper = new ObjectMapper();
             ObjectNode node = mapper.createObjectNode();
-            node.put("title", result.getSnippet().getTitle());
+            node.put("title", snip.song_name);
+            node.put("artist", snip.artist_name);
+            node.put("album", snip.album_name);
             node.put("video_id", result.getId().getVideoId());
 
+
+
             responseResult = ok(node);
+
+        }
+        return responseResult;
+    }
+
+    public static Result deleteSnip(String id) {
+        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
+        final User user = Application.getLocalUser(session());
+
+        Result result = internalServerError();
+        System.out.println("id: " + id);
+        Snip snip = Snip.findById(id).get();
+
+        if(snip != null) {
+            if(Snip.isOwner(user, snip)) {
+                Snip.deleteById(id);
+                result = ok("Snip '" + snip.song_name + "' has been deleted!");
+            } else {
+                System.out.println("ownsership");
+                result = badRequest("Could not validate your ownsership of that snip.");
+            }
+        } else {
+            System.out.println("find it");
+            badRequest("Could not find that snip.");
         }
 
-        return responseResult;
+        return result;
+
+
+
+
     }
 
 

@@ -113,7 +113,8 @@ public class Application extends Controller {
         return ok(
                 Routes.javascriptRouter("jsRoutes",
                         controllers.routes.javascript.Snips.getVideo(),
-                        controllers.routes.javascript.Snips.saveSnip())
+                        controllers.routes.javascript.Snips.saveSnip(),
+                        controllers.routes.javascript.Snips.deleteSnip())
         );
     }
 

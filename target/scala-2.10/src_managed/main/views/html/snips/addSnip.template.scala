@@ -31,9 +31,7 @@ Seq[Any](format.raw/*1.28*/("""
 """),_display_(Seq[Any](/*3.2*/main("Add Snip", "addSnip")/*3.29*/ {_display_(Seq[Any](format.raw/*3.31*/("""
     <div class="container mtb">
         <div class="row">
-            <div id="global-message" class="alert alert-danger hidden">
-                asd
-            </div>
+            <div id="global-message" class="alert alert-danger hidden"></div>
             <h1>Add Snip</h1>
         </div>
         <div class="row">
@@ -68,7 +66,14 @@ Seq[Any](format.raw/*1.28*/("""
         </div>
         <div class="row">
             <div class="col-md-3"></div>
-            <div class="centered col-md-6">
+            <div class="input-group col-md-6">
+                <span class="input-group-addon">Album</span>
+                <input id="album-input" type="text" class="form-control" placeholder="Ex. Elephant Shell">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="centered col-md-6 top-buffer-sm">
                 <button id="save_snip_btn" type="button" class="btn btn-primary">Save Snip</button>
             </div>
             <div class="col-md-3"></div>
@@ -77,6 +82,7 @@ Seq[Any](format.raw/*1.28*/("""
             <input name="snip_title" type="text" value="">
             <input name="snip_video_id" type="text" value="">
             <input name="snip_artist" type="text" value="">
+            <input name="snip_album" type="text" value="">
         </form>
     </div>
 """)))})))}
@@ -91,9 +97,9 @@ Seq[Any](format.raw/*1.28*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Jun 20 15:00:52 EDT 2014
+                    DATE: Fri Jun 20 18:15:50 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snips/addSnip.scala.html
-                    HASH: cd9286496c9b5e7a67e85c0331e9ad709d4acad0
+                    HASH: 20686ff98ca8a243fc264ed36480d72b31f33a08
                     MATRIX: 787->1|907->27|944->30|979->57|1018->59
                     LINES: 26->1|29->1|31->3|31->3|31->3
                     -- GENERATED --
