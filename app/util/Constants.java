@@ -11,6 +11,16 @@ public class Constants {
 
         public static String YOUTUBE_APIKEY = "google.api.youtube.apikey";
 
+        public static String AMAZON_EC2_IP = "amazon.ec2.proxy.ip";
+
+        public static String AMAZON_EC2_PORT = "amazon.ec2.proxy.port";
+
+        public static String AMAZON_EC2_USERNAME = "amazon.ec2.proxy.username";
+
+        public static String AMAZON_EC2_PASSWORD = "amazon.ec2.proxy.password";
+
+
+
     }
     public static class Security {
 

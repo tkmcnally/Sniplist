@@ -7,6 +7,7 @@ import play.Application;
 import play.GlobalSettings;
 import play.Logger;
 import play.mvc.Call;
+import service.api.YoutubeAuth;
 import util.MorphiaUtil;
 
 import java.util.Arrays;
@@ -25,6 +26,8 @@ public class Global extends GlobalSettings {
         Logger.info("Application has been started!");
 
         MorphiaUtil.start();
+
+        YoutubeAuth.proxySetup();
 
         Logger.info("Startup initialization complete.");
 

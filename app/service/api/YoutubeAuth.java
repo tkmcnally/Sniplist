@@ -13,6 +13,7 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.DataStore;
 import com.google.api.client.util.store.FileDataStoreFactory;
+import util.Constants;
 
 import javax.xml.ws.http.HTTPBinding;
 import java.io.File;
@@ -31,12 +32,13 @@ import java.util.List;
 public class YoutubeAuth  {
 
 
-
-
     /**
      * Define a global instance of the HTTP transport.
      */
-    public static final Proxy proxy = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("54.213.247.105",1080));
+    private static final String ip_addr = play.Play.application().configuration().getString(Constants.Configuration.AMAZON_EC2_IP);
+    private static final int port = play.Play.application().configuration().getInt(Constants.Configuration.AMAZON_EC2_PORT);
+
+    public static final Proxy proxy = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(ip_addr,port));
 
     public static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport.Builder().setProxy(proxy).build();
 
@@ -89,9 +91,8 @@ public class YoutubeAuth  {
     public static void proxySetup() {
 
 
-
-        final String authUser = "ubuntu";
-        final String authPassword = "";
+        final String authUser = play.Play.application().configuration().getString(Constants.Configuration.AMAZON_EC2_USERNAME);
+        final String authPassword = play.Play.application().configuration().getString(Constants.Configuration.AMAZON_EC2_PASSWORD);
         Authenticator.setDefault(
                 new Authenticator() {
                     public PasswordAuthentication getPasswordAuthentication() {
@@ -101,8 +102,6 @@ public class YoutubeAuth  {
                 }
         );
 
-       // System.setProperty("http.proxyHost", "ec2-54-213-127-249.us-west-2.compute.amazonaws.com");
-       // System.setProperty("http.proxyPort", "1080");
         System.setProperty("http.proxyUser", authUser);
         System.setProperty("http.proxyPassword", authPassword);
 
