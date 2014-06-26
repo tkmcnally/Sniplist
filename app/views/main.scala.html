@@ -16,41 +16,32 @@
             <meta name="description" content="">
             <meta name="author" content="">
 
-                <!-- Favicon -->
-            <link rel="shortcut icon" href="@routes.Assets.at("ico/favicon.ico")">
+            <!-- Sniplist Favicon -->
+            <link rel="shortcut icon" href="@routes.Assets.at("img/icons/favicon.ico")">
 
-                <!-- Bootstrap core CSS -->
+            <!-- Bootstrap core CSS -->
             <link href="@routes.Assets.at("css/bootstrap.css")" rel="stylesheet">
             <link href="@routes.Assets.at("css/font-awesome.min.css")" rel="stylesheet">
 
+            <!-- Social Media Icon CSS -->
             <link href="@routes.Assets.at("css/transparent.css")" rel="stylesheet"/>
 
-                <!-- Custom styles for this template -->
+                <!-- Custom Sniplist Styles -->
             <link href="@routes.Assets.at("css/style.css")" rel="stylesheet">
             <link href="@routes.Assets.at("css/responsive-video.css")" rel="stylesheet">
 
-                <!-- Custom styles for snips -->
+                <!-- Custom styles for TableclothJs -->
             <link href="@routes.Assets.at("css/prettify.css")" rel="stylesheet">
             <link href="@routes.Assets.at("css/tablecloth.css")" rel="stylesheet">
 
 
+            <!-- Styles for MediaElementJs -->
             <link  href="@routes.Assets.at("css/mediaelementplayer.css")" rel="Stylesheet" />
             <link  href="@routes.Assets.at("css/mejs-skins.css")" rel="Stylesheet" />
 
-            <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
-                <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
-            <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-            <script type="text/javascript" src="@routes.Assets.at("js/jQEditRangeSlider-min.js")"></script>
+            <!-- JQueryUI CSS -->
             <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
             <link rel="stylesheet" type="text/css" href="@routes.Assets.at("css/iThing.css")">
-
-            <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-                <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-
 
         </head>
 
@@ -119,12 +110,12 @@
             </div>
 
             <div id="wrapper-content">
-
-                        <!-- INSERTED CONTENT GOES HERE -->
+                        <!-- INSERTED CONTENT GOES HERE (From other scala templates) -->
                     @content
             </div>
-                <!-- *****************************************************************************************************************
-        FOOTER
+
+        <!-- *****************************************************************************************************************
+            FOOTER
         ***************************************************************************************************************** -->
             <div id="footerwrap">
                 <div class="container">
@@ -154,173 +145,129 @@
                 </div><! --/container -->
             </div><! --/footerwrap -->
 
-            <!-- Bootstrap core JavaScript
-        ================================================== -->
-            <!-- Placed at the end of the document so the pages load faster -->
-            <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
-            <script src="@routes.Assets.at("js/bootstrap.min.js")"></script>
-            <script src="@routes.Assets.at("js/retina-1.1.0.js")"></script>
-            <script src="@routes.Assets.at("js/jquery.hoverdir.js")"></script>
-            <script src="@routes.Assets.at("js/jquery.hoverex.min.js")"></script>
-            <script src="@routes.Assets.at("js/jquery.prettyPhoto.js")"></script>
-            <script src="@routes.Assets.at("js/jquery.isotope.min.js")"></script>
-            <!--<script src="@routes.Assets.at("js/custom.js")"></script>-->
-
-            <!--<script src="@routes.Assets.at("js/jquery-1.7.2.min.js")"></script>-->
-            <!--<script src="@routes.Assets.at("js/jquery.min.js")"></script>-->
-            <script src="@routes.Assets.at("js/jquery.metadata.js")"></script>
-            <script src="@routes.Assets.at("js/jquery.tablesorter.min.js")"></script>
-            <script src="@routes.Assets.at("js/jquery.tablecloth.js")"></script>
-            <script src="@routes.Assets.at("js/bootstrap.js")"></script>
-
-            <script src="@routes.Assets.at("js/youtube_embed_formatter.js")"></script>
 
 
-            <script type="text/javascript" src='@routes.Application.javascriptRoutes()'></script>
+            <!-- Placed at the end of the document so the pages load faster
+            =========================================== -->
 
+            <!-- JQuery JS External Imports -->
+            <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+            <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
-            <!-- Media Element Player -->
-            <script src="@routes.Assets.at("js/mediaelement-and-player.min.js")"></script>
-            <script src="@routes.Assets.at("js/custom-crop-slider.js")"></script>
+            <!-- JQRangeSlider JS -->
+            <script type="text/javascript" src="@routes.Assets.at("js/jqrangeslider/jQEditRangeSlider-min.js")"></script>
 
+            <!-- Bootstrap core JavaScript -->
+            <script src="@routes.Assets.at("js/bootstrap/bootstrap.min.js")"></script>
+            <script src="@routes.Assets.at("js/bootstrap/retina-1.1.0.js")"></script>
+            <script src="@routes.Assets.at("js/jquery/jquery.hoverdir.js")"></script>
+            <script src="@routes.Assets.at("js/jquery/jquery.hoverex.min.js")"></script>
+            <script src="@routes.Assets.at("js/tablecloth/jquery.prettyPhoto.js")"></script>
+            <script src="@routes.Assets.at("js/jquery/jquery.isotope.min.js")"></script>
+            <script src="@routes.Assets.at("js/jquery/jquery.metadata.js")"></script>
+            <script src="@routes.Assets.at("js/tablecloth/jquery.tablesorter.min.js")"></script>
+            <script src="@routes.Assets.at("js/tablecloth/jquery.tablecloth.js")"></script>
+            <script src="@routes.Assets.at("js/bootstrap/bootstrap.js")"></script>
+
+            <!-- Sniplist core JavaScript -->
+            <script src="@routes.Assets.at("js/sniplist/media_player_youtube.js")"></script>
+
+            <!-- Play Framework JavaScript routes for AJAX calls. -->
+            <script src="@routes.Application.javascriptRoutes()" type="text/javascript"></script>
+
+            <!-- MediaElementPlayer -->
+            <script src="@routes.Assets.at("js/mediaelement/mediaelement-and-player.min.js")"></script>
+            <script src="@routes.Assets.at("js/sniplist/custom-crop-slider.js")"></script>
 
             <script type="text/javascript" charset="utf-8">
 
+                //GLOBAL MEDIA PLAYER
+                var globalPlayer;
 
-            $('.dropdown-delete-snip').click(function(e) {
-                e.preventDefault();
-                deleteSnip($(this));
-            });
+                // Portfolio
+                (function($) {
+                "use strict";
+                var $container = $('.portfolio'),
+                $items = $container.find('.portfolio-item'),
+                portfolioLayout = 'fitRows';
 
-            $('#url-input').keypress(function(e) {
-            if( e.which == 13) {
-            getVideo ( $ ( this ).val ( ) ) ;
+                if( $container.hasClass('portfolio-centered') ) {
+                portfolioLayout = 'masonry';
+                }
 
-            }
-            });
+               /* $container.isotope({
+                filter: '*',
+                animationEngine: 'best-available',
+                layoutMode: portfolioLayout,
+                animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+                },
+                masonry: {
+                }
+                }, refreshWaypoints());
+                */
+                function refreshWaypoints() {
+                setTimeout(function() {
+                }, 1000);
+                }
 
-            $('#url-input-btn').click(function() {
-            getVideo($('#url-input').val());
-            });
+                $('nav.portfolio-filter ul a').on('click', function() {
+                var selector = $(this).attr('data-filter');
+                $container.isotope({ filter: selector }, refreshWaypoints());
+                $('nav.portfolio-filter ul a').removeClass('active');
+                $(this).addClass('active');
+                return false;
+                });
 
+                function getColumnNumber() {
+                var winWidth = $(window).width(),
+                columnNumber = 1;
 
-            $('#save_snip_btn').click(function() {
-            saveSnip();
-            });
+                if (winWidth > 1200) {
+                columnNumber = 5;
+                } else if (winWidth > 950) {
+                columnNumber = 4;
+                } else if (winWidth > 600) {
+                columnNumber = 3;
+                } else if (winWidth > 400) {
+                columnNumber = 2;
+                } else if (winWidth > 250) {
+                columnNumber = 1;
+                }
+                return columnNumber;
+                }
 
+                function setColumns() {
+                var winWidth = $(window).width(),
+                columnNumber = getColumnNumber(),
+                itemWidth = Math.floor(winWidth / columnNumber);
 
+                $container.find('.portfolio-item').each(function() {
+                $(this).css( {
+                width : itemWidth + 'px'
+                });
+                });
+                }
 
+                function setPortfolio() {
+                setColumns();
+                $container.isotope('reLayout');
+                }
 
+                /*
+                $container.imagesLoaded(function () {
+                setPortfolio();
+                });*/
 
-
-            $(document).ready(function() {
-                $("table").tablecloth({
-                    theme: "dark",
-                    bordered: true,
-                    condensed: true,
-                    striped: true,
-                    sortable: true,
-                    clean: true,
-                    cleanElements: "th td",
-                    customClass: "my-table"
+                $(window).on('resize', function () {
+                setPortfolio();
                 });
 
 
-            });
 
-
-
-
-            </script>
-
-            <script>
-            // Portfolio
-            (function($) {
-            "use strict";
-            var $container = $('.portfolio'),
-            $items = $container.find('.portfolio-item'),
-            portfolioLayout = 'fitRows';
-
-            if( $container.hasClass('portfolio-centered') ) {
-            portfolioLayout = 'masonry';
-            }
-
-           /* $container.isotope({
-            filter: '*',
-            animationEngine: 'best-available',
-            layoutMode: portfolioLayout,
-            animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-            },
-            masonry: {
-            }
-            }, refreshWaypoints());
-            */
-            function refreshWaypoints() {
-            setTimeout(function() {
-            }, 1000);
-            }
-
-            $('nav.portfolio-filter ul a').on('click', function() {
-            var selector = $(this).attr('data-filter');
-            $container.isotope({ filter: selector }, refreshWaypoints());
-            $('nav.portfolio-filter ul a').removeClass('active');
-            $(this).addClass('active');
-            return false;
-            });
-
-            function getColumnNumber() {
-            var winWidth = $(window).width(),
-            columnNumber = 1;
-
-            if (winWidth > 1200) {
-            columnNumber = 5;
-            } else if (winWidth > 950) {
-            columnNumber = 4;
-            } else if (winWidth > 600) {
-            columnNumber = 3;
-            } else if (winWidth > 400) {
-            columnNumber = 2;
-            } else if (winWidth > 250) {
-            columnNumber = 1;
-            }
-            return columnNumber;
-            }
-
-            function setColumns() {
-            var winWidth = $(window).width(),
-            columnNumber = getColumnNumber(),
-            itemWidth = Math.floor(winWidth / columnNumber);
-
-            $container.find('.portfolio-item').each(function() {
-            $(this).css( {
-            width : itemWidth + 'px'
-            });
-            });
-            }
-
-            function setPortfolio() {
-            setColumns();
-            $container.isotope('reLayout');
-            }
-
-            /*
-            $container.imagesLoaded(function () {
-            setPortfolio();
-            });*/
-
-            $(window).on('resize', function () {
-            setPortfolio();
-            });
-
-
-
-            })(jQuery);
-
-
-
+                })(jQuery);
             </script>
         </body>
     </html>

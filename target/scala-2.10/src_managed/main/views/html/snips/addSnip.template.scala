@@ -47,11 +47,12 @@ Seq[Any](format.raw/*1.28*/("""
             <div class="col-md-2"></div>
             <div class="col-md-8 center-block centered">
 
-                <video id="player1" width="640" height="360" controls="control" preload="none">
-                    <source src="http://www.youtube.com/" type="video/youtube" />
+                <video id="player" width="640" height="360" controls="control" preload="none">
+                    <source src="https://www.youtube.com/watch?v=smqNtBXN5Mc" type="video/youtube" />
                 </video>
 
                 <div id="slider" class="slider-bar"></div>
+                <button id="play-snip-button" type="button" class="btn btn-primary btn-large bottom-buffer-sm">Play Snip</button>
             </div>
 
             <div class="col-md-2"></div>
@@ -109,9 +110,9 @@ Seq[Any](format.raw/*1.28*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 25 02:26:24 EDT 2014
+                    DATE: Thu Jun 26 18:46:23 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snips/addSnip.scala.html
-                    HASH: e696d31a017f65cfab92787170b7a58e2a835f87
+                    HASH: e935c051311b37bebec6820a3dc76a7f2b07e883
                     MATRIX: 787->1|907->27|944->30|979->57|1018->59
                     LINES: 26->1|29->1|31->3|31->3|31->3
                     -- GENERATED --

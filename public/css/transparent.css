@@ -19,13 +19,13 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 }
 
 .twitter_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px 0;
 	opacity: 1;
 	-webkit-transition: opacity 0.5s;
@@ -46,14 +46,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -30px;
 }
 
 .linkedin_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -30px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -74,14 +74,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -60px;
 }
 
 .dropbox_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -60px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -103,14 +103,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -90px;
 }
 
 .pinterest_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -90px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -132,14 +132,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -120px;
 }
 
 .blogger_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -120px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -161,14 +161,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -150px;
 }
 
 .lastfm_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -150px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -190,14 +190,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -180px;
 }
 
 .facebook_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -180px;
 	opacity: 1;
 	-webkit-transition: opacity 0.5s;
@@ -219,14 +219,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -210px;
 }
 
 .dribbble_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -210px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -248,14 +248,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -240px;
 }
 
 .soundcloud_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -240px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -277,14 +277,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -270px;
 }
 
 .google_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -270px;
 	opacity: 1;
 	-webkit-transition: opacity 0.5s;
@@ -306,14 +306,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -300px;
 }
 
 .skype_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -300px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -335,14 +335,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -330px;
 }
 
 .wordpress_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -330px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -363,14 +363,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -360px;
 }
 
 .youtube_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -360px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -392,14 +392,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -390px;
 }
 
 .yahoo_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -390px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -421,14 +421,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -420px;
 }
 
 .digg_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -420px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -450,14 +450,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -450px;
 }
 
 .youtubeclassic_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -450px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -479,14 +479,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -480px;
 }
 
 .windowslive_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -480px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -508,14 +508,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -510px;
 }
 
 .stumbleupon_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -510px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -537,14 +537,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -540px;
 }
 
 .tumblr_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -540px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -566,14 +566,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -570px;
 }
 
 .appdev_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -570px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -595,14 +595,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -600px;
 }
 
 .ebay_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -600px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -624,14 +624,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -630px;
 }
 
 .apple_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -630px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -653,14 +653,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -660px;
 }
 
 .amazon_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -660px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -682,14 +682,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -690px;
 }
 
 .picassa_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -690px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -711,14 +711,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -720px;
 }
 
 .behance_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -720px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -740,14 +740,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -750px;
 }
 
 .android_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -750px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -768,14 +768,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -780px;
 }
 
 .paypal_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -780px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -796,14 +796,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -810px;
 }
 
 .vimeo_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -810px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -825,14 +825,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -840px;
 }
 
 .instagram_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -840px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -854,14 +854,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -870px;
 }
 
 .deviantart_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -870px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -883,14 +883,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -900px;
 }
 
 .flickr_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -900px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -912,14 +912,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -930px;
 }
 
 .myspace_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -930px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -941,14 +941,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -960px;
 }
 
 .googledrive_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -960px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -970,14 +970,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -990px;
 }
 
 .rss_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -990px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -999,14 +999,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -1020px;
 }
 
 .themeforest_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -1020px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
@@ -1028,14 +1028,14 @@ Please read the license agreement.
 	text-indent: -9999px;
 	width: 30px;
 	height: 30px;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position:0 -1050px;
 }
 
 .delicious_transp span {
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-	background:url(../icons/social_icons_transp.svg) no-repeat;
+	background:url(../img/icons/social_icons_transp.svg) no-repeat;
 	background-position: -30px -1050px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s;
