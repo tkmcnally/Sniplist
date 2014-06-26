@@ -4,7 +4,7 @@
 		module="sniplist$sources_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140624202421"
+		publication="20140626155408"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>

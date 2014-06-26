@@ -37,7 +37,7 @@ $(document).ready(function() {
             );
 
 
-            $("#slider").bind("valuesChanging", function(e, data) {
+            $("#slider").bind("valuesChanged", function(e, data) {
                 var _player = $('#player1')[0].player;
 
                 player.media.setCurrentTime(data.values.min);
