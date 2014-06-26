@@ -16,11 +16,17 @@
             </div>
         </div>
         <section class="row embeded-video">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <div class="flex-video widescreen"><iframe id="add-snip-iframe" src="//www.youtube.com/embed/" frameborder="0" allowfullscreen=""></iframe></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8 center-block centered">
+
+                <video id="player1" width="640" height="360" controls="control" preload="none">
+                    <source src="http://www.youtube.com/" type="video/youtube" />
+                </video>
+
+                <div id="slider" class="slider-bar"></div>
             </div>
-            <div class="col-md-3"></div>
+
+            <div class="col-md-2"></div>
         </section>
         <div class="row">
             <div class="col-md-3"></div>
@@ -55,6 +61,12 @@
             <input name="snip_video_id" type="text" value="">
             <input name="snip_artist" type="text" value="">
             <input name="snip_album" type="text" value="">
+            <input name="time_min" type="text" value="">
+            <input name="time_max" type="text" value="">
         </form>
+
+
+
+
     </div>
 }

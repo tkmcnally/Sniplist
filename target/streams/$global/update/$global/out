@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for sniplist#sniplist_2.10;1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@274ecd52[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@51c4aac5[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -420,32 +420,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->de.u-mass#lastfm-java;0.1.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving de.u-mass#lastfm-java;0.1.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: de.u-mass#lastfm-java;0.1.2 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\de.u-mass\lastfm-java\0.1.2\ivys\ivy.xml[0m
-[0m[[0mdebug[0m] [0m	local: no ivy file found for de.u-mass#lastfm-java;0.1.2[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.pom[0m
-[0m[[0mdebug[0m] [0m	Maven2 Local: no ivy file found for de.u-mass#lastfm-java;0.1.2[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.pom[0m
-[0m[[0mdebug[0m] [0m	public: found md file for de.u-mass#lastfm-java;0.1.2[0m
-[0m[[0mdebug[0m] [0m		=> http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.pom (0.1.2)[0m
-[0m[[0mdebug[0m] [0mdownloading http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.pom ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.pom[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.pom.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.pom[0m
-[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] de.u-mass#lastfm-java;0.1.2!lastfm-java.pom(pom.original) (201ms)[0m
-[0m[[0minfo[0m] [0mResolving org.sonatype.oss#oss-parent;7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.sonatype.oss#oss-parent;7 {}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.sonatype.oss#oss-parent;7[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: org.sonatype.oss#oss-parent;7[0m
-[0m[[0mdebug[0m] [0m		tried C:\Play\play-2.2.3\repository\local\de.u-mass\lastfm-java\0.1.2\jars\lastfm-java.jar[0m
-[0m[[0mdebug[0m] [0m		tried file:/C:/Users/Thomas/.m2/repository/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.jar[0m
-[0m[[0mdebug[0m] [0m	found de.u-mass#lastfm-java;0.1.2 in public[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: de.u-mass#lastfm-java;0.1.2[0m
+[0m[[0mdebug[0m] [0m	local: revision in cache: de.u-mass#lastfm-java;0.1.2[0m
+[0m[[0mdebug[0m] [0m	found de.u-mass#lastfm-java;0.1.2 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->de.u-mass#lastfm-java;0.1.2 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->de.u-mass#lastfm-java;0.1.2 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->de.u-mass#lastfm-java;0.1.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-java_2.10;2.2.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3be266f0[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@26d59316[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-java_2.10;2.2.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: com.typesafe.play#play-java_2.10;2.2.3[0m
 [0m[[0mdebug[0m] [0m	found com.typesafe.play#play-java_2.10;2.2.3 in sbt-chain[0m
@@ -7438,12 +7421,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.oauth-client#google-oauth-client-jetty;1.18.0-rc!google-oauth-client-jetty.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.collections#google-collections;1.0!google-collections.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.http-client#google-http-client-jackson2;1.18.0-rc!google-http-client-jackson2.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/de/u-mass/lastfm-java/0.1.2/lastfm-java-0.1.2.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] de.u-mass#lastfm-java;0.1.2!lastfm-java.jar (357ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] de.u-mass#lastfm-java;0.1.2!lastfm-java.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java_2.10;2.2.3!play-java_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-cache_2.10;2.2.3!play-cache_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play_2.10;2.2.3!play_2.10.jar[0m
@@ -7570,7 +7548,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3471ms :: artifacts dl 443ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3139ms :: artifacts dl 93ms[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 compile produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 runtime produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 test produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-test.xml[0m
@@ -7584,5 +7562,5 @@
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 docs produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 pom produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 scala-tool produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (3471ms resolve - 443ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (3139ms resolve - 93ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

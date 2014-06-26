@@ -577,3 +577,17 @@ body {
     min-width:80px;
     text-align:left;
 }
+
+
+.slider-bar {
+    color: #000000;
+    width: 640px;
+    height: 30px;
+    margin: 0 auto;
+    padding-bottom: 20px
+}
+
+#mep_0 {
+    width: 100%;
+    margin: 0 auto;
+}

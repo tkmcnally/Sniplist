@@ -32,9 +32,9 @@ public class Snip {
     @Reference
     public User user;
 
-    public Double begin_time;
+    public String time_max;
 
-    public Double end_time;
+    public String time_min;
 
     public String song_name;
 
@@ -74,6 +74,8 @@ public class Snip {
         new_snip.user = user;
         new_snip.artist_name = snipForm.snip_artist;
         new_snip.album_name = snipForm.snip_album;
+        new_snip.time_min = snipForm.time_min;
+        new_snip.time_max = snipForm.time_max;
 
         MorphiaUtil.getDatastore().save(new_snip);
         return new_snip;

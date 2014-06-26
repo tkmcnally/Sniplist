@@ -44,11 +44,17 @@ Seq[Any](format.raw/*1.28*/("""
             </div>
         </div>
         <section class="row embeded-video">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <div class="flex-video widescreen"><iframe id="add-snip-iframe" src="//www.youtube.com/embed/" frameborder="0" allowfullscreen=""></iframe></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8 center-block centered">
+
+                <video id="player1" width="640" height="360" controls="control" preload="none">
+                    <source src="http://www.youtube.com/" type="video/youtube" />
+                </video>
+
+                <div id="slider" class="slider-bar"></div>
             </div>
-            <div class="col-md-3"></div>
+
+            <div class="col-md-2"></div>
         </section>
         <div class="row">
             <div class="col-md-3"></div>
@@ -83,7 +89,13 @@ Seq[Any](format.raw/*1.28*/("""
             <input name="snip_video_id" type="text" value="">
             <input name="snip_artist" type="text" value="">
             <input name="snip_album" type="text" value="">
+            <input name="time_min" type="text" value="">
+            <input name="time_max" type="text" value="">
         </form>
+
+
+
+
     </div>
 """)))})))}
     }
@@ -97,9 +109,9 @@ Seq[Any](format.raw/*1.28*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Jun 20 18:15:50 EDT 2014
+                    DATE: Wed Jun 25 02:26:24 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snips/addSnip.scala.html
-                    HASH: 20686ff98ca8a243fc264ed36480d72b31f33a08
+                    HASH: e696d31a017f65cfab92787170b7a58e2a835f87
                     MATRIX: 787->1|907->27|944->30|979->57|1018->59
                     LINES: 26->1|29->1|31->3|31->3|31->3
                     -- GENERATED --

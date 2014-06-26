@@ -33,11 +33,24 @@
             <link href="@routes.Assets.at("css/prettify.css")" rel="stylesheet">
             <link href="@routes.Assets.at("css/tablecloth.css")" rel="stylesheet">
 
-                <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+            <link  href="@routes.Assets.at("css/mediaelementplayer.css")" rel="Stylesheet" />
+            <link  href="@routes.Assets.at("css/mejs-skins.css")" rel="Stylesheet" />
+
+            <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+                <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+            <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+            <script type="text/javascript" src="@routes.Assets.at("js/jQEditRangeSlider-min.js")"></script>
+            <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+            <link rel="stylesheet" type="text/css" href="@routes.Assets.at("css/iThing.css")">
+
+            <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
                 <!--[if lt IE 9]>
                 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
                 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+
 
         </head>
 
@@ -144,23 +157,32 @@
             <!-- Bootstrap core JavaScript
         ================================================== -->
             <!-- Placed at the end of the document so the pages load faster -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
             <script src="@routes.Assets.at("js/bootstrap.min.js")"></script>
             <script src="@routes.Assets.at("js/retina-1.1.0.js")"></script>
             <script src="@routes.Assets.at("js/jquery.hoverdir.js")"></script>
             <script src="@routes.Assets.at("js/jquery.hoverex.min.js")"></script>
             <script src="@routes.Assets.at("js/jquery.prettyPhoto.js")"></script>
             <script src="@routes.Assets.at("js/jquery.isotope.min.js")"></script>
-            <script src="@routes.Assets.at("js/custom.js")"></script>
+            <!--<script src="@routes.Assets.at("js/custom.js")"></script>-->
 
-            <script src="@routes.Assets.at("js/jquery-1.7.2.min.js")"></script>
+            <!--<script src="@routes.Assets.at("js/jquery-1.7.2.min.js")"></script>-->
+            <!--<script src="@routes.Assets.at("js/jquery.min.js")"></script>-->
             <script src="@routes.Assets.at("js/jquery.metadata.js")"></script>
             <script src="@routes.Assets.at("js/jquery.tablesorter.min.js")"></script>
             <script src="@routes.Assets.at("js/jquery.tablecloth.js")"></script>
             <script src="@routes.Assets.at("js/bootstrap.js")"></script>
 
             <script src="@routes.Assets.at("js/youtube_embed_formatter.js")"></script>
+
+
             <script type="text/javascript" src='@routes.Application.javascriptRoutes()'></script>
+
+
+            <!-- Media Element Player -->
+            <script src="@routes.Assets.at("js/mediaelement-and-player.min.js")"></script>
+            <script src="@routes.Assets.at("js/custom-crop-slider.js")"></script>
+
 
             <script type="text/javascript" charset="utf-8">
 
@@ -187,6 +209,10 @@
             });
 
 
+
+
+
+
             $(document).ready(function() {
                 $("table").tablecloth({
                     theme: "dark",
@@ -198,7 +224,13 @@
                     cleanElements: "th td",
                     customClass: "my-table"
                 });
+
+
             });
+
+
+
+
             </script>
 
             <script>
@@ -213,7 +245,7 @@
             portfolioLayout = 'masonry';
             }
 
-            $container.isotope({
+           /* $container.isotope({
             filter: '*',
             animationEngine: 'best-available',
             layoutMode: portfolioLayout,
@@ -225,7 +257,7 @@
             masonry: {
             }
             }, refreshWaypoints());
-
+            */
             function refreshWaypoints() {
             setTimeout(function() {
             }, 1000);
@@ -274,9 +306,10 @@
             $container.isotope('reLayout');
             }
 
+            /*
             $container.imagesLoaded(function () {
             setPortfolio();
-            });
+            });*/
 
             $(window).on('resize', function () {
             setPortfolio();

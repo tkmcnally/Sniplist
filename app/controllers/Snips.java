@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.api.client.json.Json;
 import com.google.api.services.youtube.model.SearchResult;
+import com.google.api.services.youtube.model.Video;
 import de.umass.lastfm.Track;
 import models.Snip;
 import models.User;
@@ -22,9 +23,14 @@ import service.api.VideoAPI;
 import service.api.impl.LastFMAPI;
 import service.api.impl.YoutubeVideoAPI;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import javax.xml.bind.DatatypeConverter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+import org.joda.time.*;
+import org.joda.time.format.*;
 
 import static play.data.Form.*;
 
@@ -47,6 +53,10 @@ public class Snips extends Controller {
         public String snip_artist;
 
         public String snip_album;
+
+        public String time_min;
+
+        public String time_max;
 
         public String validate() {
             if (snip_title == null || YoutubeVideoAPI.executeSearch(snip_video_id).size() == 0) {
@@ -104,6 +114,10 @@ public class Snips extends Controller {
         } else {
             SearchResult result = results.get(0);
 
+            List<Video> videos = (List<Video>) YoutubeVideoAPI.executeVideoSearch(result.getId().getVideoId());
+
+            Video video = videos.get(0);
+
             Snip snip = LastFMAPI.executeSearch(result.getSnippet().getTitle());
 
             ObjectMapper mapper = new ObjectMapper();
@@ -112,8 +126,7 @@ public class Snips extends Controller {
             node.put("artist", snip.artist_name);
             node.put("album", snip.album_name);
             node.put("video_id", result.getId().getVideoId());
-
-
+            node.put("duration", isoToSeconds(video.getContentDetails().getDuration()));
 
             responseResult = ok(node);
 
@@ -144,10 +157,19 @@ public class Snips extends Controller {
 
         return result;
 
-
-
-
     }
+
+
+    public static int isoToSeconds(String isoString) {
+
+        PeriodFormatter format = ISOPeriodFormat.standard();
+        Period start = format.parsePeriod(isoString);
+
+
+        return start.toStandardSeconds().getSeconds();
+    }
+
+
 
 
 

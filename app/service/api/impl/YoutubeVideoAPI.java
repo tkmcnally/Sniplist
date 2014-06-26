@@ -5,6 +5,8 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.services.youtube.model.SearchListResponse;
 import com.google.api.services.youtube.model.SearchResult;
+import com.google.api.services.youtube.model.Video;
+import com.google.api.services.youtube.model.VideoListResponse;
 import service.api.VideoAPI;
 import service.api.YoutubeAuth;
 import util.Constants;
@@ -48,7 +50,6 @@ public class YoutubeVideoAPI {
 
             search.setKey(API_KEY);
 
-
             //Must be a video.
             search.setType("video");
 
@@ -64,6 +65,47 @@ public class YoutubeVideoAPI {
             // Call the API and print results.
             SearchListResponse searchResponse = search.execute();
             List<SearchResult> searchResultList = searchResponse.getItems();
+            results = searchResultList;
+
+        } catch (GoogleJsonResponseException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Throwable t) {
+            t.printStackTrace();
+        }
+
+        return results;
+    }
+
+    public static List<?> executeVideoSearch(String id) {
+
+        List<?> results = new ArrayList();
+
+        try {
+
+            // This object is used to make YouTube Data API requests. The last
+            // argument is required, but since we don't need anything
+            // initialized when the HttpRequest is initialized, we override
+            // the interface and provide a no-op function.
+            youtube = new YouTube.Builder(YoutubeAuth.HTTP_TRANSPORT, YoutubeAuth.JSON_FACTORY, new HttpRequestInitializer() {
+                public void initialize(HttpRequest request) throws IOException {
+                }
+            }).setApplicationName("Sniplist").build();
+
+            YouTube.Videos.List search = youtube.videos().list("id,contentDetails");
+
+            search.setKey(API_KEY);
+
+            // Specify return fields.
+            search.setFields("items/contentDetails");
+
+            //Search query is user's url.
+            search.setId(id);
+
+            // Call the API and print results.
+            VideoListResponse searchResponse = search.execute();
+            List<Video> searchResultList = searchResponse.getItems();
             results = searchResultList;
 
         } catch (GoogleJsonResponseException e) {

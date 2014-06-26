@@ -551,13 +551,13 @@
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->runtime]
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->compile]
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.0->org.scala-lang#scala-library;2.10.2 [compile->master]
-[debug] == resolving dependencies sniplist#sniplist$sbt_2.10;1.0->org.jetbrains#sbt-structure;2.3.2 [default->default(compile)]
-[info] Resolving org.jetbrains#sbt-structure;2.3.2 ...
-[debug] sbt-chain: Checking cache for: dependency: org.jetbrains#sbt-structure;2.3.2 {default=[default(compile)]}
-[debug] sbt-chain: module revision found in cache: org.jetbrains#sbt-structure;2.3.2
-[debug] 	typesafe-ivy-releases: revision in cache: org.jetbrains#sbt-structure;2.3.2
-[debug] 	found org.jetbrains#sbt-structure;2.3.2 in sbt-chain
-[debug] 	[2.3.2] org.jetbrains#sbt-structure;2.3.2
+[debug] == resolving dependencies sniplist#sniplist$sbt_2.10;1.0->org.jetbrains#sbt-structure;2.4.0 [default->default(compile)]
+[info] Resolving org.jetbrains#sbt-structure;2.4.0 ...
+[debug] sbt-chain: Checking cache for: dependency: org.jetbrains#sbt-structure;2.4.0 {default=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: org.jetbrains#sbt-structure;2.4.0
+[debug] 	typesafe-ivy-releases: revision in cache: org.jetbrains#sbt-structure;2.4.0
+[debug] 	found org.jetbrains#sbt-structure;2.4.0 in sbt-chain
+[debug] 	[2.4.0] org.jetbrains#sbt-structure;2.4.0
 [debug] == resolving dependencies sniplist#sniplist$sbt_2.10;1.0->com.typesafe.play#sbt-plugin;2.2.3 [default->default(compile)]
 [info] Resolving com.typesafe.play#sbt-plugin;2.2.3 ...
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.play#sbt-plugin;2.2.3 {default=[default(compile)]}
@@ -1198,7 +1198,7 @@
 [debug] 	resolved ivy file produced in C:\Projects\Sniplist\target\resolution-cache\sniplist\sniplist$sbt_2.10\1.0\resolved.xml.xml
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-sbt#sbt;0.13.0!sbt.jar
-[debug] 	[NOT REQUIRED] org.jetbrains#sbt-structure;2.3.2!sbt-structure.jar
+[debug] 	[NOT REQUIRED] org.jetbrains#sbt-structure;2.4.0!sbt-structure.jar
 [debug] 	[NOT REQUIRED] com.typesafe.play#sbt-plugin;2.2.3!sbt-plugin.jar
 [debug] 	[NOT REQUIRED] com.typesafe.play#sbt-link;2.2.3!sbt-link.jar
 [debug] 	[NOT REQUIRED] org.javassist#javassist;3.18.0-GA!javassist.jar(bundle)
@@ -1276,9 +1276,9 @@
 [debug] 	[NOT REQUIRED] args4j#args4j;2.0.16!args4j.jar
 [debug] 	[NOT REQUIRED] com.google.protobuf#protobuf-java;2.4.1!protobuf-java.jar
 [debug] 	[NOT REQUIRED] com.google.code.findbugs#jsr305;1.3.9!jsr305.jar
-[debug] :: resolution report :: resolve 425ms :: artifacts dl 40ms
+[debug] :: resolution report :: resolve 491ms :: artifacts dl 36ms
 [debug] 	report for sniplist#sniplist$sbt_2.10;1.0 default produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist$sbt_2.10-default.xml
-[debug] 	resolve done (425ms resolve - 40ms download)
+[debug] 	resolve done (491ms resolve - 36ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: sniplist#sniplist$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -1539,13 +1539,13 @@
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#precompiled-2_9_3;0.13.0
 [debug] 	typesafe-ivy-releases: revision in cache: org.scala-sbt#precompiled-2_9_3;0.13.0
 [debug] 	found org.scala-sbt#precompiled-2_9_3;0.13.0 in sbt-chain
-[debug] == resolving dependencies sniplist#sniplist$sources_2.10;1.0->org.jetbrains#sbt-structure;2.3.2 [default->default(compile)]
-[info] Resolving org.jetbrains#sbt-structure;2.3.2 ...
-[debug] sbt-chain: Checking cache for: dependency: org.jetbrains#sbt-structure;2.3.2 {default=[default(compile)]}
-[debug] sbt-chain: module revision found in cache: org.jetbrains#sbt-structure;2.3.2
-[debug] 	typesafe-ivy-releases: revision in cache: org.jetbrains#sbt-structure;2.3.2
-[debug] 	found org.jetbrains#sbt-structure;2.3.2 in sbt-chain
-[debug] 	[2.3.2] org.jetbrains#sbt-structure;2.3.2
+[debug] == resolving dependencies sniplist#sniplist$sources_2.10;1.0->org.jetbrains#sbt-structure;2.4.0 [default->default(compile)]
+[info] Resolving org.jetbrains#sbt-structure;2.4.0 ...
+[debug] sbt-chain: Checking cache for: dependency: org.jetbrains#sbt-structure;2.4.0 {default=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: org.jetbrains#sbt-structure;2.4.0
+[debug] 	typesafe-ivy-releases: revision in cache: org.jetbrains#sbt-structure;2.4.0
+[debug] 	found org.jetbrains#sbt-structure;2.4.0 in sbt-chain
+[debug] 	[2.4.0] org.jetbrains#sbt-structure;2.4.0
 [debug] == resolving dependencies sniplist#sniplist$sources_2.10;1.0->com.typesafe.play#sbt-plugin;2.2.3 [default->default(compile)]
 [info] Resolving com.typesafe.play#sbt-plugin;2.2.3 ...
 [debug] sbt-chain: Checking cache for: dependency: com.typesafe.play#sbt-plugin;2.2.3 {default=[default(compile)]}
@@ -1857,7 +1857,7 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_8_2;0.13.0!precompiled-2_8_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_2;0.13.0!precompiled-2_9_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.0!precompiled-2_9_3.jar(src)
-[debug] 	[NOT REQUIRED] org.jetbrains#sbt-structure;2.3.2!sbt-structure.jar(src)
+[debug] 	[NOT REQUIRED] org.jetbrains#sbt-structure;2.4.0!sbt-structure.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.play#sbt-plugin;2.2.3!sbt-plugin.jar(src)
 [debug] 	[NOT REQUIRED] com.typesafe.play#sbt-link;2.2.3!sbt-link.jar(src)
 [debug] 	[NOT REQUIRED] org.javassist#javassist;3.18.0-GA!javassist.jar(src)
@@ -1888,6 +1888,6 @@
 [debug] 	[NOT REQUIRED] org.tukaani#xz;1.0!xz.jar(src)
 [debug] 	[NOT REQUIRED] org.specs2#specs2_2.10;2.1.1!specs2_2.10.jar(src)
 [debug] 	[NOT REQUIRED] org.scalaz#scalaz-concurrent_2.10;7.0.2!scalaz-concurrent_2.10.jar(src)
-[debug] :: resolution report :: resolve 149ms :: artifacts dl 43ms
+[debug] :: resolution report :: resolve 159ms :: artifacts dl 40ms
 [debug] 	report for sniplist#sniplist$sources_2.10;1.0 default produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist$sources_2.10-default.xml
-[debug] 	resolve done (149ms resolve - 43ms download)
+[debug] 	resolve done (159ms resolve - 40ms download)

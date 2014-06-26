@@ -4,7 +4,7 @@
 		module="sniplist$sources_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20140620152923"
+		publication="20140624202421"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>
@@ -132,7 +132,7 @@
 		<dependency org="org.scala-sbt" name="precompiled-2_9_3" rev="0.13.0" transitive="false" conf="default->default(compile)">
 			<artifact name="precompiled-2_9_3" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
-		<dependency org="org.jetbrains" name="sbt-structure" rev="2.3.2" transitive="false" conf="default->default(compile)" sbtVersion="0.13" scalaVersion="2.10">
+		<dependency org="org.jetbrains" name="sbt-structure" rev="2.4.0" transitive="false" conf="default->default(compile)" sbtVersion="0.13" scalaVersion="2.10">
 			<artifact name="sbt-structure" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="com.typesafe.play" name="sbt-plugin" rev="2.2.3" transitive="false" conf="default->default(compile)" sbtVersion="0.13" scalaVersion="2.10">
