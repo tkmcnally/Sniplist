@@ -31,34 +31,56 @@ $(document).ready(function() {
     }
 
     //Initializing the MediaElementPlayer and assigning it to a global variable.
-    globalPlayer = new MediaElementPlayer('#player', {
-        //Configure intialization of MediaElementPlayer.
-        startVolume: 0.2,
-        features: ['playpause','current','volume','slider'],
-        success: function(mediaElement, domObject) {
 
-            //Create and bind the JQRangeSlider after player creation.
-            createSlider();
 
-            //Event listener to validate time is within slider bounds.
-            mediaElement.addEventListener('timeupdate', function(e) {
-                    var slider_min = parseInt($("input[name=time_min]").val());
-                    var slider_max = parseInt($("input[name=time_max]").val());
+    if ($("#player").length) {
+        $("#sticky-footer").remove();
+        globalPlayer = new MediaElementPlayer('#player', {
+            //Configure intialization of MediaElementPlayer.
+            plugins: ['flash', 'youtube'],
+            startVolume: 0.2,
+            features: ['playpause', 'current', 'volume', 'slider'],
+            success: function (mediaElement, domObject) {
 
-                    //console.log(slider_min + " " + slider_max);
+                //Create and bind the JQRangeSlider after player creation.
+                createSlider();
 
-                    if(mediaElement.currentTime > slider_max) {
-                        mediaElement.setCurrentTime(slider_min);
-                    }
+                //Event listener to validate time is within slider bounds.
+                mediaElement.addEventListener('timeupdate', function (e) {
+                        var slider_min = parseInt($("input[name=time_min]").val());
+                        var slider_max = parseInt($("input[name=time_max]").val());
 
-                    if(mediaElement.currentTime < slider_min) {
-                        mediaElement.setCurrentTime(slider_min);
-                    }
-                },
-                false
-            );
-        }
-    });
+                        //console.log(slider_min + " " + slider_max);
+
+                        if (mediaElement.currentTime > slider_max) {
+                            mediaElement.setCurrentTime(slider_min);
+                        }
+
+                        if (mediaElement.currentTime < slider_min) {
+                            mediaElement.setCurrentTime(slider_min);
+                        }
+                    },
+                    false
+                );
+
+                getVideo("https://www.youtube.com/watch?v=BB7R0ZY9w94");
+            }
+        });
+    }
+
+    if ($("#audioPlayer").length) {
+        //Initializing the MediaElementPlayer and assigning it to a global variable.
+        globalAudioPlayer = new MediaElementPlayer('#audioPlayer', {
+            //Configure intialization of MediaElementPlayer.
+            plugins: ['flash', 'youtube'],
+            startVolume: 0.2,
+            features: ['playpause', 'current', 'volume'],
+            success: function (mediaElement, domObject) {
+            }
+        });
+    }
+
+
 
     bindExternalPlayerButtons();
 
@@ -90,10 +112,12 @@ function getVideo(songUrl) {
 }
 
 function loadVideoPlayer() {
-    var vidArray = [{ src: "https://www.youtube.com/watch?v=" + $("input[name=snip_video_id]").val(), type: 'video/youtube' }];
+
+    var vidArray = [{ src: "https://www.youtube.com/v/" + $("input[name=snip_video_id]").val() + "?version=3", type: 'video/youtube' }];
     globalPlayer.setSrc(vidArray);
-    globalPlayer.load();
+    globalPlayer.media.load();
     globalPlayer.setVolume(0.2);
+    globalPlayer.play();
 }
 
 function saveSnip() {
@@ -162,6 +186,21 @@ function bindExternalPlayerButtons() {
     $('#play-snip-button').click(function() {
         globalPlayer.setCurrentTime(parseInt($("input[name=time_min]").val()));
         globalPlayer.play();
+    });
+
+    $(".play-snippet").click(function() {
+        var videoId = $(this).closest("tr").find(".snip-video-id").attr("value");
+        var startTime = $(this).closest("tr").find(".snip-video-startTime").attr("value");
+        var endTime = $(this).closest("tr").find(".snip-video-endTime").attr("value");
+
+        globalAudioPlayer.media.pluginApi.cueVideoById({
+            videoId: videoId,
+            startSeconds: startTime,
+            endSeconds: endTime
+        });
+        globalAudioPlayer.load();
+        globalAudioPlayer.setVolume(0.2);
+        globalAudioPlayer.play();
     });
 }
 

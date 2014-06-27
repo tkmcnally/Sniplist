@@ -149,9 +149,9 @@
 	background: -ms-linear-gradient(top, rgba(50,50,50,0.7), rgba(0,0,0,0.7)); 	
 	background: linear-gradient(rgba(50,50,50,0.7), rgba(0,0,0,0.7)); 	
 	height: 30px;
-	width: 14%;
+	/*width: 14%;
     margin: 0 auto;
-    z-index: 10000000000;
+    z-index: 10000000000;*/
 }
 .mejs-container .mejs-controls  div {
 	list-style-type: none;

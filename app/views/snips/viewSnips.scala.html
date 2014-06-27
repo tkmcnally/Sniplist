@@ -49,8 +49,13 @@
                                         </ul>
                                     </div>
                                 </td>
-                                <td align="right" class="right"><a href="http://www.youtube.com/v/@snip.url?start=@snip.time_min&end=@snip.time_max&version=3">Play!</a></td>
+                                <td align="right" class="right">
+                                    <button type="button" class="btn-primary btn-small play-snippet">Play</button>
+                                </td>
                                 <td class="hidden snip-id" id="@snip.id" ></td>
+                                <td class="hidden snip-video-id" value="@snip.url"></td>
+                                <td class="hidden snip-video-startTime" value="@snip.time_min"></td>
+                                <td class="hidden snip-video-endTime" value="@snip.time_max"></td>
                             </tr>
                         }
                     </tbody>

@@ -4,18 +4,6 @@
 
 $(document).ready(function() {
 
-    //Create Table.
-    $("table").tablecloth({
-        theme: "dark",
-        bordered: true,
-        condensed: true,
-        striped: true,
-        sortable: true,
-        clean: true,
-        cleanElements: "th td",
-        customClass: "my-table"
-    });
-
     //Bind buttons after table creation.
     bindTableButtons();
 });

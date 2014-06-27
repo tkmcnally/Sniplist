@@ -27,7 +27,7 @@ object _providerIcon extends BaseScalaTemplate[play.api.templates.HtmlFormat.App
         _display_ {
 
 Seq[Any](format.raw/*1.23*/("""
-<img width="64" height="64" alt=""""),_display_(Seq[Any](/*2.35*/providerKey)),format.raw/*2.46*/(""" icon" title=""""),_display_(Seq[Any](/*2.61*/providerKey)),format.raw/*2.72*/("""" src=""""),_display_(Seq[Any](/*2.80*/routes/*2.86*/.Assets.at("../../public/img/icons/64-" +providerKey+".png"))),format.raw/*2.146*/("""">"""))}
+<img width="64" height="64" alt=""""),_display_(Seq[Any](/*2.35*/providerKey)),format.raw/*2.46*/(""" icon" title=""""),_display_(Seq[Any](/*2.61*/providerKey)),format.raw/*2.72*/("""" src=""""),_display_(Seq[Any](/*2.80*/routes/*2.86*/.Assets.at("img/icons/64-" +providerKey+".png"))),format.raw/*2.133*/("""">"""))}
     }
     
     def render(providerKey:String): play.api.templates.HtmlFormat.Appendable = apply(providerKey)
@@ -39,10 +39,10 @@ Seq[Any](format.raw/*1.23*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 26 18:46:23 EDT 2014
+                    DATE: Thu Jun 26 22:53:31 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/_providerIcon.scala.html
-                    HASH: ff8329b87aae435d1da2991e981c754d29d44885
-                    MATRIX: 782->1|897->22|968->58|1000->69|1050->84|1082->95|1125->103|1139->109|1221->169
+                    HASH: 8d1d34d5b74dbf02e22bc6f2e0e2d82ba3cb2834
+                    MATRIX: 782->1|897->22|968->58|1000->69|1050->84|1082->95|1125->103|1139->109|1208->156
                     LINES: 26->1|29->1|30->2|30->2|30->2|30->2|30->2|30->2|30->2
                     -- GENERATED --
                 */

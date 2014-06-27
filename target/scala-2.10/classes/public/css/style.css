@@ -587,7 +587,28 @@ body {
     padding-bottom: 20px
 }
 
-#mep_0 {
-    width: 100%;
+.add-snip-player {
     margin: 0 auto;
+}
+
+.player-ribbon {
+    color: white;
+}
+
+.navbar-fixed-bottom {
+    background-color: #222;
+}
+
+.navbar-player .mejs-controls {
+    left: 0% !important;
+}
+
+.navbar-player .mejs-audio {
+    margin: 0 auto;
+    width: 150px !important;
+    background-color: #222;
+}
+
+.add-snip-player .mejs-controls {
+    width: 14%;
 }
