@@ -147,7 +147,7 @@ public class Snips extends Controller {
             node.put("title", snip.song_name);
             node.put("artist", snip.artist_name);
             node.put("album", snip.album_name);
-            node.put("video_id", snip.direct_url);
+            node.put("video_id", snip.url);
             node.put("snip_id", snip.id.toString());
             node.put("start_time", snip.time_min);
             node.put("end_time", snip.time_max);

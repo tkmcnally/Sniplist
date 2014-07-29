@@ -291,7 +291,8 @@ function playVideo(data) {
         window.open('http://www.youtube.com/watch/' + data.video_id);
     });
 
-    if(data.favourite == true) {
+
+    if(data && data.favourite == true) {
         $(".favourite").toggleClass('red');
     }
 
