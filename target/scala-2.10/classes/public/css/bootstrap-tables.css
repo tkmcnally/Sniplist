@@ -26,7 +26,7 @@ table {
 .table colgroup + thead tr:first-child td,
 .table thead:first-child tr:first-child th,
 .table thead:first-child tr:first-child td {
-  border-top: 0;
+    border-top: 1px solid #dddddd;
 }
 .table tbody + tbody {
   border-top: 2px solid #dddddd;

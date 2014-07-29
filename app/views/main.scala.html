@@ -35,9 +35,11 @@
             <link href="@routes.Assets.at("css/tablecloth.css")" rel="stylesheet">
 
 
-            <!-- Styles for MediaElementJs -->
+            <!-- Styles for MediaElementJs
             <link  href="@routes.Assets.at("css/mediaelementplayer.css")" rel="Stylesheet" />
-            <link  href="@routes.Assets.at("css/mejs-skins.css")" rel="Stylesheet" />
+            <link  href="@routes.Assets.at("css/mejs-skins.css")" rel="Stylesheet" />-->
+
+            <link  href="@routes.Assets.at("css/audio-sniplist-skin.css")" rel="Stylesheet" />
 
             <!-- JQueryUI CSS -->
             <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
@@ -58,21 +60,22 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="@routes.Application.index()">SNIPLIST.</a>
-                        @subjectPresent() {
+                       <!-- @subjectPresent() {
                             <form class="navbar-form navbar-left" role="search">
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Search">
                                 </div>
                                 <button type="submit" class="btn btn-default">Submit</button>
                             </form>
-                        }
+                        }-->
                     </div>
                     <div class="navbar-collapse collapse navbar-right">
                         <ul class="nav navbar-nav">
                                 <!-- Determine which page is currently active -->
                             @subjectPresentOr() {
                                 @generators.navbarMenu(routes.Snips.add(), "ADD SNIP")
-                                @generators.navbarMenu(routes.Snips.mySnips(), "MY SNIPS")
+                                @generators.navbarMenu(routes.MySnipsController.mySnips(), "MY SNIPS")
+                                @generators.navbarMenu(routes.SnipLists.viewSniplists(), "MY SNIPLISTS")
                             } {
                                 @generators.navbarMenu(routes.Application.index(), "HOME")
                             }
@@ -117,41 +120,42 @@
         <!-- *****************************************************************************************************************
             FOOTER
         ***************************************************************************************************************** -->
-            <div id="footerwrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <h4>About</h4>
-                            <div class="hline-w"></div>
-                            <p>Created in 2014, Sniplist provides a new way of sharing music with your friends.</p>
-                        </div>
-                        <div class="col-lg-4">
-                            <h4>Social Links</h4>
-                            <div class="hline-w"></div>
-                            <p>
-                                <a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
-                                <a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a>
-                                <a href="http://www.instagram.com"><i class="fa fa-instagram"></i></a>
-                            </p>
-                        </div>
-                        <div class="col-lg-4">
-                            <h4>Our Location</h4>
-                            <div class="hline-w"></div>
-                            <p>
-                            Ottawa, Canada
-                            </p>
-                        </div>
-                    </div><! --/row -->
-                </div><! --/container -->
-            </div><! --/footerwrap -->
-
+            @subjectNotPresent() {
+                <div id="footerwrap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <h4>About</h4>
+                                <div class="hline-w"></div>
+                                <p>Created in 2014, Sniplist provides a new way of sharing music with your friends.</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <h4>Social Links</h4>
+                                <div class="hline-w"></div>
+                                <p>
+                                    <a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                                    <a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a>
+                                    <a href="http://www.instagram.com"><i class="fa fa-instagram"></i></a>
+                                </p>
+                            </div>
+                            <div class="col-lg-4">
+                                <h4>Our Location</h4>
+                                <div class="hline-w"></div>
+                                <p>
+                                    Ottawa, Canada
+                                </p>
+                            </div>
+                        </div><! --/row -->
+                    </div><! --/container -->
+                </div><! --/footerwrap -->
+            }
             @subjectPresent() {
                 <div id="sticky-footer" class="navbar navbar-default navbar-fixed-bottom">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
-                                <div class="navbar-player">
+                                <div class="audio-player">
                                     <audio id="audioPlayer" type="audio/youtube" controls="controls" src="https://www.youtube.com/watch?v=smqNtBXN5Mc" ></audio>
                                 </div>
                             </div>
@@ -184,12 +188,15 @@
             <script src="@routes.Assets.at("js/jquery/jquery.metadata.js")"></script>
             <script src="@routes.Assets.at("js/tablecloth/jquery.tablesorter.js")"></script>
             <script src="@routes.Assets.at("js/tablecloth/jquery.tablecloth.js")"></script>
-            <script src="@routes.Assets.at("js/bootstrap/bootstrap.js")"></script>
+
+          <!--  <script src="@routes.Assets.at("js/bootstrap/bootstrap.js")"></script>-->
 
             <!-- Sniplist core JavaScript -->
-            <script src="@routes.Assets.at("js/sniplist/media_player_youtube.js")"></script>
-            <script src="@routes.Assets.at("js/sniplist/my_snips_table.js")"></script>
+            <script src="@routes.Assets.at("js/sniplist/add-snip.js")"></script>
+            <script src="@routes.Assets.at("js/sniplist/my-snips.js")"></script>
             <script src="@routes.Assets.at("js/sniplist/custom-crop-slider.js")"></script>
+
+            <script src="@routes.Assets.at("js/sniplist/sniplists.js")"></script>
 
             <!-- Play Framework JavaScript routes for AJAX calls. -->
             <script src="@routes.Application.javascriptRoutes()" type="text/javascript"></script>

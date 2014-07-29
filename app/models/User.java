@@ -60,6 +60,11 @@ public class User implements Subject {
 
     public boolean emailValidated;
 
+    @Reference
+    public List<Snip> snipFavourites;
+
+    @Reference
+    public List<SnipList> snipListFavourites;
 
     public List<SecurityRole> roles;
 
@@ -164,6 +169,9 @@ public class User implements Subject {
         MorphiaUtil.getDatastore().save(user);
         MorphiaUtil.getDatastore().save(user.roles);
         MorphiaUtil.getDatastore().save(user.linkedAccounts);
+
+        /* create my snips collection */
+        MySnips.create(user);
 
         return user;
     }
@@ -274,6 +282,27 @@ public class User implements Subject {
         // You might want to wrap this into a transaction
         this.changePassword(authUser, create);
         TokenAction.deleteByUser(this, Type.PASSWORD_RESET);
+    }
+
+    public static void addFavouriteSnip(final User user, final Snip snip) {
+        user.snipFavourites.add(snip);
+    }
+
+    public static void removeFavouriteSnip(final User user, final Snip snip) {
+        user.snipFavourites.remove(snip);
+    }
+
+    public static void addFavouriteSnipList(final User user, final SnipList snipList) {
+        user.snipListFavourites.add(snipList);
+    }
+
+    public static void removeFavouriteSnipList(final User user, final SnipList snipList) {
+        user.snipListFavourites.remove(snipList);
+    }
+
+    public static User findById(final String id){
+        ObjectId userId = new ObjectId(id);
+        return MorphiaUtil.getDatastore().find(User.class).field("active").equal(true).field("id").equal(userId).get();
     }
 
 

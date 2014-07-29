@@ -49,7 +49,8 @@ POST        /accounts/merge                        controllers.Account.doMerge
 GET         /login/password/forgot                 controllers.Signup.forgotPassword(email: String ?= "")
 POST        /login/password/forgot                 controllers.Signup.doForgotPassword
 
-GET         /snips/                                controllers.Snips.mySnips()
+
+GET        /snips/getSnip                          controllers.Snips.getSnip(id: String)
 
 GET         /snips/add                             controllers.Snips.add()
 
@@ -57,7 +58,34 @@ POST        /snips/add/getVideo                    controllers.Snips.getVideo(so
 
 POST        /snips/add/saveSnip                    controllers.Snips.saveSnip()
 
-POST        /snips/add/deleteSnip                  controllers.Snips.deleteSnip(id: String)
+
+GET         /snips/                                controllers.MySnipsController.mySnips()
+
+POST        /snips/removeSnip                      controllers.MySnipsController.removeSnip(id: String)
+
+POST        /snips/saveSnip                        controllers.MySnipsController.saveSnip(id: String)
+
+POST        /snips/toggleSnip                      controllers.MySnipsController.toggleSnip(id: String)
+
+
+
+
+
+GET         /:id/sniplists                         controllers.SnipLists.viewSniplistsByUser(id: String)
+
+GET         /sniplists                             controllers.SnipLists.viewSniplists()
+
+POST        /sniplists/new                         controllers.SnipLists.saveSnipList()
+
+POST        /sniplists/add                         controllers.SnipLists.addToSnipList(snipList_id: String, snip_id: String)
+
+POST        /sniplists/delete                      controllers.SnipLists.deleteSnipList(snipList_id: String)
+
+GET         /sniplists/load                        controllers.SnipLists.loadSnipListByUser(snipList_id: String)
+
+POST        /sniplists/deleteSnip                  controllers.SnipLists.deleteFromSnipList(snipList_id: String, snip_id: String)
+
+GET         /sniplists/getSniplists                controllers.SnipLists.getSnipListsByUser()
 
 
 

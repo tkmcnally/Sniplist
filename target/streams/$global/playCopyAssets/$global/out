@@ -1,4 +1,6 @@
 [0m[[0mdebug[0m] [0mCopy play resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\audio-sniplist-skin.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\audio-sniplist-skin.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\audio-style.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\audio-style.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\bootstrap-tables.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\bootstrap-tables.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\bootstrap.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\bootstrap.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\bootstrap.min.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\bootstrap.min.css)[0m
@@ -55,6 +57,7 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\icons\untappd-24x24.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\icons\untappd-24x24.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\icons\vk-24x24.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\icons\vk-24x24.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\icons\xing-24x24.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\icons\xing-24x24.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\audio.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\audio.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\background.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\background.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\bigplay.fw.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\bigplay.fw.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\bigplay.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\bigplay.png)[0m
@@ -64,7 +67,21 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\controls.fw.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\controls.fw.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\controls.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\controls.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\controls.svg,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\controls.svg)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\handle-lg.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\handle-lg.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\handle-sm.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\handle-sm.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\loading.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\loading.gif)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\mute-small.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\mute-small.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\mute.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\mute.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\pause-small.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\pause-small.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\pause.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\pause.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\play-button.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\play-button.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\play-small.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\play-small.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\play.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\play.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\playpause.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\playpause.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\time-box.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\time-box.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\volume-small.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\volume-small.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\volume.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\volume.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\youtube.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\youtube.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\prettyPhoto\dark_rounded\btnNext.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\prettyPhoto\dark_rounded\btnNext.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\prettyPhoto\dark_rounded\btnPrevious.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\prettyPhoto\dark_rounded\btnPrevious.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\prettyPhoto\dark_rounded\contentPattern.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\prettyPhoto\dark_rounded\contentPattern.png)[0m
@@ -113,10 +130,11 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery\jquery.min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery\jquery.min.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\mediaelement\flashmediaelement.swf,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\mediaelement\flashmediaelement.swf)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\mediaelement\mediaelement-and-player.min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\mediaelement\mediaelement-and-player.min.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\add-snip.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\add-snip.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\custom-audio-player.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\custom-audio-player.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\custom-crop-slider.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\custom-crop-slider.js)[0m
-[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\media_player_youtube.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\media_player_youtube.js)[0m
-[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\my_snips_table.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\my_snips_table.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\my-snips.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\my-snips.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\sniplists.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\sniplists.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\tablecloth\jquery.prettyPhoto.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\tablecloth\jquery.prettyPhoto.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\tablecloth\jquery.tablecloth.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\tablecloth\jquery.tablecloth.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\tablecloth\jquery.tablesorter.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\tablecloth\jquery.tablesorter.js)[0m

@@ -1,0 +1,71 @@
+@(localUser: models.User = null, snipLists: List[models.SnipList])
+@import java.math.BigInteger; var i=0;
+
+@main("My SnipLists", "mySnipLists") {
+    <div class="container mtb">
+        <div id="global-message" class="alert alert-danger hidden">
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>SnipLists</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="padding-bottom: 10px;">
+                <button  id="new-playlist" type="button" class="btn btn-primary" data-toggle="popover" data-placement="right">
+                    New Playlist
+                </button>
+            </div>
+        </div>
+        <div id="sniplist-array" value="@localUser.id">
+            <div class="row ">
+            @for(sniplist <- snipLists) {
+                @(i += 1)
+                <div class="col-lg-6">
+                    <table class="table table-default table-bordered table-striped" value="@sniplist.id">
+                        <thead>
+                            <tr>
+                                <th title="Name" colspan="5" align="right">@sniplist.name <span style="float: right; text-align: right; cursor: pointer" class="glyphicon glyphicon-remove remove remove-playlist"></span> </th>
+                            </tr>
+                            <tr>
+                                <th title="Song" align="right">Song</th>
+                                <th title="Artist" align="right">Artist</th>
+                                <th title="Album" align="right">Album</th>
+                                <th class="{sorter: false}" title="Play" align="right">Play</th>
+                                <th title="Remove"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @for(snip <- sniplist.snips) {
+                            <tr>
+                                <td align="left" class="left snip-title">@snip.song_name</td>
+                                <td align="left" class="left snip-artist">@snip.artist_name</td>
+                                <td align="left" class="left snip-album">@snip.album_name</td>
+                                <td align="center" class="center">
+                                    <span style="cursor:pointer" class="glyphicon glyphicon-play play-snip-table play-snippet"></span>
+                                </td>
+                                <td class="center">
+                                    <span style="cursor:pointer" class="glyphicon remove glyphicon-remove remove-snip-from-sniplist" value="@snip.id"></span>
+                                </td>
+                                <td class="hidden snip-id" id="@snip.id" ></td>
+                                <td class="hidden snip-video-id" value="@snip.url"></td>
+                                <td class="hidden snip-video-startTime" value="@snip.time_min"></td>
+                                <td class="hidden snip-video-endTime" value="@snip.time_max"></td>
+                            </tr>
+                        }
+                        </tbody>
+
+                    </table>
+                </div>
+                @if(i % 2 == 0) {
+                </div>
+            <div class="row">
+            }
+            }
+            </div>
+
+        </div>
+
+    </div>
+}

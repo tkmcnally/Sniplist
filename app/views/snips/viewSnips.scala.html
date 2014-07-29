@@ -1,4 +1,4 @@
-@(localUser: models.User = null, snipList: List[models.Snip])
+@(localUser: models.User = null, snips: List[models.Snip], snipLists: List[models.SnipList])
 
 @main("My Snips", "mySnips") {
     <div class="container mtb">
@@ -13,49 +13,53 @@
         <div class="row">
 
             <div class="col-md-8">
-                <table class="table table-dark table-bordered table-stripeds" style="border: black;">
+                <table class="table table-default table-striped" style="border: black;">
                 <thead>
                         <tr>
                             <th title="Song" align="right">Song</th>
                             <th title="Artist" align="right">Artist</th>
                             <th title="Album" align="right">Album</th>
-                            <th class="{sorter: false}" title="Sniplists" align="right">Sniplists</th>
                             <th class="{sorter: false}" title="*" align="center">*</th>
                             <th class="{sorter: false}" title="Play" align="right">Play</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        @for(snip <- snipList) {
-                            <tr class="evenrow">
-                                <td align="center" class="right">@snip.song_name</td>
-                                <td align="right" class="right">@snip.artist_name</td>
-                                <td align="right" class="right">@snip.album_name</td>
-                                <td align="right" class="right">-></td>
-                                <td align="right" class="right">
+                        @for(snip <- snips) {
+                            <tr class="evenrow table-snip" data-toggle="tooltip" data-placement="right" title="Saved!">
+                                <td align="left" class="left snip-title">@snip.song_name</td>
+                                <td align="left" class="left snip-artist">@snip.artist_name</td>
+                                <td align="left" class="left snip-album">@snip.album_name</td>
+                                <td align="left" class="left">
                                     <div class="dropdown">
 
-                                        <a id="@snip.id" class="btn btn-sm dropdown-toggle" data-toggle="dropdown" href="#">+
+                                        <a id="@snip.id" class="btn btn-sm dropdown-toggle center" data-toggle="dropdown" href="#">
+                                            <span style="cursor:pointer" class="glyphicon glyphicon-share"></span>
                                         </a>
 
-                                        <ul class="dropdown-menu">
-
-                                            <li><a align="left" href="">Add to Playlist -></a></li>
-                                            <li><a align="left" href=""><i class="icon-off"></i>Save as Snip</a></li>
-                                            <li><a align="left" href=""><i class="icon-off"></i>Share on Sniplist</a></li>
-                                            <li><a align="left" href=""><i class="icon-off"></i>Share on -></a></li>
+                                        <ul class="dropdown-menu" id="menu1">
+                                            <li>
+                                                <!-- Button trigger modal -->
+                                                <a class="add-to-playlist-a" href="" align="left" data-toggle="modal" data-target="#add-to-playlist-modal">
+                                                    Add to playlist
+                                                </a></li>
+                                            <li><a align="left" href="" class="save-snip"><i class="icon-off"></i>Save Snip</a></li>
+                                            <!--<li><a align="left" href=""><i class="icon-off"></i>Share on Sniplist</a></li>
+                                            <li><a align="left" href=""><i class="icon-off"></i>Share on -></a></li>-->
                                             <li class="divider"></li>
                                             <li><a align="left" href="#" class="dropdown-delete-snip"><i class="icon-off"></i>Delete</a></li>
                                         </ul>
                                     </div>
                                 </td>
-                                <td align="right" class="right">
-                                    <button type="button" class="btn-primary btn-small play-snippet">Play</button>
+                                <td align="center" class="center valign-m ">
+                                    <span style="cursor:pointer" class="glyphicon glyphicon-play play-snip-table play-snippet"></span>
+                                        <!--<button type="button" class="btn-primary btn btn-sm play-snippet">Play</button>-->
                                 </td>
                                 <td class="hidden snip-id" id="@snip.id" ></td>
                                 <td class="hidden snip-video-id" value="@snip.url"></td>
                                 <td class="hidden snip-video-startTime" value="@snip.time_min"></td>
                                 <td class="hidden snip-video-endTime" value="@snip.time_max"></td>
+
                             </tr>
                         }
                     </tbody>
@@ -64,6 +68,41 @@
                 </table>
             </div>
             <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="add-to-playlist-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="add-to-playlist-modal-title">Add to playlist</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-message" class="alert alert-danger hidden">
+
+                    </div>
+                    <div id="modal-content">
+                        @for(snipList <- snipLists) {
+                            <ul class="list-group">
+                                <li class="list-group-item playlist-li" style="cursor:pointer" value="@snipList.id">
+                                    @if(snipList.snips.size() < 6){
+                                        <span class="badge alert-success">@snipList.snips.size()</span>
+                                    } else {
+                                        <span class="badge alert-danger">@snipList.snips.size()</span>
+                                    }
+                                    @snipList.name
+                                </li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+                <input id="selected-snip-id" type="text" hidden value=""/>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 

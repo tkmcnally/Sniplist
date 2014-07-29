@@ -606,9 +606,47 @@ body {
 .navbar-player .mejs-audio {
     margin: 0 auto;
     width: 150px !important;
-    background-color: #222;
 }
 
 .add-snip-player .mejs-controls {
     width: 14%;
+}
+
+.playlist-li:hover {
+    border-color: black;
+}
+
+.favourite {
+    color: white;
+}
+
+.favourite:hover {
+    color: gray;
+}
+
+.remove:hover {
+    color: red;
+}
+
+
+.add:hover {
+    color: green;
+}
+
+.play-snip-table  {
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+.play-snip-table:hover {
+    color: green;
+}
+
+.valign-m {
+    vertical-align: middle !important;
+}
+
+.red {
+    color: red;
 }

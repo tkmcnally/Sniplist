@@ -38,7 +38,7 @@ Seq[Any]()}
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 19 23:25:47 EDT 2014
+                    DATE: Mon Jul 28 17:05:21 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snips/snipForm.scala.html
                     HASH: c7efc0f75c87094f54f4173904bb22e85df9d1e0
                     MATRIX: 

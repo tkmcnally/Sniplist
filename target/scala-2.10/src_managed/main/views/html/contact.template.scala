@@ -79,7 +79,7 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Contact Us", "contact")/*1.31*/ {_displ
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 12 15:38:16 EDT 2014
+                    DATE: Mon Jul 28 17:05:20 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/contact.scala.html
                     HASH: 73e386e52e0e9a3b19797078f8d24cfcd962bd06
                     MATRIX: 866->1|903->30|942->32

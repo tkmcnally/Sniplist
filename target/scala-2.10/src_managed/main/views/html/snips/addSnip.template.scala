@@ -44,18 +44,18 @@ Seq[Any](format.raw/*1.28*/("""
             </div>
         </div>
         <section class="row embeded-video">
-            <div class="col-md-2"></div>
-            <div id="player-container" class="col-md-8 center-block centered">
 
-                <video id="player" width="640" height="360" controls="control" preload="none" class="add-snip-player">
+            <div class="player-container">
+
+                <video id="player" width="640" height="360" controls="control" preload="none" class="mejs-sniplist">
                     <source src="https://www.youtube.com/watch?v=BB7R0ZY9w94" type="video/youtube" />
                 </video>
-
-                <div id="slider" class="slider-bar"></div>
-                <button id="play-snip-button" type="button" class="btn btn-primary btn-large bottom-buffer-sm">Play Snip</button>
             </div>
+                <div id="slider" class="slider-bar"></div>
+                <button id="play-snip-button" type="button" class="btn btn-primary btn-large bottom-buffer-sm center-block">Play Snip</button>
 
-            <div class="col-md-2"></div>
+
+
         </section>
         <div class="row">
             <div class="col-md-3"></div>
@@ -110,9 +110,9 @@ Seq[Any](format.raw/*1.28*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Jun 27 03:03:52 EDT 2014
+                    DATE: Tue Jul 29 00:03:10 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snips/addSnip.scala.html
-                    HASH: c2b70d5be577c420556d3b5c75208da2119b8ee9
+                    HASH: c6f2c34efedf205903435c08c1d6e7d5eb2e6496
                     MATRIX: 787->1|907->27|944->30|979->57|1018->59
                     LINES: 26->1|29->1|31->3|31->3|31->3
                     -- GENERATED --

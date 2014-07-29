@@ -52,7 +52,7 @@ Howdy """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 }
                 /*
                     -- GENERATED --
-                    DATE: Fri Jun 06 02:00:45 EDT 2014
+                    DATE: Mon Jul 28 17:05:21 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/email/password_reset_en.scala.html
                     HASH: 23ae973b8b9433a980683147d3a80ba9eb289a84
                     MATRIX: 821->1|972->58|1015->67|1040->71|1334->329|1359->332

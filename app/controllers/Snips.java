@@ -10,7 +10,9 @@ import com.google.api.client.json.Json;
 import com.google.api.services.youtube.model.SearchResult;
 import com.google.api.services.youtube.model.Video;
 import de.umass.lastfm.Track;
+import models.MySnips;
 import models.Snip;
+import models.SnipList;
 import models.User;
 import play.data.Form;
 import play.data.validation.Constraints;
@@ -31,6 +33,7 @@ import java.util.*;
 
 import org.joda.time.*;
 import org.joda.time.format.*;
+import util.Util;
 
 import static play.data.Form.*;
 
@@ -38,7 +41,6 @@ import static play.data.Form.*;
  * Created by Thomas on 6/16/2014.
  */
 public class Snips extends Controller {
-
 
     private static final Form<MySnip> MY_SNIP_FORM = form(MySnip.class);
 
@@ -66,19 +68,6 @@ public class Snips extends Controller {
         }
     }
 
-
-
-    @Restrict(@Group(Application.USER_ROLE))
-    public static Result mySnips() {
-        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
-        final User user = Application.getLocalUser(session());
-
-        List<Snip> snips = Snip.findByUser(user);
-
-        return ok(views.html.snips.viewSnips.render(user, snips));
-    }
-
-
     @Restrict(@Group(Application.USER_ROLE))
     public static Result add() {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
@@ -98,19 +87,25 @@ public class Snips extends Controller {
         if(snipForm.hasErrors()) {
             result = badRequest(snipForm.errorsAsJson());
         } else {
-            Snip.create(snipForm.get(), user);
+            Snip snip = Snip.create(snipForm.get(), user);
+
+            MySnips mySnips = MySnips.findByUser(user);
+            MySnips.addSnip(mySnips, snip);
+
             result = ok();
         }
 
         return result;
     }
 
-    public static Result getVideo(String url) {
+    public static Result getVideo(final String url) {
         List<SearchResult> results = (List<SearchResult>) YoutubeVideoAPI.executeSearch(url);
-        Result responseResult = badRequest();
 
+        final User user = Application.getLocalUser(session());
+
+        Result responseResult = badRequest();
         if (results.isEmpty() || !url.contains(results.get(0).getId().getVideoId())) {
-            responseResult = badRequest("Invalid URL");
+            responseResult = badRequest("Invalid YouTube URL! Please try again.");
         } else {
             SearchResult result = results.get(0);
 
@@ -120,13 +115,15 @@ public class Snips extends Controller {
 
             Snip snip = LastFMAPI.executeSearch(result.getSnippet().getTitle());
 
+
+
             ObjectMapper mapper = new ObjectMapper();
             ObjectNode node = mapper.createObjectNode();
             node.put("title", snip.song_name);
             node.put("artist", snip.artist_name);
             node.put("album", snip.album_name);
             node.put("video_id", result.getId().getVideoId());
-            node.put("duration", isoToSeconds(video.getContentDetails().getDuration()));
+            node.put("duration", Util.isoToSeconds(video.getContentDetails().getDuration()));
 
             responseResult = ok(node);
 
@@ -134,39 +131,34 @@ public class Snips extends Controller {
         return responseResult;
     }
 
-    public static Result deleteSnip(String id) {
-        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
+    public static Result getSnip(final String id) {
         final User user = Application.getLocalUser(session());
 
-        Result result = internalServerError();
-        System.out.println("id: " + id);
+        MySnips mySnips = MySnips.findByUser(user);
+
         Snip snip = Snip.findById(id).get();
 
+        Result result = badRequest();
         if(snip != null) {
-            if(Snip.isOwner(user, snip)) {
-                Snip.deleteById(id);
-                result = ok("Snip '" + snip.song_name + "' has been deleted!");
-            } else {
-                System.out.println("ownsership");
-                result = badRequest("Could not validate your ownsership of that snip.");
-            }
+            boolean isFavourited = MySnips.isFavourited(mySnips, snip);
+
+            ObjectMapper mapper = new ObjectMapper();
+            ObjectNode node = mapper.createObjectNode();
+            node.put("title", snip.song_name);
+            node.put("artist", snip.artist_name);
+            node.put("album", snip.album_name);
+            node.put("video_id", snip.direct_url);
+            node.put("snip_id", snip.id.toString());
+            node.put("start_time", snip.time_min);
+            node.put("end_time", snip.time_max);
+            node.put("favourite", isFavourited);
+
+            result = ok(node);
         } else {
-            System.out.println("find it");
-            badRequest("Could not find that snip.");
+            result = badRequest("Invalid Snip!");
         }
 
         return result;
-
-    }
-
-
-    public static int isoToSeconds(String isoString) {
-
-        PeriodFormatter format = ISOPeriodFormat.standard();
-        Period start = format.parsePeriod(isoString);
-
-
-        return start.toStandardSeconds().getSeconds();
     }
 
 
