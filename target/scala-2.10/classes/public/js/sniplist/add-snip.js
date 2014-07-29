@@ -56,7 +56,7 @@ $(document).ready(function() {
         // create the loop button
             info =
                 $('<div class="mejs-info hidden">' +
-                    '<div class="row"> <div class="col-md-10"> <h2 id="mejs-snip-title"></h2> </div> <div class="col-md-2"> <span style="cursor: pointer" class="glyphicon glyphicon-heart favourite"></span> </div> </div>' +
+                    '<div class="row"> <div class="col-md-10"> <h2 id="mejs-snip-title"></h2> </div> <div class="col-md-2"> <span style="cursor: pointer" class="glyphicon glyphicon-heart favourite-snip"></span> </div> </div>' +
                     '<div class="row"><div class="col-md-10"><h4 id="mejs-snip-artist"></h4></div>' +
                     '<div class="col-md-2"><h4 id="mejs-snip-curr-time" style="float: right"></h4></div></div><div id="live-snip-id" value="" hidden></div>' +
                     '</div>')
@@ -135,10 +135,11 @@ $(document).ready(function() {
                     false
                 );
 
-                $(".favourite").click(function() {
+                $(".mejs-info .favourite-snip").click(function() {
 
                     $(this).toggleClass('red');
-                    saveSnipToCollection(null, $("#live-snip-id").text());
+                    $(this).toggleClass('black');
+                    favouriteSnip($("#live-snip-id").text());
                 });
 
             }
@@ -189,7 +190,7 @@ function saveSnip() {
     $("input[name=snip_album]").val($("#album-input").val());
 
     var formData = new FormData($("#hidden-add-snip-form")[0]);
-    jsRoutes.controllers.Snips.saveSnip().ajax({
+    jsRoutes.controllers.Snips.createSnip().ajax({
         data: formData,
         cache: false,
         contentType: false,
@@ -293,7 +294,7 @@ function playVideo(data) {
 
 
     if(data && data.favourite == true) {
-        $(".favourite").toggleClass('red');
+        $(".mejs-info .favourite-snip").toggleClass('red');
     }
 
     $(".mejs-info").removeClass('hidden');

@@ -1,6 +1,6 @@
-@(snipLists: List[models.SnipList])
+@(userSniplists: models.MySniplists)
 
-@for(snipList <- snipLists) {
+@for(snipList <- userSniplists.savedSniplists) {
     <ul class="list-group">
         <li class="list-group-item playlist-li" style="cursor:pointer" value="@snipList.id">
             @if(snipList.snips.size() < 6){

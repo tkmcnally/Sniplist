@@ -86,7 +86,7 @@ function deleteSnip(elem) {
 }
 
 function loadModalData(callBack) {
-    jsRoutes.controllers.SnipLists.getSnipListsByUser().ajax({
+    jsRoutes.controllers.SnipLists.viewSnipListsLocalUser().ajax({
         success: function(data) {
             $("#modal-content").html(data);
             bindTableButtons();
@@ -102,18 +102,13 @@ function loadModalData(callBack) {
     })
 }
 
-function saveSnipToCollection(snipRow, snip) {
-
+function favouriteSnip(snip) {
     jsRoutes.controllers.MySnipsController.toggleSnip(snip).ajax({
         success: function(data) {
-            if(snipRow) {
-                snipRow.tooltip('show');
-            }
+
         },
         error: function(xhr, status, error) {
-            if(snipRow) {
-                snipRow.text(xhr.responseText);
-            }
+
 
         }
     })

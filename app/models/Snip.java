@@ -44,6 +44,8 @@ public class Snip {
 
     public String song_genre;
 
+    public int favouriteCount;
+
     @Formats.DateTime(pattern = "yyyy-MM-dd HH:mm:ss")
     public Date creation_date;
 
@@ -54,6 +56,9 @@ public class Snip {
 
     @Transient
     public Album album;
+
+    @Transient
+    public boolean localUserFavourited;
 
 
     public static void deleteById(final String id) {
@@ -111,6 +116,18 @@ public class Snip {
             }
         }
         return owned;
+    }
+
+    public void favourite() {
+        favouriteCount++;
+        MorphiaUtil.getDatastore().save(this);
+    }
+
+    public void unfavourite() {
+        if(favouriteCount > 0) {
+            favouriteCount--;
+            MorphiaUtil.getDatastore().save(this);
+        }
     }
 
 }

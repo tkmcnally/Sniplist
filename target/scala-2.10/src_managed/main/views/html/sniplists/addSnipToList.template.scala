@@ -20,15 +20,15 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object addSnipToList extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[List[models.SnipList],play.api.templates.HtmlFormat.Appendable] {
+object addSnipToList extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[models.MySniplists,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(snipLists: List[models.SnipList]):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(userSniplists: models.MySniplists):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*1.36*/("""
+Seq[Any](format.raw/*1.37*/("""
 
-"""),_display_(Seq[Any](/*3.2*/for(snipList <- snipLists) yield /*3.28*/ {_display_(Seq[Any](format.raw/*3.30*/("""
+"""),_display_(Seq[Any](/*3.2*/for(snipList <- userSniplists.savedSniplists) yield /*3.47*/ {_display_(Seq[Any](format.raw/*3.49*/("""
     <ul class="list-group">
         <li class="list-group-item playlist-li" style="cursor:pointer" value=""""),_display_(Seq[Any](/*5.80*/snipList/*5.88*/.id)),format.raw/*5.91*/("""">
             """),_display_(Seq[Any](/*6.14*/if(snipList.snips.size() < 6)/*6.43*/{_display_(Seq[Any](format.raw/*6.44*/("""
@@ -42,19 +42,19 @@ Seq[Any](format.raw/*1.36*/("""
 """)))})))}
     }
     
-    def render(snipLists:List[models.SnipList]): play.api.templates.HtmlFormat.Appendable = apply(snipLists)
+    def render(userSniplists:models.MySniplists): play.api.templates.HtmlFormat.Appendable = apply(userSniplists)
     
-    def f:((List[models.SnipList]) => play.api.templates.HtmlFormat.Appendable) = (snipLists) => apply(snipLists)
+    def f:((models.MySniplists) => play.api.templates.HtmlFormat.Appendable) = (userSniplists) => apply(userSniplists)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jul 28 17:05:21 EDT 2014
+                    DATE: Tue Jul 29 15:18:23 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/sniplists/addSnipToList.scala.html
-                    HASH: 8b142837980b0dde0211e7207781025193ff2dbd
-                    MATRIX: 807->1|935->35|972->38|1013->64|1052->66|1195->174|1211->182|1235->185|1286->201|1323->230|1361->231|1448->283|1464->291|1498->304|1537->326|1549->331|1587->332|1673->383|1689->391|1723->404|1776->425|1826->439|1843->447|1870->452
+                    HASH: c0def35c059c4f8477fe02d41dd286977772a82d
+                    MATRIX: 804->1|933->36|970->39|1030->84|1069->86|1212->194|1228->202|1252->205|1303->221|1340->250|1378->251|1465->303|1481->311|1515->324|1554->346|1566->351|1604->352|1690->403|1706->411|1740->424|1793->445|1843->459|1860->467|1887->472
                     LINES: 26->1|29->1|31->3|31->3|31->3|33->5|33->5|33->5|34->6|34->6|34->6|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|39->11|39->11|39->11
                     -- GENERATED --
                 */

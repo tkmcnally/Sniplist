@@ -20,13 +20,13 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object viewSnips extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template3[models.User,List[models.Snip],List[models.SnipList],play.api.templates.HtmlFormat.Appendable] {
+object viewSnips extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[models.User,models.MySnips,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(localUser: models.User = null, snips: List[models.Snip], snipLists: List[models.SnipList]):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(localUser: models.User = null, userSnips: models.MySnips):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*1.93*/("""
+Seq[Any](format.raw/*1.60*/("""
 
 """),_display_(Seq[Any](/*3.2*/main("My Snips", "mySnips")/*3.29*/ {_display_(Seq[Any](format.raw/*3.31*/("""
     <div class="container mtb">
@@ -35,7 +35,7 @@ Seq[Any](format.raw/*1.93*/("""
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h1>Snips</h1>
+                <h1>Snips</h1> <h4 style="display: inline;">by """),_display_(Seq[Any](/*10.65*/userSnips/*10.74*/.user.name)),format.raw/*10.84*/("""</h4>
             </div>
         </div>
         <div class="row">
@@ -49,19 +49,20 @@ Seq[Any](format.raw/*1.93*/("""
                             <th title="Album" align="right">Album</th>
                             <th class=""""),format.raw/*22.40*/("""{"""),format.raw/*22.41*/("""sorter: false"""),format.raw/*22.54*/("""}"""),format.raw/*22.55*/("""" title="*" align="center">*</th>
                             <th class=""""),format.raw/*23.40*/("""{"""),format.raw/*23.41*/("""sorter: false"""),format.raw/*23.54*/("""}"""),format.raw/*23.55*/("""" title="Play" align="right">Play</th>
+                            <th class=""""),format.raw/*24.40*/("""{"""),format.raw/*24.41*/("""sorter: false"""),format.raw/*24.54*/("""}"""),format.raw/*24.55*/("""" title="Favourites" align="right"></th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        """),_display_(Seq[Any](/*28.26*/for(snip <- snips) yield /*28.44*/ {_display_(Seq[Any](format.raw/*28.46*/("""
+                        """),_display_(Seq[Any](/*29.26*/for(snip <- userSnips.savedSnips) yield /*29.59*/ {_display_(Seq[Any](format.raw/*29.61*/("""
                             <tr class="evenrow table-snip" data-toggle="tooltip" data-placement="right" title="Saved!">
-                                <td align="left" class="left snip-title">"""),_display_(Seq[Any](/*30.75*/snip/*30.79*/.song_name)),format.raw/*30.89*/("""</td>
-                                <td align="left" class="left snip-artist">"""),_display_(Seq[Any](/*31.76*/snip/*31.80*/.artist_name)),format.raw/*31.92*/("""</td>
-                                <td align="left" class="left snip-album">"""),_display_(Seq[Any](/*32.75*/snip/*32.79*/.album_name)),format.raw/*32.90*/("""</td>
+                                <td align="left" class="left snip-title">"""),_display_(Seq[Any](/*31.75*/snip/*31.79*/.song_name)),format.raw/*31.89*/("""</td>
+                                <td align="left" class="left snip-artist">"""),_display_(Seq[Any](/*32.76*/snip/*32.80*/.artist_name)),format.raw/*32.92*/("""</td>
+                                <td align="left" class="left snip-album">"""),_display_(Seq[Any](/*33.75*/snip/*33.79*/.album_name)),format.raw/*33.90*/("""</td>
                                 <td align="left" class="left">
                                     <div class="dropdown">
 
-                                        <a id=""""),_display_(Seq[Any](/*36.49*/snip/*36.53*/.id)),format.raw/*36.56*/("""" class="btn btn-sm dropdown-toggle center" data-toggle="dropdown" href="#">
+                                        <a id=""""),_display_(Seq[Any](/*37.49*/snip/*37.53*/.id)),format.raw/*37.56*/("""" class="btn btn-sm dropdown-toggle center" data-toggle="dropdown" href="#">
                                             <span style="cursor:pointer" class="glyphicon glyphicon-share"></span>
                                         </a>
 
@@ -71,11 +72,13 @@ Seq[Any](format.raw/*1.93*/("""
                                                 <a class="add-to-playlist-a" href="" align="left" data-toggle="modal" data-target="#add-to-playlist-modal">
                                                     Add to playlist
                                                 </a></li>
-                                            <li><a align="left" href="" class="save-snip"><i class="icon-off"></i>Save Snip</a></li>
-                                            <!--<li><a align="left" href=""><i class="icon-off"></i>Share on Sniplist</a></li>
-                                            <li><a align="left" href=""><i class="icon-off"></i>Share on -></a></li>-->
-                                            <li class="divider"></li>
-                                            <li><a align="left" href="#" class="dropdown-delete-snip"><i class="icon-off"></i>Delete</a></li>
+                                            """),_display_(Seq[Any](/*47.46*/if(localUser.id != userSnips.user.id)/*47.83*/ {_display_(Seq[Any](format.raw/*47.85*/("""
+                                                <li><a align="left" href="" class="save-snip"><i class="icon-off"></i>Favourite Snip</a></li>
+                                            """)))}/*49.47*/else/*49.52*/{_display_(Seq[Any](format.raw/*49.53*/("""
+                                                <li class="divider"></li>
+                                                <li><a align="left" href="#" class="dropdown-delete-snip"><i class="icon-off"></i>Delete</a></li>
+                                            """)))})),format.raw/*52.46*/("""
+
                                         </ul>
                                     </div>
                                 </td>
@@ -83,13 +86,14 @@ Seq[Any](format.raw/*1.93*/("""
                                     <span style="cursor:pointer" class="glyphicon glyphicon-play play-snip-table play-snippet"></span>
                                         <!--<button type="button" class="btn-primary btn btn-sm play-snippet">Play</button>-->
                                 </td>
-                                <td class="hidden snip-id" id=""""),_display_(Seq[Any](/*58.65*/snip/*58.69*/.id)),format.raw/*58.72*/("""" ></td>
-                                <td class="hidden snip-video-id" value=""""),_display_(Seq[Any](/*59.74*/snip/*59.78*/.url)),format.raw/*59.82*/(""""></td>
-                                <td class="hidden snip-video-startTime" value=""""),_display_(Seq[Any](/*60.81*/snip/*60.85*/.time_min)),format.raw/*60.94*/(""""></td>
-                                <td class="hidden snip-video-endTime" value=""""),_display_(Seq[Any](/*61.79*/snip/*61.83*/.time_max)),format.raw/*61.92*/(""""></td>
+                                <td align="left" style="vertical-align: middle" class="left snip-favourite-count"><span class="alert-danger badge">"""),_display_(Seq[Any](/*61.149*/snip/*61.153*/.favouriteCount)),format.raw/*61.168*/("""</span></td>
+                                <td class="hidden snip-id" id=""""),_display_(Seq[Any](/*62.65*/snip/*62.69*/.id)),format.raw/*62.72*/("""" ></td>
+                                <td class="hidden snip-video-id" value=""""),_display_(Seq[Any](/*63.74*/snip/*63.78*/.url)),format.raw/*63.82*/(""""></td>
+                                <td class="hidden snip-video-startTime" value=""""),_display_(Seq[Any](/*64.81*/snip/*64.85*/.time_min)),format.raw/*64.94*/(""""></td>
+                                <td class="hidden snip-video-endTime" value=""""),_display_(Seq[Any](/*65.79*/snip/*65.83*/.time_max)),format.raw/*65.92*/(""""></td>
 
                             </tr>
-                        """)))})),format.raw/*64.26*/("""
+                        """)))})),format.raw/*68.26*/("""
                     </tbody>
 
 
@@ -112,18 +116,7 @@ Seq[Any](format.raw/*1.93*/("""
 
                     </div>
                     <div id="modal-content">
-                        """),_display_(Seq[Any](/*87.26*/for(snipList <- snipLists) yield /*87.52*/ {_display_(Seq[Any](format.raw/*87.54*/("""
-                            <ul class="list-group">
-                                <li class="list-group-item playlist-li" style="cursor:pointer" value=""""),_display_(Seq[Any](/*89.104*/snipList/*89.112*/.id)),format.raw/*89.115*/("""">
-                                    """),_display_(Seq[Any](/*90.38*/if(snipList.snips.size() < 6)/*90.67*/{_display_(Seq[Any](format.raw/*90.68*/("""
-                                        <span class="badge alert-success">"""),_display_(Seq[Any](/*91.76*/snipList/*91.84*/.snips.size())),format.raw/*91.97*/("""</span>
-                                    """)))}/*92.39*/else/*92.44*/{_display_(Seq[Any](format.raw/*92.45*/("""
-                                        <span class="badge alert-danger">"""),_display_(Seq[Any](/*93.75*/snipList/*93.83*/.snips.size())),format.raw/*93.96*/("""</span>
-                                    """)))})),format.raw/*94.38*/("""
-                                    """),_display_(Seq[Any](/*95.38*/snipList/*95.46*/.name)),format.raw/*95.51*/("""
-                                </li>
-                            </ul>
-                        """)))})),format.raw/*98.26*/("""
+
                     </div>
                 </div>
                 <input id="selected-snip-id" type="text" hidden value=""/>
@@ -139,20 +132,20 @@ Seq[Any](format.raw/*1.93*/("""
 """)))})))}
     }
     
-    def render(localUser:models.User,snips:List[models.Snip],snipLists:List[models.SnipList]): play.api.templates.HtmlFormat.Appendable = apply(localUser,snips,snipLists)
+    def render(localUser:models.User,userSnips:models.MySnips): play.api.templates.HtmlFormat.Appendable = apply(localUser,userSnips)
     
-    def f:((models.User,List[models.Snip],List[models.SnipList]) => play.api.templates.HtmlFormat.Appendable) = (localUser,snips,snipLists) => apply(localUser,snips,snipLists)
+    def f:((models.User,models.MySnips) => play.api.templates.HtmlFormat.Appendable) = (localUser,userSnips) => apply(localUser,userSnips)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jul 29 00:44:20 EDT 2014
+                    DATE: Tue Jul 29 18:24:28 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snips/viewSnips.scala.html
-                    HASH: 2ee33427d53ded4259f956d86c41b3e52acbcf24
-                    MATRIX: 829->1|1014->92|1051->95|1086->122|1125->124|1853->824|1882->825|1923->838|1952->839|2053->912|2082->913|2123->926|2152->927|2340->1079|2374->1097|2414->1099|2645->1294|2658->1298|2690->1308|2807->1389|2820->1393|2854->1405|2970->1485|2983->1489|3016->1500|3229->1677|3242->1681|3267->1684|5188->3569|5201->3573|5226->3576|5344->3658|5357->3662|5383->3666|5507->3754|5520->3758|5551->3767|5673->3853|5686->3857|5717->3866|5817->3934|6767->4848|6809->4874|6849->4876|7042->5032|7060->5040|7086->5043|7162->5083|7200->5112|7239->5113|7351->5189|7368->5197|7403->5210|7467->5256|7480->5261|7519->5262|7630->5337|7647->5345|7682->5358|7759->5403|7833->5441|7850->5449|7877->5454|8007->5552
-                    LINES: 26->1|29->1|31->3|31->3|31->3|50->22|50->22|50->22|50->22|51->23|51->23|51->23|51->23|56->28|56->28|56->28|58->30|58->30|58->30|59->31|59->31|59->31|60->32|60->32|60->32|64->36|64->36|64->36|86->58|86->58|86->58|87->59|87->59|87->59|88->60|88->60|88->60|89->61|89->61|89->61|92->64|115->87|115->87|115->87|117->89|117->89|117->89|118->90|118->90|118->90|119->91|119->91|119->91|120->92|120->92|120->92|121->93|121->93|121->93|122->94|123->95|123->95|123->95|126->98
+                    HASH: 4ab6d80ed2229aa8349a6c4d3469f4e978cb59fe
+                    MATRIX: 804->1|956->59|993->62|1028->89|1067->91|1346->334|1364->343|1396->353|1920->849|1949->850|1990->863|2019->864|2120->937|2149->938|2190->951|2219->952|2325->1030|2354->1031|2395->1044|2424->1045|2614->1199|2663->1232|2703->1234|2934->1429|2947->1433|2979->1443|3096->1524|3109->1528|3143->1540|3259->1620|3272->1624|3305->1635|3518->1812|3531->1816|3556->1819|4362->2589|4408->2626|4448->2628|4655->2817|4668->2822|4707->2823|5005->3089|5696->3743|5710->3747|5748->3762|5861->3839|5874->3843|5899->3846|6017->3928|6030->3932|6056->3936|6180->4024|6193->4028|6224->4037|6346->4123|6359->4127|6390->4136|6490->4204
+                    LINES: 26->1|29->1|31->3|31->3|31->3|38->10|38->10|38->10|50->22|50->22|50->22|50->22|51->23|51->23|51->23|51->23|52->24|52->24|52->24|52->24|57->29|57->29|57->29|59->31|59->31|59->31|60->32|60->32|60->32|61->33|61->33|61->33|65->37|65->37|65->37|75->47|75->47|75->47|77->49|77->49|77->49|80->52|89->61|89->61|89->61|90->62|90->62|90->62|91->63|91->63|91->63|92->64|92->64|92->64|93->65|93->65|93->65|96->68
                     -- GENERATED --
                 */
             

@@ -616,11 +616,7 @@ body {
     border-color: black;
 }
 
-.favourite {
-    color: white;
-}
-
-.favourite:hover {
+.favourite-snip:hover {
     color: gray;
 }
 
@@ -649,4 +645,9 @@ body {
 
 .red {
     color: red;
+}
+
+
+.favourite-sniplist:hover {
+    color: grey;
 }

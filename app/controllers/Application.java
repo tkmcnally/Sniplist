@@ -113,17 +113,20 @@ public class Application extends Controller {
         return ok(
                 Routes.javascriptRouter("jsRoutes",
                         controllers.routes.javascript.Snips.getVideo(),
-                        controllers.routes.javascript.Snips.saveSnip(),
+                        controllers.routes.javascript.Snips.createSnip(),
                         controllers.routes.javascript.Snips.getSnip(),
                         controllers.routes.javascript.MySnipsController.removeSnip(),
                         controllers.routes.javascript.MySnipsController.saveSnip(),
                         controllers.routes.javascript.MySnipsController.toggleSnip(),
+                        controllers.routes.javascript.MySniplistsController.removeSniplist(),
+                        controllers.routes.javascript.MySniplistsController.saveSniplist(),
+                        controllers.routes.javascript.MySniplistsController.mySniplists(),
+                        controllers.routes.javascript.MySniplistsController.toggleSniplist(),
                         controllers.routes.javascript.SnipLists.saveSnipList(),
                         controllers.routes.javascript.SnipLists.addToSnipList(),
-                        controllers.routes.javascript.SnipLists.deleteSnipList(),
                         controllers.routes.javascript.SnipLists.loadSnipListByUser(),
                         controllers.routes.javascript.SnipLists.deleteFromSnipList(),
-                        controllers.routes.javascript.SnipLists.getSnipListsByUser())
+                        controllers.routes.javascript.SnipLists.viewSnipListsLocalUser())
         );
     }
 

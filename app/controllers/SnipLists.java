@@ -2,9 +2,7 @@ package controllers;
 
 import be.objectify.deadbolt.java.actions.Group;
 import be.objectify.deadbolt.java.actions.Restrict;
-import models.Snip;
-import models.SnipList;
-import models.User;
+import models.*;
 import play.data.Form;
 import play.data.validation.Constraints;
 import play.mvc.Controller;
@@ -43,16 +41,36 @@ public class SnipLists extends Controller {
     @Restrict(@Group(Application.USER_ROLE))
     public static Result viewSniplistsByUser(final String id) {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
-        User user = Application.getLocalUser(session());
+        User localUser = Application.getLocalUser(session());
 
-        if(id != null) {
+        User user = null;
+        if (id != null) {
             user = User.findById(id);
+        } else {
+            user = localUser;
         }
 
         Result result = internalServerError();
-        if(user != null) {
-            List<SnipList> snips = SnipList.findByUser(user);
-            result = ok(views.html.sniplists.sniplists.render(user, snips));
+        if (user != null) {
+            MySniplists userSniplists = MySniplists.findByUser(user);
+            MySniplists mySniplists = MySniplists.findByUser(localUser);
+
+            MySnips mySnips = MySnips.findByUser(localUser);
+
+
+            for (SnipList s : userSniplists.savedSniplists) {
+                for (Snip sn : s.snips) {
+                    if (MySnips.isFavourited(mySnips, sn)) {
+                        sn.localUserFavourited = true;
+                    }
+                }
+                if (MySniplists.isFavourited(mySniplists, s)) {
+                    s.localUserFavourited = true;
+                }
+            }
+
+
+            result = ok(views.html.sniplists.sniplists.render(localUser, userSniplists));
         } else {
             result = badRequest("Invalid user id!");
         }
@@ -75,10 +93,14 @@ public class SnipLists extends Controller {
         Result result = internalServerError();
 
         final Form<MySnipList> snipListForm = MY_SNIPLIST_FORM.bindFromRequest();
-        if(snipListForm.hasErrors()) {
+        if (snipListForm.hasErrors()) {
             result = badRequest(snipListForm.globalError().message().toString());
         } else {
             SnipList snipList = SnipList.create(snipListForm.get(), user);
+
+            MySniplists mySniplists = MySniplists.findByUser(user);
+            MySniplists.addSniplist(mySniplists, snipList);
+
             result = ok("Sniplist '" + snipList.name + "' has been saved!");
         }
 
@@ -86,7 +108,7 @@ public class SnipLists extends Controller {
     }
 
     @Restrict(@Group(Application.USER_ROLE))
-    public static Result addToSnipList( final String snipList_id, final String snip_id) {
+    public static Result addToSnipList(final String snipList_id, final String snip_id) {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
@@ -95,35 +117,15 @@ public class SnipLists extends Controller {
         Snip snip = Snip.findById(snip_id).get();
         SnipList snipList = SnipList.findById(snipList_id).get();
 
-        if(snip == null || snipList == null) {
+        if (snip == null || snipList == null) {
             result = badRequest("Invalid Snip/SnipList Id.");
-        } else if(!SnipList.isOwner(user, snipList)) {
+        } else if (!SnipList.isOwner(user, snipList)) {
             result = badRequest("You do not own that SnipList!");
         } else if (snipList.isFull()) {
             result = badRequest("The Sniplist '" + snipList.name + "' is full!");
         } else {
             SnipList.addSnipToSnipList(snipList, snip);
-            result = ok("'" + snip.song_name + " has been added to '" + snipList.name + "'." );
-        }
-
-        return result;
-    }
-
-    @Restrict(@Group(Application.USER_ROLE))
-    public static Result deleteSnipList(final String snipList_id) {
-        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
-        final User user = Application.getLocalUser(session());
-
-        Result result = internalServerError();
-        SnipList snipList = SnipList.findById(snipList_id).get();
-
-        if(snipList == null) {
-            result = badRequest("Invalid SnipList Id.");
-        } else if(!SnipList.isOwner(user, snipList)) {
-            result = badRequest("You do not own that SnipList!");
-        } else {
-            SnipList.deleteSnipList(snipList);
-            result = ok("Sniplist '" + snipList.name + "' has been removed." );
+            result = ok("'" + snip.song_name + " has been added to '" + snipList.name + "'.");
         }
 
         return result;
@@ -132,14 +134,37 @@ public class SnipLists extends Controller {
     @Restrict(@Group(Application.USER_ROLE))
     public static Result loadSnipListByUser(final String id) {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
-        final User user = Application.getLocalUser(session());
+        final User localUser = Application.getLocalUser(session());
 
-        final User id_user = User.findById(id);
+        User user = null;
+        if (id != null) {
+            user = User.findById(id);
+        } else {
+            user = localUser;
+        }
+
 
         Result result = internalServerError();
-        if(id_user != null) {
-            List<SnipList> snips = SnipList.findByUser(user);
-            result = ok(views.html.sniplists.arraySniplists.render(user, snips));
+        if (user != null) {
+            MySniplists userSniplists = MySniplists.findByUser(user);
+            MySniplists mySniplists = MySniplists.findByUser(localUser);
+
+            MySnips mySnips = MySnips.findByUser(user);
+
+
+            if (user.id != user.id) {
+                for (SnipList s : userSniplists.savedSniplists) {
+                    for (Snip sn : s.snips) {
+                        if (MySnips.isFavourited(mySnips, sn)) {
+                            sn.localUserFavourited = true;
+                        }
+                    }
+                    if (MySniplists.isFavourited(mySniplists, s)) {
+                        s.localUserFavourited = true;
+                    }
+                }
+            }
+            result = ok(views.html.sniplists.arraySniplists.render(user, userSniplists));
         } else {
             result = badRequest("Invalid user id!");
         }
@@ -158,9 +183,9 @@ public class SnipLists extends Controller {
         Snip snip = Snip.findById(snip_id).get();
         SnipList snipList = SnipList.findById(snipList_id).get();
 
-        if(snip == null || snipList == null) {
+        if (snip == null || snipList == null) {
             result = badRequest("Invalid Snip/SnipList Id.");
-        } else if(!SnipList.isOwner(user, snipList)) {
+        } else if (!SnipList.isOwner(user, snipList)) {
             result = badRequest("You do not own that SnipList!");
         } else {
             SnipList.deleteSnipFromSnipList(snipList, snip);
@@ -170,15 +195,27 @@ public class SnipLists extends Controller {
         return result;
     }
 
+
     @Restrict(@Group(Application.USER_ROLE))
-    public static Result getSnipListsByUser() {
+    public static Result viewSnipListsLocalUser() {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
-        List<SnipList> snipLists = SnipList.findByUser(user);
+        Result result = internalServerError();
 
-        return ok(views.html.sniplists.addSnipToList.render(snipLists));
+        MySniplists mySniplists = MySniplists.findByUser(user);
+        MySniplists filtered = MySniplists.copy(mySniplists);
+        for(SnipList sl: mySniplists.savedSniplists) {
+            if(!user.id.equals(sl.user.id)) {
+                filtered.savedSniplists.remove(sl);
+            }
+        }
+
+        if (mySniplists != null) {
+            result = ok(views.html.sniplists.addSnipToList.render(filtered));
+        }
+
+        return result;
     }
-
 }
 

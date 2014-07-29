@@ -50,14 +50,17 @@ GET         /login/password/forgot                 controllers.Signup.forgotPass
 POST        /login/password/forgot                 controllers.Signup.doForgotPassword
 
 
-GET        /snips/getSnip                          controllers.Snips.getSnip(id: String)
+GET         /snips/getSnip                         controllers.Snips.getSnip(id: String)
 
 GET         /snips/add                             controllers.Snips.add()
 
 POST        /snips/add/getVideo                    controllers.Snips.getVideo(songUrl: String)
 
-POST        /snips/add/saveSnip                    controllers.Snips.saveSnip()
+POST        /snips/add/createSnip                  controllers.Snips.createSnip()
 
+
+
+GET         /:id/snips                             controllers.MySnipsController.viewSnipsByUser(id: String)
 
 GET         /snips/                                controllers.MySnipsController.mySnips()
 
@@ -67,6 +70,14 @@ POST        /snips/saveSnip                        controllers.MySnipsController
 
 POST        /snips/toggleSnip                      controllers.MySnipsController.toggleSnip(id: String)
 
+
+GET         /sniplists/                            controllers.MySniplistsController.mySniplists()
+
+POST        /sniplists/removeSniplist              controllers.MySniplistsController.removeSniplist(id: String)
+
+POST        /sniplists/saveSniplist                controllers.MySniplistsController.saveSniplist(id: String)
+
+POST        /sniplists/toggleSniplist              controllers.MySniplistsController.toggleSniplist(id: String)
 
 
 
@@ -79,13 +90,11 @@ POST        /sniplists/new                         controllers.SnipLists.saveSni
 
 POST        /sniplists/add                         controllers.SnipLists.addToSnipList(snipList_id: String, snip_id: String)
 
-POST        /sniplists/delete                      controllers.SnipLists.deleteSnipList(snipList_id: String)
-
 GET         /sniplists/load                        controllers.SnipLists.loadSnipListByUser(snipList_id: String)
 
 POST        /sniplists/deleteSnip                  controllers.SnipLists.deleteFromSnipList(snipList_id: String, snip_id: String)
 
-GET         /sniplists/getSniplists                controllers.SnipLists.getSnipListsByUser()
+POST        /sniplists/viewSnipListsLocalUser      controllers.SnipLists.viewSnipListsLocalUser()
 
 
 

@@ -77,7 +77,7 @@ public class Snips extends Controller {
     }
 
     @Restrict(@Group(Application.USER_ROLE))
-    public static Result saveSnip() {
+    public static Result createSnip() {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 

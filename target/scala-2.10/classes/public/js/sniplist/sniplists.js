@@ -43,7 +43,7 @@ function createSnipList() {
 }
 
 function deleteSnipList(snipList_id) {
-    jsRoutes.controllers.SnipLists.deleteSnipList(snipList_id).ajax({
+    jsRoutes.controllers.MySniplistsController.toggleSniplist(snipList_id).ajax({
         success: function(data) {
             var tableRow = $("table").filter(function() {
                 return $(this).attr('value') == snipList_id;
@@ -67,6 +67,18 @@ function deleteSnipList(snipList_id) {
     });
 }
 
+function favouriteSniplist(snipList) {
+    jsRoutes.controllers.MySniplistsController.toggleSniplist(snipList).ajax({
+        success: function(data) {
+        },
+        error: function(xhr, status, error) {
+
+        }
+    })
+}
+
+
+
 function deleteSnipFromSnipList(snipList, snip) {
     jsRoutes.controllers.SnipLists.deleteFromSnipList(snipList, snip).ajax({
         success: function(data) {
@@ -74,9 +86,7 @@ function deleteSnipFromSnipList(snipList, snip) {
             loadSnipLists(localUser);
         },
         error: function(xhr, status, error) {
-            $("#modal-message").removeClass("hidden");
-            $("#modal-message").addClass("alert-danger");
-            $("#modal-message").text(xhr.responseText);
+
         }
     })
 }
@@ -112,4 +122,16 @@ function initialize() {
             $('[data-original-title]').popover('hide');
         }
     });
+
+    $(".favourite-sniplist").click(function() {
+        $(this).toggleClass('red');
+        favouriteSniplist($(this).closest('table').attr('value'));
+    });
+
+    $(".favourite-snip").click(function() {
+        $(this).toggleClass('red');
+        favouriteSnip($(this).closest("tr").find(".snip-id").attr("id"));
+    });
+
+
 }

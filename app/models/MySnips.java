@@ -52,6 +52,7 @@ public class MySnips {
                 }
             }
             if(!duplicate) {
+                snip.favourite();
                 mySnips.savedSnips.add(snip);
                 MorphiaUtil.getDatastore().save(mySnips);
             }
@@ -63,10 +64,8 @@ public class MySnips {
     public static boolean toggleSnip(final MySnips mySnips, final Snip snip) {
         if(!removeSnip(mySnips, snip)) {
             addSnip(mySnips, snip);
-            System.out.println("added");
             return true;
         } else {
-            System.out.println("removed");
             return false;
         }
     }
@@ -76,6 +75,7 @@ public class MySnips {
     public static boolean removeSnip(final MySnips mySnips, final Snip snip) {
         for (Snip s : mySnips.savedSnips) {
             if (s.id.equals(snip.id)) {
+                snip.unfavourite();
                 mySnips.savedSnips.remove(s);
                 MorphiaUtil.getDatastore().save(mySnips);
                 return true;

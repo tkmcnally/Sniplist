@@ -5,11 +5,11 @@ import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
+import org.mongodb.morphia.annotations.Transient;
 import org.mongodb.morphia.query.Query;
 import play.data.format.Formats;
 import util.MorphiaUtil;
 
-import javax.persistence.Transient;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -37,7 +37,11 @@ public class SnipList {
     @Formats.DateTime(pattern = "yyyy-MM-dd HH:mm:ss")
     public Date creation_date;
 
-    public int favourite_count;
+    public int favouriteCount;
+
+    @Transient
+    public boolean localUserFavourited;
+
 
     public static SnipList create(final SnipLists.MySnipList snipListForm, final User user) {
 
@@ -47,7 +51,7 @@ public class SnipList {
         snipList.user = user;
         snipList.snips = new ArrayList<Snip>();
 
-        snipList.favourite_count = 0;
+        snipList.favouriteCount = 0;
         snipList.creation_date = new Date();
 
         MorphiaUtil.getDatastore().save(snipList);
@@ -107,6 +111,16 @@ public class SnipList {
             return true;
         }
         return false;
+    }
+
+    public void favourite() {
+        favouriteCount++;
+        MorphiaUtil.getDatastore().save(this);
+    }
+
+    public void unfavourite() {
+        favouriteCount--;
+        MorphiaUtil.getDatastore().save(this);
     }
 
 }

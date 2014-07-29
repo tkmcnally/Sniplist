@@ -172,6 +172,7 @@ public class User implements Subject {
 
         /* create my snips collection */
         MySnips.create(user);
+        MySniplists.create(user);
 
         return user;
     }
