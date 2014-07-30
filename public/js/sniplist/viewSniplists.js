@@ -7,6 +7,7 @@ function loadSnipLists(localUser, fn) {
         success: function(data) {
             $("#sniplist-array").html(data).hide().fadeIn(100);
             initialize();
+            bindExternalPlayerButtons();
         },
         error: function(xhr, status, error) {
             $("#global-message").removeClass("hidden");
