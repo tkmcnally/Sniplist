@@ -4,7 +4,7 @@
 		module="sniplist-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20140728170511"
+		publication="20140730144855"
 		e:scalaVersion="2.10" e:sbtVersion="0.13"
 	>
 		<description>

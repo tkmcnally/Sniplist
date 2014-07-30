@@ -18,7 +18,6 @@ function addToSniplist(snipList, snip) {
                 $("#modal-message").addClass("alert-success");
                 $("#modal-message").text(data);
             });
-
         },
         error: function(xhr, status, error) {
             $("#modal-message").removeClass("hidden");
@@ -35,7 +34,7 @@ function bindTableButtons() {
     });
 
     $('.add-to-playlist-a').click(function(e) {
-        var value_id = $(this).closest("tr").find(".snip-id" ).attr("id");
+        var value_id = $(this).closest("tr").find(".snip-id" ).attr("value");
         var value = $(this).closest('tr').find('.snip-title').text();
         $('#add-to-playlist-modal-title').text("Add '" + value + "' to a playlist.");
         $('#selected-snip-id').val(value_id);
@@ -49,7 +48,7 @@ function bindTableButtons() {
 
     $('.save-snip').click(function(e) {
         e.preventDefault();
-        saveSnipToCollection($(this).closest('tr'), $(this).closest("tr").find(".snip-id" ).attr("id"));
+        saveSnipToCollection($(this).closest('tr'), $(this).closest("tr").find(".snip-id" ).attr("value"));
     });
 
     $('.table-snip').on('shown.bs.tooltip', function() {
@@ -61,14 +60,12 @@ function bindTableButtons() {
     $('.table-snip').tooltip({
         trigger: 'manual'
     });
-
-
 }
 
 
 function deleteSnip(elem) {
 
-    var snip = elem.closest("tr").find(".snip-id" ).attr("id");
+    var snip = elem.closest("tr").find(".snip-id" ).attr("value");
     jsRoutes.controllers.MySnipsController.removeSnip(snip).ajax({
         success: function(data) {
             $("#global-message").removeClass("hidden");
@@ -105,11 +102,8 @@ function loadModalData(callBack) {
 function favouriteSnip(snip) {
     jsRoutes.controllers.MySnipsController.toggleSnip(snip).ajax({
         success: function(data) {
-
         },
         error: function(xhr, status, error) {
-
-
         }
     })
 }

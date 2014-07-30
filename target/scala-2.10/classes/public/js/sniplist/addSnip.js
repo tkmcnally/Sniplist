@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 
 
-    // loop toggle
+    // MediaPlayer custom button for YouTube redirect.
     MediaElementPlayer.prototype.buildurltube = function(player, controls, layers, media) {
         var
         // create the loop button
@@ -50,7 +50,7 @@ $(document).ready(function() {
     }
 
 
-    // loop toggle
+    // MediaPlayer custom information div for the currently playing Snip.
     MediaElementPlayer.prototype.buildinfo= function(player, controls, layers, media) {
         var
         // create the loop button
@@ -58,7 +58,7 @@ $(document).ready(function() {
                 $('<div class="mejs-info hidden">' +
                     '<div class="row"> <div class="col-md-10"> <h2 id="mejs-snip-title"></h2> </div> <div class="col-md-2"> <span style="cursor: pointer" class="glyphicon glyphicon-heart favourite-snip"></span> </div> </div>' +
                     '<div class="row"><div class="col-md-10"><h4 id="mejs-snip-artist"></h4></div>' +
-                    '<div class="col-md-2"><h4 id="mejs-snip-curr-time" style="float: right"></h4></div></div><div id="live-snip-id" value="" hidden></div>' +
+                    '<div class="col-md-2"><h4 id="mejs-snip-curr-time" style="float: right"></h4></div></div> <div id="live-snip-list-id" value="" hidden></div><div id="live-snip-id" value="" hidden></div> <div id="live-snip-video-id" value="" hidden></div> <div id="live-snip-start-time" value="" hidden></div><div id="live-snip-end-time" value="" hidden></div></div>' +
                     '</div>')
                     // append it to the toolbar
                     .appendTo(controls)
@@ -68,12 +68,7 @@ $(document).ready(function() {
                     });
     }
 
-
-
-
-    //Initializing the MediaElementPlayer and assigning it to a global variable.
-
-
+    // Initializing the MediaElementPlayer and assigning it to a global variable.
     if ($("#player").length) {
         //$("#sticky-footer").remove();
         globalPlayer = new MediaElementPlayer('#player', {
@@ -135,6 +130,48 @@ $(document).ready(function() {
                     false
                 );
 
+                mediaElement.addEventListener('ended', function (e) {
+
+                        var video_id;
+                        var start_time;
+                        var end_time;
+
+                        var current_row;
+
+                        var live_list_id = $("#live-snip-list-id").text();
+                        var id = $("#live-snip-id").text();
+
+                        var table = $("table").filter(function() {
+                            return $(this).attr('value') == live_list_id;
+                        });
+
+                        var table_row = table.find(".snip-id").filter(function() {
+                            return $(this).attr('value') == id;
+                        });
+
+                        if(table_row.parent("tr").next("tr").length) {
+                            current_row = table_row.parent("tr").next("tr");
+                            video_id = current_row.find(".snip-id").attr('value');
+                            start_time = current_row.find(".snip-video-startTime").attr('value');
+                            end_time = current_row.find(".snip-video-endTime").attr('value');
+
+                            getSnip(video_id, loadVideo, true);
+
+
+                        } else {
+                            current_row = table.find("tr");
+                            video_id = current_row.find(".snip-id").attr("value");
+
+                            getSnip(video_id, loadVideo, false);
+
+                        }
+
+
+
+                    },
+                    false
+                );
+
                 $(".mejs-info .favourite-snip").click(function() {
 
                     $(this).toggleClass('red');
@@ -145,8 +182,6 @@ $(document).ready(function() {
             }
         });
     }
-
-
 
     bindExternalPlayerButtons();
 
@@ -163,19 +198,20 @@ function getVideo(songUrl, callBack) {
     })
 }
 
-function getSnip(snipId, callBack) {
+function getSnip(snipId, callBack, autoPlay) {
     jsRoutes.controllers.Snips.getSnip(snipId).ajax({
         success: function(data) {
-            callBack(data);
+            callBack(data, autoPlay);
         },
         error: function(data) {
-            callBack(data);
+            callBack(data, autoPlay);
         }
     })
 }
 
-function loadVideoPlayer() {
 
+// [Add Snip] - Change source of MediaPlayer and autoPlay.
+function loadVideoPlayer() {
     var vidArray = [{ src: "https://www.youtube.com/v/" + $("input[name=snip_video_id]").val() + "?version=3", type: 'video/youtube' }];
     globalPlayer.setSrc(vidArray);
     globalPlayer.media.load();
@@ -183,6 +219,7 @@ function loadVideoPlayer() {
     globalPlayer.play();
 }
 
+// [Add Snip] - Submit form data for new Snip to be created.
 function saveSnip() {
 
     $("input[name=snip_title]").val($("#title-input").val());
@@ -206,47 +243,42 @@ function saveSnip() {
             $("#global-message").addClass("alert-danger");
             $("#global-message").text(data.error);
         }
-
     })
 }
 
+
 function bindExternalPlayerButtons() {
 
+    // [Add Snip] - Enter trigger for URL input box.
     $('#url-input').keypress(function(e) {
         if( e.which == 13) {
             getVideo($(this).val(), addSnipGetVideo);
         }
     });
 
+    // [Add Snip] - Button click trigger for URL input box.
     $('#url-input-btn').click(function() {
         getVideo($('#url-input').val(), addSnipGetVideo);
     });
 
-
+    // [Add Snip] - Button click trigger to Save Snip.
     $('#save_snip_btn').click(function() {
         saveSnip();
     });
 
+    // [Add Snip] - Button click trigger to seek to beginning of range slider.
     $('#play-snip-button').click(function() {
         globalPlayer.setCurrentTime(parseInt($("input[name=time_min]").val()));
         globalPlayer.play();
     });
 
+    // [
     $(".play-snippet").click(function() {
-        var snipId = $(this).closest("tr").find(".snip-id").attr("id");
-        /*var videoId = $(this).closest("tr").find(".snip-video-id").attr("value");
-        var startTime = $(this).closest("tr").find(".snip-video-startTime").attr("value");
-        var endTime = $(this).closest("tr").find(".snip-video-endTime").attr("value");
-        var title = $(this).closest("tr").find(".snip-title").text();
-        var artist = $(this).closest("tr").find(".snip-artist").text();*/
-
-
-
-        getSnip(snipId, playVideo);
+        var snipId = $(this).closest("tr").find(".snip-id").attr("value");
+        $("#live-snip-list-id").text($(this).closest("table").attr('value'));
+        getSnip(snipId, loadVideo, true);
 
     });
-
-
 }
 
 
@@ -271,7 +303,9 @@ function addSnipGetVideo(data) {
     }
 }
 
-function playVideo(data) {
+
+// [Main] - Set new source for audio player and autoPlay.
+function loadVideo(data, autoPlay) {
 
     globalAudioPlayer.media.pluginApi.cueVideoById({
         videoId: data.video_id,
@@ -281,12 +315,17 @@ function playVideo(data) {
 
     globalAudioPlayer.load();
     globalAudioPlayer.setVolume(0.2);
-    globalAudioPlayer.play();
+    if(autoPlay) {
+        globalAudioPlayer.play();
+    }
 
     $("#mejs-snip-title").text(data.title);
     $("#mejs-snip-artist").text(data.artist);
     // $("#live-snip-id").text(snipId);
     $("#live-snip-id").text(data.snip_id);
+    $("#live-snip-video-id").text(data.video_id);
+    $("#live-snip-start-time").text(data.start_time);
+    $("#live-snip-end-time").text(data.end_time);
 
     $('#watch-youtube').click(function() {
         window.open('http://www.youtube.com/watch/' + data.video_id);
@@ -294,8 +333,15 @@ function playVideo(data) {
 
 
     if(data && data.favourite == true) {
-        $(".mejs-info .favourite-snip").toggleClass('red');
+        $(".mejs-info .favourite-snip").addClass('red');
+        $(".mejs-info .favourite-snip").removeClass('black');
+    } else {
+        $(".mejs-info .favourite-snip").removeClass('red');
+        $(".mejs-info .favourite-snip").addClass('black');
     }
 
     $(".mejs-info").removeClass('hidden');
+
+
+
 }

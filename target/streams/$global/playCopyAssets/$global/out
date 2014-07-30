@@ -130,11 +130,11 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery\jquery.min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery\jquery.min.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\mediaelement\flashmediaelement.swf,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\mediaelement\flashmediaelement.swf)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\mediaelement\mediaelement-and-player.min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\mediaelement\mediaelement-and-player.min.js)[0m
-[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\add-snip.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\add-snip.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\addSnip.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\addSnip.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\custom-audio-player.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\custom-audio-player.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\custom-crop-slider.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\custom-crop-slider.js)[0m
-[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\my-snips.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\my-snips.js)[0m
-[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\sniplists.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\sniplists.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\viewSniplists.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\viewSniplists.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\viewSnips.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\viewSnips.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\tablecloth\jquery.prettyPhoto.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\tablecloth\jquery.prettyPhoto.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\tablecloth\jquery.tablecloth.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\tablecloth\jquery.tablecloth.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\tablecloth\jquery.tablesorter.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\tablecloth\jquery.tablesorter.js)[0m

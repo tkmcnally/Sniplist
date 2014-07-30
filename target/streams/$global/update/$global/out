@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for sniplist#sniplist_2.10;1.0 [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2c3ed2fb[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@50c09dc5[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -186,8 +186,16 @@
 [0m[[0mdebug[0m] [0m		tried http://joscha.github.com/play-easymail/repo/snapshots/com.feth/play-easymail_2.10/0.5-SNAPSHOT/ivys/ivy.xml[0m
 [0m[[0mdebug[0m] [0m	play-easymail (snapshot): found md file for com.feth#play-easymail_2.10;0.5-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m		=> http://joscha.github.com/play-easymail/repo/snapshots/com.feth/play-easymail_2.10/0.5-SNAPSHOT/ivys/ivy.xml (0.5-SNAPSHOT)[0m
-[0m[[0mdebug[0m] [0m	default-cache: revision in cache (not updated): com.feth#play-easymail_2.10;0.5-SNAPSHOT[0m
-[0m[[0mdebug[0m] [0m	found com.feth#play-easymail_2.10;0.5-SNAPSHOT in sbt-chain[0m
+[0m[[0mdebug[0m] [0m	default-cache: revision in cache is not up to date: com.feth#play-easymail_2.10;0.5-SNAPSHOT[0m
+[0m[[0mdebug[0m] [0mdownloading http://joscha.github.com/play-easymail/repo/snapshots/com.feth/play-easymail_2.10/0.5-SNAPSHOT/ivys/ivy.xml ...[0m
+[0m[[0mdebug[0m] [0m	play-easymail (snapshot): downloading http://joscha.github.com/play-easymail/repo/snapshots/com.feth/play-easymail_2.10/0.5-SNAPSHOT/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	play-easymail (snapshot): downloading http://joscha.github.com/play-easymail/repo/snapshots/com.feth/play-easymail_2.10/0.5-SNAPSHOT/ivys/ivy.xml.sha1[0m
+[0m[[0mdebug[0m] [0msha1 OK for http://joscha.github.com/play-easymail/repo/snapshots/com.feth/play-easymail_2.10/0.5-SNAPSHOT/ivys/ivy.xml[0m
+[0m[[0mdebug[0m] [0m	[SUCCESSFUL ] com.feth#play-easymail_2.10;0.5-SNAPSHOT!ivy.xml(ivy.original) (405ms)[0m
+[0m[[0mdebug[0m] [0mcom.feth#play-easymail_2.10;0.5-SNAPSHOT is changing, but has not changed: will trust cached artifacts if any[0m
+[0m[[0mdebug[0m] [0mDeleting additional old artifacts from cache for changed module com.feth#play-easymail_2.10;0.5-SNAPSHOT:[0m
+[0m[[0mdebug[0m] [0m	[0m
+[0m[[0mdebug[0m] [0m	found com.feth#play-easymail_2.10;0.5-SNAPSHOT in play-easymail (snapshot)[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.feth#play-easymail_2.10;0.5-SNAPSHOT->org.scala-lang#scala-library;2.10.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.feth#play-easymail_2.10;0.5-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.feth#play-easymail_2.10;0.5-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
@@ -428,7 +436,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->de.u-mass#lastfm-java;0.1.2 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies sniplist#sniplist_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-java_2.10;2.2.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@2786f36[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1968265a[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-java_2.10;2.2.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: com.typesafe.play#play-java_2.10;2.2.3[0m
 [0m[[0mdebug[0m] [0m	found com.typesafe.play#play-java_2.10;2.2.3 in sbt-chain[0m
@@ -7548,7 +7556,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3006ms :: artifacts dl 109ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3396ms :: artifacts dl 125ms[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 compile produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 runtime produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 test produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-test.xml[0m
@@ -7562,5 +7570,5 @@
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 docs produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 pom produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for sniplist#sniplist_2.10;1.0 scala-tool produced in C:\Projects\Sniplist\target\resolution-cache\reports\sniplist-sniplist_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (3006ms resolve - 109ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (3396ms resolve - 125ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

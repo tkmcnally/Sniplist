@@ -651,3 +651,12 @@ body {
 .favourite-sniplist:hover {
     color: grey;
 }
+
+.mejs-controls  button {
+
+    -webkit-transition: .2s all;
+}
+
+.mejs-controls  button:hover {
+    -webkit-filter: brightness(50%);
+}

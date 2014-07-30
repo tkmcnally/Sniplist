@@ -130,7 +130,7 @@ function initialize() {
 
     $(".favourite-snip").click(function() {
         $(this).toggleClass('red');
-        favouriteSnip($(this).closest("tr").find(".snip-id").attr("id"));
+        favouriteSnip($(this).closest("tr").find(".snip-id").attr("value"));
     });
 
 
