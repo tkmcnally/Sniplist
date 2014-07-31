@@ -1,22 +1,25 @@
-@main("Contact Us", "contact") {
-            <!-- *****************************************************************************************************************
+@(js: java.lang.Boolean)
+
+@content = {
+
+    <!-- *****************************************************************************************************************
 	 BLUE WRAP
 	 ***************************************************************************************************************** -->
-        <div id="blue">
-            <div class="container">
-                <div class="row">
-                    <h3>Contact.</h3>
-                </div><!-- /row -->
-            </div> <!-- /container -->
-        </div><!-- /blue -->
+    <div id="blue">
+        <div class="container">
+            <div class="row">
+                <h3>Contact.</h3>
+            </div><!-- /row -->
+        </div> <!-- /container -->
+    </div> <!-- /blue -->
 
-        <!-- *****************************************************************************************************************
+    <!-- *****************************************************************************************************************
 	 CONTACT WRAP
 	 ***************************************************************************************************************** -->
 
-        <div id="contactwrap"></div>
+    <div id="contactwrap"></div>
 
-            <!-- *****************************************************************************************************************
+    <!-- *****************************************************************************************************************
 	 CONTACT FORMS
 	 ***************************************************************************************************************** -->
 
@@ -33,10 +36,14 @@
                     Email: noreply.sniplist@@gmail.com<br/>
                 </p>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
             </div>
             <div class="col-lg-2"></div>
         </div><! --/row -->
     </div><! --/container -->
-
 }
+    @if(!js) {
+        @main("Contact Us", "contact")(content)
+    } else {
+        @content
+    }

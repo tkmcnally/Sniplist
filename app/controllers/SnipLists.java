@@ -40,6 +40,8 @@ public class SnipLists extends Controller {
 
     @Restrict(@Group(Application.USER_ROLE))
     public static Result viewSniplistsByUser(final String id) {
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         User localUser = Application.getLocalUser(session());
 
@@ -70,7 +72,7 @@ public class SnipLists extends Controller {
             }
 
 
-            result = ok(views.html.sniplists.sniplists.render(localUser, userSniplists));
+            result = ok(views.html.sniplists.sniplists.render(js, localUser, userSniplists));
         } else {
             result = badRequest("Invalid user id!");
         }
@@ -133,6 +135,7 @@ public class SnipLists extends Controller {
 
     @Restrict(@Group(Application.USER_ROLE))
     public static Result loadSnipListByUser(final String id) {
+
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User localUser = Application.getLocalUser(session());
 
@@ -198,6 +201,7 @@ public class SnipLists extends Controller {
 
     @Restrict(@Group(Application.USER_ROLE))
     public static Result viewSnipListsLocalUser() {
+
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 

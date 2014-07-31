@@ -20,15 +20,15 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object addSnip extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[models.User,play.api.templates.HtmlFormat.Appendable] {
+object addSnip extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[java.lang.Boolean,models.User,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(user: models.User = null):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(js: java.lang.Boolean, user: models.User = null):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
+def /*3.2*/content/*3.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
-Seq[Any](format.raw/*1.28*/("""
+Seq[Any](format.raw/*3.13*/("""
 
-"""),_display_(Seq[Any](/*3.2*/main("Add Snip", "addSnip")/*3.29*/ {_display_(Seq[Any](format.raw/*3.31*/("""
     <div class="container mtb">
         <div class="row">
             <div id="global-message" class="alert alert-danger hidden"></div>
@@ -98,23 +98,32 @@ Seq[Any](format.raw/*1.28*/("""
 
 
     </div>
+""")))};
+Seq[Any](format.raw/*1.51*/("""
+
+"""),format.raw/*74.2*/("""
+
+"""),_display_(Seq[Any](/*76.2*/if(!js)/*76.9*/ {_display_(Seq[Any](format.raw/*76.11*/("""
+    """),_display_(Seq[Any](/*77.6*/main("Add Snip", "addSnip")/*77.33*/(content))),format.raw/*77.42*/("""
+""")))}/*78.3*/else/*78.8*/{_display_(Seq[Any](format.raw/*78.9*/("""
+    """),_display_(Seq[Any](/*79.6*/content)),format.raw/*79.13*/("""
 """)))})))}
     }
     
-    def render(user:models.User): play.api.templates.HtmlFormat.Appendable = apply(user)
+    def render(js:java.lang.Boolean,user:models.User): play.api.templates.HtmlFormat.Appendable = apply(js,user)
     
-    def f:((models.User) => play.api.templates.HtmlFormat.Appendable) = (user) => apply(user)
+    def f:((java.lang.Boolean,models.User) => play.api.templates.HtmlFormat.Appendable) = (js,user) => apply(js,user)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jul 29 00:03:10 EDT 2014
+                    DATE: Thu Jul 31 02:20:26 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snips/addSnip.scala.html
-                    HASH: c6f2c34efedf205903435c08c1d6e7d5eb2e6496
-                    MATRIX: 787->1|907->27|944->30|979->57|1018->59
-                    LINES: 26->1|29->1|31->3|31->3|31->3
+                    HASH: 03eb3b03c55d6218a9790962628d834727c8c869
+                    MATRIX: 805->1|931->53|945->60|1029->64|4017->50|4046->3013|4084->3016|4099->3023|4139->3025|4180->3031|4216->3058|4247->3067|4267->3070|4279->3075|4317->3076|4358->3082|4387->3089
+                    LINES: 26->1|28->3|28->3|30->3|102->1|104->74|106->76|106->76|106->76|107->77|107->77|107->77|108->78|108->78|108->78|109->79|109->79
                     -- GENERATED --
                 */
             

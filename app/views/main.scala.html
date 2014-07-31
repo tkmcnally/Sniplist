@@ -16,14 +16,14 @@
             <meta name="description" content="">
             <meta name="author" content="">
 
-            <!-- Sniplist Favicon -->
+                <!-- Sniplist Favicon -->
             <link rel="shortcut icon" href="@routes.Assets.at("img/icons/favicon.ico")">
 
-            <!-- Bootstrap core CSS -->
+                <!-- Bootstrap core CSS -->
             <link href="@routes.Assets.at("css/bootstrap.css")" rel="stylesheet">
             <link href="@routes.Assets.at("css/font-awesome.min.css")" rel="stylesheet">
 
-            <!-- Social Media Icon CSS -->
+                <!-- Social Media Icon CSS -->
             <link href="@routes.Assets.at("css/transparent.css")" rel="stylesheet"/>
 
                 <!-- Custom Sniplist Styles -->
@@ -35,13 +35,13 @@
             <link href="@routes.Assets.at("css/tablecloth.css")" rel="stylesheet">
 
 
-            <!-- Styles for MediaElementJs
+                <!-- Styles for MediaElementJs
             <link  href="@routes.Assets.at("css/mediaelementplayer.css")" rel="Stylesheet" />
             <link  href="@routes.Assets.at("css/mejs-skins.css")" rel="Stylesheet" />-->
 
             <link  href="@routes.Assets.at("css/audio-sniplist-skin.css")" rel="Stylesheet" />
 
-            <!-- JQueryUI CSS -->
+                <!-- JQueryUI CSS -->
             <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
             <link rel="stylesheet" type="text/css" href="@routes.Assets.at("css/iThing.css")">
 
@@ -60,14 +60,14 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="@routes.Application.index()">SNIPLIST.</a>
-                       <!-- @subjectPresent() {
-                            <form class="navbar-form navbar-left" role="search">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                </div>
-                                <button type="submit" class="btn btn-default">Submit</button>
-                            </form>
-                        }-->
+                            <!-- @subjectPresent() {
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    }-->
                     </div>
                     <div class="navbar-collapse collapse navbar-right">
                         <ul class="nav navbar-nav">
@@ -90,11 +90,11 @@
                                         <div class="dropdown">
                                             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                                                 <i class="icon-user"></i> @user.name.toUpperCase()
-                                                <span class="caret"></span>
+                                            <span class="caret"></span>
                                             </a>
 
                                             <ul class="dropdown-menu">
-                                                <li><a href="@routes.Application.profile()">@Messages("playauthenticate.navigation.profile").toUpperCase()</a></li>
+                                                <li><a class="dynamic-link" href="@routes.Application.profile()">@Messages("playauthenticate.navigation.profile").toUpperCase()</a></li>
                                                 <li class="divider"></li>
                                                 <li><a href="@com.feth.play.module.pa.controllers.routes.Authenticate.logout()"><i class="icon-off"></i> @Messages("playauthenticate.navigation.logout").toUpperCase()</a></li>
                                             </ul>
@@ -113,11 +113,10 @@
             </div>
 
             <div id="wrapper-content">
-                        <!-- INSERTED CONTENT GOES HERE (From other scala templates) -->
-                    @content
-            </div>
+                @content
+        </div>
 
-        <!-- *****************************************************************************************************************
+                <!-- *****************************************************************************************************************
             FOOTER
         ***************************************************************************************************************** -->
             @subjectNotPresent() {
@@ -167,18 +166,18 @@
 
 
 
-            <!-- Placed at the end of the document so the pages load faster
+                <!-- Placed at the end of the document so the pages load faster
             =========================================== -->
 
-            <!-- JQuery JS External Imports -->
+                <!-- JQuery JS External Imports -->
             <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
 
             <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
-            <!-- JQRangeSlider JS -->
+                <!-- JQRangeSlider JS -->
             <script type="text/javascript" src="@routes.Assets.at("js/jqrangeslider/jQEditRangeSlider-min.js")"></script>
 
-            <!-- Bootstrap core JavaScript -->
+                <!-- Bootstrap core JavaScript -->
             <script src="@routes.Assets.at("js/bootstrap/bootstrap.min.js")"></script>
             <script src="@routes.Assets.at("js/bootstrap/retina-1.1.0.js")"></script>
             <script src="@routes.Assets.at("js/jquery/jquery.hoverdir.js")"></script>
@@ -189,124 +188,132 @@
             <script src="@routes.Assets.at("js/tablecloth/jquery.tablesorter.js")"></script>
             <script src="@routes.Assets.at("js/tablecloth/jquery.tablecloth.js")"></script>
 
-          <!--  <script src="@routes.Assets.at("js/bootstrap/bootstrap.js")"></script>-->
+                <!--  <script src="@routes.Assets.at("js/bootstrap/bootstrap.js")"></script>-->
 
-            <!-- Sniplist core JavaScript -->
-            <script src="@routes.Assets.at("js/sniplist/addSnip.js")"></script>
+        <!-- Sniplist core JavaScript -->
+        <script src="@routes.Assets.at("js/sniplist/addSnip.js")"></script>
             <script src="@routes.Assets.at("js/sniplist/viewSnips.js")"></script>
             <script src="@routes.Assets.at("js/sniplist/custom-crop-slider.js")"></script>
 
             <script src="@routes.Assets.at("js/sniplist/viewSniplists.js")"></script>
 
-            <!-- Play Framework JavaScript routes for AJAX calls. -->
+                <!-- Play Framework JavaScript routes for AJAX calls. -->
             <script src="@routes.Application.javascriptRoutes()" type="text/javascript"></script>
 
-            <!-- MediaElementPlayer -->
+                <!-- MediaElementPlayer -->
             <script src="@routes.Assets.at("js/mediaelement/mediaelement-and-player.min.js")"></script>
+
+
+
+            <script src="@routes.Assets.at("js/sniplist/dynamicAjax.js")"></script>
+
+
+                <!-- BLOCK UI -->
+            <script src="@routes.Assets.at("js/jquery/blockUI.js")"></script>
 
 
             <script type="text/javascript" charset="utf-8">
 
-                //GLOBAL MEDIA PLAYER
-                var globalPlayer;
+            //GLOBAL MEDIA PLAYER
+            var globalPlayer;
 
-                var globalAudioPlayer;
+            var globalAudioPlayer;
 
-                // Portfolio
-                (function($) {
-                "use strict";
-                var $container = $('.portfolio'),
-                $items = $container.find('.portfolio-item'),
-                portfolioLayout = 'fitRows';
+            // Portfolio
+            (function($) {
+            "use strict";
+            var $container = $('.portfolio'),
+            $items = $container.find('.portfolio-item'),
+            portfolioLayout = 'fitRows';
 
-                if( $container.hasClass('portfolio-centered') ) {
-                portfolioLayout = 'masonry';
-                }
+            if( $container.hasClass('portfolio-centered') ) {
+            portfolioLayout = 'masonry';
+            }
 
-               /* $container.isotope({
-                filter: '*',
-                animationEngine: 'best-available',
-                layoutMode: portfolioLayout,
-                animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-                },
-                masonry: {
-                }
-                }, refreshWaypoints());
-                */
-                function refreshWaypoints() {
-                setTimeout(function() {
-                }, 1000);
-                }
+            /* $container.isotope({
+             filter: '*',
+             animationEngine: 'best-available',
+             layoutMode: portfolioLayout,
+             animationOptions: {
+             duration: 750,
+             easing: 'linear',
+             queue: false
+             },
+             masonry: {
+             }
+             }, refreshWaypoints());
+             */
+            function refreshWaypoints() {
+            setTimeout(function() {
+            }, 1000);
+            }
 
-                $('nav.portfolio-filter ul a').on('click', function() {
-                var selector = $(this).attr('data-filter');
-                $container.isotope({ filter: selector }, refreshWaypoints());
-                $('nav.portfolio-filter ul a').removeClass('active');
-                $(this).addClass('active');
-                return false;
-                });
+            $('nav.portfolio-filter ul a').on('click', function() {
+            var selector = $(this).attr('data-filter');
+            $container.isotope({ filter: selector }, refreshWaypoints());
+            $('nav.portfolio-filter ul a').removeClass('active');
+            $(this).addClass('active');
+            return false;
+            });
 
-                function getColumnNumber() {
-                var winWidth = $(window).width(),
-                columnNumber = 1;
+            function getColumnNumber() {
+            var winWidth = $(window).width(),
+            columnNumber = 1;
 
-                if (winWidth > 1200) {
-                columnNumber = 5;
-                } else if (winWidth > 950) {
-                columnNumber = 4;
-                } else if (winWidth > 600) {
-                columnNumber = 3;
-                } else if (winWidth > 400) {
-                columnNumber = 2;
-                } else if (winWidth > 250) {
-                columnNumber = 1;
-                }
-                return columnNumber;
-                }
+            if (winWidth > 1200) {
+            columnNumber = 5;
+            } else if (winWidth > 950) {
+            columnNumber = 4;
+            } else if (winWidth > 600) {
+            columnNumber = 3;
+            } else if (winWidth > 400) {
+            columnNumber = 2;
+            } else if (winWidth > 250) {
+            columnNumber = 1;
+            }
+            return columnNumber;
+            }
 
-                function setColumns() {
-                var winWidth = $(window).width(),
-                columnNumber = getColumnNumber(),
-                itemWidth = Math.floor(winWidth / columnNumber);
+            function setColumns() {
+            var winWidth = $(window).width(),
+            columnNumber = getColumnNumber(),
+            itemWidth = Math.floor(winWidth / columnNumber);
 
-                $container.find('.portfolio-item').each(function() {
-                $(this).css( {
-                width : itemWidth + 'px'
-                });
-                });
-                }
+            $container.find('.portfolio-item').each(function() {
+            $(this).css( {
+            width : itemWidth + 'px'
+            });
+            });
+            }
 
-                function setPortfolio() {
-                setColumns();
-                $container.isotope('reLayout');
-                }
+            function setPortfolio() {
+            setColumns();
+            $container.isotope('reLayout');
+            }
 
-                /*
-                $container.imagesLoaded(function () {
-                setPortfolio();
-                });*/
+            /*
+            $container.imagesLoaded(function () {
+            setPortfolio();
+            });*/
 
-                $(window).on('resize', function () {
-                setPortfolio();
-                });
+            $(window).on('resize', function () {
+            setPortfolio();
+            });
 
 
 
-                })(jQuery);
+            })(jQuery);
             </script>
 
-            <!-- Google Analytics Tracking JS -->
+                <!-- Google Analytics Tracking JS -->
             <script>
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-                ga('create', 'UA-52100641-2', 'auto');
-                ga('send', 'pageview');
+            ga('create', 'UA-52100641-2', 'auto');
+            ga('send', 'pageview');
 
             </script>
         </body>

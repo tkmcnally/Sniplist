@@ -20,94 +20,101 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object profile extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[models.User,play.api.templates.HtmlFormat.Appendable] {
+object profile extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[java.lang.Boolean,models.User,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(localUser: models.User = null):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(js: java.lang.Boolean, localUser: models.User = null):play.api.templates.HtmlFormat.Appendable = {
         _display_ {import com.feth.play.module.pa.views.html._
 
+def /*5.2*/content/*5.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
-Seq[Any](format.raw/*1.33*/("""
-
-"""),format.raw/*4.1*/("""
-"""),_display_(Seq[Any](/*5.2*/main(Messages("playauthenticate.profile.title"),"profile")/*5.60*/ {_display_(Seq[Any](format.raw/*5.62*/("""
-
+Seq[Any](format.raw/*5.13*/("""
     <div class="container mtb">
-        """),_display_(Seq[Any](/*8.10*/if(flash.contains(Application.FLASH_ERROR_KEY))/*8.57*/ {_display_(Seq[Any](format.raw/*8.59*/("""
+        """),_display_(Seq[Any](/*7.10*/if(flash.contains(Application.FLASH_ERROR_KEY))/*7.57*/ {_display_(Seq[Any](format.raw/*7.59*/("""
             <div class="alert alert-danger">
-            """),_display_(Seq[Any](/*10.14*/flash()/*10.21*/.get(Application.FLASH_ERROR_KEY))),format.raw/*10.54*/("""
+            """),_display_(Seq[Any](/*9.14*/flash()/*9.21*/.get(Application.FLASH_ERROR_KEY))),format.raw/*9.54*/("""
             </div>
-        """)))})),format.raw/*12.10*/("""
-        """),_display_(Seq[Any](/*13.10*/if(flash.contains(Application.FLASH_MESSAGE_KEY))/*13.59*/ {_display_(Seq[Any](format.raw/*13.61*/("""
+        """)))})),format.raw/*11.10*/("""
+        """),_display_(Seq[Any](/*12.10*/if(flash.contains(Application.FLASH_MESSAGE_KEY))/*12.59*/ {_display_(Seq[Any](format.raw/*12.61*/("""
             <div class="alert alert-success">
-            """),_display_(Seq[Any](/*15.14*/flash()/*15.21*/.get(Application.FLASH_MESSAGE_KEY))),format.raw/*15.56*/("""
+            """),_display_(Seq[Any](/*14.14*/flash()/*14.21*/.get(Application.FLASH_MESSAGE_KEY))),format.raw/*14.56*/("""
             </div>
-        """)))})),format.raw/*17.10*/("""
-        <h1>"""),_display_(Seq[Any](/*18.14*/Messages("playauthenticate.profile.title"))),format.raw/*18.56*/("""</h1>
+        """)))})),format.raw/*16.10*/("""
+        <h1>"""),_display_(Seq[Any](/*17.14*/Messages("playauthenticate.profile.title"))),format.raw/*17.56*/("""</h1>
         <p>
-        Your name is """),_display_(Seq[Any](/*20.23*/localUser/*20.32*/.name)),format.raw/*20.37*/(""" and your email address is """),_display_(Seq[Any](/*20.65*/if(!localUser.email)/*20.85*/ {_display_(Seq[Any](format.raw/*20.87*/("""<em>&lt;unknown&gt;</em>.""")))}/*20.114*/else/*20.119*/{_display_(Seq[Any](format.raw/*20.120*/("""
-            """),_display_(Seq[Any](/*21.14*/localUser/*21.23*/.email)),format.raw/*21.29*/(""".
+            Your name is """),_display_(Seq[Any](/*19.27*/localUser/*19.36*/.name)),format.raw/*19.41*/(""" and your email address is """),_display_(Seq[Any](/*19.69*/if(!localUser.email)/*19.89*/ {_display_(Seq[Any](format.raw/*19.91*/("""
+            <em>&lt;unknown&gt;</em>
+            .""")))}/*21.16*/else/*21.21*/{_display_(Seq[Any](format.raw/*21.22*/("""
+            """),_display_(Seq[Any](/*22.14*/localUser/*22.23*/.email)),format.raw/*22.29*/(""".
             <i>
-            """),_display_(Seq[Any](/*23.14*/if(!localUser.emailValidated && localUser.email)/*23.62*/ {_display_(Seq[Any](format.raw/*23.64*/("""
-              (<a href=""""),_display_(Seq[Any](/*24.26*/routes/*24.32*/.Account.verifyEmail)),format.raw/*24.52*/("""">unverified - click to verify</a>)
-            """)))}/*25.15*/else/*25.20*/{_display_(Seq[Any](format.raw/*25.21*/("""
-              (verified)
-            """)))})),format.raw/*27.14*/("""</i>
-        """)))})),format.raw/*28.10*/("""
-        <br />
-            """),_display_(Seq[Any](/*30.14*/if(localUser.firstName && localUser.lastName)/*30.59*/ {_display_(Seq[Any](format.raw/*30.61*/("""
-                Your first name is """),_display_(Seq[Any](/*31.37*/localUser/*31.46*/.firstName)),format.raw/*31.56*/(""" and your last name is """),_display_(Seq[Any](/*31.80*/localUser/*31.89*/.lastName)),format.raw/*31.98*/("""
+            """),_display_(Seq[Any](/*24.14*/if(!localUser.emailValidated && localUser.email)/*24.62*/ {_display_(Seq[Any](format.raw/*24.64*/("""
+                (<a href=""""),_display_(Seq[Any](/*25.28*/routes/*25.34*/.Account.verifyEmail)),format.raw/*25.54*/("""">unverified - click to verify</a>)
+            """)))}/*26.15*/else/*26.20*/{_display_(Seq[Any](format.raw/*26.21*/("""
+                (verified)
+            """)))})),format.raw/*28.14*/("""</i>
+        """)))})),format.raw/*29.10*/("""
+            <br />
+            """),_display_(Seq[Any](/*31.14*/if(localUser.firstName && localUser.lastName)/*31.59*/ {_display_(Seq[Any](format.raw/*31.61*/("""
+                Your first name is """),_display_(Seq[Any](/*32.37*/localUser/*32.46*/.firstName)),format.raw/*32.56*/(""" and your last name is """),_display_(Seq[Any](/*32.80*/localUser/*32.89*/.lastName)),format.raw/*32.98*/("""
                 <br/>
-            """)))})),format.raw/*33.14*/("""
-        """),_display_(Seq[Any](/*34.10*/defining(localUser.getProviders())/*34.44*/ { providers =>_display_(Seq[Any](format.raw/*34.59*/("""
-            """),_display_(Seq[Any](/*35.14*/if(providers.size() > 0)/*35.38*/ {_display_(Seq[Any](format.raw/*35.40*/("""
-            """),_display_(Seq[Any](/*36.14*/if(providers.size() ==1)/*36.38*/ {_display_(Seq[Any](format.raw/*36.40*/("""
-                """),_display_(Seq[Any](/*37.18*/Messages("playauthenticate.profile.providers_one"))),format.raw/*37.68*/("""
-            """)))}/*38.15*/else/*38.20*/{_display_(Seq[Any](format.raw/*38.21*/("""
-                """),_display_(Seq[Any](/*39.18*/Messages("playauthenticate.profile.providers_many",providers.size().toString()))),format.raw/*39.97*/("""
-            """)))})),format.raw/*40.14*/("""
-            """),_display_(Seq[Any](/*41.14*/for(p <- providers) yield /*41.33*/ {_display_(Seq[Any](format.raw/*41.35*/("""
-                """),_display_(Seq[Any](/*42.18*/_providerIcon(p))),format.raw/*42.34*/("""
-            """)))})),format.raw/*43.14*/("""
-            <br/>
-            """)))})),format.raw/*45.14*/("""
-        """)))})),format.raw/*46.10*/("""
+            """)))})),format.raw/*34.14*/("""
+            """),_display_(Seq[Any](/*35.14*/defining(localUser.getProviders())/*35.48*/ { providers =>_display_(Seq[Any](format.raw/*35.63*/("""
+                """),_display_(Seq[Any](/*36.18*/if(providers.size() > 0)/*36.42*/ {_display_(Seq[Any](format.raw/*36.44*/("""
+                    """),_display_(Seq[Any](/*37.22*/if(providers.size() == 1)/*37.47*/ {_display_(Seq[Any](format.raw/*37.49*/("""
+                        """),_display_(Seq[Any](/*38.26*/Messages("playauthenticate.profile.providers_one"))),format.raw/*38.76*/("""
+                    """)))}/*39.23*/else/*39.28*/{_display_(Seq[Any](format.raw/*39.29*/("""
+                        """),_display_(Seq[Any](/*40.26*/Messages("playauthenticate.profile.providers_many", providers.size().toString()))),format.raw/*40.106*/("""
+                    """)))})),format.raw/*41.22*/("""
+                    """),_display_(Seq[Any](/*42.22*/for(p <- providers) yield /*42.41*/ {_display_(Seq[Any](format.raw/*42.43*/("""
+                        """),_display_(Seq[Any](/*43.26*/_providerIcon(p))),format.raw/*43.42*/("""
+                    """)))})),format.raw/*44.22*/("""
+                    <br/>
+                """)))})),format.raw/*46.18*/("""
+            """)))})),format.raw/*47.14*/("""
 
-        <br/>
-        """),_display_(Seq[Any](/*49.10*/currentAuth()/*49.23*/ { auth =>_display_(Seq[Any](format.raw/*49.33*/("""
-            """),_display_(Seq[Any](/*50.14*/Messages("playauthenticate.profile.logged"))),format.raw/*50.57*/(""" """),_display_(Seq[Any](/*50.59*/_providerIcon(auth.getProvider()))),format.raw/*50.92*/("""<br/>
-            """),_display_(Seq[Any](/*51.14*/if(auth.expires() != -1)/*51.38*/{_display_(Seq[Any](format.raw/*51.39*/("""
-               <!-- """),_display_(Seq[Any](/*52.22*/Messages("playauthenticate.profile.session", auth.getId(), Application.formatTimestamp(auth.expires())))),format.raw/*52.125*/("""-->
-                <h1> Your USERID is: """),_display_(Seq[Any](/*53.39*/localUser/*53.48*/.id)),format.raw/*53.51*/(""" </h1>
-            """)))}/*54.15*/else/*54.20*/{_display_(Seq[Any](format.raw/*54.21*/("""
-                """),_display_(Seq[Any](/*55.18*/Messages("playauthenticate.profile.session_endless", auth.getId()))),format.raw/*55.84*/("""
-            """)))})),format.raw/*56.14*/("""
+            <br/>
+            """),_display_(Seq[Any](/*50.14*/currentAuth()/*50.27*/ { auth =>_display_(Seq[Any](format.raw/*50.37*/("""
+                """),_display_(Seq[Any](/*51.18*/Messages("playauthenticate.profile.logged"))),format.raw/*51.61*/(""" """),_display_(Seq[Any](/*51.63*/_providerIcon(auth.getProvider()))),format.raw/*51.96*/(""" <br/>
+                """),_display_(Seq[Any](/*52.18*/if(auth.expires() != -1)/*52.42*/ {_display_(Seq[Any](format.raw/*52.44*/("""
+                        """),_display_(Seq[Any](/*53.26*/Messages("playauthenticate.profile.session", auth.getId(), Application.formatTimestamp(auth.expires())))),format.raw/*53.129*/("""
+                        <h1> Your USERID is: """),_display_(Seq[Any](/*54.47*/localUser/*54.56*/.id)),format.raw/*54.59*/(""" </h1>
+        """)))}/*55.11*/else/*55.16*/{_display_(Seq[Any](format.raw/*55.17*/("""
+            """),_display_(Seq[Any](/*56.14*/Messages("playauthenticate.profile.session_endless", auth.getId()))),format.raw/*56.80*/("""
         """)))})),format.raw/*57.10*/("""
+    """)))})),format.raw/*58.6*/("""
         <br/>
         <ul>
-            <li><a href=""""),_display_(Seq[Any](/*60.27*/routes/*60.33*/.Account.changePassword)),format.raw/*60.56*/("""">"""),_display_(Seq[Any](/*60.59*/Messages("playauthenticate.profile.password_change"))),format.raw/*60.111*/("""</a></li>
-            <li><a href=""""),_display_(Seq[Any](/*61.27*/routes/*61.33*/.Account.link)),format.raw/*61.46*/("""">Add/Remove Authentication Providers</a></li>
+            <li><a href=""""),_display_(Seq[Any](/*61.27*/routes/*61.33*/.Account.changePassword)),format.raw/*61.56*/("""">"""),_display_(Seq[Any](/*61.59*/Messages("playauthenticate.profile.password_change"))),format.raw/*61.111*/("""</a></li>
+            <li><a href=""""),_display_(Seq[Any](/*62.27*/routes/*62.33*/.Account.link)),format.raw/*62.46*/("""">Add/Remove Authentication Providers</a></li>
         </ul>
-        </p>
+    </p>
     </div>
-""")))})),format.raw/*65.2*/("""
-"""))}
+""")))};
+Seq[Any](format.raw/*1.56*/("""
+"""),format.raw/*3.1*/("""
+
+"""),format.raw/*66.2*/("""
+    """),_display_(Seq[Any](/*67.6*/if(!js)/*67.13*/ {_display_(Seq[Any](format.raw/*67.15*/("""
+        """),_display_(Seq[Any](/*68.10*/main("About Us", "about")/*68.35*/(content))),format.raw/*68.44*/("""
+    """)))}/*69.7*/else/*69.12*/{_display_(Seq[Any](format.raw/*69.13*/("""
+        """),_display_(Seq[Any](/*70.10*/content)),format.raw/*70.17*/("""
+    """)))})))}
     }
     
-    def render(localUser:models.User): play.api.templates.HtmlFormat.Appendable = apply(localUser)
+    def render(js:java.lang.Boolean,localUser:models.User): play.api.templates.HtmlFormat.Appendable = apply(js,localUser)
     
-    def f:((models.User) => play.api.templates.HtmlFormat.Appendable) = (localUser) => apply(localUser)
+    def f:((java.lang.Boolean,models.User) => play.api.templates.HtmlFormat.Appendable) = (js,localUser) => apply(js,localUser)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Jul 29 15:57:23 EDT 2014
+                    DATE: Thu Jul 31 02:23:01 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/profile.scala.html
-                    HASH: 156794c59af6237ab2c72e52c2c657f6cef25c54
-                    MATRIX: 781->1|951->32|981->82|1018->85|1084->143|1123->145|1204->191|1259->238|1298->240|1395->301|1411->308|1466->341|1529->372|1576->383|1634->432|1674->434|1772->496|1788->503|1845->538|1908->569|1959->584|2023->626|2101->668|2119->677|2146->682|2210->710|2239->730|2279->732|2325->759|2339->764|2379->765|2430->780|2448->789|2476->795|2545->828|2602->876|2642->878|2705->905|2720->911|2762->931|2831->982|2844->987|2883->988|2956->1029|3003->1044|3070->1075|3124->1120|3164->1122|3238->1160|3256->1169|3288->1179|3348->1203|3366->1212|3397->1221|3467->1259|3514->1270|3557->1304|3610->1319|3661->1334|3694->1358|3734->1360|3785->1375|3818->1399|3858->1401|3913->1420|3985->1470|4019->1486|4032->1491|4071->1492|4126->1511|4227->1590|4274->1605|4325->1620|4360->1639|4400->1641|4455->1660|4493->1676|4540->1691|4606->1725|4649->1736|4713->1764|4735->1777|4783->1787|4834->1802|4899->1845|4937->1847|4992->1880|5048->1900|5081->1924|5120->1925|5179->1948|5305->2051|5384->2094|5402->2103|5427->2106|5467->2128|5480->2133|5519->2134|5574->2153|5662->2219|5709->2234|5752->2245|5845->2302|5860->2308|5905->2331|5944->2334|6019->2386|6092->2423|6107->2429|6142->2442|6263->2532
-                    LINES: 26->1|30->1|32->4|33->5|33->5|33->5|36->8|36->8|36->8|38->10|38->10|38->10|40->12|41->13|41->13|41->13|43->15|43->15|43->15|45->17|46->18|46->18|48->20|48->20|48->20|48->20|48->20|48->20|48->20|48->20|48->20|49->21|49->21|49->21|51->23|51->23|51->23|52->24|52->24|52->24|53->25|53->25|53->25|55->27|56->28|58->30|58->30|58->30|59->31|59->31|59->31|59->31|59->31|59->31|61->33|62->34|62->34|62->34|63->35|63->35|63->35|64->36|64->36|64->36|65->37|65->37|66->38|66->38|66->38|67->39|67->39|68->40|69->41|69->41|69->41|70->42|70->42|71->43|73->45|74->46|77->49|77->49|77->49|78->50|78->50|78->50|78->50|79->51|79->51|79->51|80->52|80->52|81->53|81->53|81->53|82->54|82->54|82->54|83->55|83->55|84->56|85->57|88->60|88->60|88->60|88->60|88->60|89->61|89->61|89->61|93->65
+                    HASH: fa712d8df107bb1a288e1ba21e61b04bb30cfe1c
+                    MATRIX: 799->1|975->108|989->115|1073->119|1152->163|1207->210|1246->212|1342->273|1357->280|1411->313|1474->344|1521->355|1579->404|1619->406|1717->468|1733->475|1790->510|1853->541|1904->556|1968->598|2050->644|2068->653|2095->658|2159->686|2188->706|2228->708|2301->763|2314->768|2353->769|2404->784|2422->793|2450->799|2519->832|2576->880|2616->882|2681->911|2696->917|2738->937|2807->988|2820->993|2859->994|2934->1037|2981->1052|3052->1087|3106->1132|3146->1134|3220->1172|3238->1181|3270->1191|3330->1215|3348->1224|3379->1233|3449->1271|3500->1286|3543->1320|3596->1335|3651->1354|3684->1378|3724->1380|3783->1403|3817->1428|3857->1430|3920->1457|3992->1507|4034->1531|4047->1536|4086->1537|4149->1564|4252->1644|4307->1667|4366->1690|4401->1709|4441->1711|4504->1738|4542->1754|4597->1777|4675->1823|4722->1838|4794->1874|4816->1887|4864->1897|4919->1916|4984->1959|5022->1961|5077->1994|5138->2019|5171->2043|5211->2045|5274->2072|5400->2175|5484->2223|5502->2232|5527->2235|5563->2253|5576->2258|5615->2259|5666->2274|5754->2340|5797->2351|5835->2358|5928->2415|5943->2421|5988->2444|6027->2447|6102->2499|6175->2536|6190->2542|6225->2555|6350->55|6378->103|6409->2641|6451->2648|6467->2655|6507->2657|6554->2668|6588->2693|6619->2702|6644->2710|6657->2715|6696->2716|6743->2727|6772->2734
+                    LINES: 26->1|29->5|29->5|31->5|33->7|33->7|33->7|35->9|35->9|35->9|37->11|38->12|38->12|38->12|40->14|40->14|40->14|42->16|43->17|43->17|45->19|45->19|45->19|45->19|45->19|45->19|47->21|47->21|47->21|48->22|48->22|48->22|50->24|50->24|50->24|51->25|51->25|51->25|52->26|52->26|52->26|54->28|55->29|57->31|57->31|57->31|58->32|58->32|58->32|58->32|58->32|58->32|60->34|61->35|61->35|61->35|62->36|62->36|62->36|63->37|63->37|63->37|64->38|64->38|65->39|65->39|65->39|66->40|66->40|67->41|68->42|68->42|68->42|69->43|69->43|70->44|72->46|73->47|76->50|76->50|76->50|77->51|77->51|77->51|77->51|78->52|78->52|78->52|79->53|79->53|80->54|80->54|80->54|81->55|81->55|81->55|82->56|82->56|83->57|84->58|87->61|87->61|87->61|87->61|87->61|88->62|88->62|88->62|93->1|94->3|96->66|97->67|97->67|97->67|98->68|98->68|98->68|99->69|99->69|99->69|100->70|100->70
                     -- GENERATED --
                 */
             

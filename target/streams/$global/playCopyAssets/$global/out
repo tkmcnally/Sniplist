@@ -27,6 +27,7 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\fonts\segoeui.ttf,C:\Projects\Sniplist\target\scala-2.10\classes\public\fonts\segoeui.ttf)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\fonts\segoe_ui_light.ttf,C:\Projects\Sniplist\target\scala-2.10\classes\public\fonts\segoe_ui_light.ttf)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\agency.jpg,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\agency.jpg)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\ajax-loader.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\ajax-loader.gif)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\asc.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\asc.gif)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\asc_light.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\asc_light.gif)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\contact.jpg,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\contact.jpg)[0m
@@ -121,6 +122,7 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\bootstrap\custom.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\bootstrap\custom.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\bootstrap\retina-1.1.0.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\bootstrap\retina-1.1.0.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jqrangeslider\jQEditRangeSlider-min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jqrangeslider\jQEditRangeSlider-min.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery\blockUI.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery\blockUI.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery\jquery-1.7.2.min.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery\jquery-1.7.2.min.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery\jquery-ui-1.10.4.custom.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery\jquery-ui-1.10.4.custom.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\jquery\jquery.hoverdir.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\jquery\jquery.hoverdir.js)[0m
@@ -133,6 +135,7 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\addSnip.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\addSnip.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\custom-audio-player.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\custom-audio-player.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\custom-crop-slider.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\custom-crop-slider.js)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\dynamicAjax.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\dynamicAjax.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\viewSniplists.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\viewSniplists.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\sniplist\viewSnips.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\sniplist\viewSnips.js)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\js\tablecloth\jquery.prettyPhoto.js,C:\Projects\Sniplist\target\scala-2.10\classes\public\js\tablecloth\jquery.prettyPhoto.js)[0m

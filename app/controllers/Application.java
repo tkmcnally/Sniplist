@@ -33,11 +33,16 @@ public class Application extends Controller {
 	}
 
     public static Result about() {
-        return ok(about.render());
+
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+
+        return ok(about.render(js));
     }
 
     public static Result contact() {
-        return ok(contact.render());
+
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+        return ok(contact.render(js));
     }
 
     public static User getLocalUser(final Session session) {
@@ -56,8 +61,10 @@ public class Application extends Controller {
 
 	@Restrict(@Group(Application.USER_ROLE))
 	public static Result profile() {
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+
 		final User localUser = getLocalUser(session());
-		return ok(profile.render(localUser));
+		return ok(profile.render(js, localUser));
 	}
 
 	public static Result login() {
@@ -126,7 +133,8 @@ public class Application extends Controller {
                         controllers.routes.javascript.SnipLists.addToSnipList(),
                         controllers.routes.javascript.SnipLists.loadSnipListByUser(),
                         controllers.routes.javascript.SnipLists.deleteFromSnipList(),
-                        controllers.routes.javascript.SnipLists.viewSnipListsLocalUser())
+                        controllers.routes.javascript.SnipLists.viewSnipListsLocalUser(),
+                        controllers.routes.javascript.MySnipsController.mySnips())
         );
     }
 

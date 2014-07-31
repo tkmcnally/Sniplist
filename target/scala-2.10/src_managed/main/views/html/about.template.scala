@@ -20,14 +20,14 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object about extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
+object about extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[java.lang.Boolean,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply():play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(js: java.lang.Boolean):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
+def /*3.2*/content/*3.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
-Seq[Any](_display_(Seq[Any](/*1.2*/main("About Us", "about")/*1.27*/ {_display_(Seq[Any](format.raw/*1.29*/("""
-
+Seq[Any](format.raw/*3.13*/("""
         <!-- *****************************************************************************************************************
  BLUE WRAP
  ***************************************************************************************************************** -->
@@ -79,7 +79,7 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("About Us", "about")/*1.27*/ {_display_(
             <div class="col-lg-3 col-md-3 col-sm-3"></div>
             <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="he-wrap tpl6">
-                    <img src=""""),_display_(Seq[Any](/*54.32*/routes/*54.38*/.Assets.at("img/team/thomas.jpg"))),format.raw/*54.71*/("""" alt="">
+                    <img src=""""),_display_(Seq[Any](/*55.32*/routes/*55.38*/.Assets.at("img/team/thomas.jpg"))),format.raw/*55.71*/("""" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
@@ -97,7 +97,7 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("About Us", "about")/*1.27*/ {_display_(
 
             <div class="col-lg-3 col-md-3 col-sm-3">
                 <div class="he-wrap tpl6">
-                    <img src=""""),_display_(Seq[Any](/*72.32*/routes/*72.38*/.Assets.at("img/team/mathew.jpg"))),format.raw/*72.71*/("""" alt="">
+                    <img src=""""),_display_(Seq[Any](/*73.32*/routes/*73.38*/.Assets.at("img/team/mathew.jpg"))),format.raw/*73.71*/("""" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
@@ -114,23 +114,32 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("About Us", "about")/*1.27*/ {_display_(
             <div class="col-lg-3 col-md-3 col-sm-3"></div>
         </div><! --/row -->
     </div><! --/container -->
+""")))};
+Seq[Any](format.raw/*1.25*/("""
+
+"""),format.raw/*90.2*/("""
+
+"""),_display_(Seq[Any](/*92.2*/if(!js)/*92.9*/ {_display_(Seq[Any](format.raw/*92.11*/("""
+    """),_display_(Seq[Any](/*93.6*/main("About Us", "about")/*93.31*/(content))),format.raw/*93.40*/("""
+""")))}/*94.3*/else/*94.8*/{_display_(Seq[Any](format.raw/*94.9*/("""
+    """),_display_(Seq[Any](/*95.6*/content)),format.raw/*95.13*/("""
 """)))})))}
     }
     
-    def render(): play.api.templates.HtmlFormat.Appendable = apply()
+    def render(js:java.lang.Boolean): play.api.templates.HtmlFormat.Appendable = apply(js)
     
-    def f:(() => play.api.templates.HtmlFormat.Appendable) = () => apply()
+    def f:((java.lang.Boolean) => play.api.templates.HtmlFormat.Appendable) = (js) => apply(js)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jul 28 17:05:20 EDT 2014
+                    DATE: Thu Jul 31 02:20:15 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/about.scala.html
-                    HASH: b93605626b7e2203fd2f24ceb3c34624cfd9b5a6
-                    MATRIX: 864->1|897->26|936->28|4020->3076|4035->3082|4090->3115|5083->4072|5098->4078|5153->4111
-                    LINES: 29->1|29->1|29->1|82->54|82->54|82->54|100->72|100->72|100->72
+                    HASH: 475520530937ee93ac51551531a3e5e28a4df52f
+                    MATRIX: 785->1|885->29|899->36|983->40|4065->3086|4080->3092|4135->3125|5128->4082|5143->4088|5198->4121|6180->24|6211->5064|6251->5069|6266->5076|6306->5078|6348->5085|6382->5110|6413->5119|6434->5123|6446->5128|6484->5129|6526->5136|6555->5143
+                    LINES: 26->1|28->3|28->3|30->3|82->55|82->55|82->55|100->73|100->73|100->73|118->1|120->90|122->92|122->92|122->92|123->93|123->93|123->93|124->94|124->94|124->94|125->95|125->95
                     -- GENERATED --
                 */
             

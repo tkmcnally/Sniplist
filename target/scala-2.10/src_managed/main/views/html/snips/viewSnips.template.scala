@@ -20,29 +20,28 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object viewSnips extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[models.User,models.MySnips,play.api.templates.HtmlFormat.Appendable] {
+object viewSnips extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template3[java.lang.Boolean,models.User,models.MySnips,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(localUser: models.User = null, userSnips: models.MySnips):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(js: java.lang.Boolean, localUser: models.User = null, userSnips: models.MySnips):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
+def /*3.2*/content/*3.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
-Seq[Any](format.raw/*1.60*/("""
-
-"""),_display_(Seq[Any](/*3.2*/main("My Snips", "mySnips")/*3.29*/ {_display_(Seq[Any](format.raw/*3.31*/("""
+Seq[Any](format.raw/*3.13*/("""
     <div class="container mtb">
         <div id="global-message" class="alert alert-danger hidden">
 
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h1>Snips</h1> <h4 style="display: inline;">by """),_display_(Seq[Any](/*10.65*/userSnips/*10.74*/.user.name)),format.raw/*10.84*/("""</h4>
+                <h1>Snips</h1> <h4 style="display : inline ;">by """),_display_(Seq[Any](/*10.67*/userSnips/*10.76*/.user.name)),format.raw/*10.86*/("""</h4>
             </div>
         </div>
         <div class="row">
 
             <div class="col-md-8">
-                <table class="table table-default table-striped" style="border: black;">
-                <thead>
+                <table class="table table-default table-striped" value="default" style="border : black ;">
+                    <thead>
                         <tr>
                             <th title="Song" align="right">Song</th>
                             <th title="Artist" align="right">Artist</th>
@@ -54,46 +53,48 @@ Seq[Any](format.raw/*1.60*/("""
                         </tr>
                     </thead>
                     <tbody>
-                        """),_display_(Seq[Any](/*29.26*/for(snip <- userSnips.savedSnips) yield /*29.59*/ {_display_(Seq[Any](format.raw/*29.61*/("""
-                            <tr class="evenrow table-snip" data-toggle="tooltip" data-placement="right" title="Saved!">
-                                <td align="left" class="left snip-title">"""),_display_(Seq[Any](/*31.75*/snip/*31.79*/.song_name)),format.raw/*31.89*/("""</td>
-                                <td align="left" class="left snip-artist">"""),_display_(Seq[Any](/*32.76*/snip/*32.80*/.artist_name)),format.raw/*32.92*/("""</td>
-                                <td align="left" class="left snip-album">"""),_display_(Seq[Any](/*33.75*/snip/*33.79*/.album_name)),format.raw/*33.90*/("""</td>
-                                <td align="left" class="left">
-                                    <div class="dropdown">
+                    """),_display_(Seq[Any](/*29.22*/for(snip <- userSnips.savedSnips) yield /*29.55*/ {_display_(Seq[Any](format.raw/*29.57*/("""
+                        <tr class="evenrow table-snip" data-toggle="tooltip" data-placement="right" title="Saved!">
+                            <td align="left" class="left snip-title">"""),_display_(Seq[Any](/*31.71*/snip/*31.75*/.song_name)),format.raw/*31.85*/("""</td>
+                            <td align="left" class="left snip-artist">"""),_display_(Seq[Any](/*32.72*/snip/*32.76*/.artist_name)),format.raw/*32.88*/("""</td>
+                            <td align="left" class="left snip-album">"""),_display_(Seq[Any](/*33.71*/snip/*33.75*/.album_name)),format.raw/*33.86*/("""</td>
+                            <td align="left" class="left">
+                                <div class="dropdown">
 
-                                        <a id=""""),_display_(Seq[Any](/*37.49*/snip/*37.53*/.id)),format.raw/*37.56*/("""" class="btn btn-sm dropdown-toggle center" data-toggle="dropdown" href="#">
-                                            <span style="cursor:pointer" class="glyphicon glyphicon-share"></span>
-                                        </a>
+                                    <a id=""""),_display_(Seq[Any](/*37.45*/snip/*37.49*/.id)),format.raw/*37.52*/("""" class="btn btn-sm dropdown-toggle center" data-toggle="dropdown" href="#">
+                                        <span style="cursor : pointer" class="glyphicon glyphicon-share"></span>
+                                    </a>
 
-                                        <ul class="dropdown-menu" id="menu1">
-                                            <li>
+                                    <ul class="dropdown-menu" id="menu1">
+                                        <li>
                                                 <!-- Button trigger modal -->
-                                                <a class="add-to-playlist-a" href="" align="left" data-toggle="modal" data-target="#add-to-playlist-modal">
+                                            <a class="add-to-playlist-a" href="" align="left" data-toggle="modal" data-target="#add-to-playlist-modal">
                                                     Add to playlist
-                                                </a></li>
-                                            """),_display_(Seq[Any](/*47.46*/if(localUser.id != userSnips.user.id)/*47.83*/ {_display_(Seq[Any](format.raw/*47.85*/("""
-                                                <li><a align="left" href="" class="save-snip"><i class="icon-off"></i>Favourite Snip</a></li>
-                                            """)))}/*49.47*/else/*49.52*/{_display_(Seq[Any](format.raw/*49.53*/("""
-                                                <li class="divider"></li>
-                                                <li><a align="left" href="#" class="dropdown-delete-snip"><i class="icon-off"></i>Delete</a></li>
-                                            """)))})),format.raw/*52.46*/("""
+                                            </a></li>
+                                        """),_display_(Seq[Any](/*47.42*/if(localUser.id != userSnips.user.id)/*47.79*/ {_display_(Seq[Any](format.raw/*47.81*/("""
+                                            <li><a align="left" href="" class="save-snip"><i class="icon-off"></i>
+                                                Favourite Snip</a></li>
+                                        """)))}/*50.43*/else/*50.48*/{_display_(Seq[Any](format.raw/*50.49*/("""
+                                            <li class="divider"></li>
+                                            <li><a align="left" href="#" class="dropdown-delete-snip"><i class="icon-off"></i>
+                                                Delete</a></li>
+                                        """)))})),format.raw/*54.42*/("""
 
-                                        </ul>
-                                    </div>
-                                </td>
-                                <td align="center" class="center valign-m ">
-                                    <span style="cursor:pointer" class="glyphicon glyphicon-play play-snip-table play-snippet"></span>
-                                        <!--<button type="button" class="btn-primary btn btn-sm play-snippet">Play</button>-->
-                                </td>
-                                <td align="left" style="vertical-align: middle" class="left snip-favourite-count"><span class="alert-danger badge">"""),_display_(Seq[Any](/*61.149*/snip/*61.153*/.favouriteCount)),format.raw/*61.168*/("""</span></td>
-                                <td class="hidden snip-id" value=""""),_display_(Seq[Any](/*62.68*/snip/*62.72*/.id)),format.raw/*62.75*/("""" ></td>
-                                <td class="hidden snip-video-id" value=""""),_display_(Seq[Any](/*63.74*/snip/*63.78*/.url)),format.raw/*63.82*/(""""></td>
-                                <td class="hidden snip-video-startTime" value=""""),_display_(Seq[Any](/*64.81*/snip/*64.85*/.time_min)),format.raw/*64.94*/(""""></td>
-                                <td class="hidden snip-video-endTime" value=""""),_display_(Seq[Any](/*65.79*/snip/*65.83*/.time_max)),format.raw/*65.92*/(""""></td>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td align="center" class="center valign-m ">
+                                <span style="cursor : pointer" class="glyphicon glyphicon-play play-snip-table play-snippet"></span>
+                                    <!--<button type="button" class="btn-primary btn btn-sm play-snippet">Play</button>-->
+                            </td>
+                            <td align="left" style="vertical-align : middle" class="left snip-favourite-count"><span class="alert-danger badge">"""),_display_(Seq[Any](/*63.146*/snip/*63.150*/.favouriteCount)),format.raw/*63.165*/("""</span></td>
+                            <td class="hidden snip-id" value=""""),_display_(Seq[Any](/*64.64*/snip/*64.68*/.id)),format.raw/*64.71*/("""" ></td>
+                            <td class="hidden snip-video-id" value=""""),_display_(Seq[Any](/*65.70*/snip/*65.74*/.url)),format.raw/*65.78*/(""""></td>
+                            <td class="hidden snip-video-startTime" value=""""),_display_(Seq[Any](/*66.77*/snip/*66.81*/.time_min)),format.raw/*66.90*/(""""></td>
+                            <td class="hidden snip-video-endTime" value=""""),_display_(Seq[Any](/*67.75*/snip/*67.79*/.time_max)),format.raw/*67.88*/(""""></td>
 
-                            </tr>
-                        """)))})),format.raw/*68.26*/("""
+                        </tr>
+                    """)))})),format.raw/*70.22*/("""
                     </tbody>
 
 
@@ -108,7 +109,8 @@ Seq[Any](format.raw/*1.60*/("""
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">
+                        Close</span></button>
                     <h4 class="modal-title" id="add-to-playlist-modal-title">Add to playlist</h4>
                 </div>
                 <div class="modal-body">
@@ -126,26 +128,33 @@ Seq[Any](format.raw/*1.60*/("""
             </div>
         </div>
     </div>
+""")))};
+Seq[Any](format.raw/*1.83*/("""
+
+"""),format.raw/*104.2*/("""
 
 
-
+ """),_display_(Seq[Any](/*107.3*/if(!js)/*107.10*/ {_display_(Seq[Any](format.raw/*107.12*/("""
+    """),_display_(Seq[Any](/*108.6*/main("My Snips", "mySnips")/*108.33*/(content))),format.raw/*108.42*/("""
+""")))}/*109.3*/else/*109.8*/{_display_(Seq[Any](format.raw/*109.9*/("""
+    """),_display_(Seq[Any](/*110.6*/content)),format.raw/*110.13*/("""
 """)))})))}
     }
     
-    def render(localUser:models.User,userSnips:models.MySnips): play.api.templates.HtmlFormat.Appendable = apply(localUser,userSnips)
+    def render(js:java.lang.Boolean,localUser:models.User,userSnips:models.MySnips): play.api.templates.HtmlFormat.Appendable = apply(js,localUser,userSnips)
     
-    def f:((models.User,models.MySnips) => play.api.templates.HtmlFormat.Appendable) = (localUser,userSnips) => apply(localUser,userSnips)
+    def f:((java.lang.Boolean,models.User,models.MySnips) => play.api.templates.HtmlFormat.Appendable) = (js,localUser,userSnips) => apply(js,localUser,userSnips)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jul 30 16:46:55 EDT 2014
+                    DATE: Thu Jul 31 02:29:37 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snips/viewSnips.scala.html
-                    HASH: 13e4e259f623b2d1f4a987c3063e804c072af004
-                    MATRIX: 804->1|956->59|993->62|1028->89|1067->91|1346->334|1364->343|1396->353|1920->849|1949->850|1990->863|2019->864|2120->937|2149->938|2190->951|2219->952|2325->1030|2354->1031|2395->1044|2424->1045|2614->1199|2663->1232|2703->1234|2934->1429|2947->1433|2979->1443|3096->1524|3109->1528|3143->1540|3259->1620|3272->1624|3305->1635|3518->1812|3531->1816|3556->1819|4362->2589|4408->2626|4448->2628|4655->2817|4668->2822|4707->2823|5005->3089|5696->3743|5710->3747|5748->3762|5864->3842|5877->3846|5902->3849|6020->3931|6033->3935|6059->3939|6183->4027|6196->4031|6227->4040|6349->4126|6362->4130|6393->4139|6493->4207
-                    LINES: 26->1|29->1|31->3|31->3|31->3|38->10|38->10|38->10|50->22|50->22|50->22|50->22|51->23|51->23|51->23|51->23|52->24|52->24|52->24|52->24|57->29|57->29|57->29|59->31|59->31|59->31|60->32|60->32|60->32|61->33|61->33|61->33|65->37|65->37|65->37|75->47|75->47|75->47|77->49|77->49|77->49|80->52|89->61|89->61|89->61|90->62|90->62|90->62|91->63|91->63|91->63|92->64|92->64|92->64|93->65|93->65|93->65|96->68
+                    HASH: ce2644750fdf8ed18678b13a0ecc5014776218d0
+                    MATRIX: 822->1|980->85|994->92|1078->96|1359->341|1377->350|1409->360|1955->878|1984->879|2025->892|2054->893|2155->966|2184->967|2225->980|2254->981|2360->1059|2389->1060|2430->1073|2459->1074|2645->1224|2694->1257|2734->1259|2957->1446|2970->1450|3002->1460|3115->1537|3128->1541|3162->1553|3274->1629|3287->1633|3320->1644|3521->1809|3534->1813|3559->1816|4339->2560|4385->2597|4425->2599|4673->2829|4686->2834|4725->2835|5060->3138|5722->3763|5736->3767|5774->3782|5886->3858|5899->3862|5924->3865|6038->3943|6051->3947|6077->3951|6197->4035|6210->4039|6241->4048|6359->4130|6372->4134|6403->4143|6495->4203|7788->82|7818->5457|7859->5462|7876->5469|7917->5471|7959->5477|7996->5504|8028->5513|8049->5516|8062->5521|8101->5522|8143->5528|8173->5535
+                    LINES: 26->1|28->3|28->3|30->3|37->10|37->10|37->10|49->22|49->22|49->22|49->22|50->23|50->23|50->23|50->23|51->24|51->24|51->24|51->24|56->29|56->29|56->29|58->31|58->31|58->31|59->32|59->32|59->32|60->33|60->33|60->33|64->37|64->37|64->37|74->47|74->47|74->47|77->50|77->50|77->50|81->54|90->63|90->63|90->63|91->64|91->64|91->64|92->65|92->65|92->65|93->66|93->66|93->66|94->67|94->67|94->67|97->70|132->1|134->104|137->107|137->107|137->107|138->108|138->108|138->108|139->109|139->109|139->109|140->110|140->110
                     -- GENERATED --
                 */
             

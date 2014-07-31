@@ -1,7 +1,7 @@
-@(localUser: models.User = null, userSniplists: models.MySniplists)
+@(js: java.lang.Boolean, localUser: models.User = null, userSniplists: models.MySniplists)
 @import java.math.BigInteger; var i=0;
 
-@main("My SnipLists", "mySnipLists") {
+@content = {
     <div class="container mtb">
         <div id="global-message" class="alert alert-danger hidden">
 
@@ -97,4 +97,10 @@
         </div>
 
     </div>
+}
+
+@if(!js) {
+    @main("My SnipLists", "mySnipLists")(content)
+} else {
+    @content
 }

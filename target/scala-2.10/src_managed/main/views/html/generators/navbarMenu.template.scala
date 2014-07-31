@@ -27,7 +27,7 @@ object navbarMenu extends BaseScalaTemplate[play.api.templates.HtmlFormat.Append
         _display_ {
 
 Seq[Any](format.raw/*1.86*/("""
-<li """),_display_(Seq[Any](/*2.6*/if(uri.url.equals(request.path))/*2.38*/{})),format.raw/*2.40*/("""><a href=""""),_display_(Seq[Any](/*2.51*/uri)),format.raw/*2.54*/("""">"""),_display_(Seq[Any](/*2.57*/text)),format.raw/*2.61*/("""</a></li>"""))}
+<li """),_display_(Seq[Any](/*2.6*/if(uri.url.equals(request.path))/*2.38*/{})),format.raw/*2.40*/("""><a class="dynamic-link" href=""""),_display_(Seq[Any](/*2.72*/uri)),format.raw/*2.75*/("""">"""),_display_(Seq[Any](/*2.78*/text)),format.raw/*2.82*/("""</a></li>"""))}
     }
     
     def render(uri:play.api.mvc.Call,text:String,request:play.api.mvc.RequestHeader): play.api.templates.HtmlFormat.Appendable = apply(uri,text)(request)
@@ -39,10 +39,10 @@ Seq[Any](format.raw/*1.86*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jul 28 17:05:21 EDT 2014
+                    DATE: Wed Jul 30 19:40:19 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/generators/navbarMenu.scala.html
-                    HASH: cc210e9d0ceb85cb60cd839c54dd8b8d82c88b58
-                    MATRIX: 835->1|1013->85|1053->91|1093->123|1116->125|1162->136|1186->139|1224->142|1249->146
+                    HASH: 9390c27298924decb75059fe09dc95b6bbfcc85a
+                    MATRIX: 835->1|1013->85|1053->91|1093->123|1116->125|1183->157|1207->160|1245->163|1270->167
                     LINES: 26->1|29->1|30->2|30->2|30->2|30->2|30->2|30->2|30->2
                     -- GENERATED --
                 */

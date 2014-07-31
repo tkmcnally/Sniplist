@@ -1,6 +1,7 @@
-@(user: models.User = null)
+@(js: java.lang.Boolean, user: models.User = null)
 
-@main("Add Snip", "addSnip") {
+@content = {
+
     <div class="container mtb">
         <div class="row">
             <div id="global-message" class="alert alert-danger hidden"></div>
@@ -70,4 +71,10 @@
 
 
     </div>
+}
+
+@if(!js) {
+    @main("Add Snip", "addSnip")(content)
+} else {
+    @content
 }

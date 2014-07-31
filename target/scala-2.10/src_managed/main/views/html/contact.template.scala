@@ -20,31 +20,33 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object contact extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
+object contact extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[java.lang.Boolean,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply():play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(js: java.lang.Boolean):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
+def /*3.2*/content/*3.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
-Seq[Any](_display_(Seq[Any](/*1.2*/main("Contact Us", "contact")/*1.31*/ {_display_(Seq[Any](format.raw/*1.33*/("""
-            <!-- *****************************************************************************************************************
+Seq[Any](format.raw/*3.13*/("""
+
+    <!-- *****************************************************************************************************************
 	 BLUE WRAP
 	 ***************************************************************************************************************** -->
-        <div id="blue">
-            <div class="container">
-                <div class="row">
-                    <h3>Contact.</h3>
-                </div><!-- /row -->
-            </div> <!-- /container -->
-        </div><!-- /blue -->
+    <div id="blue">
+        <div class="container">
+            <div class="row">
+                <h3>Contact.</h3>
+            </div><!-- /row -->
+        </div> <!-- /container -->
+    </div> <!-- /blue -->
 
-        <!-- *****************************************************************************************************************
+    <!-- *****************************************************************************************************************
 	 CONTACT WRAP
 	 ***************************************************************************************************************** -->
 
-        <div id="contactwrap"></div>
+    <div id="contactwrap"></div>
 
-            <!-- *****************************************************************************************************************
+    <!-- *****************************************************************************************************************
 	 CONTACT FORMS
 	 ***************************************************************************************************************** -->
 
@@ -61,29 +63,36 @@ Seq[Any](_display_(Seq[Any](/*1.2*/main("Contact Us", "contact")/*1.31*/ {_displ
                     Email: noreply.sniplist@gmail.com<br/>
                 </p>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
             </div>
             <div class="col-lg-2"></div>
         </div><! --/row -->
     </div><! --/container -->
+""")))};
+Seq[Any](format.raw/*1.25*/("""
 
-""")))})))}
+"""),format.raw/*44.2*/("""
+    """),_display_(Seq[Any](/*45.6*/if(!js)/*45.13*/ {_display_(Seq[Any](format.raw/*45.15*/("""
+        """),_display_(Seq[Any](/*46.10*/main("Contact Us", "contact")/*46.39*/(content))),format.raw/*46.48*/("""
+    """)))}/*47.7*/else/*47.12*/{_display_(Seq[Any](format.raw/*47.13*/("""
+        """),_display_(Seq[Any](/*48.10*/content)),format.raw/*48.17*/("""
+    """)))})))}
     }
     
-    def render(): play.api.templates.HtmlFormat.Appendable = apply()
+    def render(js:java.lang.Boolean): play.api.templates.HtmlFormat.Appendable = apply(js)
     
-    def f:(() => play.api.templates.HtmlFormat.Appendable) = () => apply()
+    def f:((java.lang.Boolean) => play.api.templates.HtmlFormat.Appendable) = (js) => apply(js)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jul 28 17:05:20 EDT 2014
+                    DATE: Thu Jul 31 02:19:19 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/contact.scala.html
-                    HASH: 73e386e52e0e9a3b19797078f8d24cfcd962bd06
-                    MATRIX: 866->1|903->30|942->32
-                    LINES: 29->1|29->1|29->1
+                    HASH: a1f301fafa3ca527b302cdc469201a2219c8ae5f
+                    MATRIX: 787->1|887->29|901->36|985->40|2838->24|2869->1855|2911->1862|2927->1869|2967->1871|3014->1882|3052->1911|3083->1920|3108->1928|3121->1933|3160->1934|3207->1945|3236->1952
+                    LINES: 26->1|28->3|28->3|30->3|72->1|74->44|75->45|75->45|75->45|76->46|76->46|76->46|77->47|77->47|77->47|78->48|78->48
                     -- GENERATED --
                 */
             

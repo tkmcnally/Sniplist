@@ -3,7 +3,9 @@
  */
 
 //DO when the document is loaded.
-$(document).ready(function() {
+$(document).ready(addSnipReady);
+
+function addSnipReady() {
 
     //Adding built-in prototype for String to format Seconds to HH:MM:SS for the JQRangeSlider.
     String.prototype.toHHMMSS = function () {
@@ -185,7 +187,7 @@ $(document).ready(function() {
 
     bindExternalPlayerButtons();
 
-});
+}
 
 function getVideo(songUrl, callBack) {
     jsRoutes.controllers.Snips.getVideo(songUrl).ajax({

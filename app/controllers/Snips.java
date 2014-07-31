@@ -70,10 +70,14 @@ public class Snips extends Controller {
 
     @Restrict(@Group(Application.USER_ROLE))
     public static Result add() {
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
-        return ok(views.html.snips.addSnip.render(user));
+
+
+        return ok(views.html.snips.addSnip.render(js, user));
     }
 
     @Restrict(@Group(Application.USER_ROLE))

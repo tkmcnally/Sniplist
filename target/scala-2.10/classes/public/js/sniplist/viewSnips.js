@@ -38,7 +38,7 @@ function bindTableButtons() {
         var value = $(this).closest('tr').find('.snip-title').text();
         $('#add-to-playlist-modal-title').text("Add '" + value + "' to a playlist.");
         $('#selected-snip-id').val(value_id);
-
+        $("#modal-message").addClass("hidden");
         loadModalData();
     });
 
@@ -87,7 +87,6 @@ function loadModalData(callBack) {
         success: function(data) {
             $("#modal-content").html(data);
             bindTableButtons();
-            $("#modal-message").addClass("hidden");
             if(callBack)
                 callBack();
         },

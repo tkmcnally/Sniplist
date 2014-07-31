@@ -1,6 +1,6 @@
 // @SOURCE:C:/Projects/Sniplist/conf/routes
-// @HASH:71fcb118a0ae758f3fb8970ccd4dd752aae3444a
-// @DATE:Tue Jul 29 18:38:28 EDT 2014
+// @HASH:f2e2ca0674feaa72485fcc47ef47fda2e1b84593
+// @DATE:Thu Jul 31 01:41:23 EDT 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -52,11 +52,11 @@ def authenticate(provider:String): Call = {
 // @LINE:78
 // @LINE:76
 // @LINE:74
-// @LINE:71
-// @LINE:69
-// @LINE:67
-// @LINE:65
-// @LINE:63
+// @LINE:70
+// @LINE:68
+// @LINE:66
+// @LINE:64
+// @LINE:62
 // @LINE:59
 // @LINE:57
 // @LINE:55
@@ -158,39 +158,39 @@ def saveSnipList(): Call = {
 }
                           
 
-// @LINE:71
-// @LINE:69
-// @LINE:67
-// @LINE:65
-// @LINE:63
+// @LINE:70
+// @LINE:68
+// @LINE:66
+// @LINE:64
+// @LINE:62
 class ReverseMySnipsController {
     
 
-// @LINE:63
+// @LINE:62
 def viewSnipsByUser(id:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + implicitly[PathBindable[String]].unbind("id", dynamicString(id)) + "/snips")
 }
                                                 
 
-// @LINE:65
+// @LINE:64
 def mySnips(): Call = {
-   Call("GET", _prefix + { _defaultPrefix } + "snips/")
+   Call("GET", _prefix + { _defaultPrefix } + "snips")
 }
                                                 
 
-// @LINE:71
+// @LINE:70
 def toggleSnip(id:String): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "snips/toggleSnip" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("id", id)))))
 }
                                                 
 
-// @LINE:69
+// @LINE:68
 def saveSnip(id:String): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "snips/saveSnip" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("id", id)))))
 }
                                                 
 
-// @LINE:67
+// @LINE:66
 def removeSnip(id:String): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "snips/removeSnip" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("id", id)))))
 }
@@ -533,11 +533,11 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 // @LINE:78
 // @LINE:76
 // @LINE:74
-// @LINE:71
-// @LINE:69
-// @LINE:67
-// @LINE:65
-// @LINE:63
+// @LINE:70
+// @LINE:68
+// @LINE:66
+// @LINE:64
+// @LINE:62
 // @LINE:59
 // @LINE:57
 // @LINE:55
@@ -679,15 +679,15 @@ def saveSnipList : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:71
-// @LINE:69
-// @LINE:67
-// @LINE:65
-// @LINE:63
+// @LINE:70
+// @LINE:68
+// @LINE:66
+// @LINE:64
+// @LINE:62
 class ReverseMySnipsController {
     
 
-// @LINE:63
+// @LINE:62
 def viewSnipsByUser : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.MySnipsController.viewSnipsByUser",
    """
@@ -698,18 +698,18 @@ def viewSnipsByUser : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:65
+// @LINE:64
 def mySnips : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.MySnipsController.mySnips",
    """
       function() {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "snips/"})
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "snips"})
       }
    """
 )
                         
 
-// @LINE:71
+// @LINE:70
 def toggleSnip : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.MySnipsController.toggleSnip",
    """
@@ -720,7 +720,7 @@ def toggleSnip : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:69
+// @LINE:68
 def saveSnip : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.MySnipsController.saveSnip",
    """
@@ -731,7 +731,7 @@ def saveSnip : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:67
+// @LINE:66
 def removeSnip : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.MySnipsController.removeSnip",
    """
@@ -1250,11 +1250,11 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 // @LINE:78
 // @LINE:76
 // @LINE:74
-// @LINE:71
-// @LINE:69
-// @LINE:67
-// @LINE:65
-// @LINE:63
+// @LINE:70
+// @LINE:68
+// @LINE:66
+// @LINE:64
+// @LINE:62
 // @LINE:59
 // @LINE:57
 // @LINE:55
@@ -1357,39 +1357,39 @@ def saveSnipList(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
-// @LINE:71
-// @LINE:69
-// @LINE:67
-// @LINE:65
-// @LINE:63
+// @LINE:70
+// @LINE:68
+// @LINE:66
+// @LINE:64
+// @LINE:62
 class ReverseMySnipsController {
     
 
-// @LINE:63
+// @LINE:62
 def viewSnipsByUser(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.MySnipsController.viewSnipsByUser(id), HandlerDef(this, "controllers.MySnipsController", "viewSnipsByUser", Seq(classOf[String]), "GET", """""", _prefix + """$id<[^/]+>/snips""")
 )
                       
 
-// @LINE:65
+// @LINE:64
 def mySnips(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.MySnipsController.mySnips(), HandlerDef(this, "controllers.MySnipsController", "mySnips", Seq(), "GET", """""", _prefix + """snips/""")
+   controllers.MySnipsController.mySnips(), HandlerDef(this, "controllers.MySnipsController", "mySnips", Seq(), "GET", """""", _prefix + """snips""")
 )
                       
 
-// @LINE:71
+// @LINE:70
 def toggleSnip(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.MySnipsController.toggleSnip(id), HandlerDef(this, "controllers.MySnipsController", "toggleSnip", Seq(classOf[String]), "POST", """""", _prefix + """snips/toggleSnip""")
 )
                       
 
-// @LINE:69
+// @LINE:68
 def saveSnip(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.MySnipsController.saveSnip(id), HandlerDef(this, "controllers.MySnipsController", "saveSnip", Seq(classOf[String]), "POST", """""", _prefix + """snips/saveSnip""")
 )
                       
 
-// @LINE:67
+// @LINE:66
 def removeSnip(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.MySnipsController.removeSnip(id), HandlerDef(this, "controllers.MySnipsController", "removeSnip", Seq(classOf[String]), "POST", """""", _prefix + """snips/removeSnip""")
 )

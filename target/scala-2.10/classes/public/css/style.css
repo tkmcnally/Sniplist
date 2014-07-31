@@ -660,3 +660,35 @@ body {
 .mejs-controls  button:hover {
     -webkit-filter: brightness(50%);
 }
+
+.ajax-loading {
+
+}
+
+.loading-block {
+    background-color: dimgrey !important;
+    width: 150px !important;
+    height: 90px !important;
+    border-radius: 10px;
+
+    position: fixed !important;
+    top: 30% !important;
+    left: 50% !important;
+    margin-top: -50px !important;
+    margin-left: -100px !important;
+
+}
+
+.loading-block h4 {
+    padding-top: 10px;
+    color: white;
+}
+
+
+.loading-block img {
+    padding-top: 10px;
+}
+
+
+
+

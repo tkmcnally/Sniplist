@@ -69,14 +69,18 @@ public class MySnipsController extends Controller {
 
     @Restrict(@Group(Application.USER_ROLE))
     public static Result mySnips() {
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
         MySnips mySnips = MySnips.findByUser(user);
         List<SnipList> snipLists = SnipList.findByUser(user);
 
-        return ok(views.html.snips.viewSnips.render(user, mySnips));
+        return ok(views.html.snips.viewSnips.render(js, user, mySnips));
     }
+
+
 
 
     @Restrict(@Group(Application.USER_ROLE))
@@ -104,6 +108,8 @@ public class MySnipsController extends Controller {
 
     @Restrict(@Group(Application.USER_ROLE))
     public static Result viewSnipsByUser(final String id) {
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         User localUser = Application.getLocalUser(session());
 
@@ -115,7 +121,7 @@ public class MySnipsController extends Controller {
         Result result = internalServerError();
         if(user != null) {
             MySnips mySnips = MySnips.findByUser(user);
-            result = ok(views.html.snips.viewSnips.render(localUser, mySnips));
+            result = ok(views.html.snips.viewSnips.render(js, localUser, mySnips));
         } else {
             result = badRequest("Invalid user id!");
         }
