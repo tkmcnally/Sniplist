@@ -110,7 +110,6 @@ public class Snip {
 
         boolean owned = false;
         if(user != null && snip != null) {
-            System.out.println(user.id + " EQUAL; " + snip.user.id);
             if(user.id.equals(snip.user.id)) {
                 owned = true;
             }

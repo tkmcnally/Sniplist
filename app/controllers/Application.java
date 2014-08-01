@@ -129,6 +129,7 @@ public class Application extends Controller {
                         controllers.routes.javascript.MySniplistsController.saveSniplist(),
                         controllers.routes.javascript.MySniplistsController.mySniplists(),
                         controllers.routes.javascript.MySniplistsController.toggleSniplist(),
+                        controllers.routes.javascript.MySniplistsController.getNextSnip(),
                         controllers.routes.javascript.SnipLists.saveSnipList(),
                         controllers.routes.javascript.SnipLists.addToSnipList(),
                         controllers.routes.javascript.SnipLists.loadSnipListByUser(),

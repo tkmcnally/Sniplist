@@ -1,6 +1,6 @@
 // @SOURCE:C:/Projects/Sniplist/conf/routes
-// @HASH:f2e2ca0674feaa72485fcc47ef47fda2e1b84593
-// @DATE:Thu Jul 31 01:41:23 EDT 2014
+// @HASH:cf9bca53ac138f6152331b70553864ed38b5d20f
+// @DATE:Thu Jul 31 15:12:17 EDT 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -39,15 +39,16 @@ def authenticate(provider:String): Call = {
 }
                   
 
+// @LINE:108
 // @LINE:105
-// @LINE:102
-// @LINE:97
-// @LINE:95
-// @LINE:93
-// @LINE:91
-// @LINE:89
-// @LINE:87
-// @LINE:85
+// @LINE:100
+// @LINE:98
+// @LINE:96
+// @LINE:94
+// @LINE:92
+// @LINE:90
+// @LINE:88
+// @LINE:82
 // @LINE:80
 // @LINE:78
 // @LINE:76
@@ -90,11 +91,11 @@ def authenticate(provider:String): Call = {
 // @LINE:6
 package controllers {
 
-// @LINE:105
+// @LINE:108
 class ReverseAssets {
     
 
-// @LINE:105
+// @LINE:108
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -103,53 +104,53 @@ def at(file:String): Call = {
 }
                           
 
-// @LINE:97
-// @LINE:95
-// @LINE:93
-// @LINE:91
-// @LINE:89
-// @LINE:87
-// @LINE:85
+// @LINE:100
+// @LINE:98
+// @LINE:96
+// @LINE:94
+// @LINE:92
+// @LINE:90
+// @LINE:88
 class ReverseSnipLists {
     
 
-// @LINE:97
+// @LINE:100
 def viewSnipListsLocalUser(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "sniplists/viewSnipListsLocalUser")
 }
                                                 
 
-// @LINE:87
+// @LINE:90
 def viewSniplists(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "sniplists")
 }
                                                 
 
-// @LINE:85
+// @LINE:88
 def viewSniplistsByUser(id:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + implicitly[PathBindable[String]].unbind("id", dynamicString(id)) + "/sniplists")
 }
                                                 
 
-// @LINE:91
+// @LINE:94
 def addToSnipList(snipList_id:String, snip_id:String): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "sniplists/add" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("snipList_id", snipList_id)), Some(implicitly[QueryStringBindable[String]].unbind("snip_id", snip_id)))))
 }
                                                 
 
-// @LINE:93
+// @LINE:96
 def loadSnipListByUser(snipList_id:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "sniplists/load" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("snipList_id", snipList_id)))))
 }
                                                 
 
-// @LINE:95
+// @LINE:98
 def deleteFromSnipList(snipList_id:String, snip_id:String): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "sniplists/deleteSnip" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("snipList_id", snipList_id)), Some(implicitly[QueryStringBindable[String]].unbind("snip_id", snip_id)))))
 }
                                                 
 
-// @LINE:89
+// @LINE:92
 def saveSnipList(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "sniplists/new")
 }
@@ -199,7 +200,7 @@ def removeSnip(id:String): Call = {
 }
                           
 
-// @LINE:102
+// @LINE:105
 // @LINE:23
 // @LINE:22
 // @LINE:17
@@ -267,7 +268,7 @@ def contact(): Call = {
 }
                                                 
 
-// @LINE:102
+// @LINE:105
 def javascriptRoutes(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/javascripts/routes")
 }
@@ -378,6 +379,7 @@ def getSnip(id:String): Call = {
 }
                           
 
+// @LINE:82
 // @LINE:80
 // @LINE:78
 // @LINE:76
@@ -385,9 +387,9 @@ def getSnip(id:String): Call = {
 class ReverseMySniplistsController {
     
 
-// @LINE:80
-def toggleSniplist(id:String): Call = {
-   Call("POST", _prefix + { _defaultPrefix } + "sniplists/toggleSniplist" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("id", id)))))
+// @LINE:82
+def getNextSnip(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "sniplists/getNextSnip")
 }
                                                 
 
@@ -400,6 +402,12 @@ def mySniplists(): Call = {
 // @LINE:78
 def saveSniplist(id:String): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "sniplists/saveSniplist" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("id", id)))))
+}
+                                                
+
+// @LINE:80
+def toggleSniplist(id:String): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "sniplists/toggleSniplist" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("id", id)))))
 }
                                                 
 
@@ -520,15 +528,16 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 }
         
 
+// @LINE:108
 // @LINE:105
-// @LINE:102
-// @LINE:97
-// @LINE:95
-// @LINE:93
-// @LINE:91
-// @LINE:89
-// @LINE:87
-// @LINE:85
+// @LINE:100
+// @LINE:98
+// @LINE:96
+// @LINE:94
+// @LINE:92
+// @LINE:90
+// @LINE:88
+// @LINE:82
 // @LINE:80
 // @LINE:78
 // @LINE:76
@@ -571,11 +580,11 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:105
+// @LINE:108
 class ReverseAssets {
     
 
-// @LINE:105
+// @LINE:108
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -589,17 +598,17 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:97
-// @LINE:95
-// @LINE:93
-// @LINE:91
-// @LINE:89
-// @LINE:87
-// @LINE:85
+// @LINE:100
+// @LINE:98
+// @LINE:96
+// @LINE:94
+// @LINE:92
+// @LINE:90
+// @LINE:88
 class ReverseSnipLists {
     
 
-// @LINE:97
+// @LINE:100
 def viewSnipListsLocalUser : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.SnipLists.viewSnipListsLocalUser",
    """
@@ -610,7 +619,7 @@ def viewSnipListsLocalUser : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:87
+// @LINE:90
 def viewSniplists : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.SnipLists.viewSniplists",
    """
@@ -621,7 +630,7 @@ def viewSniplists : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:85
+// @LINE:88
 def viewSniplistsByUser : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.SnipLists.viewSniplistsByUser",
    """
@@ -632,7 +641,7 @@ def viewSniplistsByUser : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:91
+// @LINE:94
 def addToSnipList : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.SnipLists.addToSnipList",
    """
@@ -643,7 +652,7 @@ def addToSnipList : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:93
+// @LINE:96
 def loadSnipListByUser : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.SnipLists.loadSnipListByUser",
    """
@@ -654,7 +663,7 @@ def loadSnipListByUser : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:95
+// @LINE:98
 def deleteFromSnipList : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.SnipLists.deleteFromSnipList",
    """
@@ -665,7 +674,7 @@ def deleteFromSnipList : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:89
+// @LINE:92
 def saveSnipList : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.SnipLists.saveSnipList",
    """
@@ -745,7 +754,7 @@ def removeSnip : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:102
+// @LINE:105
 // @LINE:23
 // @LINE:22
 // @LINE:17
@@ -858,7 +867,7 @@ def contact : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:102
+// @LINE:105
 def javascriptRoutes : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.javascriptRoutes",
    """
@@ -1039,6 +1048,7 @@ def getSnip : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:82
 // @LINE:80
 // @LINE:78
 // @LINE:76
@@ -1046,12 +1056,12 @@ def getSnip : JavascriptReverseRoute = JavascriptReverseRoute(
 class ReverseMySniplistsController {
     
 
-// @LINE:80
-def toggleSniplist : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.MySniplistsController.toggleSniplist",
+// @LINE:82
+def getNextSnip : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.MySniplistsController.getNextSnip",
    """
-      function(id) {
-      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "sniplists/toggleSniplist" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id)])})
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "sniplists/getNextSnip"})
       }
    """
 )
@@ -1074,6 +1084,17 @@ def saveSniplist : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function(id) {
       return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "sniplists/saveSniplist" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id)])})
+      }
+   """
+)
+                        
+
+// @LINE:80
+def toggleSniplist : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.MySniplistsController.toggleSniplist",
+   """
+      function(id) {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "sniplists/toggleSniplist" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("id", id)])})
       }
    """
 )
@@ -1237,15 +1258,16 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 }
         
 
+// @LINE:108
 // @LINE:105
-// @LINE:102
-// @LINE:97
-// @LINE:95
-// @LINE:93
-// @LINE:91
-// @LINE:89
-// @LINE:87
-// @LINE:85
+// @LINE:100
+// @LINE:98
+// @LINE:96
+// @LINE:94
+// @LINE:92
+// @LINE:90
+// @LINE:88
+// @LINE:82
 // @LINE:80
 // @LINE:78
 // @LINE:76
@@ -1289,11 +1311,11 @@ def authenticate(provider:String): play.api.mvc.HandlerRef[_] = new play.api.mvc
 package controllers.ref {
 
 
-// @LINE:105
+// @LINE:108
 class ReverseAssets {
     
 
-// @LINE:105
+// @LINE:108
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -1302,53 +1324,53 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
-// @LINE:97
-// @LINE:95
-// @LINE:93
-// @LINE:91
-// @LINE:89
-// @LINE:87
-// @LINE:85
+// @LINE:100
+// @LINE:98
+// @LINE:96
+// @LINE:94
+// @LINE:92
+// @LINE:90
+// @LINE:88
 class ReverseSnipLists {
     
 
-// @LINE:97
+// @LINE:100
 def viewSnipListsLocalUser(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.SnipLists.viewSnipListsLocalUser(), HandlerDef(this, "controllers.SnipLists", "viewSnipListsLocalUser", Seq(), "POST", """""", _prefix + """sniplists/viewSnipListsLocalUser""")
 )
                       
 
-// @LINE:87
+// @LINE:90
 def viewSniplists(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.SnipLists.viewSniplists(), HandlerDef(this, "controllers.SnipLists", "viewSniplists", Seq(), "GET", """""", _prefix + """sniplists""")
 )
                       
 
-// @LINE:85
+// @LINE:88
 def viewSniplistsByUser(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.SnipLists.viewSniplistsByUser(id), HandlerDef(this, "controllers.SnipLists", "viewSniplistsByUser", Seq(classOf[String]), "GET", """""", _prefix + """$id<[^/]+>/sniplists""")
 )
                       
 
-// @LINE:91
+// @LINE:94
 def addToSnipList(snipList_id:String, snip_id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.SnipLists.addToSnipList(snipList_id, snip_id), HandlerDef(this, "controllers.SnipLists", "addToSnipList", Seq(classOf[String], classOf[String]), "POST", """""", _prefix + """sniplists/add""")
 )
                       
 
-// @LINE:93
+// @LINE:96
 def loadSnipListByUser(snipList_id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.SnipLists.loadSnipListByUser(snipList_id), HandlerDef(this, "controllers.SnipLists", "loadSnipListByUser", Seq(classOf[String]), "GET", """""", _prefix + """sniplists/load""")
 )
                       
 
-// @LINE:95
+// @LINE:98
 def deleteFromSnipList(snipList_id:String, snip_id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.SnipLists.deleteFromSnipList(snipList_id, snip_id), HandlerDef(this, "controllers.SnipLists", "deleteFromSnipList", Seq(classOf[String], classOf[String]), "POST", """""", _prefix + """sniplists/deleteSnip""")
 )
                       
 
-// @LINE:89
+// @LINE:92
 def saveSnipList(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.SnipLists.saveSnipList(), HandlerDef(this, "controllers.SnipLists", "saveSnipList", Seq(), "POST", """""", _prefix + """sniplists/new""")
 )
@@ -1398,7 +1420,7 @@ def removeSnip(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.Handler
 }
                           
 
-// @LINE:102
+// @LINE:105
 // @LINE:23
 // @LINE:22
 // @LINE:17
@@ -1466,7 +1488,7 @@ def contact(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:102
+// @LINE:105
 def javascriptRoutes(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.javascriptRoutes(), HandlerDef(this, "controllers.Application", "javascriptRoutes", Seq(), "GET", """ Javascript routing""", _prefix + """assets/javascripts/routes""")
 )
@@ -1577,6 +1599,7 @@ def getSnip(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef
 }
                           
 
+// @LINE:82
 // @LINE:80
 // @LINE:78
 // @LINE:76
@@ -1584,9 +1607,9 @@ def getSnip(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef
 class ReverseMySniplistsController {
     
 
-// @LINE:80
-def toggleSniplist(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.MySniplistsController.toggleSniplist(id), HandlerDef(this, "controllers.MySniplistsController", "toggleSniplist", Seq(classOf[String]), "POST", """""", _prefix + """sniplists/toggleSniplist""")
+// @LINE:82
+def getNextSnip(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.MySniplistsController.getNextSnip(), HandlerDef(this, "controllers.MySniplistsController", "getNextSnip", Seq(), "POST", """""", _prefix + """sniplists/getNextSnip""")
 )
                       
 
@@ -1599,6 +1622,12 @@ def mySniplists(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:78
 def saveSniplist(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.MySniplistsController.saveSniplist(id), HandlerDef(this, "controllers.MySniplistsController", "saveSniplist", Seq(classOf[String]), "POST", """""", _prefix + """sniplists/saveSniplist""")
+)
+                      
+
+// @LINE:80
+def toggleSniplist(id:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.MySniplistsController.toggleSniplist(id), HandlerDef(this, "controllers.MySniplistsController", "toggleSniplist", Seq(classOf[String]), "POST", """""", _prefix + """sniplists/toggleSniplist""")
 )
                       
 

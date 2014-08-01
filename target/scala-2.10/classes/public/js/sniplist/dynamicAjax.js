@@ -43,7 +43,10 @@ function replaceContent(data, callBack) {
             $("#wrapper-content").html(data);
             var stateObj = { foo: "" };
             window.history.pushState(stateObj, "Title", url);
+
             addSnipReady();
+            viewSniplistsReady();
+            viewSnipsReady();
         },
         error: function(data) {
             $("#global-message").removeClass("hidden");

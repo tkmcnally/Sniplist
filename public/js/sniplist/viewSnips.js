@@ -1,14 +1,16 @@
 /**
  * Created by Thomas on 6/26/2014.
  */
+$(document).ready(viewSnipsReady);
 
-$(document).ready(function() {
+function viewSnipsReady() {
 
     //Bind buttons after table creation.
     bindTableButtons();
-});
+}
 
 function addToSniplist(snipList, snip) {
+
     jsRoutes.controllers.SnipLists.addToSnipList(snipList, snip).ajax({
         success: function(data) {
 
@@ -83,6 +85,7 @@ function deleteSnip(elem) {
 }
 
 function loadModalData(callBack) {
+
     jsRoutes.controllers.SnipLists.viewSnipListsLocalUser().ajax({
         success: function(data) {
             $("#modal-content").html(data);
@@ -107,3 +110,30 @@ function favouriteSnip(snip) {
     })
 }
 
+function getNextSnip(callBack) {
+
+    var live_list_id = $("#live-snip-list-id").text();
+    var id = $("#live-snip-id").text();
+    var type = $("#live-list-type").text();
+    var d = {
+                playlistType: type,
+                list_id: live_list_id,
+                snip_id: id
+            };
+    jsRoutes.controllers.MySniplistsController.getNextSnip().ajax({
+        type :  "POST",
+        cache: false,
+        contentType: 'application/json',
+        processData: false,
+        data: JSON.stringify(d),
+        success: function(data) {
+            callBack(data);
+        },
+        error: function(data) {
+            $("#global-message").removeClass("hidden");
+            $("#global-message").addClass("alert-danger");
+            $("#global-message").text(data);
+        }
+    })
+
+}

@@ -74,7 +74,6 @@ public class SnipList {
 
         boolean owned = false;
         if(user != null && snipList != null) {
-            System.out.println(user.id + " EQUAL; " + snipList.user.id);
             if(user.id.equals(snipList.user.id)) {
                 owned = true;
             }

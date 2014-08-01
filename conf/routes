@@ -61,7 +61,7 @@ POST        /snips/add/createSnip                    controllers.Snips.createSni
 
 GET         /:id/snips                               controllers.MySnipsController.viewSnipsByUser(id: String)
 
-GET         /snips                                  controllers.MySnipsController.mySnips()
+GET         /snips                                   controllers.MySnipsController.mySnips()
 
 POST        /snips/removeSnip                        controllers.MySnipsController.removeSnip(id: String)
 
@@ -78,6 +78,9 @@ POST        /sniplists/removeSniplist                controllers.MySniplistsCont
 POST        /sniplists/saveSniplist                  controllers.MySniplistsController.saveSniplist(id: String)
 
 POST        /sniplists/toggleSniplist                controllers.MySniplistsController.toggleSniplist(id: String)
+
+POST        /sniplists/getNextSnip                   controllers.MySniplistsController.getNextSnip()
+
 
 
 

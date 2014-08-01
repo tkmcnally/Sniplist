@@ -60,7 +60,7 @@ function addSnipReady() {
                 $('<div class="mejs-info hidden">' +
                     '<div class="row"> <div class="col-md-10"> <h2 id="mejs-snip-title"></h2> </div> <div class="col-md-2"> <span style="cursor: pointer" class="glyphicon glyphicon-heart favourite-snip"></span> </div> </div>' +
                     '<div class="row"><div class="col-md-10"><h4 id="mejs-snip-artist"></h4></div>' +
-                    '<div class="col-md-2"><h4 id="mejs-snip-curr-time" style="float: right"></h4></div></div> <div id="live-snip-list-id" value="" hidden></div><div id="live-snip-id" value="" hidden></div> <div id="live-snip-video-id" value="" hidden></div> <div id="live-snip-start-time" value="" hidden></div><div id="live-snip-end-time" value="" hidden></div></div>' +
+                    '<div class="col-md-2"><h4 id="mejs-snip-curr-time" style="float: right"></h4></div></div> <div id="live-snip-list-id" value="" hidden></div> <div id="live-list-type" value="" hidden></div><div id="live-snip-id" value="" hidden></div> <div id="live-snip-video-id" value="" hidden></div> <div id="live-snip-start-time" value="" hidden></div><div id="live-snip-end-time" value="" hidden></div></div>' +
                     '</div>')
                     // append it to the toolbar
                     .appendTo(controls)
@@ -134,7 +134,12 @@ function addSnipReady() {
 
                 mediaElement.addEventListener('ended', function (e) {
 
-                        var video_id;
+
+                        getNextSnip(function(data) {
+                            loadVideo(data, data.autoPlay);
+                        });
+
+                       /* var video_id;
                         var start_time;
                         var end_time;
 
@@ -167,7 +172,7 @@ function addSnipReady() {
                             getSnip(video_id, loadVideo, false);
 
                         }
-
+                    */
 
 
                     },
@@ -277,7 +282,8 @@ function bindExternalPlayerButtons() {
     // [
     $(".play-snippet").click(function() {
         var snipId = $(this).closest("tr").find(".snip-id").attr("value");
-        $("#live-snip-list-id").text($(this).closest("table").attr('value'));
+        $("#live-snip-list-id").text($(this).closest("table").attr('id'));
+        $("#live-list-type").text($(this).closest("table").attr('value'));
         getSnip(snipId, loadVideo, true);
 
     });

@@ -47,7 +47,7 @@ function deleteSnipList(snipList_id) {
     jsRoutes.controllers.MySniplistsController.toggleSniplist(snipList_id).ajax({
         success: function(data) {
             var tableRow = $("table").filter(function() {
-                return $(this).attr('value') == snipList_id;
+                return $(this).attr('id') == snipList_id;
             });
 
             tableRow.remove();
@@ -92,7 +92,9 @@ function deleteSnipFromSnipList(snipList, snip) {
     })
 }
 
-$(document).ready(function() {
+$(document).ready(viewSniplistsReady);
+
+function viewSniplistsReady() {
 
     $('#new-playlist').popover({
         html: true,
@@ -104,16 +106,16 @@ $(document).ready(function() {
 
     initialize();
 
-});
+}
 
 function initialize() {
 
     $('.remove-playlist').click(function(e) {
-        deleteSnipList($(this).closest('table').attr('value'));
+        deleteSnipList($(this).closest('table').attr('id'));
     });
 
     $('.remove-snip-from-sniplist').click(function(e) {
-        deleteSnipFromSnipList($(this).closest('table').attr('value'), $(this).attr('value'));
+        deleteSnipFromSnipList($(this).closest('table').attr('id'), $(this).attr('value'));
     });
 
     //Dismiss popup whenever clicking outside
@@ -126,7 +128,7 @@ function initialize() {
 
     $(".favourite-sniplist").click(function() {
         $(this).toggleClass('red');
-        favouriteSniplist($(this).closest('table').attr('value'));
+        favouriteSniplist($(this).closest('table').attr('id'));
     });
 
     $(".favourite-snip").click(function() {

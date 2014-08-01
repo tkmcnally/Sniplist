@@ -33,4 +33,11 @@ public class Constants {
         public static final String FLASH_ERROR_KEY = "error";
 
     }
+
+    public static class Snips {
+
+        public static final String SNIPLIST = "sniplist";
+
+        public static final String USER = "user";
+    }
 }

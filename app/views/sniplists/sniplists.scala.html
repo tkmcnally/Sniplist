@@ -24,7 +24,7 @@
                     @for(sniplist <- userSniplists.savedSniplists) {
                         @(i += 1)
                         <div class="col-lg-6">
-                            <table class="table table-default table-bordered table-striped" value="@sniplist.id">
+                            <table class="table table-default table-bordered table-striped"  value="sniplist" id="@sniplist.id" >
                                 <thead>
                                     <tr>
                                         <th title="Name" colspan="5" align="right"><h4 style="display: inline;">@sniplist.name </h4>
