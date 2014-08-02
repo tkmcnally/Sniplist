@@ -71,14 +71,16 @@ Seq[Any](format.raw/*3.13*/("""
                                             <a class="add-to-playlist-a" href="" align="left" data-toggle="modal" data-target="#add-to-playlist-modal">
                                                     Add to playlist
                                             </a></li>
-                                        """),_display_(Seq[Any](/*47.42*/if(localUser.id != userSnips.user.id)/*47.79*/ {_display_(Seq[Any](format.raw/*47.81*/("""
+                                        <li><a class="share-link-a" href="" align="left" data-toggle="modal" data-target="#share-link-modal" value=""""),_display_(Seq[Any](/*47.150*/routes/*47.156*/.Snips.viewSnipById(snip.id.toString))),format.raw/*47.193*/("""">
+                                            Share Snip</a></li>
+                                        """),_display_(Seq[Any](/*49.42*/if(localUser.id != userSnips.user.id)/*49.79*/ {_display_(Seq[Any](format.raw/*49.81*/("""
                                             <li><a align="left" href="" class="save-snip"><i class="icon-off"></i>
                                                 Favourite Snip</a></li>
-                                        """)))}/*50.43*/else/*50.48*/{_display_(Seq[Any](format.raw/*50.49*/("""
+                                        """)))}/*52.43*/else/*52.48*/{_display_(Seq[Any](format.raw/*52.49*/("""
                                             <li class="divider"></li>
                                             <li><a align="left" href="#" class="dropdown-delete-snip"><i class="icon-off"></i>
                                                 Delete</a></li>
-                                        """)))})),format.raw/*54.42*/("""
+                                        """)))})),format.raw/*56.42*/("""
 
                                     </ul>
                                 </div>
@@ -87,14 +89,14 @@ Seq[Any](format.raw/*3.13*/("""
                                 <span style="cursor : pointer" class="glyphicon glyphicon-play play-snip-table play-snippet"></span>
                                     <!--<button type="button" class="btn-primary btn btn-sm play-snippet">Play</button>-->
                             </td>
-                            <td align="left" style="vertical-align : middle" class="left snip-favourite-count"><span class="alert-danger badge">"""),_display_(Seq[Any](/*63.146*/snip/*63.150*/.favouriteCount)),format.raw/*63.165*/("""</span></td>
-                            <td class="hidden snip-id" value=""""),_display_(Seq[Any](/*64.64*/snip/*64.68*/.id)),format.raw/*64.71*/("""" ></td>
-                            <td class="hidden snip-video-id" value=""""),_display_(Seq[Any](/*65.70*/snip/*65.74*/.url)),format.raw/*65.78*/(""""></td>
-                            <td class="hidden snip-video-startTime" value=""""),_display_(Seq[Any](/*66.77*/snip/*66.81*/.time_min)),format.raw/*66.90*/(""""></td>
-                            <td class="hidden snip-video-endTime" value=""""),_display_(Seq[Any](/*67.75*/snip/*67.79*/.time_max)),format.raw/*67.88*/(""""></td>
+                            <td align="left" style="vertical-align : middle" class="left snip-favourite-count"><span class="alert-danger badge">"""),_display_(Seq[Any](/*65.146*/snip/*65.150*/.favouriteCount)),format.raw/*65.165*/("""</span></td>
+                            <td class="hidden snip-id" value=""""),_display_(Seq[Any](/*66.64*/snip/*66.68*/.id)),format.raw/*66.71*/("""" ></td>
+                            <td class="hidden snip-video-id" value=""""),_display_(Seq[Any](/*67.70*/snip/*67.74*/.url)),format.raw/*67.78*/(""""></td>
+                            <td class="hidden snip-video-startTime" value=""""),_display_(Seq[Any](/*68.77*/snip/*68.81*/.time_min)),format.raw/*68.90*/(""""></td>
+                            <td class="hidden snip-video-endTime" value=""""),_display_(Seq[Any](/*69.75*/snip/*69.79*/.time_max)),format.raw/*69.88*/(""""></td>
 
                         </tr>
-                    """)))})),format.raw/*70.22*/("""
+                    """)))})),format.raw/*72.22*/("""
                     </tbody>
 
 
@@ -128,16 +130,37 @@ Seq[Any](format.raw/*3.13*/("""
             </div>
         </div>
     </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="share-link-modal" tabindex="-1" role="dialog" aria-labelledby="shareLinkModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="share-link-modal-header">Share with friends!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Link:</span>
+                            <input id="share-link-modal-input" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 """)))};
 Seq[Any](format.raw/*1.83*/("""
 
-"""),format.raw/*104.2*/("""
+"""),format.raw/*127.2*/("""
 
 
- """),_display_(Seq[Any](/*107.3*/if(!js)/*107.10*/ {_display_(Seq[Any](format.raw/*107.12*/("""
-    """),_display_(Seq[Any](/*108.6*/main("My Snips", "mySnips")/*108.33*/(content))),format.raw/*108.42*/("""
-""")))}/*109.3*/else/*109.8*/{_display_(Seq[Any](format.raw/*109.9*/("""
-    """),_display_(Seq[Any](/*110.6*/content)),format.raw/*110.13*/("""
+ """),_display_(Seq[Any](/*130.3*/if(!js)/*130.10*/ {_display_(Seq[Any](format.raw/*130.12*/("""
+    """),_display_(Seq[Any](/*131.6*/main("My Snips", "mySnips")/*131.33*/(content))),format.raw/*131.42*/("""
+""")))}/*132.3*/else/*132.8*/{_display_(Seq[Any](format.raw/*132.9*/("""
+    """),_display_(Seq[Any](/*133.6*/content)),format.raw/*133.13*/("""
 """)))})))}
     }
     
@@ -150,11 +173,11 @@ Seq[Any](format.raw/*1.83*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jul 31 15:30:02 EDT 2014
+                    DATE: Fri Aug 01 22:22:40 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snips/viewSnips.scala.html
-                    HASH: c0b9c9979dd16dbec64c9303cabd7bd4c04ab204
-                    MATRIX: 822->1|980->85|994->92|1078->96|1359->341|1377->350|1409->360|1630->545|1648->554|1673->557|2038->894|2067->895|2108->908|2137->909|2238->982|2267->983|2308->996|2337->997|2443->1075|2472->1076|2513->1089|2542->1090|2728->1240|2777->1273|2817->1275|3040->1462|3053->1466|3085->1476|3198->1553|3211->1557|3245->1569|3357->1645|3370->1649|3403->1660|3604->1825|3617->1829|3642->1832|4422->2576|4468->2613|4508->2615|4756->2845|4769->2850|4808->2851|5143->3154|5805->3779|5819->3783|5857->3798|5969->3874|5982->3878|6007->3881|6121->3959|6134->3963|6160->3967|6280->4051|6293->4055|6324->4064|6442->4146|6455->4150|6486->4159|6578->4219|7871->82|7901->5473|7942->5478|7959->5485|8000->5487|8042->5493|8079->5520|8111->5529|8132->5532|8145->5537|8184->5538|8226->5544|8256->5551
-                    LINES: 26->1|28->3|28->3|30->3|37->10|37->10|37->10|43->16|43->16|43->16|49->22|49->22|49->22|49->22|50->23|50->23|50->23|50->23|51->24|51->24|51->24|51->24|56->29|56->29|56->29|58->31|58->31|58->31|59->32|59->32|59->32|60->33|60->33|60->33|64->37|64->37|64->37|74->47|74->47|74->47|77->50|77->50|77->50|81->54|90->63|90->63|90->63|91->64|91->64|91->64|92->65|92->65|92->65|93->66|93->66|93->66|94->67|94->67|94->67|97->70|132->1|134->104|137->107|137->107|137->107|138->108|138->108|138->108|139->109|139->109|139->109|140->110|140->110
+                    HASH: 3a792e3e8403ba68e2d35326e53d511c78ae40f4
+                    MATRIX: 822->1|980->85|994->92|1078->96|1359->341|1377->350|1409->360|1630->545|1648->554|1673->557|2038->894|2067->895|2108->908|2137->909|2238->982|2267->983|2308->996|2337->997|2443->1075|2472->1076|2513->1089|2542->1090|2728->1240|2777->1273|2817->1275|3040->1462|3053->1466|3085->1476|3198->1553|3211->1557|3245->1569|3357->1645|3370->1649|3403->1660|3604->1825|3617->1829|3642->1832|4531->2684|4547->2690|4607->2727|4751->2835|4797->2872|4837->2874|5085->3104|5098->3109|5137->3110|5472->3413|6134->4038|6148->4042|6186->4057|6298->4133|6311->4137|6336->4140|6450->4218|6463->4222|6489->4226|6609->4310|6622->4314|6653->4323|6771->4405|6784->4409|6815->4418|6907->4478|9149->82|9179->6681|9220->6686|9237->6693|9278->6695|9320->6701|9357->6728|9389->6737|9410->6740|9423->6745|9462->6746|9504->6752|9534->6759
+                    LINES: 26->1|28->3|28->3|30->3|37->10|37->10|37->10|43->16|43->16|43->16|49->22|49->22|49->22|49->22|50->23|50->23|50->23|50->23|51->24|51->24|51->24|51->24|56->29|56->29|56->29|58->31|58->31|58->31|59->32|59->32|59->32|60->33|60->33|60->33|64->37|64->37|64->37|74->47|74->47|74->47|76->49|76->49|76->49|79->52|79->52|79->52|83->56|92->65|92->65|92->65|93->66|93->66|93->66|94->67|94->67|94->67|95->68|95->68|95->68|96->69|96->69|96->69|99->72|155->1|157->127|160->130|160->130|160->130|161->131|161->131|161->131|162->132|162->132|162->132|163->133|163->133
                     -- GENERATED --
                 */
             

@@ -44,6 +44,10 @@ function bindTableButtons() {
         loadModalData();
     });
 
+    $('.share-link-a').click(function(e) {
+        $('#share-link-modal-input').val(location.host  + $(this).attr('value'));
+    });
+
     $('.playlist-li').click(function(e) {
         addToSniplist($(this).attr('value'), $('#selected-snip-id').val());
     });

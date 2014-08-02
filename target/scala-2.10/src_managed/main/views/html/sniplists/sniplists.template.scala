@@ -67,6 +67,10 @@ Seq[Any](format.raw/*4.13*/("""
                                             """)))}/*40.47*/else/*40.52*/{_display_(Seq[Any](format.raw/*40.53*/("""
                                                 <span style="float: right; text-align: right; cursor: pointer" class="glyphicon glyphicon-remove remove remove-playlist"></span>
                                             """)))})),format.raw/*42.46*/("""
+
+                                            <a class="share-link-a" href="" align="left" data-toggle="modal" data-target="#share-link-modal" value=""""),_display_(Seq[Any](/*44.150*/routes/*44.156*/.SnipLists.viewSniplistById(sniplist.id.toString))),format.raw/*44.205*/("""">
+                                                <span style="cursor : pointer" class="glyphicon glyphicon-share"></span>
+                                            </a>
                                         </th>
 
                                     </tr>
@@ -74,65 +78,85 @@ Seq[Any](format.raw/*4.13*/("""
                                         <th title="Song" align="right">Song</th>
                                         <th title="Artist" align="right">Artist</th>
                                         <th title="Album" align="right">Album</th>
-                                        <th class=""""),format.raw/*50.52*/("""{"""),format.raw/*50.53*/("""sorter: false"""),format.raw/*50.66*/("""}"""),format.raw/*50.67*/("""" title="Play" align="right">Play</th>
+                                        <th class=""""),format.raw/*54.52*/("""{"""),format.raw/*54.53*/("""sorter: false"""),format.raw/*54.66*/("""}"""),format.raw/*54.67*/("""" title="Play" align="right">Play</th>
 
-                                        """),_display_(Seq[Any](/*52.42*/if(localUser.id == userSniplists.user.id)/*52.83*/ {_display_(Seq[Any](format.raw/*52.85*/("""
+                                        """),_display_(Seq[Any](/*56.42*/if(localUser.id == userSniplists.user.id)/*56.83*/ {_display_(Seq[Any](format.raw/*56.85*/("""
                                             <th title="Remove"></th>
-                                        """)))}/*54.43*/else/*54.48*/{_display_(Seq[Any](format.raw/*54.49*/("""
+                                        """)))}/*58.43*/else/*58.48*/{_display_(Seq[Any](format.raw/*58.49*/("""
                                             <th title="Favourite"></th>
-                                        """)))})),format.raw/*56.42*/("""
+                                        """)))})),format.raw/*60.42*/("""
                                     </tr>
                                 </thead>
                                 <tbody>
-                                """),_display_(Seq[Any](/*60.34*/for(snip <- sniplist.snips) yield /*60.61*/ {_display_(Seq[Any](format.raw/*60.63*/("""
+                                """),_display_(Seq[Any](/*64.34*/for(snip <- sniplist.snips) yield /*64.61*/ {_display_(Seq[Any](format.raw/*64.63*/("""
                                     <tr>
-                                        <td align="left" class="left snip-title">"""),_display_(Seq[Any](/*62.83*/snip/*62.87*/.song_name)),format.raw/*62.97*/("""</td>
-                                        <td align="left" class="left snip-artist">"""),_display_(Seq[Any](/*63.84*/snip/*63.88*/.artist_name)),format.raw/*63.100*/("""</td>
-                                        <td align="left" class="left snip-album">"""),_display_(Seq[Any](/*64.83*/snip/*64.87*/.album_name)),format.raw/*64.98*/("""</td>
+                                        <td align="left" class="left snip-title">"""),_display_(Seq[Any](/*66.83*/snip/*66.87*/.song_name)),format.raw/*66.97*/("""</td>
+                                        <td align="left" class="left snip-artist">"""),_display_(Seq[Any](/*67.84*/snip/*67.88*/.artist_name)),format.raw/*67.100*/("""</td>
+                                        <td align="left" class="left snip-album">"""),_display_(Seq[Any](/*68.83*/snip/*68.87*/.album_name)),format.raw/*68.98*/("""</td>
                                         <td align="center" class="center">
                                             <span style="cursor:pointer" class="glyphicon glyphicon-play play-snip-table play-snippet"></span>
                                         </td>
                                         <td class="center">
-                                        """),_display_(Seq[Any](/*69.42*/if(localUser.id == sniplist.user.id)/*69.78*/ {_display_(Seq[Any](format.raw/*69.80*/("""
-                                                <span style="cursor : pointer" class="glyphicon remove glyphicon-remove remove-snip-from-sniplist" value=""""),_display_(Seq[Any](/*70.156*/snip/*70.160*/.id)),format.raw/*70.163*/(""""></span>
-                                        """)))}/*71.43*/else/*71.48*/{_display_(Seq[Any](format.raw/*71.49*/("""
-                                            """),_display_(Seq[Any](/*72.46*/if(snip.localUserFavourited)/*72.74*/ {_display_(Seq[Any](format.raw/*72.76*/("""
+                                        """),_display_(Seq[Any](/*73.42*/if(localUser.id == sniplist.user.id)/*73.78*/ {_display_(Seq[Any](format.raw/*73.80*/("""
+                                                <span style="cursor : pointer" class="glyphicon remove glyphicon-remove remove-snip-from-sniplist" value=""""),_display_(Seq[Any](/*74.156*/snip/*74.160*/.id)),format.raw/*74.163*/(""""></span>
+                                        """)))}/*75.43*/else/*75.48*/{_display_(Seq[Any](format.raw/*75.49*/("""
+                                            """),_display_(Seq[Any](/*76.46*/if(snip.localUserFavourited)/*76.74*/ {_display_(Seq[Any](format.raw/*76.76*/("""
                                                 <span style="cursor : pointer ;" class="glyphicon glyphicon-heart favourite-snip red"></span>
-                                            """)))}/*74.47*/else/*74.52*/{_display_(Seq[Any](format.raw/*74.53*/("""
+                                            """)))}/*78.47*/else/*78.52*/{_display_(Seq[Any](format.raw/*78.53*/("""
                                                 <span style="cursor : pointer ;" class="glyphicon glyphicon-heart favourite-snip black"></span>
-                                            """)))})),format.raw/*76.46*/("""
-                                        """)))})),format.raw/*77.42*/("""
+                                            """)))})),format.raw/*80.46*/("""
+                                        """)))})),format.raw/*81.42*/("""
                                         </td>
-                                        <td class="hidden snip-id" value=""""),_display_(Seq[Any](/*79.76*/snip/*79.80*/.id)),format.raw/*79.83*/("""" ></td>
-                                        <td class="hidden snip-video-id" value=""""),_display_(Seq[Any](/*80.82*/snip/*80.86*/.url)),format.raw/*80.90*/(""""></td>
-                                        <td class="hidden snip-video-startTime" value=""""),_display_(Seq[Any](/*81.89*/snip/*81.93*/.time_min)),format.raw/*81.102*/(""""></td>
-                                        <td class="hidden snip-video-endTime" value=""""),_display_(Seq[Any](/*82.87*/snip/*82.91*/.time_max)),format.raw/*82.100*/(""""></td>
+                                        <td class="hidden snip-id" value=""""),_display_(Seq[Any](/*83.76*/snip/*83.80*/.id)),format.raw/*83.83*/("""" ></td>
+                                        <td class="hidden snip-video-id" value=""""),_display_(Seq[Any](/*84.82*/snip/*84.86*/.url)),format.raw/*84.90*/(""""></td>
+                                        <td class="hidden snip-video-startTime" value=""""),_display_(Seq[Any](/*85.89*/snip/*85.93*/.time_min)),format.raw/*85.102*/(""""></td>
+                                        <td class="hidden snip-video-endTime" value=""""),_display_(Seq[Any](/*86.87*/snip/*86.91*/.time_max)),format.raw/*86.100*/(""""></td>
                                     </tr>
-                                """)))})),format.raw/*84.34*/("""
+                                """)))})),format.raw/*88.34*/("""
                                 </tbody>
 
                             </table>
                         </div>
-                        """),_display_(Seq[Any](/*89.26*/if(i % 2 == 0)/*89.40*/ {_display_(Seq[Any](format.raw/*89.42*/("""
+                        """),_display_(Seq[Any](/*93.26*/if(i % 2 == 0)/*93.40*/ {_display_(Seq[Any](format.raw/*93.42*/("""
                         </div>
                     <div class="row">
-                    """)))})),format.raw/*92.22*/("""
-                    """)))})),format.raw/*93.22*/("""
+                    """)))})),format.raw/*96.22*/("""
+                    """)))})),format.raw/*97.22*/("""
                     </div>
-            """)))})),format.raw/*95.14*/("""
+            """)))})),format.raw/*99.14*/("""
 
         </div>
 
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="share-link-modal" tabindex="-1" role="dialog" aria-labelledby="shareLinkModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="share-link-modal-header">Share with friends!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Link:</span>
+                        <input id="share-link-modal-input" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 """)))};
 Seq[Any](format.raw/*1.91*/("""
 """),format.raw/*3.1*/("""
-"""),format.raw/*100.2*/("""
+"""),format.raw/*124.2*/("""
 
-"""),_display_(Seq[Any](/*102.2*/if(!js)/*102.9*/ {_display_(Seq[Any](format.raw/*102.11*/("""
-    """),_display_(Seq[Any](/*103.6*/main("My SnipLists", "mySnipLists")/*103.41*/(content))),format.raw/*103.50*/("""
-""")))}/*104.3*/else/*104.8*/{_display_(Seq[Any](format.raw/*104.9*/("""
-    """),_display_(Seq[Any](/*105.6*/content)),format.raw/*105.13*/("""
+"""),_display_(Seq[Any](/*126.2*/if(!js)/*126.9*/ {_display_(Seq[Any](format.raw/*126.11*/("""
+    """),_display_(Seq[Any](/*127.6*/main("My SnipLists", "mySnipLists")/*127.41*/(content))),format.raw/*127.50*/("""
+""")))}/*128.3*/else/*128.8*/{_display_(Seq[Any](format.raw/*128.9*/("""
+    """),_display_(Seq[Any](/*129.6*/content)),format.raw/*129.13*/("""
 """)))})))}
     }
     
@@ -145,11 +169,11 @@ Seq[Any](format.raw/*1.91*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jul 31 15:27:33 EDT 2014
+                    DATE: Fri Aug 01 22:28:41 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/sniplists/sniplists.scala.html
-                    HASH: 543c6dc5a4530ca8be5c0222b554863119e40437
-                    MATRIX: 830->1|1034->132|1048->139|1132->143|1769->744|1787->753|1812->756|1899->807|1933->832|1973->834|2031->856|2092->901|2132->903|2194->929|2224->937|2424->1100|2442->1108|2468->1111|2703->1309|2721->1317|2749->1322|2869->1406|2886->1414|2918->1424|2994->1463|3012->1471|3050->1486|3148->1548|3198->1589|3238->1591|3324->1641|3366->1674|3406->1676|3643->1895|3656->1900|3695->1901|3943->2117|4008->2164|4021->2169|4060->2170|4315->2393|4774->2824|4803->2825|4844->2838|4873->2839|4990->2920|5040->2961|5080->2963|5210->3075|5223->3080|5262->3081|5408->3195|5601->3352|5644->3379|5684->3381|5844->3505|5857->3509|5889->3519|6014->3608|6027->3612|6062->3624|6186->3712|6199->3716|6232->3727|6639->4098|6684->4134|6724->4136|6917->4292|6931->4296|6957->4299|7027->4351|7040->4356|7079->4357|7161->4403|7198->4431|7238->4433|7445->4622|7458->4627|7497->4628|7719->4818|7793->4860|7951->4982|7964->4986|7989->4989|8115->5079|8128->5083|8154->5087|8286->5183|8299->5187|8331->5196|8461->5290|8474->5294|8506->5303|8621->5386|8793->5522|8816->5536|8856->5538|8979->5629|9033->5651|9106->5692|9175->90|9202->130|9231->5722|9270->5725|9286->5732|9327->5734|9369->5740|9414->5775|9446->5784|9467->5787|9480->5792|9519->5793|9561->5799|9591->5806
-                    LINES: 26->1|29->4|29->4|31->4|48->21|48->21|48->21|50->23|50->23|50->23|51->24|51->24|51->24|52->25|52->25|54->27|54->27|54->27|57->30|57->30|57->30|59->32|59->32|59->32|59->32|59->32|59->32|61->34|61->34|61->34|62->35|62->35|62->35|64->37|64->37|64->37|66->39|67->40|67->40|67->40|69->42|77->50|77->50|77->50|77->50|79->52|79->52|79->52|81->54|81->54|81->54|83->56|87->60|87->60|87->60|89->62|89->62|89->62|90->63|90->63|90->63|91->64|91->64|91->64|96->69|96->69|96->69|97->70|97->70|97->70|98->71|98->71|98->71|99->72|99->72|99->72|101->74|101->74|101->74|103->76|104->77|106->79|106->79|106->79|107->80|107->80|107->80|108->81|108->81|108->81|109->82|109->82|109->82|111->84|116->89|116->89|116->89|119->92|120->93|122->95|128->1|129->3|130->100|132->102|132->102|132->102|133->103|133->103|133->103|134->104|134->104|134->104|135->105|135->105
+                    HASH: 227858be369482d0c6b41e9ecf3768be980ccd43
+                    MATRIX: 830->1|1034->132|1048->139|1132->143|1769->744|1787->753|1812->756|1899->807|1933->832|1973->834|2031->856|2092->901|2132->903|2194->929|2224->937|2424->1100|2442->1108|2468->1111|2703->1309|2721->1317|2749->1322|2869->1406|2886->1414|2918->1424|2994->1463|3012->1471|3050->1486|3148->1548|3198->1589|3238->1591|3324->1641|3366->1674|3406->1676|3643->1895|3656->1900|3695->1901|3943->2117|4008->2164|4021->2169|4060->2170|4315->2393|4503->2544|4519->2550|4591->2599|5222->3202|5251->3203|5292->3216|5321->3217|5438->3298|5488->3339|5528->3341|5658->3453|5671->3458|5710->3459|5856->3573|6049->3730|6092->3757|6132->3759|6292->3883|6305->3887|6337->3897|6462->3986|6475->3990|6510->4002|6634->4090|6647->4094|6680->4105|7087->4476|7132->4512|7172->4514|7365->4670|7379->4674|7405->4677|7475->4729|7488->4734|7527->4735|7609->4781|7646->4809|7686->4811|7893->5000|7906->5005|7945->5006|8167->5196|8241->5238|8399->5360|8412->5364|8437->5367|8563->5457|8576->5461|8602->5465|8734->5561|8747->5565|8779->5574|8909->5668|8922->5672|8954->5681|9069->5764|9241->5900|9264->5914|9304->5916|9427->6007|9481->6029|9554->6070|10567->90|10594->130|10623->7044|10662->7047|10678->7054|10719->7056|10761->7062|10806->7097|10838->7106|10859->7109|10872->7114|10911->7115|10953->7121|10983->7128
+                    LINES: 26->1|29->4|29->4|31->4|48->21|48->21|48->21|50->23|50->23|50->23|51->24|51->24|51->24|52->25|52->25|54->27|54->27|54->27|57->30|57->30|57->30|59->32|59->32|59->32|59->32|59->32|59->32|61->34|61->34|61->34|62->35|62->35|62->35|64->37|64->37|64->37|66->39|67->40|67->40|67->40|69->42|71->44|71->44|71->44|81->54|81->54|81->54|81->54|83->56|83->56|83->56|85->58|85->58|85->58|87->60|91->64|91->64|91->64|93->66|93->66|93->66|94->67|94->67|94->67|95->68|95->68|95->68|100->73|100->73|100->73|101->74|101->74|101->74|102->75|102->75|102->75|103->76|103->76|103->76|105->78|105->78|105->78|107->80|108->81|110->83|110->83|110->83|111->84|111->84|111->84|112->85|112->85|112->85|113->86|113->86|113->86|115->88|120->93|120->93|120->93|123->96|124->97|126->99|152->1|153->3|154->124|156->126|156->126|156->126|157->127|157->127|157->127|158->128|158->128|158->128|159->129|159->129
                     -- GENERATED --
                 */
             
