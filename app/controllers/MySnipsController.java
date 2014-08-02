@@ -2,6 +2,8 @@ package controllers;
 
 import be.objectify.deadbolt.java.actions.Group;
 import be.objectify.deadbolt.java.actions.Restrict;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.*;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -18,6 +20,9 @@ public class MySnipsController extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
         Result result = internalServerError();
 
         Snip snip = Snip.findById(id).get();
@@ -27,12 +32,15 @@ public class MySnipsController extends Controller {
             boolean removed = MySnips.removeSnip(mySnips, snip);
 
             if(removed) {
-                result = ok("Snip '" + snip.song_name + "' has been removed from your collection!");
+                node.put("message", "Snip '" + snip.song_name + "' has been removed from your collection!");
+                result = ok(node);
             } else {
-                result = badRequest("Snip '" + snip.song_name + "' could not be found in your collection!");
+                node.put("error", "Snip '" + snip.song_name + "' could not be found in your collection!");
+                result = badRequest(node);
             }
         } else {
-            badRequest("Could not find that snip.");
+            node.put("error", "Could not find that snip.");
+            badRequest(node);
         }
 
         return result;
@@ -42,6 +50,9 @@ public class MySnipsController extends Controller {
     public static Result saveSnip(final String id) {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
+
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
 
         Result result = internalServerError();
 
@@ -56,7 +67,8 @@ public class MySnipsController extends Controller {
                 snip.favourite();
                 result = ok();
             } else {
-                result = badRequest("Your collection is full!");
+                node.put("error", "Your collection is full!");
+                result = badRequest(node);
             }
 
         } else {
@@ -88,6 +100,9 @@ public class MySnipsController extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
         Result result = internalServerError();
 
         Snip snip = Snip.findById(id).get();
@@ -95,9 +110,11 @@ public class MySnipsController extends Controller {
 
         if(snip != null && mySnips != null) {
             if(MySnips.toggleSnip(mySnips, snip)) {
-                result = ok("Snip '" + snip.song_name + "' has been favourited.");
+                node.put("message", "Snip '" + snip.song_name + "' has been favourited.");
+                result = ok(node);
             } else {
-                result = ok("Snip '" + snip.song_name + "' has been unfavourited.");
+                node.put("message", "Snip '" + snip.song_name + "' has been unfavourited.");
+                result = ok(node);
             }
         } else {
             result = badRequest("Could not find Snip with id: '" + snip.id + "'.");
@@ -113,6 +130,9 @@ public class MySnipsController extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         User localUser = Application.getLocalUser(session());
 
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
         User user = null;
         if(id != null) {
             user = User.findById(id);
@@ -123,28 +143,10 @@ public class MySnipsController extends Controller {
             MySnips mySnips = MySnips.findByUser(user);
             result = ok(views.html.snips.viewSnips.render(js, localUser, mySnips));
         } else {
-            result = badRequest("Invalid user id!");
+            node.put("error", "Invalid user id!");
+            result = badRequest(node);
         }
 
         return result;
     }
-/*
-    @Restrict(@Group(Application.USER_ROLE))
-    public static Result loadSnipsByUser(final String id) {
-        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
-        final User user = Application.getLocalUser(session());
-
-        final User id_user = User.findById(id);
-
-        Result result = internalServerError();
-        if(id_user != null) {
-            MySnips mySnips = MySnips.findByUser(user);
-            result = ok(views.html.sniplists.arraySnips.render(user, mySnips));
-        } else {
-            result = badRequest("Invalid user id!");
-        }
-
-        return result;
-    }*/
-
 }

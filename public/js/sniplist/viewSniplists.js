@@ -31,7 +31,7 @@ function createSnipList() {
             $("#global-message").removeClass("hidden");
             $("#global-message").removeClass("alert-danger");
             $("#global-message").addClass("alert-success");
-            $("#global-message").text(data);
+            $("#global-message").text(data.message);
             var localUser = $('#sniplist-array').attr('value');
             loadSnipLists(localUser);
         },
@@ -56,7 +56,7 @@ function deleteSnipList(snipList_id) {
             $("#global-message").removeClass("hidden");
             $("#global-message").removeClass("alert-danger");
             $("#global-message").addClass("alert-success");
-            $("#global-message").text(data);
+            $("#global-message").text(data.message);
             var localUser = $('#sniplist-array').attr('value');
             loadSnipLists(localUser);
         },

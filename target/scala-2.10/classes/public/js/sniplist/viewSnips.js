@@ -132,7 +132,7 @@ function getNextSnip(callBack) {
         error: function(data) {
             $("#global-message").removeClass("hidden");
             $("#global-message").addClass("alert-danger");
-            $("#global-message").text(data);
+            $("#global-message").text(data.error);
         }
     })
 

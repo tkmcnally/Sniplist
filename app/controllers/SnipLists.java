@@ -2,6 +2,8 @@ package controllers;
 
 import be.objectify.deadbolt.java.actions.Group;
 import be.objectify.deadbolt.java.actions.Restrict;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.*;
 import play.data.Form;
 import play.data.validation.Constraints;
@@ -45,6 +47,9 @@ public class SnipLists extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         User localUser = Application.getLocalUser(session());
 
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
         User user = null;
         if (id != null) {
             user = User.findById(id);
@@ -74,7 +79,8 @@ public class SnipLists extends Controller {
 
             result = ok(views.html.sniplists.sniplists.render(js, localUser, userSniplists));
         } else {
-            result = badRequest("Invalid user id!");
+            node.put("error", "Invalid user id!");
+            result = badRequest(node);
         }
 
         return result;
@@ -92,18 +98,24 @@ public class SnipLists extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
         Result result = internalServerError();
 
         final Form<MySnipList> snipListForm = MY_SNIPLIST_FORM.bindFromRequest();
         if (snipListForm.hasErrors()) {
-            result = badRequest(snipListForm.globalError().message().toString());
+            node.put("error", snipListForm.globalError().message().toString());
+            result = badRequest(node);
         } else {
             SnipList snipList = SnipList.create(snipListForm.get(), user);
 
             MySniplists mySniplists = MySniplists.findByUser(user);
             MySniplists.addSniplist(mySniplists, snipList);
 
-            result = ok("Sniplist '" + snipList.name + "' has been saved!");
+
+            node.put("message", "Sniplist '" + snipList.name + "' has been saved!");
+            result = ok(node);
         }
 
         return result;
@@ -114,20 +126,28 @@ public class SnipLists extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
         Result result = internalServerError();
 
         Snip snip = Snip.findById(snip_id).get();
         SnipList snipList = SnipList.findById(snipList_id).get();
 
         if (snip == null || snipList == null) {
-            result = badRequest("Invalid Snip/SnipList Id.");
+            node.put("error", "Invalid Snip/SnipList Id.");
+            result = badRequest(node);
         } else if (!SnipList.isOwner(user, snipList)) {
-            result = badRequest("You do not own that SnipList!");
+            node.put("error", "You do not own that SnipList!");
+            result = badRequest(node);
         } else if (snipList.isFull()) {
-            result = badRequest("The Sniplist '" + snipList.name + "' is full!");
+            node.put("error", "The Sniplist '" + snipList.name + "' is full!");
+            result = badRequest(node);
         } else {
             SnipList.addSnipToSnipList(snipList, snip);
-            result = ok("'" + snip.song_name + " has been added to '" + snipList.name + "'.");
+
+            node.put("message", "'" + snip.song_name + " has been added to '" + snipList.name + "'.");
+            result = ok(node);
         }
 
         return result;
@@ -138,6 +158,9 @@ public class SnipLists extends Controller {
 
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User localUser = Application.getLocalUser(session());
+
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
 
         User user = null;
         if (id != null) {
@@ -169,7 +192,9 @@ public class SnipLists extends Controller {
             }
             result = ok(views.html.sniplists.arraySniplists.render(user, userSniplists));
         } else {
-            result = badRequest("Invalid user id!");
+
+            node.put("error", "Invalid user id!");
+            result = badRequest();
         }
 
         return result;
@@ -181,15 +206,20 @@ public class SnipLists extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
         Result result = internalServerError();
 
         Snip snip = Snip.findById(snip_id).get();
         SnipList snipList = SnipList.findById(snipList_id).get();
 
         if (snip == null || snipList == null) {
-            result = badRequest("Invalid Snip/SnipList Id.");
+            node.put("error", "Invalid Snip/SnipList Id.");
+            result = badRequest(node);
         } else if (!SnipList.isOwner(user, snipList)) {
-            result = badRequest("You do not own that SnipList!");
+            node.put("error", "You do not own that SnipList!");
+            result = badRequest(node);
         } else {
             SnipList.deleteSnipFromSnipList(snipList, snip);
             result = ok();
@@ -221,5 +251,27 @@ public class SnipLists extends Controller {
 
         return result;
     }
+
+    public static Result viewSniplistById(final String id) {
+        final User user = Application.getLocalUser(session());
+        SnipList snipList = SnipList.findById(id).get();
+
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
+        Result result = internalServerError();
+        if(snipList != null) {
+
+
+            result = ok(views.html.sniplists.viewSniplistDirect.render(false, user, snipList));
+        } else {
+            node.put("error", "Invalid Sniplist ID: " + id);
+            result = badRequest(node);
+        }
+
+        return result;
+    }
+
+
 }
 

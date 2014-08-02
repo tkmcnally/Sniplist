@@ -1,6 +1,6 @@
 // @SOURCE:C:/Projects/Sniplist/conf/routes
-// @HASH:cf9bca53ac138f6152331b70553864ed38b5d20f
-// @DATE:Thu Jul 31 15:12:17 EDT 2014
+// @HASH:c4c5137f670bcd0603fb5e8d0c5110d0de1eded8
+// @DATE:Fri Aug 01 02:21:46 EDT 2014
 
 
 import play.core._
@@ -161,81 +161,89 @@ private[this] lazy val controllers_Snips_createSnip32 = Route("POST", PathPatter
         
 
 // @LINE:62
-private[this] lazy val controllers_MySnipsController_viewSnipsByUser33 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),DynamicPart("id", """[^/]+""",true),StaticPart("/snips"))))
+private[this] lazy val controllers_Snips_viewSnipById33 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("s/"),DynamicPart("id", """[^/]+""",true))))
         
 
-// @LINE:64
-private[this] lazy val controllers_MySnipsController_mySnips34 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("snips"))))
+// @LINE:65
+private[this] lazy val controllers_MySnipsController_viewSnipsByUser34 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),DynamicPart("id", """[^/]+""",true),StaticPart("/snips"))))
         
 
-// @LINE:66
-private[this] lazy val controllers_MySnipsController_removeSnip35 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("snips/removeSnip"))))
+// @LINE:67
+private[this] lazy val controllers_MySnipsController_mySnips35 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("snips"))))
         
 
-// @LINE:68
-private[this] lazy val controllers_MySnipsController_saveSnip36 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("snips/saveSnip"))))
+// @LINE:69
+private[this] lazy val controllers_MySnipsController_removeSnip36 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("snips/removeSnip"))))
         
 
-// @LINE:70
-private[this] lazy val controllers_MySnipsController_toggleSnip37 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("snips/toggleSnip"))))
+// @LINE:71
+private[this] lazy val controllers_MySnipsController_saveSnip37 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("snips/saveSnip"))))
         
 
-// @LINE:74
-private[this] lazy val controllers_MySniplistsController_mySniplists38 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/"))))
+// @LINE:73
+private[this] lazy val controllers_MySnipsController_toggleSnip38 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("snips/toggleSnip"))))
         
 
-// @LINE:76
-private[this] lazy val controllers_MySniplistsController_removeSniplist39 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/removeSniplist"))))
+// @LINE:77
+private[this] lazy val controllers_MySniplistsController_mySniplists39 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/"))))
         
 
-// @LINE:78
-private[this] lazy val controllers_MySniplistsController_saveSniplist40 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/saveSniplist"))))
+// @LINE:79
+private[this] lazy val controllers_MySniplistsController_removeSniplist40 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/removeSniplist"))))
         
 
-// @LINE:80
-private[this] lazy val controllers_MySniplistsController_toggleSniplist41 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/toggleSniplist"))))
+// @LINE:81
+private[this] lazy val controllers_MySniplistsController_saveSniplist41 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/saveSniplist"))))
         
 
-// @LINE:82
-private[this] lazy val controllers_MySniplistsController_getNextSnip42 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/getNextSnip"))))
+// @LINE:83
+private[this] lazy val controllers_MySniplistsController_toggleSniplist42 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/toggleSniplist"))))
         
 
-// @LINE:88
-private[this] lazy val controllers_SnipLists_viewSniplistsByUser43 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),DynamicPart("id", """[^/]+""",true),StaticPart("/sniplists"))))
+// @LINE:85
+private[this] lazy val controllers_MySniplistsController_getNextSnip43 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/getNextSnip"))))
         
 
-// @LINE:90
-private[this] lazy val controllers_SnipLists_viewSniplists44 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists"))))
+// @LINE:89
+private[this] lazy val controllers_SnipLists_viewSniplistById44 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("l/"),DynamicPart("id", """[^/]+""",true))))
         
 
 // @LINE:92
-private[this] lazy val controllers_SnipLists_saveSnipList45 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/new"))))
+private[this] lazy val controllers_SnipLists_viewSniplistsByUser45 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),DynamicPart("id", """[^/]+""",true),StaticPart("/sniplists"))))
         
 
 // @LINE:94
-private[this] lazy val controllers_SnipLists_addToSnipList46 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/add"))))
+private[this] lazy val controllers_SnipLists_viewSniplists46 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists"))))
         
 
 // @LINE:96
-private[this] lazy val controllers_SnipLists_loadSnipListByUser47 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/load"))))
+private[this] lazy val controllers_SnipLists_saveSnipList47 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/new"))))
         
 
 // @LINE:98
-private[this] lazy val controllers_SnipLists_deleteFromSnipList48 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/deleteSnip"))))
+private[this] lazy val controllers_SnipLists_addToSnipList48 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/add"))))
         
 
 // @LINE:100
-private[this] lazy val controllers_SnipLists_viewSnipListsLocalUser49 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/viewSnipListsLocalUser"))))
+private[this] lazy val controllers_SnipLists_loadSnipListByUser49 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/load"))))
         
 
-// @LINE:105
-private[this] lazy val controllers_Application_javascriptRoutes50 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/javascripts/routes"))))
+// @LINE:102
+private[this] lazy val controllers_SnipLists_deleteFromSnipList50 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/deleteSnip"))))
         
 
-// @LINE:108
-private[this] lazy val controllers_Assets_at51 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:104
+private[this] lazy val controllers_SnipLists_viewSnipListsLocalUser51 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sniplists/viewSnipListsLocalUser"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """restricted""","""controllers.Application.restricted"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/javascript/routes.js""","""controllers.Application.jsRoutes"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profile""","""controllers.Application.profile"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """about""","""controllers.Application.about"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """contact""","""controllers.Application.contact"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.doLogin"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""com.feth.play.module.pa.controllers.Authenticate.logout"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>""","""com.feth.play.module.pa.controllers.Authenticate.authenticate(provider:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Application.signup"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Application.doSignup"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/unverified""","""controllers.Signup.unverified"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>/denied""","""controllers.Signup.oAuthDenied(provider:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/verify/$token<[^/]+>""","""controllers.Signup.verify(token:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/exists""","""controllers.Signup.exists"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/reset/$token<[^/]+>""","""controllers.Signup.resetPassword(token:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/reset""","""controllers.Signup.doResetPassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/change""","""controllers.Account.changePassword"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/change""","""controllers.Account.doChangePassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/verify""","""controllers.Account.verifyEmail"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/add""","""controllers.Account.link"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/link""","""controllers.Account.askLink"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/link""","""controllers.Account.doLink"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/unlink/$provider<[^/]+>""","""controllers.Account.unlink(provider:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/merge""","""controllers.Account.askMerge"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/merge""","""controllers.Account.doMerge"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login/password/forgot""","""controllers.Signup.forgotPassword(email:String ?= "")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login/password/forgot""","""controllers.Signup.doForgotPassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/getSnip""","""controllers.Snips.getSnip(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/add""","""controllers.Snips.add()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/add/getVideo""","""controllers.Snips.getVideo(songUrl:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/add/createSnip""","""controllers.Snips.createSnip()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """$id<[^/]+>/snips""","""controllers.MySnipsController.viewSnipsByUser(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips""","""controllers.MySnipsController.mySnips()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/removeSnip""","""controllers.MySnipsController.removeSnip(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/saveSnip""","""controllers.MySnipsController.saveSnip(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/toggleSnip""","""controllers.MySnipsController.toggleSnip(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/""","""controllers.MySniplistsController.mySniplists()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/removeSniplist""","""controllers.MySniplistsController.removeSniplist(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/saveSniplist""","""controllers.MySniplistsController.saveSniplist(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/toggleSniplist""","""controllers.MySniplistsController.toggleSniplist(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/getNextSnip""","""controllers.MySniplistsController.getNextSnip()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """$id<[^/]+>/sniplists""","""controllers.SnipLists.viewSniplistsByUser(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists""","""controllers.SnipLists.viewSniplists()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/new""","""controllers.SnipLists.saveSnipList()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/add""","""controllers.SnipLists.addToSnipList(snipList_id:String, snip_id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/load""","""controllers.SnipLists.loadSnipListByUser(snipList_id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/deleteSnip""","""controllers.SnipLists.deleteFromSnipList(snipList_id:String, snip_id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/viewSnipListsLocalUser""","""controllers.SnipLists.viewSnipListsLocalUser()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/javascripts/routes""","""controllers.Application.javascriptRoutes()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:109
+private[this] lazy val controllers_Application_javascriptRoutes52 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/javascripts/routes"))))
+        
+
+// @LINE:112
+private[this] lazy val controllers_Assets_at53 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """restricted""","""controllers.Application.restricted"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/javascript/routes.js""","""controllers.Application.jsRoutes"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """profile""","""controllers.Application.profile"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """about""","""controllers.Application.about"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """contact""","""controllers.Application.contact"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.login"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""controllers.Application.doLogin"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""com.feth.play.module.pa.controllers.Authenticate.logout"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>""","""com.feth.play.module.pa.controllers.Authenticate.authenticate(provider:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Application.signup"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """signup""","""controllers.Application.doSignup"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/unverified""","""controllers.Signup.unverified"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>/denied""","""controllers.Signup.oAuthDenied(provider:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/verify/$token<[^/]+>""","""controllers.Signup.verify(token:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/exists""","""controllers.Signup.exists"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/reset/$token<[^/]+>""","""controllers.Signup.resetPassword(token:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/reset""","""controllers.Signup.doResetPassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/change""","""controllers.Account.changePassword"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/password/change""","""controllers.Account.doChangePassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/verify""","""controllers.Account.verifyEmail"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/add""","""controllers.Account.link"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/link""","""controllers.Account.askLink"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/link""","""controllers.Account.doLink"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/unlink/$provider<[^/]+>""","""controllers.Account.unlink(provider:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/merge""","""controllers.Account.askMerge"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """accounts/merge""","""controllers.Account.doMerge"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login/password/forgot""","""controllers.Signup.forgotPassword(email:String ?= "")"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login/password/forgot""","""controllers.Signup.doForgotPassword"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/getSnip""","""controllers.Snips.getSnip(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/add""","""controllers.Snips.add()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/add/getVideo""","""controllers.Snips.getVideo(songUrl:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/add/createSnip""","""controllers.Snips.createSnip()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """s/$id<[^/]+>""","""controllers.Snips.viewSnipById(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """$id<[^/]+>/snips""","""controllers.MySnipsController.viewSnipsByUser(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips""","""controllers.MySnipsController.mySnips()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/removeSnip""","""controllers.MySnipsController.removeSnip(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/saveSnip""","""controllers.MySnipsController.saveSnip(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """snips/toggleSnip""","""controllers.MySnipsController.toggleSnip(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/""","""controllers.MySniplistsController.mySniplists()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/removeSniplist""","""controllers.MySniplistsController.removeSniplist(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/saveSniplist""","""controllers.MySniplistsController.saveSniplist(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/toggleSniplist""","""controllers.MySniplistsController.toggleSniplist(id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/getNextSnip""","""controllers.MySniplistsController.getNextSnip()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """l/$id<[^/]+>""","""controllers.SnipLists.viewSniplistById(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """$id<[^/]+>/sniplists""","""controllers.SnipLists.viewSniplistsByUser(id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists""","""controllers.SnipLists.viewSniplists()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/new""","""controllers.SnipLists.saveSnipList()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/add""","""controllers.SnipLists.addToSnipList(snipList_id:String, snip_id:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/load""","""controllers.SnipLists.loadSnipListByUser(snipList_id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/deleteSnip""","""controllers.SnipLists.deleteFromSnipList(snipList_id:String, snip_id:String)"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sniplists/viewSnipListsLocalUser""","""controllers.SnipLists.viewSnipListsLocalUser()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/javascripts/routes""","""controllers.Application.javascriptRoutes()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -508,151 +516,167 @@ case controllers_Snips_createSnip32(params) => {
         
 
 // @LINE:62
-case controllers_MySnipsController_viewSnipsByUser33(params) => {
+case controllers_Snips_viewSnipById33(params) => {
+   call(params.fromPath[String]("id", None)) { (id) =>
+        invokeHandler(controllers.Snips.viewSnipById(id), HandlerDef(this, "controllers.Snips", "viewSnipById", Seq(classOf[String]),"GET", """""", Routes.prefix + """s/$id<[^/]+>"""))
+   }
+}
+        
+
+// @LINE:65
+case controllers_MySnipsController_viewSnipsByUser34(params) => {
    call(params.fromPath[String]("id", None)) { (id) =>
         invokeHandler(controllers.MySnipsController.viewSnipsByUser(id), HandlerDef(this, "controllers.MySnipsController", "viewSnipsByUser", Seq(classOf[String]),"GET", """""", Routes.prefix + """$id<[^/]+>/snips"""))
    }
 }
         
 
-// @LINE:64
-case controllers_MySnipsController_mySnips34(params) => {
+// @LINE:67
+case controllers_MySnipsController_mySnips35(params) => {
    call { 
         invokeHandler(controllers.MySnipsController.mySnips(), HandlerDef(this, "controllers.MySnipsController", "mySnips", Nil,"GET", """""", Routes.prefix + """snips"""))
    }
 }
         
 
-// @LINE:66
-case controllers_MySnipsController_removeSnip35(params) => {
+// @LINE:69
+case controllers_MySnipsController_removeSnip36(params) => {
    call(params.fromQuery[String]("id", None)) { (id) =>
         invokeHandler(controllers.MySnipsController.removeSnip(id), HandlerDef(this, "controllers.MySnipsController", "removeSnip", Seq(classOf[String]),"POST", """""", Routes.prefix + """snips/removeSnip"""))
    }
 }
         
 
-// @LINE:68
-case controllers_MySnipsController_saveSnip36(params) => {
+// @LINE:71
+case controllers_MySnipsController_saveSnip37(params) => {
    call(params.fromQuery[String]("id", None)) { (id) =>
         invokeHandler(controllers.MySnipsController.saveSnip(id), HandlerDef(this, "controllers.MySnipsController", "saveSnip", Seq(classOf[String]),"POST", """""", Routes.prefix + """snips/saveSnip"""))
    }
 }
         
 
-// @LINE:70
-case controllers_MySnipsController_toggleSnip37(params) => {
+// @LINE:73
+case controllers_MySnipsController_toggleSnip38(params) => {
    call(params.fromQuery[String]("id", None)) { (id) =>
         invokeHandler(controllers.MySnipsController.toggleSnip(id), HandlerDef(this, "controllers.MySnipsController", "toggleSnip", Seq(classOf[String]),"POST", """""", Routes.prefix + """snips/toggleSnip"""))
    }
 }
         
 
-// @LINE:74
-case controllers_MySniplistsController_mySniplists38(params) => {
+// @LINE:77
+case controllers_MySniplistsController_mySniplists39(params) => {
    call { 
         invokeHandler(controllers.MySniplistsController.mySniplists(), HandlerDef(this, "controllers.MySniplistsController", "mySniplists", Nil,"GET", """""", Routes.prefix + """sniplists/"""))
    }
 }
         
 
-// @LINE:76
-case controllers_MySniplistsController_removeSniplist39(params) => {
+// @LINE:79
+case controllers_MySniplistsController_removeSniplist40(params) => {
    call(params.fromQuery[String]("id", None)) { (id) =>
         invokeHandler(controllers.MySniplistsController.removeSniplist(id), HandlerDef(this, "controllers.MySniplistsController", "removeSniplist", Seq(classOf[String]),"POST", """""", Routes.prefix + """sniplists/removeSniplist"""))
    }
 }
         
 
-// @LINE:78
-case controllers_MySniplistsController_saveSniplist40(params) => {
+// @LINE:81
+case controllers_MySniplistsController_saveSniplist41(params) => {
    call(params.fromQuery[String]("id", None)) { (id) =>
         invokeHandler(controllers.MySniplistsController.saveSniplist(id), HandlerDef(this, "controllers.MySniplistsController", "saveSniplist", Seq(classOf[String]),"POST", """""", Routes.prefix + """sniplists/saveSniplist"""))
    }
 }
         
 
-// @LINE:80
-case controllers_MySniplistsController_toggleSniplist41(params) => {
+// @LINE:83
+case controllers_MySniplistsController_toggleSniplist42(params) => {
    call(params.fromQuery[String]("id", None)) { (id) =>
         invokeHandler(controllers.MySniplistsController.toggleSniplist(id), HandlerDef(this, "controllers.MySniplistsController", "toggleSniplist", Seq(classOf[String]),"POST", """""", Routes.prefix + """sniplists/toggleSniplist"""))
    }
 }
         
 
-// @LINE:82
-case controllers_MySniplistsController_getNextSnip42(params) => {
+// @LINE:85
+case controllers_MySniplistsController_getNextSnip43(params) => {
    call { 
         invokeHandler(controllers.MySniplistsController.getNextSnip(), HandlerDef(this, "controllers.MySniplistsController", "getNextSnip", Nil,"POST", """""", Routes.prefix + """sniplists/getNextSnip"""))
    }
 }
         
 
-// @LINE:88
-case controllers_SnipLists_viewSniplistsByUser43(params) => {
+// @LINE:89
+case controllers_SnipLists_viewSniplistById44(params) => {
+   call(params.fromPath[String]("id", None)) { (id) =>
+        invokeHandler(controllers.SnipLists.viewSniplistById(id), HandlerDef(this, "controllers.SnipLists", "viewSniplistById", Seq(classOf[String]),"GET", """""", Routes.prefix + """l/$id<[^/]+>"""))
+   }
+}
+        
+
+// @LINE:92
+case controllers_SnipLists_viewSniplistsByUser45(params) => {
    call(params.fromPath[String]("id", None)) { (id) =>
         invokeHandler(controllers.SnipLists.viewSniplistsByUser(id), HandlerDef(this, "controllers.SnipLists", "viewSniplistsByUser", Seq(classOf[String]),"GET", """""", Routes.prefix + """$id<[^/]+>/sniplists"""))
    }
 }
         
 
-// @LINE:90
-case controllers_SnipLists_viewSniplists44(params) => {
+// @LINE:94
+case controllers_SnipLists_viewSniplists46(params) => {
    call { 
         invokeHandler(controllers.SnipLists.viewSniplists(), HandlerDef(this, "controllers.SnipLists", "viewSniplists", Nil,"GET", """""", Routes.prefix + """sniplists"""))
    }
 }
         
 
-// @LINE:92
-case controllers_SnipLists_saveSnipList45(params) => {
+// @LINE:96
+case controllers_SnipLists_saveSnipList47(params) => {
    call { 
         invokeHandler(controllers.SnipLists.saveSnipList(), HandlerDef(this, "controllers.SnipLists", "saveSnipList", Nil,"POST", """""", Routes.prefix + """sniplists/new"""))
    }
 }
         
 
-// @LINE:94
-case controllers_SnipLists_addToSnipList46(params) => {
+// @LINE:98
+case controllers_SnipLists_addToSnipList48(params) => {
    call(params.fromQuery[String]("snipList_id", None), params.fromQuery[String]("snip_id", None)) { (snipList_id, snip_id) =>
         invokeHandler(controllers.SnipLists.addToSnipList(snipList_id, snip_id), HandlerDef(this, "controllers.SnipLists", "addToSnipList", Seq(classOf[String], classOf[String]),"POST", """""", Routes.prefix + """sniplists/add"""))
    }
 }
         
 
-// @LINE:96
-case controllers_SnipLists_loadSnipListByUser47(params) => {
+// @LINE:100
+case controllers_SnipLists_loadSnipListByUser49(params) => {
    call(params.fromQuery[String]("snipList_id", None)) { (snipList_id) =>
         invokeHandler(controllers.SnipLists.loadSnipListByUser(snipList_id), HandlerDef(this, "controllers.SnipLists", "loadSnipListByUser", Seq(classOf[String]),"GET", """""", Routes.prefix + """sniplists/load"""))
    }
 }
         
 
-// @LINE:98
-case controllers_SnipLists_deleteFromSnipList48(params) => {
+// @LINE:102
+case controllers_SnipLists_deleteFromSnipList50(params) => {
    call(params.fromQuery[String]("snipList_id", None), params.fromQuery[String]("snip_id", None)) { (snipList_id, snip_id) =>
         invokeHandler(controllers.SnipLists.deleteFromSnipList(snipList_id, snip_id), HandlerDef(this, "controllers.SnipLists", "deleteFromSnipList", Seq(classOf[String], classOf[String]),"POST", """""", Routes.prefix + """sniplists/deleteSnip"""))
    }
 }
         
 
-// @LINE:100
-case controllers_SnipLists_viewSnipListsLocalUser49(params) => {
+// @LINE:104
+case controllers_SnipLists_viewSnipListsLocalUser51(params) => {
    call { 
         invokeHandler(controllers.SnipLists.viewSnipListsLocalUser(), HandlerDef(this, "controllers.SnipLists", "viewSnipListsLocalUser", Nil,"POST", """""", Routes.prefix + """sniplists/viewSnipListsLocalUser"""))
    }
 }
         
 
-// @LINE:105
-case controllers_Application_javascriptRoutes50(params) => {
+// @LINE:109
+case controllers_Application_javascriptRoutes52(params) => {
    call { 
         invokeHandler(controllers.Application.javascriptRoutes(), HandlerDef(this, "controllers.Application", "javascriptRoutes", Nil,"GET", """ Javascript routing""", Routes.prefix + """assets/javascripts/routes"""))
    }
 }
         
 
-// @LINE:108
-case controllers_Assets_at51(params) => {
+// @LINE:112
+case controllers_Assets_at53(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }

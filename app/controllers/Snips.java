@@ -129,6 +129,7 @@ public class Snips extends Controller {
             node.put("video_id", result.getId().getVideoId());
             node.put("duration", Util.isoToSeconds(video.getContentDetails().getDuration()));
 
+
             responseResult = ok(node);
 
         }
@@ -138,6 +139,9 @@ public class Snips extends Controller {
     public static Result getSnip(final String id) {
         final User user = Application.getLocalUser(session());
 
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
         MySnips mySnips = MySnips.findByUser(user);
 
         Snip snip = Snip.findById(id).get();
@@ -146,8 +150,7 @@ public class Snips extends Controller {
         if(snip != null) {
             boolean isFavourited = MySnips.isFavourited(mySnips, snip);
 
-            ObjectMapper mapper = new ObjectMapper();
-            ObjectNode node = mapper.createObjectNode();
+
             node.put("title", snip.song_name);
             node.put("artist", snip.artist_name);
             node.put("album", snip.album_name);
@@ -159,12 +162,31 @@ public class Snips extends Controller {
 
             result = ok(node);
         } else {
-            result = badRequest("Invalid Snip!");
+            node.put("error", "Invalid Snip!");
+            result = badRequest();
         }
 
         return result;
     }
 
+
+    public static Result viewSnipById(final String id) {
+        final User user = Application.getLocalUser(session());
+        Snip snip = Snip.findById(id).get();
+
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
+        Result result = internalServerError();
+        if(snip != null) {
+            result = ok(views.html.snips.viewSnipDirect.render(false, user, snip));
+        } else {
+            node.put("error", "Invalid Snip ID: " + id);
+            result = badRequest(node);
+        }
+
+        return result;
+    }
 
 
 

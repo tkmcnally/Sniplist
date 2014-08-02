@@ -24,6 +24,9 @@ public class MySniplistsController extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
         Result result = internalServerError();
 
         SnipList snipList = SnipList.findById(id).get();
@@ -33,12 +36,15 @@ public class MySniplistsController extends Controller {
             boolean removed = MySniplists.removeSniplist(mySniplists, snipList);
 
             if(removed) {
-                result = ok("Sniplist '" + snipList.name + "' has been removed from your collection!");
+                node.put("message", "Sniplist '" + snipList.name + "' has been removed from your collection!");
+                result = ok(node);
             } else {
-                result = badRequest("Sniplist '" + snipList.name + "' could not be found in your collection!");
+                node.put("error", "Sniplist '" + snipList.name + "' could not be found in your collection!");
+                result = badRequest(node);
             }
         } else {
-            badRequest("Could not find that snip.");
+            node.put("error", "Could not find that snip.");
+            badRequest(node);
         }
 
         return result;
@@ -48,6 +54,9 @@ public class MySniplistsController extends Controller {
     public static Result saveSniplist(final String id) {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
+
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
 
         Result result = internalServerError();
 
@@ -61,11 +70,13 @@ public class MySniplistsController extends Controller {
             if(saved) {
                 result = ok();
             } else {
-                result = badRequest("Your collection is full!");
+                node.put("error", "Your collection is full!");
+                result = badRequest(node);
             }
 
         } else {
-            result = badRequest("Could not find Snip with id: '" + snipList.id + "'.");
+            node.put("error", "Could not find Snip with id: '" + snipList.id + "'.");
+            result = badRequest(node);
         }
 
         return result;
@@ -87,6 +98,9 @@ public class MySniplistsController extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
         Result result = internalServerError();
 
         SnipList snipList = SnipList.findById(id).get();
@@ -94,12 +108,15 @@ public class MySniplistsController extends Controller {
 
         if(snipList != null && mySniplists != null) {
             if(MySniplists.toggleSniplist(mySniplists, snipList)) {
-                result = ok("Sniplist '" + snipList.name + "' has been favourited.");
+                node.put("message","Sniplist '" + snipList.name + "' has been favourited.");
             } else {
-                result = ok("Sniplist '" + snipList.name + "' has been unfavourited.");
+                node.put("message","Sniplist '" + snipList.name + "' has been unfavourited.");
             }
+            result = ok(node);
         } else {
-            result = badRequest("Could not find Sniplist with id: '" + snipList.id + "'.");
+
+            node.put("error", "Could not find Sniplist with id: '" + snipList.id + "'.");
+            result = badRequest(node);
         }
 
         return result;
@@ -187,30 +204,4 @@ public class MySniplistsController extends Controller {
 
         return result;
     }
-
-   /* @Restrict(@Group(Application.USER_ROLE))
-    public static Result toggleSniplist(final String snipList_id) {
-        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
-        final User user = Application.getLocalUser(session());
-
-        Result result = internalServerError();
-
-        MySniplists mySniplists = MySniplists.findByUser(user);
-        SnipList snipList = SnipList.findById(snipList_id).get();
-
-        if(snipList == null) {
-            result = badRequest("Invalid SnipList Id.");
-        } else {
-
-            if(MySniplists.isFavourited(mySniplists, snipList)) {
-                MySniplists.removeSniplist(mySniplists, snipList);
-                result = ok("Sniplist '" + snipList.name + "' has been removed from your collection." );
-            } else {
-                MySniplists.addSniplist(mySniplists, snipList);
-                result = ok("Sniplist '" + snipList.name + "' has been added to your collection." );
-            }
-        }
-        return result;
-    }*/
-
 }
