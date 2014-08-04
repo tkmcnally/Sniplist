@@ -39,7 +39,7 @@ Seq[Any](format.raw/*1.23*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Jul 28 17:05:21 EDT 2014
+                    DATE: Sun Aug 03 16:01:00 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/_providerIcon.scala.html
                     HASH: 8d1d34d5b74dbf02e22bc6f2e0e2d82ba3cb2834
                     MATRIX: 782->1|897->22|968->58|1000->69|1050->84|1082->95|1125->103|1139->109|1208->156

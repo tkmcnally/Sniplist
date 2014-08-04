@@ -1,7 +1,7 @@
 @(title: String, nav: String = "")(content: Html)
 
-    @import be.objectify.deadbolt.java.views.html._
-    @import be.objectify.deadbolt.core.utils.TemplateUtils._
+@import be.objectify.deadbolt.java.views.html._
+@import be.objectify.deadbolt.core.utils.TemplateUtils._
 
 
 <!DOCTYPE html>
@@ -59,7 +59,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="@routes.Application.index()">SNIPLIST.</a>
+                        <a class="dynamic-link navbar-brand" href="@routes.Application.index()">SNIPLIST.</a>
                             <!-- @subjectPresent() {
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">

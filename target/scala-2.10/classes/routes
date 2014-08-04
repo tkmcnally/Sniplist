@@ -16,6 +16,13 @@ GET         /contact                                 controllers.Application.con
 GET         /login                                   controllers.Application.login
 POST        /login                                   controllers.Application.doLogin
 
+GET         /following                               controllers.Application.getUsersFollowing()
+
+GET         /u/:id                                   controllers.Application.getUserProfile(id: String)
+
+GET         /follow/:id                                   controllers.Application.toggleFollow(id: String)
+
+
 GET         /logout                                  com.feth.play.module.pa.controllers.Authenticate.logout
 GET         /authenticate/:provider                  com.feth.play.module.pa.controllers.Authenticate.authenticate(provider: String)
 
@@ -45,6 +52,7 @@ GET         /accounts/unlink/:provider               controllers.Account.unlink(
 
 GET         /accounts/merge                          controllers.Account.askMerge
 POST        /accounts/merge                          controllers.Account.doMerge
+
 
 GET         /login/password/forgot                   controllers.Signup.forgotPassword(email: String ?= "")
 POST        /login/password/forgot                   controllers.Signup.doForgotPassword

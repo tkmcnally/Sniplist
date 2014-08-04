@@ -106,6 +106,15 @@ function loadModalData(callBack) {
 }
 
 function favouriteSnip(snip) {
+    $('tr').each(function(){
+        if( $(this).find('.snip-id').attr('value') == snip) {
+            $(this).find('.favourite-snip').toggleClass('red');
+        }
+    });
+
+    if($('#live-snip-id').text() == snip) {
+        $('.mejs-info .favourite-snip').toggleClass('red');
+    }
     jsRoutes.controllers.MySnipsController.toggleSnip(snip).ajax({
         success: function(data) {
         },

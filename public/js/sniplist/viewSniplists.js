@@ -69,6 +69,11 @@ function deleteSnipList(snipList_id) {
 }
 
 function favouriteSniplist(snipList) {
+    $('table').each(function(){
+        if( $(this).attr('id') == snipList) {
+            $(this).find('.favourite-sniplist').toggleClass('red');
+        }
+    });
     jsRoutes.controllers.MySniplistsController.toggleSniplist(snipList).ajax({
         success: function(data) {
         },
@@ -127,12 +132,10 @@ function initialize() {
     });
 
     $(".favourite-sniplist").click(function() {
-        $(this).toggleClass('red');
         favouriteSniplist($(this).closest('table').attr('id'));
     });
 
     $(".favourite-snip").click(function() {
-        $(this).toggleClass('red');
         favouriteSnip($(this).closest("tr").find(".snip-id").attr("value"));
     });
 

@@ -190,8 +190,10 @@ function addSnipReady() {
 
                 $(".mejs-info .favourite-snip").click(function() {
 
-                    $(this).toggleClass('red');
-                    $(this).toggleClass('black');
+
+
+
+
                     favouriteSnip($("#live-snip-id").text());
                 });
 
@@ -296,6 +298,10 @@ function bindExternalPlayerButtons() {
         getSnip(snipId, loadVideo, true);
 
     });
+
+    $(".follow-user-btn").click(function() {
+       followUser($(this));
+    });
 }
 
 
@@ -326,7 +332,7 @@ function loadVideo(data, autoPlay) {
 
     if(data.snip_id != $("#live-snip-id").text()) {
 
-        setPlayButtonView();
+
 
         globalAudioPlayer.media.pluginApi.cueVideoById({
             videoId: data.video_id,
@@ -375,18 +381,58 @@ function loadVideo(data, autoPlay) {
 function setPlayButtonView() {
     var snip_id = $("#live-snip-id").text();
     var snip_list_id = $("#live-snip-list-id").text();
-
+    /*
     var table = $("table").filter(function() {
         return $(this).attr('id') == snip_list_id;
     });
 
-    var table_row = table.find(".snip-id").filter(function() {
+    var table_row = $("table").find(".snip-id").filter(function() {
         return $(this).attr('value') == snip_id;
     });
 
-    var row = table_row.parent().find(".play-snippet");
-    row.toggleClass("glyphicon-play");
-    row.toggleClass("glyphicon-pause");
+    $(".play-snippet").each(function( index ) {
+        $(this).addClass("glyphicon-play");
+        $(this).removeClass("glyphicon-pause");
+    });
+*/
+    $('.play-snippet').each(function(){
+        if( $(this).parent().parent().find('.snip-id').attr('value') == snip_id) {
+            $(this).toggleClass('glyphicon-play');
+            $(this).toggleClass('glyphicon-pause');
+        } else {
+            $(this).addClass("glyphicon-play");
+            $(this).removeClass('glyphicon-pause');
+        }
+    });
 
+}
 
+function followUser(followBtn) {
+    var oldBtn = $(followBtn);
+
+    jsRoutes.controllers.Application.toggleFollow(followBtn.attr('value')).ajax({
+        success: function(data) {
+
+            if (data.following == true) {
+                $(followBtn).addClass("btn-success");
+                $(followBtn).removeClass("btn-primary");
+                $(followBtn).html("Following");
+            } else {
+                $(followBtn).removeClass("btn-success");
+                $(followBtn).addClass("btn-primary");
+                $(followBtn).html("Follow");
+            }
+        },
+        error: function(data) {
+            if($(oldBtn).hasClass('btn-primary')) {
+                $(followBtn).addClass("btn-primary");
+                $(followBtn).removeClass("btn-success");
+            } else {
+                $(followBtn).removeClass("btn-primary");
+                $(followBtn).addClass("btn-success");
+            }
+
+            $(followBtn).html(oldBtn.html());
+        }
+    })
 }

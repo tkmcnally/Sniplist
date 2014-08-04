@@ -64,20 +64,7 @@ public class SnipLists extends Controller {
 
             MySnips mySnips = MySnips.findByUser(localUser);
 
-
-            for (SnipList s : userSniplists.savedSniplists) {
-                for (Snip sn : s.snips) {
-                    if (MySnips.isFavourited(mySnips, sn)) {
-                        sn.localUserFavourited = true;
-                    }
-                }
-                if (MySniplists.isFavourited(mySniplists, s)) {
-                    s.localUserFavourited = true;
-                }
-            }
-
-
-            result = ok(views.html.sniplists.sniplists.render(js, localUser, userSniplists));
+            result = ok(views.html.sniplists.sniplists.render(js, localUser, mySnips, mySniplists, userSniplists));
         } else {
             node.put("error", "Invalid user id!");
             result = badRequest(node);
@@ -177,20 +164,7 @@ public class SnipLists extends Controller {
 
             MySnips mySnips = MySnips.findByUser(user);
 
-
-            if (user.id != user.id) {
-                for (SnipList s : userSniplists.savedSniplists) {
-                    for (Snip sn : s.snips) {
-                        if (MySnips.isFavourited(mySnips, sn)) {
-                            sn.localUserFavourited = true;
-                        }
-                    }
-                    if (MySniplists.isFavourited(mySniplists, s)) {
-                        s.localUserFavourited = true;
-                    }
-                }
-            }
-            result = ok(views.html.sniplists.arraySniplists.render(user, userSniplists));
+            result = ok(views.html.sniplists.arraySniplists.render(true, user, mySnips, mySniplists, userSniplists));
         } else {
 
             node.put("error", "Invalid user id!");

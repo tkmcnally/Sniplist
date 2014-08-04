@@ -1,4 +1,4 @@
-@(js: java.lang.Boolean, localUser: models.User = null, userSniplists: models.MySniplists)
+@(js: java.lang.Boolean, localUser: models.User = null, mySnips: models.MySnips, mySniplists: models.MySniplists, userSniplists: models.MySniplists)
 @import java.math.BigInteger; var i=0;
 
 @content = {
@@ -11,95 +11,16 @@
                 <h1>SnipLists</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12" style="padding-bottom: 10px;">
-                <button  id="new-playlist" type="button" class="btn btn-primary" data-toggle="popover" data-placement="right">
-                    New Playlist
-                </button>
+        @if(localUser.id.eq(userSniplists.id)) {
+            <div class="row">
+                <div class="col-md-12" style="padding-bottom : 10px ;">
+                    <button id="new-playlist" type="button" class="btn btn-primary" data-toggle="popover" data-placement="right">
+                        New Playlist
+                    </button>
+                </div>
             </div>
-        </div>
-        <div id="sniplist-array" value="@localUser.id">
-            <div class="row ">
-                @if(userSniplists != null) {
-                    @for(sniplist <- userSniplists.savedSniplists) {
-                        @(i += 1)
-                        <div class="col-lg-6">
-                            <table class="table table-default table-bordered table-striped"  value="sniplist" id="@sniplist.id" >
-                                <thead>
-                                    <tr>
-                                        <th title="Name" colspan="5" align="right"><h4 style="display: inline;">@sniplist.name </h4>
-
-                                            <p style="display: inline;">by @sniplist.user.name</p> <span class="alert-danger badge">@sniplist.favouriteCount</span> </span>
-
-                                            @if(localUser.id != userSniplists.user.id) {
-                                                @if(!sniplist.localUserFavourited) {
-                                                    <span style="float : right ; cursor : pointer ;" class="glyphicon glyphicon-heart favourite-sniplist black"></span>
-                                                } else {
-                                                    <span style="float : right ; cursor : pointer ;" class="glyphicon glyphicon-heart favourite-sniplist red"></span>
-                                                }
-                                            } else {
-                                                <span style="float: right; text-align: right; cursor: pointer" class="glyphicon glyphicon-remove remove remove-playlist"></span>
-                                            }
-
-                                            <a class="share-link-a" href="" align="left" data-toggle="modal" data-target="#share-link-modal" value="@routes.SnipLists.viewSniplistById(sniplist.id.toString)">
-                                                <span style="cursor : pointer" class="glyphicon glyphicon-share"></span>
-                                            </a>
-                                        </th>
-
-                                    </tr>
-                                    <tr>
-                                        <th title="Song" align="right">Song</th>
-                                        <th title="Artist" align="right">Artist</th>
-                                        <th title="Album" align="right">Album</th>
-                                        <th class="{sorter: false}" title="Play" align="right">Play</th>
-
-                                        @if(localUser.id == userSniplists.user.id) {
-                                            <th title="Remove"></th>
-                                        } else {
-                                            <th title="Favourite"></th>
-                                        }
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @for(snip <- sniplist.snips) {
-                                    <tr>
-                                        <td align="left" class="left snip-title">@snip.song_name</td>
-                                        <td align="left" class="left snip-artist">@snip.artist_name</td>
-                                        <td align="left" class="left snip-album">@snip.album_name</td>
-                                        <td align="center" class="center">
-                                            <span style="cursor:pointer" class="glyphicon glyphicon-play play-snip-table play-snippet"></span>
-                                        </td>
-                                        <td class="center">
-                                        @if(localUser.id == sniplist.user.id) {
-                                                <span style="cursor : pointer" class="glyphicon remove glyphicon-remove remove-snip-from-sniplist" value="@snip.id"></span>
-                                        } else {
-                                            @if(snip.localUserFavourited) {
-                                                <span style="cursor : pointer ;" class="glyphicon glyphicon-heart favourite-snip red"></span>
-                                            } else {
-                                                <span style="cursor : pointer ;" class="glyphicon glyphicon-heart favourite-snip black"></span>
-                                            }
-                                        }
-                                        </td>
-                                        <td class="hidden snip-id" value="@snip.id" ></td>
-                                        <td class="hidden snip-video-id" value="@snip.url"></td>
-                                        <td class="hidden snip-video-startTime" value="@snip.time_min"></td>
-                                        <td class="hidden snip-video-endTime" value="@snip.time_max"></td>
-                                    </tr>
-                                }
-                                </tbody>
-
-                            </table>
-                        </div>
-                        @if(i % 2 == 0) {
-                        </div>
-                    <div class="row">
-                    }
-                    }
-                    </div>
-            }
-
-        </div>
-
+        }
+        @views.html.sniplists.arraySniplists(true, localUser, mySnips, mySniplists, userSniplists)
     </div>
 
     <!-- Modal -->

@@ -40,4 +40,9 @@ public class Constants {
 
         public static final String USER = "user";
     }
+
+    public static class User {
+
+        public static final int MAX_FOLLOWING = 100;
+    }
 }

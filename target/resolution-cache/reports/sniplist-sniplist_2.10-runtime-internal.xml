@@ -7,7 +7,7 @@
 		revision="1.0"
 		conf="runtime-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20140730144858"/>
+		date="20140804001742"/>
 	<dependencies>
 		<module organisation="com.typesafe.play" name="play-cache_2.10">
 			<revision name="2.2.3" status="release" pubdate="20140501103234" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="78">
@@ -215,8 +215,8 @@
 			</revision>
 		</module>
 		<module organisation="com.feth" name="play-easymail_2.10">
-			<revision name="0.5-SNAPSHOT" status="integration" pubdate="20131023065242" resolver="play-easymail (snapshot)" artresolver="play-easymail (snapshot)" downloaded="true" searched="true" default="false" conf="default(compile), compile" position="63">
-				<metadata-artifact status="successful" details="" size="1668" time="405" location="C:\Play\play-2.2.3\framework\..\repository\cache\com.feth\play-easymail_2.10\ivy-0.5-SNAPSHOT.xml" searched="true" original-local-location="C:\Play\play-2.2.3\framework\..\repository\cache\com.feth\play-easymail_2.10\ivy-0.5-SNAPSHOT.xml.original" origin-is-local="false" origin-location="http://joscha.github.com/play-easymail/repo/snapshots/com.feth/play-easymail_2.10/0.5-SNAPSHOT/ivys/ivy.xml"/>
+			<revision name="0.5-SNAPSHOT" status="integration" pubdate="20131023065242" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="true" default="false" conf="default(compile), compile" position="63">
+				<metadata-artifact status="no" details="" size="1670" time="0" location="C:\Play\play-2.2.3\framework\..\repository\cache\com.feth\play-easymail_2.10\ivy-0.5-SNAPSHOT.xml" searched="true" origin-is-local="false" origin-location="http://joscha.github.com/play-easymail/repo/snapshots/com.feth/play-easymail_2.10/0.5-SNAPSHOT/ivys/ivy.xml"/>
 				<caller organisation="sniplist" name="sniplist_2.10" conf="optional, compile, runtime, runtime-internal" rev="0.5-SNAPSHOT" rev-constraint-default="0.5-SNAPSHOT" rev-constraint-dynamic="0.5-SNAPSHOT" callerrev="1.0"/>
 				<artifacts>
 					<artifact name="play-easymail_2.10" type="jar" ext="jar" status="no" details="" size="8691" time="0" location="C:\Play\play-2.2.3\framework\..\repository\cache\com.feth\play-easymail_2.10\jars\play-easymail_2.10-0.5-SNAPSHOT.jar">

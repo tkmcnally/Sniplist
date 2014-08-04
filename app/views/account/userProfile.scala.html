@@ -1,0 +1,32 @@
+@(js: java.lang.Boolean, localUser: models.User = null, mySnips: models.MySnips, mySniplists: models.MySniplists, userProfile: models.User, userSnips: models.MySnips, userSniplists: models.MySniplists)
+
+@content = {
+    <div class="container mtb">
+        <div class="row inline">
+            <h1 style="display: inline-block;">@userProfile.name
+            @if(localUser.following != null && localUser.following.contains(userProfile.id)) {
+                <button type="button" class="btn btn-success follow-user-btn" value="@userProfile.id.toString()">Following</button>
+            } else {
+                <button type="button" class="btn btn-primary follow-user-btn" value="@userProfile.id.toString()">Follow</button>
+            }
+            </h1>
+        </div>
+        <div class="row">
+            <h2>Snips</h2>
+            @snips.arraySnips(true, localUser, userSnips)
+        </div>
+        <div class="row">
+            <h2>Sniplists</h2>
+            @views.html.sniplists.arraySniplists(true, localUser, mySnips, mySniplists, userSniplists)
+        </div>
+    </div>
+
+
+
+}
+
+@if(!js) {
+    @main("User Profile", "userProfile")(content)
+} else {
+    @content
+}

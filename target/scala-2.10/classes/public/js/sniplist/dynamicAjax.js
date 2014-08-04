@@ -2,9 +2,27 @@
  * Created by Thomas on 7/30/2014.
  */
 
-$(document).ready(function(){
+var globalStateId = 0;
 
-    $(".dynamic-link").click(function(e){
+$(document).ready(function(){
+    bindDynamicLinkClick();
+
+    $(window).on('popstate', function(evt) {
+        var data = {
+            url: window.location.pathname,
+            type: 'application/javascript'
+        };
+        replaceContent(data, null);
+
+    });
+
+
+
+});
+
+function bindDynamicLinkClick() {
+    $(".dynamic-link").unbind();
+    $(".dynamic-link").click(function(e) {
         e.preventDefault();
         var url = $(this).attr('href');
 
@@ -14,13 +32,13 @@ $(document).ready(function(){
             type: 'application/javascript'
         };
         replaceContent(data, null);
+
+        var stateObj = {id: 1};
+
+        window.history.pushState(stateObj, "Title", url);
     });
 
-
-
-});
-
-
+}
 
 function replaceContent(data, callBack) {
 
@@ -41,12 +59,12 @@ function replaceContent(data, callBack) {
         success: function(data) {
             $('#wrapper-content').unblock();
             $("#wrapper-content").html(data);
-            var stateObj = { foo: "" };
-            window.history.pushState(stateObj, "Title", url);
 
             addSnipReady();
             viewSniplistsReady();
             viewSnipsReady();
+
+            bindDynamicLinkClick();
         },
         error: function(data) {
             $("#global-message").removeClass("hidden");

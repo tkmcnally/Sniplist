@@ -1,0 +1,20 @@
+@(js: java.lang.Boolean, localUser: models.User = null, followingList: List[models.User])
+
+@content = {
+    <div class="container mtb">
+        <div class="row">
+            <h2>Following @followingList.size user(s)</h2>
+            @for(fUser <- followingList) {
+                <a class="dynamic-link" href="@routes.Application.getUserProfile(fUser.id.toString)">@fUser.name</a>
+            }
+        </div>
+    </div>
+
+}
+
+
+@if(!js) {
+    @main("Following", "following")(content)
+} else {
+    @content
+}

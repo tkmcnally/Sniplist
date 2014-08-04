@@ -60,18 +60,19 @@ public class User implements Subject {
 
     public boolean emailValidated;
 
-    @Reference
-    public List<Snip> snipFavourites;
-
-    @Reference
-    public List<SnipList> snipListFavourites;
-
     public List<SecurityRole> roles;
 
     public List<UserPermission> permissions;
 
     @Reference
     public List<LinkedAccount> linkedAccounts;
+
+    public List<ObjectId> following;
+
+
+
+
+
 
     public static boolean existsByAuthUserIdentity(
             final AuthUserIdentity identity) {
@@ -166,6 +167,8 @@ public class User implements Subject {
                 user.lastName = lastName;
             }
         }
+
+
         MorphiaUtil.getDatastore().save(user);
         MorphiaUtil.getDatastore().save(user.roles);
         MorphiaUtil.getDatastore().save(user.linkedAccounts);
@@ -285,25 +288,55 @@ public class User implements Subject {
         TokenAction.deleteByUser(this, Type.PASSWORD_RESET);
     }
 
-    public static void addFavouriteSnip(final User user, final Snip snip) {
-        user.snipFavourites.add(snip);
-    }
-
-    public static void removeFavouriteSnip(final User user, final Snip snip) {
-        user.snipFavourites.remove(snip);
-    }
-
-    public static void addFavouriteSnipList(final User user, final SnipList snipList) {
-        user.snipListFavourites.add(snipList);
-    }
-
-    public static void removeFavouriteSnipList(final User user, final SnipList snipList) {
-        user.snipListFavourites.remove(snipList);
-    }
-
     public static User findById(final String id){
         ObjectId userId = new ObjectId(id);
         return MorphiaUtil.getDatastore().find(User.class).field("active").equal(true).field("id").equal(userId).get();
+    }
+
+
+    public static boolean followUser(final User user, final User followee) {
+        if(user.following == null) {
+            user.following = new ArrayList<ObjectId>();
+        }
+        if(user.following.add(followee.id)) {
+            MorphiaUtil.getDatastore().save(user);
+            return true;
+        }
+
+        return false;
+
+    }
+
+    public static boolean unfollowUser(final User user, final User followee) {
+
+        if(user.following != null) {
+            if (user.following.remove(followee.id)) {
+                MorphiaUtil.getDatastore().save(user);
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    public static boolean isFollowing(final User user, final User follower) {
+
+        if(user.following != null) {
+            if (user.following.contains(follower.id)) {
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    public boolean isFull() {
+        if(this.following != null) {
+            if(this.following.size() >= Constants.User.MAX_FOLLOWING) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

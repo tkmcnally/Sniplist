@@ -1,5 +1,7 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.feth.play.module.pa.controllers.Authenticate;
 import models.User;
 import be.objectify.deadbolt.java.actions.Restrict;
@@ -9,6 +11,7 @@ import be.objectify.deadbolt.java.actions.SubjectPresent;
 import com.feth.play.module.pa.PlayAuthenticate;
 import com.feth.play.module.pa.user.AuthUser;
 
+import org.bson.types.ObjectId;
 import play.data.Form;
 import play.data.format.Formats.NonEmpty;
 import play.data.validation.Constraints.MinLength;
@@ -20,6 +23,9 @@ import providers.MyUsernamePasswordAuthProvider;
 import providers.MyUsernamePasswordAuthUser;
 import views.html.account.*;
 import views.html.account.link;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static play.data.Form.form;
 
@@ -243,4 +249,5 @@ public class Account extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.logout();
         return redirect(routes.Application.index());
     }
+
 }

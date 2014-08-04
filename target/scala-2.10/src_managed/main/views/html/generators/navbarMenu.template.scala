@@ -39,7 +39,7 @@ Seq[Any](format.raw/*1.86*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jul 30 19:40:19 EDT 2014
+                    DATE: Sun Aug 03 16:01:00 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/generators/navbarMenu.scala.html
                     HASH: 9390c27298924decb75059fe09dc95b6bbfcc85a
                     MATRIX: 835->1|1013->85|1053->91|1093->123|1116->125|1183->157|1207->160|1245->163|1270->167

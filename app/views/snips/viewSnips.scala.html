@@ -7,73 +7,13 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h1>Snips</h1> <h4 style="display : inline ;">by @userSnips.user.name</h4>
+                <h1>Snips</h1> <h4 style="display : inline ;">by <a class="dynamic-link" href="@routes.Application.getUserProfile(userSnips.user.id.toString)">@userSnips.user.name</a></h4>
             </div>
         </div>
         <div class="row">
 
             <div class="col-md-8">
-                <table class="table table-default table-striped" value="user" id="@userSnips.id" style="border : black ;">
-                    <thead>
-                        <tr>
-                            <th title="Song" align="right">Song</th>
-                            <th title="Artist" align="right">Artist</th>
-                            <th title="Album" align="right">Album</th>
-                            <th class="{sorter: false}" title="*" align="center">*</th>
-                            <th class="{sorter: false}" title="Play" align="right">Play</th>
-                            <th class="{sorter: false}" title="Favourites" align="right"></th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                    @for(snip <- userSnips.savedSnips) {
-                        <tr class="evenrow table-snip" data-toggle="tooltip" data-placement="right" title="Saved!">
-                            <td align="left" class="left snip-title">@snip.song_name</td>
-                            <td align="left" class="left snip-artist">@snip.artist_name</td>
-                            <td align="left" class="left snip-album">@snip.album_name</td>
-                            <td align="left" class="left">
-                                <div class="dropdown">
-
-                                    <a id="@snip.id" class="btn btn-sm dropdown-toggle center" data-toggle="dropdown" href="#">
-                                        <span style="cursor : pointer" class="glyphicon glyphicon-share"></span>
-                                    </a>
-
-                                    <ul class="dropdown-menu" id="menu1">
-                                        <li>
-                                                <!-- Button trigger modal -->
-                                            <a class="add-to-playlist-a" href="" align="left" data-toggle="modal" data-target="#add-to-playlist-modal">
-                                                    Add to playlist
-                                            </a></li>
-                                        <li><a class="share-link-a" href="" align="left" data-toggle="modal" data-target="#share-link-modal" value="@routes.Snips.viewSnipById(snip.id.toString)">
-                                            Share Snip</a></li>
-                                        @if(localUser.id != userSnips.user.id) {
-                                            <li><a align="left" href="" class="save-snip"><i class="icon-off"></i>
-                                                Favourite Snip</a></li>
-                                        } else {
-                                            <li class="divider"></li>
-                                            <li><a align="left" href="#" class="dropdown-delete-snip"><i class="icon-off"></i>
-                                                Delete</a></li>
-                                        }
-
-                                    </ul>
-                                </div>
-                            </td>
-                            <td align="center" class="center valign-m ">
-                                <span style="cursor : pointer" class="glyphicon glyphicon-play play-snip-table play-snippet"></span>
-                                    <!--<button type="button" class="btn-primary btn btn-sm play-snippet">Play</button>-->
-                            </td>
-                            <td align="left" style="vertical-align : middle" class="left snip-favourite-count"><span class="alert-danger badge">@snip.favouriteCount</span></td>
-                            <td class="hidden snip-id" value="@snip.id" ></td>
-                            <td class="hidden snip-video-id" value="@snip.url"></td>
-                            <td class="hidden snip-video-startTime" value="@snip.time_min"></td>
-                            <td class="hidden snip-video-endTime" value="@snip.time_max"></td>
-
-                        </tr>
-                    }
-                    </tbody>
-
-
-                </table>
+                @views.html.snips.arraySnips(true, localUser, userSnips)
             </div>
             <div class="col-md-4"></div>
         </div>
