@@ -126,7 +126,7 @@ Seq[Any](format.raw/*1.51*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Aug 10 23:33:51 EDT 2014
+                    DATE: Mon Aug 11 17:33:11 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snip/addSnip.scala.html
                     HASH: ab7fee54a1b7454afad0962453d28aab23239306
                     MATRIX: 804->1|930->53|944->60|1028->64|4268->50|4297->3265|4335->3268|4350->3275|4390->3277|4431->3283|4467->3310|4498->3319|4518->3322|4530->3327|4568->3328|4609->3334|4638->3341
