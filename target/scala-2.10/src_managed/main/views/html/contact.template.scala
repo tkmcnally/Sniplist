@@ -88,7 +88,7 @@ Seq[Any](format.raw/*1.25*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Aug 03 16:01:00 EDT 2014
+                    DATE: Sun Aug 10 22:10:18 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/contact.scala.html
                     HASH: a1f301fafa3ca527b302cdc469201a2219c8ae5f
                     MATRIX: 787->1|887->29|901->36|985->40|2838->24|2869->1855|2911->1862|2927->1869|2967->1871|3014->1882|3052->1911|3083->1920|3108->1928|3121->1933|3160->1934|3207->1945|3236->1952

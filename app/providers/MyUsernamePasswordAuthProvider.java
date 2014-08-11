@@ -100,6 +100,7 @@ public class MyUsernamePasswordAuthProvider
 
 		public String validate() {
 			if (password == null || !password.equals(repeatPassword)) {
+                System.out.println("password does not match");
 				return Messages
 						.get("playauthenticate.password.signup.error.passwords_not_same");
 			}
@@ -168,7 +169,6 @@ public class MyUsernamePasswordAuthProvider
 							// you would allow the user to have
 							// multiple passwords defined
 							// usually we don't want this
-                            System.out.println("PPPP: " + authUser.getPassword() + " OOOO: " + acc.providerUserId);
 							return LoginResult.WRONG_PASSWORD;
 						}
 					}

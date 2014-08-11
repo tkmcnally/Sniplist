@@ -37,57 +37,94 @@ Seq[Any](format.raw/*1.22*/("""
 
 
 """),_display_(Seq[Any](/*9.2*/main(Messages("playauthenticate.login.title"),"login")/*9.56*/ {_display_(Seq[Any](format.raw/*9.58*/("""
-
-    <div class="container mtb">
+"""),format.raw/*65.7*/("""
+    <div class="container mt">
         <div class="row">
             <div class="centered">
-                <div class="col-md-6" style="padding-right:20px; border-right: 1px solid #ccc;">
-                    """),_display_(Seq[Any](/*15.22*/if(loginForm.hasGlobalErrors)/*15.51*/ {_display_(Seq[Any](format.raw/*15.53*/("""
-                        <p>asdasda</p>
-                        <div class="alert alert-danger">"""),_display_(Seq[Any](/*17.58*/loginForm/*17.67*/.globalError.message)),format.raw/*17.87*/("""</div>
+                <div class="col-md-12">
+                    <div id="contentContainer" class="container">
 
-                    """)))})),format.raw/*19.22*/("""
+                        <div class="row">
+                            <div id="realContent" class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-sm-offset-0">
+                                        <h1>Sign In</h1>
+                                    </div>
 
-                    """),_display_(Seq[Any](/*21.22*/if(ctx().flash().size() > 0)/*21.50*/ {_display_(Seq[Any](format.raw/*21.52*/("""
-                        <div class="alert alert-danger">
-                            """),_display_(Seq[Any](/*23.30*/ctx()/*23.35*/.flash().get("error"))),format.raw/*23.56*/("""
+                                </div>
+                                <div class="row">
+                                    <section class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-sm-offset-0">
+                                        <div class="well well-lg">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-12"><h3>Social Sign In</h3></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12"><p><b>Use one of your social networks to connect!</b></p></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <ul id="social-sign-in" class="inline-block list-unstyled">
+                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*94.95*/com/*94.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google"))),format.raw/*94.173*/("""" title="Sign in with Google" rel="nofollow"><i class="icon-google-plus-sign icon-5x go-color"></i></a></li>
+                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*95.95*/com/*95.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter"))),format.raw/*95.174*/("""" title="Sign in with Twitter" rel="nofollow"><i class="icon-twitter-sign icon-5x tw-color"></i></a></li>
+                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*96.95*/com/*96.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook"))),format.raw/*96.175*/("""" title="Sign in with Facebook" rel="nofollow"><i class="icon-facebook-sign icon-5x fb-color"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-12"><h3>Log In with E-mail</h3>
+                                                            """),_display_(Seq[Any](/*104.62*/if(loginForm.hasGlobalErrors)/*104.91*/ {_display_(Seq[Any](format.raw/*104.93*/("""
+                                                                <div class="alert alert-danger">"""),_display_(Seq[Any](/*105.98*/loginForm/*105.107*/.globalError.message)),format.raw/*105.127*/("""</div>
+                                                            """)))})),format.raw/*106.62*/("""
+                                                            """),_display_(Seq[Any](/*107.62*/if(flash.contains(Application.FLASH_ERROR_KEY))/*107.109*/ {_display_(Seq[Any](format.raw/*107.111*/("""
+                                                                <div class="alert alert-danger">"""),_display_(Seq[Any](/*108.98*/flash()/*108.105*/.get(Application.FLASH_ERROR_KEY))),format.raw/*108.138*/("""</div>
+                                                            """)))})),format.raw/*109.62*/("""
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <form id="loginForm" method="POST" action=""""),_display_(Seq[Any](/*116.105*/routes/*116.111*/.Application.doLogin())),format.raw/*116.133*/("""" accept-charset="UTF-8">
+
+
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon talign-m"><i class="icon-envelope icon-2x"></i></span>
+                                                                    <input id="email" class="form-control input-lg" placeholder="Email" required="required" maxlength="100" type="email" name="email" value="">
+                                                                </div>
+                                                                """),_display_(Seq[Any](/*123.66*/if(loginForm.error("email") != null)/*123.102*/ {_display_(Seq[Any](format.raw/*123.104*/("""
+                                                                    <span class="help-inline red">"""),_display_(Seq[Any](/*124.100*/Messages(loginForm.error("email").message, loginForm.error("email").arguments: _*))),format.raw/*124.182*/("""</span>
+                                                                """)))})),format.raw/*125.66*/("""
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon talign-m"><i class="icon-asterisk icon-2x"></i></span>
+                                                                    <input id="password" class="form-control input-lg" placeholder="Password" required="required" minLength="5" maxlength="60" type="password" name="password">
+                                                                </div>
+
+                                                                """),_display_(Seq[Any](/*131.66*/if(loginForm.error("password") != null)/*131.105*/ {_display_(Seq[Any](format.raw/*131.107*/("""
+                                                                    <span class="help-inline red">"""),_display_(Seq[Any](/*132.100*/Messages(loginForm.error("password").message, loginForm.error("password").arguments: _*))),format.raw/*132.188*/("""</span>
+                                                                """)))})),format.raw/*133.66*/("""
+
+                                                                <div class="form-group">
+                                                                    <button type="submit" id="btn-signin" class="btn btn-block btn-primary btn-lg">Log In</button>
+                                                                </div>
+                                                            </form>
+                                                            <div class="form-group">
+                                                                <div class="topCushion"><a href="#login">Forgot your password?</a></div>
+                                                            </div>
+                                                        </div><!-- end of column -->
+                                                    </div><!-- end of row -->
+                                                </div><!-- end of column 2 -->
+                                            </div><!-- end of well row -->
+                                        </div><!-- end of well -->
+                                    </section>
+                                </div><!-- end of row -->
+                            </div>
                         </div>
-                    """)))})),format.raw/*25.22*/("""
+                    </div>
 
-
-                    <h3>Use a sniplist account</h3>
-                    """),_display_(Seq[Any](/*29.22*/helper/*29.28*/.form(routes.Application.doLogin)/*29.61*/ {_display_(Seq[Any](format.raw/*29.63*/("""
-
-                        """),_display_(Seq[Any](/*31.26*/if(loginForm.hasGlobalErrors)/*31.55*/ {_display_(Seq[Any](format.raw/*31.57*/("""
-
-                            <div class="alert alert-danger">"""),_display_(Seq[Any](/*33.62*/loginForm/*33.71*/.globalError.message)),format.raw/*33.91*/("""</div>
-
-                        """)))})),format.raw/*35.26*/("""
-
-
-                        """),_display_(Seq[Any](/*38.26*/inputText(
-                            loginForm("email"),
-                            '_showConstraints -> false,
-                            '_label -> Messages("playauthenticate.login.email.placeholder"),
-                            'type -> "email"
-                        ))),format.raw/*43.26*/("""
-                        """),_display_(Seq[Any](/*44.26*/inputPassword(
-                            loginForm("password"),
-                            '_showConstraints -> false,
-                            '_label -> Messages("playauthenticate.login.password.placeholder")
-                        ))),format.raw/*48.26*/("""
-
-                        <input type="submit" value=""""),_display_(Seq[Any](/*50.54*/Messages("playauthenticate.login.now"))),format.raw/*50.92*/("""" class="btn btn-primary top-buffer-sm"><br/>
-                        <br/>
-                        <a href="javascript:void(0);" onclick="window.location.href = jsRoutes.controllers.Signup.forgotPassword($('#email').val() || null).absoluteURL();">"""),_display_(Seq[Any](/*52.174*/Messages("playauthenticate.login.forgot.password"))),format.raw/*52.224*/("""</a>
-
-                    """)))})),format.raw/*54.22*/("""
-
-                 </div>
-                <div class="col-md-6">
-                    <h3>Use another account</h3>
-                    """),format.raw/*59.62*/("""
-                    """),_display_(Seq[Any](/*60.22*/_providerPartial(skipCurrent=false))),format.raw/*60.57*/("""
                 </div>
             </div>
         </div>
@@ -109,11 +146,11 @@ Seq[Any](format.raw/*1.22*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Aug 03 16:01:00 EDT 2014
+                    DATE: Sun Aug 10 22:10:18 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/login.scala.html
-                    HASH: 1601342b82bb651ba53edd2de974e11295208c3e
-                    MATRIX: 848->1|971->52|992->65|1061->21|1091->43|1126->104|1167->111|1229->165|1268->167|1523->386|1561->415|1601->417|1736->516|1754->525|1796->545|1859->576|1920->601|1957->629|1997->631|2122->720|2136->725|2179->746|2266->801|2382->881|2397->887|2439->920|2479->922|2544->951|2582->980|2622->982|2723->1047|2741->1056|2783->1076|2850->1111|2917->1142|3222->1425|3285->1452|3553->1698|3646->1755|3706->1793|3994->2044|4067->2094|4128->2123|4295->2303|4354->2326|4411->2361
-                    LINES: 28->1|31->6|31->6|32->1|34->4|36->6|39->9|39->9|39->9|45->15|45->15|45->15|47->17|47->17|47->17|49->19|51->21|51->21|51->21|53->23|53->23|53->23|55->25|59->29|59->29|59->29|59->29|61->31|61->31|61->31|63->33|63->33|63->33|65->35|68->38|73->43|74->44|78->48|80->50|80->50|82->52|82->52|84->54|89->59|90->60|90->60
+                    HASH: b5c08ee8d70c81293fa8d55e68c8c3170b8c330e
+                    MATRIX: 848->1|971->52|992->65|1061->21|1091->43|1126->104|1167->111|1229->165|1268->167|1297->2440|3257->4364|3269->4367|3367->4442|3607->4646|3619->4649|3718->4725|3955->4926|3967->4929|4067->5006|4782->5684|4821->5713|4862->5715|4998->5814|5018->5823|5062->5843|5164->5912|5264->5975|5322->6022|5364->6024|5500->6123|5518->6130|5575->6163|5677->6232|6101->6618|6118->6624|6164->6646|6824->7269|6871->7305|6913->7307|7052->7408|7158->7490|7265->7564|7914->8176|7964->8215|8006->8217|8145->8318|8257->8406|8364->8480
+                    LINES: 28->1|31->6|31->6|32->1|34->4|36->6|39->9|39->9|39->9|40->65|69->94|69->94|69->94|70->95|70->95|70->95|71->96|71->96|71->96|79->104|79->104|79->104|80->105|80->105|80->105|81->106|82->107|82->107|82->107|83->108|83->108|83->108|84->109|91->116|91->116|91->116|98->123|98->123|98->123|99->124|99->124|100->125|106->131|106->131|106->131|107->132|107->132|108->133
                     -- GENERATED --
                 */
             

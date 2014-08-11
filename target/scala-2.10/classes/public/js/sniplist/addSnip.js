@@ -206,7 +206,7 @@ function addSnipReady() {
 }
 
 function getVideo(songUrl, callBack) {
-    jsRoutes.controllers.Snips.getVideo(songUrl).ajax({
+    jsRoutes.controllers.SnipController.getVideo(songUrl).ajax({
         success: function(data) {
             callBack(data);
         },
@@ -217,7 +217,7 @@ function getVideo(songUrl, callBack) {
 }
 
 function getSnip(snipId, callBack, autoPlay) {
-    jsRoutes.controllers.Snips.getSnip(snipId).ajax({
+    jsRoutes.controllers.SnipController.getSnip(snipId).ajax({
         success: function(data) {
             callBack(data, autoPlay);
         },
@@ -245,7 +245,7 @@ function saveSnip() {
     $("input[name=snip_album]").val($("#album-input").val());
 
     var formData = new FormData($("#hidden-add-snip-form")[0]);
-    jsRoutes.controllers.Snips.createSnip().ajax({
+    jsRoutes.controllers.SnipController.createSnip().ajax({
         data: formData,
         cache: false,
         contentType: false,
@@ -315,6 +315,7 @@ function addSnipGetVideo(data) {
         $("#title-input").val(data.title);
         $("#artist-input").val(data.artist);
         $("#album-input").val(data.album);
+        $("#snip-thumbnail").attr('src', data.thumbnail_url);
 
         $("input[name=snip_title]").val(data.title);
         $("input[name=snip_video_id]").val(data.video_id);

@@ -45,4 +45,9 @@ public class Constants {
 
         public static final int MAX_FOLLOWING = 100;
     }
+
+    public static class LastFM {
+        public static final String APIKEY = "lastfm.api.key";
+        public static final String USERNAME = "lastfm.api.username";
+    }
 }

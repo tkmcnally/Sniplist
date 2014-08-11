@@ -16,8 +16,12 @@
 @font-face
 {
     font-family: SegoeUI;
-    src: url('../fonts/segoeui.ttf');
+    src: url('../font/segoeui.ttf');
 format('truetype');
+}
+
+html,body{
+    height: 100%
 }
 
 /*	################################################################
@@ -370,11 +374,11 @@ a:focus {
 	color: white;
 }
 
-#footerwrap i {
+/*#footerwrap i {
 	font-size: 30px;
 	color: #bfc9d3;
 	padding-right: 25px;
-}
+}*/
 
 #footerwrap i:hover {
 	color: #00b3fe
@@ -541,7 +545,6 @@ body {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 170
 }
 
 /* SOCIAL ICONS */
@@ -643,8 +646,12 @@ body {
     vertical-align: middle !important;
 }
 
+.talign-m {
+    text-align: center;
+}
+
 .red {
-    color: red;
+    color: #a94442;
 }
 
 
@@ -691,4 +698,109 @@ body {
 
 
 
+/**************************
+        GLYPHICON
+**************************/
 
+.gly-sm {
+    font-size: 1.4em;
+}
+
+.gly-lg {
+    font-size: 1.8em;
+}
+
+
+
+/**************************
+ SIGN UP PAGE
+ *************************/
+
+/* BS3 using input group icons from Font-Awesome 3.2.1 */
+
+/* no need for any margin/padding for headings when using WELL */
+.well h3 {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+#signUpForm .input-group {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#signUpForm .input-group {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#signUpForm button {
+    margin-top: 5px;
+}
+
+#loginForm .input-group {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#loginForm .input-group {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#loginForm button {
+    margin-top: 5px;
+}
+
+
+/* get font-awesome to work with BS3 */
+.input-group-addon .icon-2x {
+    width: 28px;
+    min-width: 28px;
+    display: inline-block;
+}
+
+.inline-block > li {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px 10px 0;
+}
+
+/* Why doesn't OR work? Tested with Chrome 29, FF 24 or IE 11
+@media (max-width: 480px), (min-width: 1199px) {
+    #social-sign-in .icon-5x {
+        font-size: 7em;
+    }
+}
+
+*/
+
+.fb-color {
+    color: #3B5998;
+}
+.go-color {
+    color: #d34836;
+}
+
+.tw-color {
+    color: #4099FF;
+}
+
+.ins-color {
+    color: #3f729b;
+}
+@media (max-width: 768px) {
+    #social-sign-in .icon-5x {
+        font-size: 7em;
+    }
+}
+@media (max-width: 480px) {
+    #social-sign-in .icon-5x {
+        font-size: 4.5em;
+    }
+}
+@media (min-width: 1199px) {
+    #social-sign-in .icon-5x {
+        font-size: 7em;
+    }
+}

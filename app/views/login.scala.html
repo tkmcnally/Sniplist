@@ -7,7 +7,7 @@
 
 
 @main(Messages("playauthenticate.login.title"),"login") {
-
+@*
     <div class="container mtb">
         <div class="row">
             <div class="centered">
@@ -56,8 +56,100 @@
                  </div>
                 <div class="col-md-6">
                     <h3>Use another account</h3>
-                    @* Display list of available providers *@
+                    @* Display list of available providers
                     @_providerPartial(skipCurrent=false)
+                </div>
+            </div>
+        </div>
+    </div>
+    *@
+    <div class="container mt">
+        <div class="row">
+            <div class="centered">
+                <div class="col-md-12">
+                    <div id="contentContainer" class="container">
+
+                        <div class="row">
+                            <div id="realContent" class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-sm-offset-0">
+                                        <h1>Sign In</h1>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <section class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-sm-offset-0">
+                                        <div class="well well-lg">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-12"><h3>Social Sign In</h3></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12"><p><b>Use one of your social networks to connect!</b></p></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <ul id="social-sign-in" class="inline-block list-unstyled">
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google")" title="Sign in with Google" rel="nofollow"><i class="icon-google-plus-sign icon-5x go-color"></i></a></li>
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter")" title="Sign in with Twitter" rel="nofollow"><i class="icon-twitter-sign icon-5x tw-color"></i></a></li>
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook")" title="Sign in with Facebook" rel="nofollow"><i class="icon-facebook-sign icon-5x fb-color"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-12"><h3>Log In with E-mail</h3>
+                                                            @if(loginForm.hasGlobalErrors) {
+                                                                <div class="alert alert-danger">@loginForm.globalError.message</div>
+                                                            }
+                                                            @if(flash.contains(Application.FLASH_ERROR_KEY)) {
+                                                                <div class="alert alert-danger">@flash().get(Application.FLASH_ERROR_KEY)</div>
+                                                            }
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <form id="loginForm" method="POST" action="@routes.Application.doLogin()" accept-charset="UTF-8">
+
+
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon talign-m"><i class="icon-envelope icon-2x"></i></span>
+                                                                    <input id="email" class="form-control input-lg" placeholder="Email" required="required" maxlength="100" type="email" name="email" value="">
+                                                                </div>
+                                                                @if(loginForm.error("email") != null) {
+                                                                    <span class="help-inline red">@Messages(loginForm.error("email").message, loginForm.error("email").arguments: _*)</span>
+                                                                }
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon talign-m"><i class="icon-asterisk icon-2x"></i></span>
+                                                                    <input id="password" class="form-control input-lg" placeholder="Password" required="required" minLength="5" maxlength="60" type="password" name="password">
+                                                                </div>
+
+                                                                @if(loginForm.error("password") != null) {
+                                                                    <span class="help-inline red">@Messages(loginForm.error("password").message, loginForm.error("password").arguments: _*)</span>
+                                                                }
+
+                                                                <div class="form-group">
+                                                                    <button type="submit" id="btn-signin" class="btn btn-block btn-primary btn-lg">Log In</button>
+                                                                </div>
+                                                            </form>
+                                                            <div class="form-group">
+                                                                <div class="topCushion"><a href="#login">Forgot your password?</a></div>
+                                                            </div>
+                                                        </div><!-- end of column -->
+                                                    </div><!-- end of row -->
+                                                </div><!-- end of column 2 -->
+                                            </div><!-- end of well row -->
+                                        </div><!-- end of well -->
+                                    </section>
+                                </div><!-- end of row -->
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

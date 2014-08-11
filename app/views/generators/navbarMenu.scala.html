@@ -1,2 +1,2 @@
-@(uri: play.api.mvc.Call, text: String)(implicit request: play.api.mvc.RequestHeader)
-<li @if(uri.url.equals(request.path)){}><a class="dynamic-link" href="@uri">@text</a></li>
+@(uri: play.api.mvc.Call, text: String, dynamic: Boolean)(implicit request: play.api.mvc.RequestHeader)
+<li @if(uri.url.equals(request.path)){}><a class="@if(dynamic){dynamic-link}" href="@uri">@text</a></li>

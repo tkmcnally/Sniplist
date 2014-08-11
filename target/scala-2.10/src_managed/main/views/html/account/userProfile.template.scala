@@ -20,10 +20,10 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object userProfile extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template7[java.lang.Boolean,models.User,models.MySnips,models.MySniplists,models.User,models.MySnips,models.MySniplists,play.api.templates.HtmlFormat.Appendable] {
+object userProfile extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template7[java.lang.Boolean,models.User,models.SnipCollection,models.SniplistCollection,models.User,models.SnipCollection,models.SniplistCollection,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(js: java.lang.Boolean, localUser: models.User = null, mySnips: models.MySnips, mySniplists: models.MySniplists, userProfile: models.User, userSnips: models.MySnips, userSniplists: models.MySniplists):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(js: java.lang.Boolean, localUser: models.User = null, mySnips: models.SnipCollection, mySniplists: models.SniplistCollection, userProfile: models.User, userSnips: models.SnipCollection, userSniplists: models.SniplistCollection):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 def /*3.2*/content/*3.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
@@ -31,51 +31,53 @@ Seq[Any](format.raw/*3.13*/("""
     <div class="container mtb">
         <div class="row inline">
             <h1 style="display: inline-block;">"""),_display_(Seq[Any](/*6.49*/userProfile/*6.60*/.name)),format.raw/*6.65*/("""
-            """),_display_(Seq[Any](/*7.14*/if(localUser.following != null && localUser.following.contains(userProfile.id))/*7.93*/ {_display_(Seq[Any](format.raw/*7.95*/("""
-                <button type="button" class="btn btn-success follow-user-btn" value=""""),_display_(Seq[Any](/*8.87*/userProfile/*8.98*/.id.toString())),format.raw/*8.112*/("""">Following</button>
-            """)))}/*9.15*/else/*9.20*/{_display_(Seq[Any](format.raw/*9.21*/("""
-                <button type="button" class="btn btn-primary follow-user-btn" value=""""),_display_(Seq[Any](/*10.87*/userProfile/*10.98*/.id.toString())),format.raw/*10.112*/("""">Follow</button>
-            """)))})),format.raw/*11.14*/("""
+                """),_display_(Seq[Any](/*7.18*/if(localUser.id.eq(userProfile.id))/*7.53*/ {_display_(Seq[Any](format.raw/*7.55*/("""
+                    """),_display_(Seq[Any](/*8.22*/if(localUser.following != null && localUser.following.contains(userProfile.id))/*8.101*/ {_display_(Seq[Any](format.raw/*8.103*/("""
+                        <button type="button" class="btn btn-success follow-user-btn" value=""""),_display_(Seq[Any](/*9.95*/userProfile/*9.106*/.id.toString())),format.raw/*9.120*/("""">
+                            Following</button>
+                    """)))}/*11.23*/else/*11.28*/{_display_(Seq[Any](format.raw/*11.29*/("""
+                        <button type="button" class="btn btn-primary follow-user-btn" value=""""),_display_(Seq[Any](/*12.95*/userProfile/*12.106*/.id.toString())),format.raw/*12.120*/("""">
+                            Follow</button>
+                    """)))})),format.raw/*14.22*/("""
+                """)))})),format.raw/*15.18*/("""
             </h1>
         </div>
         <div class="row">
             <h2>Snips</h2>
-            """),_display_(Seq[Any](/*16.14*/snips/*16.19*/.arraySnips(true, localUser, userSnips))),format.raw/*16.58*/("""
+            """),_display_(Seq[Any](/*20.14*/snip/*20.18*/.arraySnips(true, localUser, userSnips))),format.raw/*20.57*/("""
         </div>
         <div class="row">
             <h2>Sniplists</h2>
-            """),_display_(Seq[Any](/*20.14*/views/*20.19*/.html.sniplists.arraySniplists(true, localUser, mySnips, mySniplists, userSniplists))),format.raw/*20.103*/("""
+            """),_display_(Seq[Any](/*24.14*/views/*24.19*/.html.sniplist.arraySniplists(true, localUser, mySnips, mySniplists, userSniplists))),format.raw/*24.102*/("""
         </div>
     </div>
 
-
-
 """)))};
-Seq[Any](format.raw/*1.202*/("""
+Seq[Any](format.raw/*1.230*/("""
 
-"""),format.raw/*26.2*/("""
+"""),format.raw/*28.2*/("""
 
-"""),_display_(Seq[Any](/*28.2*/if(!js)/*28.9*/ {_display_(Seq[Any](format.raw/*28.11*/("""
-    """),_display_(Seq[Any](/*29.6*/main("User Profile", "userProfile")/*29.41*/(content))),format.raw/*29.50*/("""
-""")))}/*30.3*/else/*30.8*/{_display_(Seq[Any](format.raw/*30.9*/("""
-    """),_display_(Seq[Any](/*31.6*/content)),format.raw/*31.13*/("""
+"""),_display_(Seq[Any](/*30.2*/if(!js)/*30.9*/ {_display_(Seq[Any](format.raw/*30.11*/("""
+    """),_display_(Seq[Any](/*31.6*/main("User Profile", "userProfile")/*31.41*/(content))),format.raw/*31.50*/("""
+""")))}/*32.3*/else/*32.8*/{_display_(Seq[Any](format.raw/*32.9*/("""
+    """),_display_(Seq[Any](/*33.6*/content)),format.raw/*33.13*/("""
 """)))})))}
     }
     
-    def render(js:java.lang.Boolean,localUser:models.User,mySnips:models.MySnips,mySniplists:models.MySniplists,userProfile:models.User,userSnips:models.MySnips,userSniplists:models.MySniplists): play.api.templates.HtmlFormat.Appendable = apply(js,localUser,mySnips,mySniplists,userProfile,userSnips,userSniplists)
+    def render(js:java.lang.Boolean,localUser:models.User,mySnips:models.SnipCollection,mySniplists:models.SniplistCollection,userProfile:models.User,userSnips:models.SnipCollection,userSniplists:models.SniplistCollection): play.api.templates.HtmlFormat.Appendable = apply(js,localUser,mySnips,mySniplists,userProfile,userSnips,userSniplists)
     
-    def f:((java.lang.Boolean,models.User,models.MySnips,models.MySniplists,models.User,models.MySnips,models.MySniplists) => play.api.templates.HtmlFormat.Appendable) = (js,localUser,mySnips,mySniplists,userProfile,userSnips,userSniplists) => apply(js,localUser,mySnips,mySniplists,userProfile,userSnips,userSniplists)
+    def f:((java.lang.Boolean,models.User,models.SnipCollection,models.SniplistCollection,models.User,models.SnipCollection,models.SniplistCollection) => play.api.templates.HtmlFormat.Appendable) = (js,localUser,mySnips,mySniplists,userProfile,userSnips,userSniplists) => apply(js,localUser,mySnips,mySniplists,userProfile,userSnips,userSniplists)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Aug 03 19:38:08 EDT 2014
+                    DATE: Sun Aug 10 22:10:18 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/userProfile.scala.html
-                    HASH: 3605d94455c7e98174d6d835a063493e6194e149
-                    MATRIX: 891->1|1168->204|1182->211|1266->215|1415->329|1434->340|1460->345|1509->359|1596->438|1635->440|1757->527|1776->538|1812->552|1864->587|1876->592|1914->593|2037->680|2057->691|2094->705|2157->736|2293->836|2307->841|2368->880|2490->966|2504->971|2611->1055|2682->201|2711->1086|2749->1089|2764->1096|2804->1098|2845->1104|2889->1139|2920->1148|2940->1151|2952->1156|2990->1157|3031->1163|3060->1170
-                    LINES: 26->1|28->3|28->3|30->3|33->6|33->6|33->6|34->7|34->7|34->7|35->8|35->8|35->8|36->9|36->9|36->9|37->10|37->10|37->10|38->11|43->16|43->16|43->16|47->20|47->20|47->20|54->1|56->26|58->28|58->28|58->28|59->29|59->29|59->29|60->30|60->30|60->30|61->31|61->31
+                    HASH: e3534c9325fa7f0acbdbc88a3864530a5ad0595b
+                    MATRIX: 919->1|1224->232|1238->239|1322->243|1471->357|1490->368|1516->373|1569->391|1612->426|1651->428|1708->450|1796->529|1836->531|1966->626|1986->637|2022->651|2112->723|2125->728|2164->729|2295->824|2316->835|2353->849|2453->917|2503->935|2639->1035|2652->1039|2713->1078|2835->1164|2849->1169|2955->1252|3024->229|3053->1281|3091->1284|3106->1291|3146->1293|3187->1299|3231->1334|3262->1343|3282->1346|3294->1351|3332->1352|3373->1358|3402->1365
+                    LINES: 26->1|28->3|28->3|30->3|33->6|33->6|33->6|34->7|34->7|34->7|35->8|35->8|35->8|36->9|36->9|36->9|38->11|38->11|38->11|39->12|39->12|39->12|41->14|42->15|47->20|47->20|47->20|51->24|51->24|51->24|56->1|58->28|60->30|60->30|60->30|61->31|61->31|61->31|62->32|62->32|62->32|63->33|63->33
                     -- GENERATED --
                 */
             

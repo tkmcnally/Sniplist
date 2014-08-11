@@ -1,0 +1,74 @@
+@(js: java.lang.Boolean, localUser: models.User = null, userSnips: models.SnipCollection)
+
+@content = {
+    <div class="container mtb">
+        <div id="global-message" class="alert alert-danger hidden">
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Snips</h1> <h4 style="display : inline ;">by <a class="dynamic-link" href="@routes.Application.getUserProfile(userSnips.user.id.toString)">@userSnips.user.name</a></h4>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-8">
+                @views.html.snip.arraySnips(true, localUser, userSnips)
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="add-to-playlist-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">
+                        Close</span></button>
+                    <h4 class="modal-title" id="add-to-playlist-modal-title">Add to playlist</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-message" class="alert alert-danger hidden">
+
+                    </div>
+                    <div id="modal-content">
+
+                    </div>
+                </div>
+                <input id="selected-snip-id" type="text" hidden value=""/>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="share-link-modal" tabindex="-1" role="dialog" aria-labelledby="shareLinkModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="share-link-modal-header">Share with friends!</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon">Link:</span>
+                            <input id="share-link-modal-input" type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+ @if(!js) {
+    @main("My Snips", "mySnips")(content)
+} else {
+    @content
+}

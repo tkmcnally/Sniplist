@@ -1,4 +1,5 @@
-@(js: java.lang.Boolean, localUser: models.User, followingList: List[models.User])
+@(js: java.lang.Boolean, localUser: models.User, followingList: List[models.User], topSnips: List[models.Snip], topSniplists: List[models.Sniplist])
+@import java.math.BigInteger; var i=0;
 
 @content = {
     <div class="container mtb">
@@ -12,6 +13,29 @@
                 <a class="dynamic-link" href="@routes.Application.getUserProfile(fUser.id.toString)">@fUser.name</a>
             }
         </div>
+        <div class="row">
+            <h2>Popular Snips</h2>
+            @for(snip <- topSnips) {
+                @(i += 1)
+                <div class="col-md-2">
+                    <i class="icon-heart red"></i>@snip.favouriteCount<br>
+                    <img src="@snip.thumbnail_url"/>
+                    <p>@snip.song_name <br> by @snip.artist_name <br> <a class="dynamic-link" href="@routes.Application.getUserProfile(snip.user.id.toString)">@snip.user.name</a></p>
+                </div>
+                @if(i % 6 == 0) {
+                    </div>
+                    <div class="row">
+                }
+
+            }
+        </div>
+        <div class="row">
+            <h2>Popular Sniplists</h2>
+            @for(sniplist <- topSniplists) {
+                <p>@sniplist.name by @sniplist.user.name FavCount: @sniplist.favouriteCount</p>
+            }
+        </div>
+
     </div>
 }
 

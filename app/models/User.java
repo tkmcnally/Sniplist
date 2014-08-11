@@ -14,14 +14,12 @@ import org.bson.types.ObjectId;
 
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
-import org.mongodb.morphia.query.CriteriaContainer;
 import org.mongodb.morphia.query.Query;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
 
 
 import java.util.*;
-import java.util.logging.Logger;
 
 import org.mongodb.morphia.annotations.Entity;
 import util.Constants;
@@ -174,8 +172,8 @@ public class User implements Subject {
         MorphiaUtil.getDatastore().save(user.linkedAccounts);
 
         /* create my snips collection */
-        MySnips.create(user);
-        MySniplists.create(user);
+        SnipCollection.create(user);
+        SniplistCollection.create(user);
 
         return user;
     }

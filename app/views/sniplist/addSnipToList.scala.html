@@ -1,0 +1,14 @@
+@(userSniplists: models.SniplistCollection)
+
+@for(snipList <- userSniplists.savedSniplists) {
+    <ul class="list-group">
+        <li class="list-group-item playlist-li" style="cursor:pointer" value="@snipList.id">
+            @if(snipList.snips.size() < 6){
+                <span class="badge alert-success">@snipList.snips.size()</span>
+            } else {
+                <span class="badge alert-danger">@snipList.snips.size()</span>
+            }
+            @snipList.name
+        </li>
+    </ul>
+}

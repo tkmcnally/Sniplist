@@ -3,7 +3,7 @@
  */
 
 function loadSnipLists(localUser, fn) {
-    jsRoutes.controllers.SnipLists.loadSnipListByUser(localUser).ajax({
+    jsRoutes.controllers.SniplistController.loadSnipListByUser(localUser).ajax({
         success: function(data) {
             $("#sniplist-array").html(data).hide().fadeIn(100);
             initialize();
@@ -22,7 +22,7 @@ function createSnipList() {
     var formData = new FormData();
     formData.append('sniplist_name', $("#new-sniplist-name").val());
 
-    jsRoutes.controllers.SnipLists.saveSnipList().ajax({
+    jsRoutes.controllers.SniplistController.saveSnipList().ajax({
         data: formData,
         cache: false,
         contentType: false,
@@ -44,7 +44,7 @@ function createSnipList() {
 }
 
 function deleteSnipList(snipList_id) {
-    jsRoutes.controllers.MySniplistsController.toggleSniplist(snipList_id).ajax({
+    jsRoutes.controllers.SniplistCollectionController.toggleSniplist(snipList_id).ajax({
         success: function(data) {
             var tableRow = $("table").filter(function() {
                 return $(this).attr('id') == snipList_id;
@@ -74,7 +74,7 @@ function favouriteSniplist(snipList) {
             $(this).find('.favourite-sniplist').toggleClass('red');
         }
     });
-    jsRoutes.controllers.MySniplistsController.toggleSniplist(snipList).ajax({
+    jsRoutes.controllers.SniplistCollectionController.toggleSniplist(snipList).ajax({
         success: function(data) {
         },
         error: function(xhr, status, error) {
@@ -86,7 +86,7 @@ function favouriteSniplist(snipList) {
 
 
 function deleteSnipFromSnipList(snipList, snip) {
-    jsRoutes.controllers.SnipLists.deleteFromSnipList(snipList, snip).ajax({
+    jsRoutes.controllers.SniplistController.deleteFromSnipList(snipList, snip).ajax({
         success: function(data) {
             var localUser = $('#sniplist-array').attr('value');
             loadSnipLists(localUser);
@@ -127,7 +127,9 @@ function initialize() {
     $('html').on('click', function(e) {
         if (typeof $(e.target).data('original-title') == 'undefined' &&
             !$(e.target).parents().is('.popover.in')) {
-            $('[data-original-title]').popover('hide');
+            if( $('[data-original-title]').length) {
+                $('[data-original-title]').popover('hide');
+            }
         }
     });
 

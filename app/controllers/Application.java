@@ -7,14 +7,11 @@ import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import models.MySniplists;
-import models.MySnips;
-import models.User;
+import models.*;
 import org.bson.types.ObjectId;
 import play.Routes;
 import play.data.Form;
 import play.mvc.*;
-import play.mvc.Http.Response;
 import play.mvc.Http.Session;
 import play.mvc.Result;
 import providers.MyUsernamePasswordAuthProvider;
@@ -49,7 +46,10 @@ public class Application extends Controller {
                 }
             }
 
-            result = ok(home.render(js, localUser, following));
+            List<Snip> topSnips = Snip.findPopular();
+            List<Sniplist> topSniplists = Sniplist.findPopular();
+
+            result = ok(home.render(js, localUser, following, topSnips, topSniplists));
         } else {
             result = ok(splash.render());
         }
@@ -101,9 +101,11 @@ public class Application extends Controller {
 		final Form<MyLogin> filledForm = MyUsernamePasswordAuthProvider.LOGIN_FORM
 				.bindFromRequest();
 		if (filledForm.hasErrors()) {
+            System.out.println("!" + filledForm.errors());
 			// User did not fill everything properly
 			return badRequest(login.render(filledForm));
 		} else {
+            System.out.println("2" + filledForm.errors());
 			// Everything was filled
 			return UsernamePasswordAuthProvider.handleLogin(ctx());
 		}
@@ -205,13 +207,13 @@ public class Application extends Controller {
 
         Result result = internalServerError();
         if(userProfile != null) {
-            MySniplists mySniplists = MySniplists.findByUser(localUser);
-            MySnips mySnips = MySnips.findByUser(localUser);
+            SniplistCollection sniplistCollection = SniplistCollection.findByUser(localUser);
+            SnipCollection snipCollection = SnipCollection.findByUser(localUser);
 
-            MySniplists userSniplists = MySniplists.findByUser(userProfile);
-            MySnips userSnips = MySnips.findByUser(userProfile);
+            SniplistCollection userSniplists = SniplistCollection.findByUser(userProfile);
+            SnipCollection userSnips = SnipCollection.findByUser(userProfile);
 
-            result = ok(views.html.account.userProfile.render(js, localUser, mySnips, mySniplists, userProfile, userSnips, userSniplists));
+            result = ok(views.html.account.userProfile.render(js, localUser, snipCollection, sniplistCollection, userProfile, userSnips, userSniplists));
         } else {
             result = badRequest(node);
         }
@@ -227,23 +229,25 @@ public class Application extends Controller {
         response().setContentType("text/javascript");
         return ok(
                 Routes.javascriptRouter("jsRoutes",
-                        controllers.routes.javascript.Snips.getVideo(),
-                        controllers.routes.javascript.Snips.createSnip(),
-                        controllers.routes.javascript.Snips.getSnip(),
-                        controllers.routes.javascript.MySnipsController.removeSnip(),
-                        controllers.routes.javascript.MySnipsController.saveSnip(),
-                        controllers.routes.javascript.MySnipsController.toggleSnip(),
-                        controllers.routes.javascript.MySniplistsController.removeSniplist(),
-                        controllers.routes.javascript.MySniplistsController.saveSniplist(),
-                        controllers.routes.javascript.MySniplistsController.mySniplists(),
-                        controllers.routes.javascript.MySniplistsController.toggleSniplist(),
-                        controllers.routes.javascript.MySniplistsController.getNextSnip(),
-                        controllers.routes.javascript.SnipLists.saveSnipList(),
-                        controllers.routes.javascript.SnipLists.addToSnipList(),
-                        controllers.routes.javascript.SnipLists.loadSnipListByUser(),
-                        controllers.routes.javascript.SnipLists.deleteFromSnipList(),
-                        controllers.routes.javascript.SnipLists.viewSnipListsLocalUser(),
-                        controllers.routes.javascript.MySnipsController.mySnips(),
+                        controllers.routes.javascript.SnipController.getVideo(),
+                        controllers.routes.javascript.SnipController.createSnip(),
+                        controllers.routes.javascript.SnipController.getSnip(),
+                        controllers.routes.javascript.SnipController.getPopularSnips(),
+                        controllers.routes.javascript.SnipCollectionController.removeSnip(),
+                        controllers.routes.javascript.SnipCollectionController.saveSnip(),
+                        controllers.routes.javascript.SnipCollectionController.toggleSnip(),
+                        controllers.routes.javascript.SniplistCollectionController.removeSniplist(),
+                        controllers.routes.javascript.SniplistCollectionController.saveSniplist(),
+                        controllers.routes.javascript.SniplistCollectionController.mySniplists(),
+                        controllers.routes.javascript.SniplistCollectionController.toggleSniplist(),
+                        controllers.routes.javascript.SniplistCollectionController.getNextSnip(),
+                        controllers.routes.javascript.SniplistController.saveSnipList(),
+                        controllers.routes.javascript.SniplistController.addToSnipList(),
+                        controllers.routes.javascript.SniplistController.loadSnipListByUser(),
+                        controllers.routes.javascript.SniplistController.deleteFromSnipList(),
+                        controllers.routes.javascript.SniplistController.viewSnipListsLocalUser(),
+                        controllers.routes.javascript.SniplistController.getPopularSniplists(),
+                        controllers.routes.javascript.SnipCollectionController.mySnips(),
                         controllers.routes.javascript.Application.getUserProfile(),
                         controllers.routes.javascript.Application.getUsersFollowing(),
                         controllers.routes.javascript.Application.toggleFollow())

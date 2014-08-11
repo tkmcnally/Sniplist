@@ -1,0 +1,87 @@
+@(js: java.lang.Boolean, user: models.User = null)
+
+@content = {
+
+    <div class="container mtb">
+        <div class="row">
+            <div id="global-message" class="alert alert-danger hidden"></div>
+            <h1>Add Snip</h1>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-addon">Paste URL:</span>
+                    <input id="url-input" type="text" class="form-control" placeholder="www.youtube.com/watch?v=XXXXXXXXXXX">
+                <span class="input-group-btn">
+                    <button id="url-input-btn" class="btn btn-primary" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+        <section class="row embeded-video">
+
+            <div class="player-container">
+
+                <video id="player" width="640" height="360" controls="control" preload="none" class="mejs-sniplist">
+                    <source src="https://www.youtube.com/watch?v=BB7R0ZY9w94" type="video/youtube" />
+                </video>
+            </div>
+                <div id="slider" class="slider-bar"></div>
+                <button id="play-snip-button" type="button" class="btn btn-primary btn-large bottom-buffer-sm center-block">Play Snip</button>
+
+
+
+        </section>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <img width="126" height="126" id="snip-thumbnail" src=""/>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="input-group col-md-6">
+                <span class="input-group-addon">Title</span>
+                <input id="title-input" type="text" class="form-control" placeholder="Ex. Your English is Good">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="input-group col-md-6">
+                <span class="input-group-addon">Artist</span>
+                <input id="artist-input" type="text" class="form-control" placeholder="Ex. Tokyo Police Club">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="input-group col-md-6">
+                <span class="input-group-addon">Album</span>
+                <input id="album-input" type="text" class="form-control" placeholder="Ex. Elephant Shell">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="centered col-md-6 top-buffer-sm">
+                <button id="save_snip_btn" type="button" class="btn btn-primary">Save Snip</button>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <form id="hidden-add-snip-form" class="hidden" enctype="multipart/form-data">
+            <input name="snip_title" type="text" value="">
+            <input name="snip_video_id" type="text" value="">
+            <input name="snip_artist" type="text" value="">
+            <input name="snip_album" type="text" value="">
+            <input name="time_min" type="text" value="">
+            <input name="time_max" type="text" value="">
+        </form>
+
+
+
+
+    </div>
+}
+
+@if(!js) {
+    @main("Add Snip", "addSnip")(content)
+} else {
+    @content
+}

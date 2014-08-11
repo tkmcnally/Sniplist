@@ -1,4 +1,4 @@
-@(title: String, nav: String = "")(content: Html)
+@(title: String, nav: String = "", moreScripts: Html = Html(""))(content: Html)
 
 @import be.objectify.deadbolt.java.views.html._
 @import be.objectify.deadbolt.core.utils.TemplateUtils._
@@ -15,6 +15,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <meta name="description" content="">
             <meta name="author" content="">
+
 
                 <!-- Sniplist Favicon -->
             <link rel="shortcut icon" href="@routes.Assets.at("img/icons/favicon.ico")">
@@ -59,7 +60,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="dynamic-link navbar-brand" href="@routes.Application.index()">SNIPLIST.</a>
+                        <a class="@subjectPresent(){dynamic-link} navbar-brand" href="@routes.Application.index()">SNIPLIST.</a>
                             <!-- @subjectPresent() {
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
@@ -73,15 +74,15 @@
                         <ul class="nav navbar-nav">
                                 <!-- Determine which page is currently active -->
                             @subjectPresentOr() {
-                                @generators.navbarMenu(routes.Snips.add(), "ADD SNIP")
-                                @generators.navbarMenu(routes.MySnipsController.mySnips(), "MY SNIPS")
-                                @generators.navbarMenu(routes.SnipLists.viewSniplists(), "MY SNIPLISTS")
+                                @generators.navbarMenu(routes.SnipController.add(), "ADD SNIP", true)
+                                @generators.navbarMenu(routes.SnipCollectionController.mySnips(), "MY SNIPS", true)
+                                @generators.navbarMenu(routes.SniplistController.viewSniplists(), "MY SNIPLISTS", true)
                             } {
-                                @generators.navbarMenu(routes.Application.index(), "HOME")
+                                @generators.navbarMenu(routes.Application.index(), "HOME", false)
                             }
                             @subjectNotPresent() {
-                                @generators.navbarMenu(routes.Application.about(), "ABOUT")
-                                @generators.navbarMenu(routes.Application.contact(), "CONTACT")
+                                @generators.navbarMenu(routes.Application.about(), "ABOUT", false)
+                                @generators.navbarMenu(routes.Application.contact(), "CONTACT", false)
                             }
 
                             @subjectPresentOr() {
@@ -101,10 +102,10 @@
                                         </div>
                                     </li>
                                 }
-                                @generators.navbarMenu(routes.Application.about(), "ABOUT")
+                                @generators.navbarMenu(routes.Application.about(), "ABOUT", true)
                             }{
 
-                                @generators.navbarMenu(routes.Application.login(), "SIGN IN")
+                                @generators.navbarMenu(routes.Application.login(), "SIGN IN", false)
                             }
 
                         </ul>
@@ -120,33 +121,49 @@
             FOOTER
         ***************************************************************************************************************** -->
             @subjectNotPresent() {
-                <div id="footerwrap">
+                <!--<div id="footerwrap">-->
                     <div class="container">
+                        <div class="hline bottom-buffer-sm"></div>
                         <div class="row">
-                            <div class="col-lg-4">
+                            <div class="col-md-4">
                                 <h4>About</h4>
                                 <div class="hline-w"></div>
                                 <p>Created in 2014, Sniplist provides a new way of sharing music with your friends.</p>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-md-4">
                                 <h4>Social Links</h4>
                                 <div class="hline-w"></div>
                                 <p>
-                                    <a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a>
-                                    <a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a>
-                                    <a href="http://www.instagram.com"><i class="fa fa-instagram"></i></a>
+                                    <a href="http://www.instagram.com">
+                                        <span class="icon-stack icon-2x">
+                                            <i class="icon-circle icon-stack-base ins-color"></i>
+                                            <i class="icon-instagram icon-light"></i>
+                                        </span>
+                                    </a>
+                                    <a href="http://www.twitter.com">
+                                        <span class="icon-stack icon-2x">
+                                            <i class="icon-circle icon-stack-base tw-color"></i>
+                                            <i class="icon-twitter icon-light"></i>
+                                        </span>
+                                    </a>
+                                    <a href="http://www.facebook.com">
+                                        <span class="icon-stack icon-2x">
+                                            <i class="icon-circle icon-stack-base fa-color"></i>
+                                            <i class="icon-facebook icon-light"></i>
+                                        </span>
+                                    </a>
                                 </p>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-md-4">
                                 <h4>Our Location</h4>
                                 <div class="hline-w"></div>
                                 <p>
                                     Ottawa, Canada
                                 </p>
                             </div>
-                        </div><! --/row -->
-                    </div><! --/container -->
-                </div><! --/footerwrap -->
+                        </div>
+                    </div>
+               <!-- </div>-->
             }
             @subjectPresent() {
                 <div id="sticky-footer" class="navbar navbar-default navbar-fixed-bottom">
@@ -188,16 +205,14 @@
             <script src="@routes.Assets.at("js/tablecloth/jquery.tablesorter.js")"></script>
             <script src="@routes.Assets.at("js/tablecloth/jquery.tablecloth.js")"></script>
 
-                <!--  <script src="@routes.Assets.at("js/bootstrap/bootstrap.js")"></script>-->
-
-        <!-- Sniplist core JavaScript -->
-        <script src="@routes.Assets.at("js/sniplist/addSnip.js")"></script>
+            @moreScripts
+                <!-- Sniplist core JavaScript -->
+            <script src="@routes.Assets.at("js/sniplist/addSnip.js")"></script>
             <script src="@routes.Assets.at("js/sniplist/viewSnips.js")"></script>
             <script src="@routes.Assets.at("js/sniplist/custom-crop-slider.js")"></script>
-
             <script src="@routes.Assets.at("js/sniplist/viewSniplists.js")"></script>
 
-                <!-- Play Framework JavaScript routes for AJAX calls. -->
+            <!-- Play Framework JavaScript routes for AJAX calls. -->
             <script src="@routes.Application.javascriptRoutes()" type="text/javascript"></script>
 
                 <!-- MediaElementPlayer -->

@@ -4,6 +4,8 @@ import de.umass.lastfm.Album;
 import de.umass.lastfm.Caller;
 import de.umass.lastfm.Track;
 import models.Snip;
+import play.Play;
+import util.Constants;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,20 +16,21 @@ import java.util.List;
  */
 public class LastFMAPI {
 
-    public static Snip executeSearch(String title) {
+    private final static String API_KEY = play.Play.application().configuration().getString(Constants.LastFM.APIKEY);
+
+    public static Snip executeSearch(String title, String artist) {
+
+        String query = title + " " + artist;
 
         Caller.getInstance().setUserAgent("tst");
         Caller.getInstance().setDebugMode(true);
 
-        String key = "bb269a2438ed865a877fea8868c16b7d";
-        String user = "tkmcnally";
-
-        Collection<Track> tracks = Track.search(title, key);
+        Collection<Track> tracks = Track.search(query, API_KEY);
         List<Track> suggestedInfo = new ArrayList<Track>(tracks);
 
         Track track = suggestedInfo.get(0);
         if(track != null) {
-            track = Track.getInfo(track.getArtist(), track.getMbid(), key);
+            track = Track.getInfo(track.getArtist(), track.getMbid(), API_KEY);
         }
 
         return Snip.mapperLastFM(track);

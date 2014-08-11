@@ -10,8 +10,8 @@
         <div class="row">
             <div class="centered">
                 <div class="col-md-12">
-                    <h1>@Messages("playauthenticate.signup.title")</h1>
-                    @* Display proprietary login form *@
+                    @*<h1>@Messages("playauthenticate.signup.title")</h1>
+                    @* Display proprietary login form
                     @form(routes.Application.doSignup, 'id -> "signUpForm", 'class -> "col-md-12 form-inline form-horizontal") {
 
                         @if(signupForm.hasGlobalErrors) {
@@ -19,29 +19,171 @@
                             <div class="alert alert-danger">@signupForm.globalError.message</div>
 
                         }
+
+
+
+
+
+
+                        <form action="@routes.Application.doSignup()" method="POST" id="signUpForm" class="col-md-12 form-inline form-horizontal">
+
+                            <div class="control-group row top-buffer-sm ">
+                                <label class="control-label  col-sm-3" for="name">Your name</label>
+                                <div class="input-group  col-sm-6">
+
+                                    <input type="text" id="name" name="name" value="" showconstraints="false" class="form-control">
+                                    <span class="help-inline top-buffer-xsm">* Required</span>
+
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+
+
+                            <div class="control-group row top-buffer-sm ">
+                                <label class="control-label  col-sm-3" for="email">Your e-mail address</label>
+                                <div class="input-group  col-sm-6">
+
+
+
+                                    <input type="email" id="email" name="email" value="" class="form-control">
+                                    <span class="help-inline top-buffer-xsm"></span>
+
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+
+
+                            <div class="control-group row top-buffer-sm ">
+                                <label class="control-label  col-sm-3" for="password">Password</label>
+                                <div class="input-group  col-sm-6">
+
+
+
+                                    <input type="password" id="password" name="password" class="form-control">
+                                    <span class="help-inline top-buffer-xsm">* Required, Minimum length: 5</span>
+
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+
+                            <div class="control-group row top-buffer-sm ">
+                                <label class="control-label  col-sm-3" for="repeatPassword">Repeat chosen password</label>
+                                <div class="input-group  col-sm-6">
+
+
+
+                                    <input type="password" id="repeatPassword" name="repeatPassword" class="form-control">
+                                    <span class="help-inline top-buffer-xsm"></span>
+
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+
+                            <input type="submit" value="Sign up now" class="btn btn-primary top-buffer-sm">
+                        </form> -->
+
+
+
+
+
+
+
+
                         @signUpFormFields(signupForm)
                         @signupForm.error("password")
                         <input type="submit" value="@Messages("playauthenticate.signup.now")" class="btn btn-primary top-buffer-sm">
                         }
+                    *@
 
-                </div>
-            </div>
-            <div class="row">
-                <div class="centered mt">
-                    <div class="col-md-12">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6">
-                            <div class="hline"><h4 class="top-buffer-sm bottom-buffer-sm">or</h4></div>
-                            <h3 class="top-buffer-sm bottom-buffer-sm">Connect using:</h3>
+                    <div id="contentContainer" class="container">
 
-                            <ul>
-                            @_providerPartial(skipCurrent=false)
-                            </ul>
+                        <div class="row">
+                            <div id="realContent" class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-sm-offset-0">
+                                        <h1>Sign Up</h1>
+                                    </div>
+
+                                    </div>
+                                <div class="row">
+                                    <section class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-sm-offset-0">
+                                        <div class="well well-lg">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-12"><h3>Social Sign In</h3></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12"><p><b>Use one of your social networks to connect!</b></p></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <ul id="social-sign-in" class="inline-block list-unstyled">
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google")" title="Sign in with Google" rel="nofollow"><i class="icon-google-plus-sign icon-5x go-color"></i></a></li>
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter")" title="Sign in with Twitter" rel="nofollow"><i class="icon-twitter-sign icon-5x tw-color"></i></a></li>
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook")" title="Sign in with Facebook" rel="nofollow"><i class="icon-facebook-sign icon-5x fb-color"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-xs-12">
+                                                    <div class="row">
+                                                        <div class="col-xs-12"><h3>Sign Up Old School</h3>
+                                                            @if(signupForm.hasGlobalErrors) {
+                                                                <div class="alert alert-danger">@signupForm.globalError.message</div>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <form id="signUpForm" method="POST" action="@routes.Application.doSignup()" accept-charset="UTF-8">
+
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon talign-m"><i class="icon-user icon-2x"></i></span>
+
+                                                                    <input id="name" class="form-control input-lg" placeholder="Name" required="required" maxlength="100" type="text" name="name" value="">
+                                                                </div>
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon talign-m"><i class="icon-envelope icon-2x"></i></span>
+                                                                    <input id="email" class="form-control input-lg" placeholder="Email" required="required" maxlength="100" type="email" name="email" value="">
+                                                                </div>
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon talign-m"><i class="icon-asterisk icon-2x"></i></span>
+                                                                    <input id="password" class="form-control input-lg" placeholder="Password" required="required" minLength="5" maxlength="60" type="password" name="password">
+                                                                </div>
+                                                                <div class="input-group  @if(signupForm.error("repeatPassword") != null) { has-error }">
+                                                                        <span class="input-group-addon talign-m"><i class="icon-asterisk icon-2x"></i></span>
+                                                                        <input id="repeatPassword" class="form-control input-lg" placeholder="Confirm Password" required="required" minLength="5" maxlength="60" type="password" name="repeatPassword">
+
+                                                                </div>
+                                                                @if(signupForm.error("repeatPassword") != null) {
+                                                                    <span class="help-inline red">@Messages(signupForm.error("repeatPassword").message, signupForm.error("repeatPassword").arguments: _*)</span>
+                                                                }
+
+                                                                <div class="form-group">
+                                                                    <button type="submit" id="btn-signup" class="btn btn-block btn-primary btn-lg">Sign Up</button>
+                                                                </div>
+                                                            </form>
+                                                            <div class="form-group">
+                                                                <div class="topCushion">Already a member? <a href="#login">Login</a></div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <p>By clicking on "Sign Up", you agree to the <a href="#terms-of-service" target="_blank">Terms of Service</a> and the <a href="#privacy" target="_blank">Privacy Policy</a>.</p>
+                                                            </div>
+                                                        </div><!-- end of column -->
+                                                    </div><!-- end of row -->
+                                                </div><!-- end of column 2 -->
+                                            </div><!-- end of well row -->
+                                        </div><!-- end of well -->
+                                    </section>
+                                </div><!-- end of row -->
+                            </div>
                         </div>
-                        <div class="col-md-3"></div>
                     </div>
+
+
                 </div>
             </div>
-        </div><! --/row -->
+        </div>
     </div>
 }

@@ -1,7 +1,8 @@
 package models;
 
-import controllers.Snips;
+import controllers.SnipController;
 import de.umass.lastfm.Album;
+import de.umass.lastfm.ImageSize;
 import de.umass.lastfm.Track;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
@@ -10,6 +11,7 @@ import org.mongodb.morphia.annotations.Reference;
 import org.mongodb.morphia.annotations.Transient;
 import org.mongodb.morphia.query.Query;
 import play.data.format.Formats;
+import service.api.impl.LastFMAPI;
 import util.MorphiaUtil;
 
 
@@ -51,6 +53,8 @@ public class Snip {
 
     public String direct_url;
 
+    public String thumbnail_url;
+
     @Transient
     public Track track;
 
@@ -71,16 +75,20 @@ public class Snip {
         return q;
     }
 
-    public static Snip create(final Snips.MySnip snipForm,  final User user) {
+    public static Snip create(final SnipController.MySnip snipForm,  final User user) {
+
+        Snip newSnip = LastFMAPI.executeSearch(snipForm.snip_title, snipForm.snip_artist);
+
         Snip new_snip = new Snip();
         new_snip.creation_date = new Date();
-        new_snip.song_name = snipForm.snip_title;
+        new_snip.song_name = newSnip.song_name;
         new_snip.url = snipForm.snip_video_id;
         new_snip.user = user;
-        new_snip.artist_name = snipForm.snip_artist;
-        new_snip.album_name = snipForm.snip_album;
+        new_snip.artist_name = newSnip.artist_name;
+        new_snip.album_name = newSnip.album_name;
         new_snip.time_min = snipForm.time_min;
         new_snip.time_max = snipForm.time_max;
+        new_snip.thumbnail_url = newSnip.thumbnail_url;
 
         MorphiaUtil.getDatastore().save(new_snip);
         return new_snip;
@@ -100,6 +108,7 @@ public class Snip {
             snip.artist_name = track.getArtist();
             snip.track = track;
             snip.album_name = track.getAlbum();
+            snip.thumbnail_url = track.getImageURL(ImageSize.MEDIUM);
         }
 
         return snip;
@@ -127,6 +136,10 @@ public class Snip {
             favouriteCount--;
             MorphiaUtil.getDatastore().save(this);
         }
+    }
+
+    public static List<Snip> findPopular() {
+        return MorphiaUtil.getDatastore().createQuery(Snip.class).order("-favouriteCount").asList();
     }
 
 }

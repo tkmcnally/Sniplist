@@ -11,14 +11,14 @@ function viewSnipsReady() {
 
 function addToSniplist(snipList, snip) {
 
-    jsRoutes.controllers.SnipLists.addToSnipList(snipList, snip).ajax({
+    jsRoutes.controllers.SniplistController.addToSnipList(snipList, snip).ajax({
         success: function(data) {
 
             loadModalData(function() {
                 $("#modal-message").removeClass("hidden");
                 $("#modal-message").removeClass("alert-danger");
                 $("#modal-message").addClass("alert-success");
-                $("#modal-message").text(data);
+                $("#modal-message").text(data.message);
             });
         },
         error: function(xhr, status, error) {
@@ -72,12 +72,12 @@ function bindTableButtons() {
 function deleteSnip(elem) {
 
     var snip = elem.closest("tr").find(".snip-id" ).attr("value");
-    jsRoutes.controllers.MySnipsController.removeSnip(snip).ajax({
+    jsRoutes.controllers.SnipCollectionController.removeSnip(snip).ajax({
         success: function(data) {
             $("#global-message").removeClass("hidden");
             $("#global-message").removeClass("alert-danger");
             $("#global-message").addClass("alert-success");
-            $("#global-message").text(data);
+            $("#global-message").text(data.message);
             $(elem.closest("tr").remove());
         },
         error: function(data) {
@@ -90,7 +90,7 @@ function deleteSnip(elem) {
 
 function loadModalData(callBack) {
 
-    jsRoutes.controllers.SnipLists.viewSnipListsLocalUser().ajax({
+    jsRoutes.controllers.SniplistController.viewSnipListsLocalUser().ajax({
         success: function(data) {
             $("#modal-content").html(data);
             bindTableButtons();
@@ -115,7 +115,7 @@ function favouriteSnip(snip) {
     if($('#live-snip-id').text() == snip) {
         $('.mejs-info .favourite-snip').toggleClass('red');
     }
-    jsRoutes.controllers.MySnipsController.toggleSnip(snip).ajax({
+    jsRoutes.controllers.SnipCollectionController.toggleSnip(snip).ajax({
         success: function(data) {
         },
         error: function(xhr, status, error) {
@@ -133,7 +133,7 @@ function getNextSnip(callBack) {
                 list_id: live_list_id,
                 snip_id: id
             };
-    jsRoutes.controllers.MySniplistsController.getNextSnip().ajax({
+    jsRoutes.controllers.SniplistCollectionController.getNextSnip().ajax({
         type :  "POST",
         cache: false,
         contentType: 'application/json',

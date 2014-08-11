@@ -20,7 +20,7 @@ GET         /following                               controllers.Application.get
 
 GET         /u/:id                                   controllers.Application.getUserProfile(id: String)
 
-GET         /follow/:id                                   controllers.Application.toggleFollow(id: String)
+GET         /follow/:id                              controllers.Application.toggleFollow(id: String)
 
 
 GET         /logout                                  com.feth.play.module.pa.controllers.Authenticate.logout
@@ -58,58 +58,62 @@ GET         /login/password/forgot                   controllers.Signup.forgotPa
 POST        /login/password/forgot                   controllers.Signup.doForgotPassword
 
 
-GET         /snips/getSnip                           controllers.Snips.getSnip(id: String)
+GET         /snips/getSnip                           controllers.SnipController.getSnip(id: String)
 
-GET         /snips/add                               controllers.Snips.add()
+GET         /snips/getPopular                        controllers.SnipController.getPopularSnips()
 
-POST        /snips/add/getVideo                      controllers.Snips.getVideo(songUrl: String)
+GET         /snips/add                               controllers.SnipController.add()
 
-POST        /snips/add/createSnip                    controllers.Snips.createSnip()
+POST        /snips/add/getVideo                      controllers.SnipController.getVideo(songUrl: String)
 
-
-GET         /s/:id                                   controllers.Snips.viewSnipById(id: String)
-
-
-GET         /:id/snips                               controllers.MySnipsController.viewSnipsByUser(id: String)
-
-GET         /snips                                   controllers.MySnipsController.mySnips()
-
-POST        /snips/removeSnip                        controllers.MySnipsController.removeSnip(id: String)
-
-POST        /snips/saveSnip                          controllers.MySnipsController.saveSnip(id: String)
-
-POST        /snips/toggleSnip                        controllers.MySnipsController.toggleSnip(id: String)
+POST        /snips/add/createSnip                    controllers.SnipController.createSnip()
 
 
+GET         /s/:id                                   controllers.SnipController.viewSnipById(id: String)
 
-GET         /sniplists/                              controllers.MySniplistsController.mySniplists()
 
-POST        /sniplists/removeSniplist                controllers.MySniplistsController.removeSniplist(id: String)
+GET         /:id/snips                               controllers.SnipCollectionController.viewSnipsByUser(id: String)
 
-POST        /sniplists/saveSniplist                  controllers.MySniplistsController.saveSniplist(id: String)
+GET         /snips                                   controllers.SnipCollectionController.mySnips()
 
-POST        /sniplists/toggleSniplist                controllers.MySniplistsController.toggleSniplist(id: String)
+POST        /snips/removeSnip                        controllers.SnipCollectionController.removeSnip(id: String)
 
-POST        /sniplists/getNextSnip                   controllers.MySniplistsController.getNextSnip()
+POST        /snips/saveSnip                          controllers.SnipCollectionController.saveSnip(id: String)
+
+POST        /snips/toggleSnip                        controllers.SnipCollectionController.toggleSnip(id: String)
 
 
 
-GET         /l/:id                                   controllers.SnipLists.viewSniplistById(id: String)
+GET         /sniplists/                              controllers.SniplistCollectionController.mySniplists()
+
+POST        /sniplists/removeSniplist                controllers.SniplistCollectionController.removeSniplist(id: String)
+
+POST        /sniplists/saveSniplist                  controllers.SniplistCollectionController.saveSniplist(id: String)
+
+POST        /sniplists/toggleSniplist                controllers.SniplistCollectionController.toggleSniplist(id: String)
+
+POST        /sniplists/getNextSnip                   controllers.SniplistCollectionController.getNextSnip()
 
 
-GET         /:id/sniplists                           controllers.SnipLists.viewSniplistsByUser(id: String)
 
-GET         /sniplists                               controllers.SnipLists.viewSniplists()
+GET         /l/:id                                   controllers.SniplistController.viewSniplistById(id: String)
 
-POST        /sniplists/new                           controllers.SnipLists.saveSnipList()
+GET         /sniplists/getPopular                    controllers.SniplistController.getPopularSniplists()
 
-POST        /sniplists/add                           controllers.SnipLists.addToSnipList(snipList_id: String, snip_id: String)
 
-GET         /sniplists/load                          controllers.SnipLists.loadSnipListByUser(snipList_id: String)
+GET         /:id/sniplists                           controllers.SniplistController.viewSniplistsByUser(id: String)
 
-POST        /sniplists/deleteSnip                    controllers.SnipLists.deleteFromSnipList(snipList_id: String, snip_id: String)
+GET         /sniplists                               controllers.SniplistController.viewSniplists()
 
-POST        /sniplists/viewSnipListsLocalUser        controllers.SnipLists.viewSnipListsLocalUser()
+POST        /sniplists/new                           controllers.SniplistController.saveSnipList()
+
+POST        /sniplists/add                           controllers.SniplistController.addToSnipList(snipList_id: String, snip_id: String)
+
+GET         /sniplists/load                          controllers.SniplistController.loadSnipListByUser(snipList_id: String)
+
+POST        /sniplists/deleteSnip                    controllers.SniplistController.deleteFromSnipList(snipList_id: String, snip_id: String)
+
+POST        /sniplists/viewSnipListsLocalUser        controllers.SniplistController.viewSnipListsLocalUser()
 
 
 
