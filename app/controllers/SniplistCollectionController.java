@@ -28,7 +28,7 @@ public class SniplistCollectionController extends Controller {
 
         Result result = internalServerError();
 
-        Sniplist sniplist = Sniplist.findById(id).get();
+        Sniplist1 sniplist = Sniplist1.findById(id).get();
         SniplistCollection sniplistCollection = SniplistCollection.findByUser(user);
         if(sniplist != null && sniplistCollection != null) {
 
@@ -59,7 +59,7 @@ public class SniplistCollectionController extends Controller {
 
         Result result = internalServerError();
 
-        Sniplist sniplist = Sniplist.findById(id).get();
+        Sniplist1 sniplist = Sniplist1.findById(id).get();
         SniplistCollection sniplistCollection = SniplistCollection.findByUser(user);
 
         if(sniplist != null && sniplistCollection != null) {
@@ -87,7 +87,7 @@ public class SniplistCollectionController extends Controller {
         final User user = Application.getLocalUser(session());
 
         SniplistCollection mySnips = SniplistCollection.findByUser(user);
-        List<Sniplist> sniplists = Sniplist.findByUser(user);
+        List<Sniplist1> sniplists = Sniplist1.findByUser(user);
 
         return ok();
     }
@@ -102,7 +102,7 @@ public class SniplistCollectionController extends Controller {
 
         Result result = internalServerError();
 
-        Sniplist sniplist = Sniplist.findById(id).get();
+        Sniplist1 sniplist = Sniplist1.findById(id).get();
         SniplistCollection sniplistCollection = SniplistCollection.findByUser(user);
 
         if(sniplist != null && sniplistCollection != null) {
@@ -139,7 +139,7 @@ public class SniplistCollectionController extends Controller {
         User owner = null;
         String sniplist_name = null;
         if(Constants.Snips.SNIPLIST.equals(playlistType)) {
-            Sniplist sniplist = Sniplist.findById(json.findPath("list_id").textValue()).get();
+            Sniplist1 sniplist = Sniplist1.findById(json.findPath("list_id").textValue()).get();
 
 
             for(Snip s: sniplist.snips) {

@@ -47,7 +47,7 @@ public class Application extends Controller {
             }
 
             List<Snip> topSnips = Snip.findPopular();
-            List<Sniplist> topSniplists = Sniplist.findPopular();
+            List<Sniplist1> topSniplists = Sniplist1.findPopular();
 
             result = ok(home.render(js, localUser, following, topSnips, topSniplists));
         } else {

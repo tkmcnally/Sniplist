@@ -19,7 +19,7 @@ import java.util.List;
  */
 
 @Entity("sniplists")
-public class Sniplist {
+public class Sniplist1 {
     @Transient
     public static final int MAX_SIZE = 6;
 
@@ -43,9 +43,9 @@ public class Sniplist {
     public boolean localUserFavourited;
 
 
-    public static Sniplist create(final SniplistController.MySnipList snipListForm, final User user) {
+    public static Sniplist1 create(final SniplistController.MySnipList snipListForm, final User user) {
 
-        Sniplist sniplist = new Sniplist();
+        Sniplist1 sniplist = new Sniplist1();
 
         sniplist.name = snipListForm.sniplist_name;
         sniplist.user = user;
@@ -63,14 +63,14 @@ public class Sniplist {
         MorphiaUtil.getDatastore().delete(findById(id));
     }
 
-    public static Query<Sniplist> findById(final String id) {
+    public static Query<Sniplist1> findById(final String id) {
         ObjectId oid = new ObjectId(id);
-        Query<Sniplist> q = MorphiaUtil.getDatastore().find(Sniplist.class).field("id").equal(oid);
+        Query<Sniplist1> q = MorphiaUtil.getDatastore().find(Sniplist1.class).field("id").equal(oid);
         return q;
     }
 
 
-    public static boolean isOwner(final User user, final Sniplist sniplist) {
+    public static boolean isOwner(final User user, final Sniplist1 sniplist) {
 
         boolean owned = false;
         if(user != null && sniplist != null) {
@@ -81,21 +81,21 @@ public class Sniplist {
         return owned;
     }
 
-    public static List<Sniplist> findByUser(final User user){
-        Query<Sniplist> q = MorphiaUtil.getDatastore().find(Sniplist.class).field("user").equal(user);
+    public static List<Sniplist1> findByUser(final User user){
+        Query<Sniplist1> q = MorphiaUtil.getDatastore().find(Sniplist1.class).field("user").equal(user);
         return q.asList();
     }
 
-    public static void addSnipToSnipList(final Sniplist sniplist, final Snip snip) {
+    public static void addSnipToSnipList(final Sniplist1 sniplist, final Snip snip) {
         sniplist.snips.add(snip);
         MorphiaUtil.getDatastore().save(sniplist);
     }
 
-    public static void deleteSnipList(final Sniplist sniplist) {
+    public static void deleteSnipList(final Sniplist1 sniplist) {
         MorphiaUtil.getDatastore().delete(sniplist);
     }
 
-    public static void deleteSnipFromSnipList(final Sniplist sniplist, final Snip snip) {
+    public static void deleteSnipFromSnipList(final Sniplist1 sniplist, final Snip snip) {
         for(Snip s: sniplist.snips) {
             if(s.id.equals(snip.id)) {
                 sniplist.snips.remove(s);
@@ -125,8 +125,8 @@ public class Sniplist {
         MorphiaUtil.getDatastore().save(this);
     }
 
-    public static List<Sniplist> findPopular() {
-        return MorphiaUtil.getDatastore().createQuery(Sniplist.class).order("-favouriteCount").asList();
+    public static List<Sniplist1> findPopular() {
+        return MorphiaUtil.getDatastore().createQuery(Sniplist1.class).order("-favouriteCount").asList();
     }
 
 }

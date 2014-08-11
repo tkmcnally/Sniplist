@@ -22,7 +22,7 @@ public class SniplistCollection {
     public ObjectId id;
 
     @Reference
-    public List<Sniplist> savedSniplists;
+    public List<Sniplist1> savedSniplists;
 
     @Reference
     public User user;
@@ -40,10 +40,10 @@ public class SniplistCollection {
         return q.get();
     }
 
-    public static boolean addSniplist(final SniplistCollection sniplistCollection, final Sniplist sniplist) {
+    public static boolean addSniplist(final SniplistCollection sniplistCollection, final Sniplist1 sniplist) {
         boolean duplicate = false;
         if(sniplistCollection.savedSniplists.size() < MAX_SIZE) {
-            for(Sniplist s: sniplistCollection.savedSniplists) {
+            for(Sniplist1 s: sniplistCollection.savedSniplists) {
                 if(s.id.equals(sniplist.id)) {
                     duplicate = true;
                 }
@@ -58,7 +58,7 @@ public class SniplistCollection {
         return false;
     }
 
-    public static boolean toggleSniplist(final SniplistCollection sniplistCollection, final Sniplist sniplist) {
+    public static boolean toggleSniplist(final SniplistCollection sniplistCollection, final Sniplist1 sniplist) {
         if(!removeSniplist(sniplistCollection, sniplist)) {
             addSniplist(sniplistCollection, sniplist);
             return true;
@@ -67,8 +67,8 @@ public class SniplistCollection {
         }
     }
 
-    public static boolean removeSniplist(final SniplistCollection sniplistCollection, final Sniplist sniplist) {
-        for (Sniplist s : sniplistCollection.savedSniplists) {
+    public static boolean removeSniplist(final SniplistCollection sniplistCollection, final Sniplist1 sniplist) {
+        for (Sniplist1 s : sniplistCollection.savedSniplists) {
             if (s.id.equals(sniplist.id)) {
                 sniplist.unfavourite();
                 sniplistCollection.savedSniplists.remove(s);
@@ -81,15 +81,15 @@ public class SniplistCollection {
 
     public static void create(final User user) {
         SniplistCollection sniplistCollection = new SniplistCollection();
-        sniplistCollection.savedSniplists = new ArrayList<Sniplist>();
+        sniplistCollection.savedSniplists = new ArrayList<Sniplist1>();
         sniplistCollection.user = user;
 
         MorphiaUtil.getDatastore().save(sniplistCollection);
     }
 
 
-    public static boolean isFavourited(final SniplistCollection sniplistCollection, final Sniplist sniplist) {
-        for(Sniplist s: sniplistCollection.savedSniplists) {
+    public static boolean isFavourited(final SniplistCollection sniplistCollection, final Sniplist1 sniplist) {
+        for(Sniplist1 s: sniplistCollection.savedSniplists) {
             if(s.id.equals(sniplist.id)) {
                 return true;
             }
@@ -99,7 +99,7 @@ public class SniplistCollection {
 
     public static SniplistCollection copy(final SniplistCollection mySnipLists) {
         SniplistCollection newSniplists = new SniplistCollection();
-        newSniplists.savedSniplists = new ArrayList<Sniplist>();
+        newSniplists.savedSniplists = new ArrayList<Sniplist1>();
         newSniplists.savedSniplists.addAll(mySnipLists.savedSniplists);
         newSniplists.user = mySnipLists.user;
         return newSniplists;

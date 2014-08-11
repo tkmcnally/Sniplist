@@ -94,7 +94,7 @@ public class SniplistController extends Controller {
             node.put("error", snipListForm.globalError().message().toString());
             result = badRequest(node);
         } else {
-            Sniplist sniplist = Sniplist.create(snipListForm.get(), user);
+            Sniplist1 sniplist = Sniplist1.create(snipListForm.get(), user);
 
             SniplistCollection sniplistCollection = SniplistCollection.findByUser(user);
             SniplistCollection.addSniplist(sniplistCollection, sniplist);
@@ -118,19 +118,19 @@ public class SniplistController extends Controller {
         Result result = internalServerError();
 
         Snip snip = Snip.findById(snip_id).get();
-        Sniplist sniplist = Sniplist.findById(snipList_id).get();
+        Sniplist1 sniplist = Sniplist1.findById(snipList_id).get();
 
         if (snip == null || sniplist == null) {
             node.put("error", "Invalid Snip/SnipList Id.");
             result = badRequest(node);
-        } else if (!Sniplist.isOwner(user, sniplist)) {
+        } else if (!Sniplist1.isOwner(user, sniplist)) {
             node.put("error", "You do not own that SnipList!");
             result = badRequest(node);
         } else if (sniplist.isFull()) {
             node.put("error", "The Sniplist '" + sniplist.name + "' is full!");
             result = badRequest(node);
         } else {
-            Sniplist.addSnipToSnipList(sniplist, snip);
+            Sniplist1.addSnipToSnipList(sniplist, snip);
 
             node.put("message", "'" + snip.song_name + " has been added to '" + sniplist.name + "'.");
             result = ok(node);
@@ -185,16 +185,16 @@ public class SniplistController extends Controller {
         Result result = internalServerError();
 
         Snip snip = Snip.findById(snip_id).get();
-        Sniplist sniplist = Sniplist.findById(snipList_id).get();
+        Sniplist1 sniplist = Sniplist1.findById(snipList_id).get();
 
         if (snip == null || sniplist == null) {
             node.put("error", "Invalid Snip/SnipList Id.");
             result = badRequest(node);
-        } else if (!Sniplist.isOwner(user, sniplist)) {
+        } else if (!Sniplist1.isOwner(user, sniplist)) {
             node.put("error", "You do not own that SnipList!");
             result = badRequest(node);
         } else {
-            Sniplist.deleteSnipFromSnipList(sniplist, snip);
+            Sniplist1.deleteSnipFromSnipList(sniplist, snip);
             result = ok();
         }
 
@@ -212,7 +212,7 @@ public class SniplistController extends Controller {
 
         SniplistCollection sniplistCollection = SniplistCollection.findByUser(user);
         SniplistCollection filtered = SniplistCollection.copy(sniplistCollection);
-        for(Sniplist sl: sniplistCollection.savedSniplists) {
+        for(Sniplist1 sl: sniplistCollection.savedSniplists) {
             if(!user.id.equals(sl.user.id)) {
                 filtered.savedSniplists.remove(sl);
             }
@@ -228,7 +228,7 @@ public class SniplistController extends Controller {
     @Restrict(@Group(Application.USER_ROLE))
     public static Result viewSniplistById(final String id) {
         final User user = Application.getLocalUser(session());
-        Sniplist sniplist = Sniplist.findById(id).get();
+        Sniplist1 sniplist = Sniplist1.findById(id).get();
 
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode node = mapper.createObjectNode();
@@ -253,7 +253,7 @@ public class SniplistController extends Controller {
 
         Result result = internalServerError();
 
-        List<Sniplist> topList = Sniplist.findPopular();
+        List<Sniplist1> topList = Sniplist1.findPopular();
 
         if(topList != null) {
             result = ok(views.html.sniplist.popular.render(js, localUser, topList));
