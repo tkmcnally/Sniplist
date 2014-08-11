@@ -54,7 +54,7 @@ Seq[Any](format.raw/*1.44*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 17:33:11 EDT 2014
+                    DATE: Mon Aug 11 18:07:55 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/_emailPartial.scala.html
                     HASH: a44a2ce8d6673bbedf1d3b87e6aac977f73f3106
                     MATRIX: 864->1|1052->43|1082->100|1119->103
