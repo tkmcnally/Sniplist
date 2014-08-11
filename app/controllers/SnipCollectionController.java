@@ -87,7 +87,7 @@ public class SnipCollectionController extends Controller {
         final User user = Application.getLocalUser(session());
 
         SnipCollection snipCollection = SnipCollection.findByUser(user);
-        List<Sniplist1> sniplists = Sniplist1.findByUser(user);
+        List<Sniplist> sniplists = Sniplist.findByUser(user);
 
         return ok(views.html.snip.viewSnips.render(js, user, snipCollection));
     }
