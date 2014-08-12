@@ -2,7 +2,7 @@
 @import java.math.BigInteger; var i=0;
 
 @content = {
-    <div class="container mtb">
+    <div class="container">
         <div class="row">
             <h1>News Feed</h1>
             <div class="hline"></div>
@@ -32,7 +32,8 @@
         <div class="row">
             <h2>Popular Sniplists</h2>
             @for(sniplist <- topSniplists) {
-                <p>@sniplist.name by @sniplist.user.name FavCount: @sniplist.favouriteCount</p>
+                <i class="icon-heart red"></i>@sniplist.favouriteCount<br>
+                <p><a class="dynamic-link" href="@routes.SniplistController.viewSniplistById(sniplist.id.toString)">@sniplist.name</a> by <a class="dynamic-link" href="@routes.Application.getUserProfile(sniplist.id.toString)">@sniplist.user.name</a> </p>
             }
         </div>
 

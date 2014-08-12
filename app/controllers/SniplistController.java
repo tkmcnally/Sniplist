@@ -227,6 +227,7 @@ public class SniplistController extends Controller {
 
     @Restrict(@Group(Application.USER_ROLE))
     public static Result viewSniplistById(final String id) {
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
         final User user = Application.getLocalUser(session());
         Sniplist sniplist = Sniplist.findById(id).get();
 
@@ -235,12 +236,10 @@ public class SniplistController extends Controller {
 
         Result result = internalServerError();
         if(sniplist != null) {
-
-
-            result = ok(views.html.sniplist.viewSniplistDirect.render(false, user, sniplist));
+            result = ok(views.html.sniplist.viewSniplistDirect.render(js, user, sniplist));
         } else {
             node.put("error", "Invalid Sniplist ID: " + id);
-            result = badRequest(node);
+            result = badRequest(views.html.badRequest.render(js, node));
         }
 
         return result;

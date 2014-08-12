@@ -215,7 +215,8 @@ public class Application extends Controller {
 
             result = ok(views.html.account.userProfile.render(js, localUser, snipCollection, sniplistCollection, userProfile, userSnips, userSniplists));
         } else {
-            result = badRequest(node);
+            node.put("error","Invalid User ID! id: [" + id + "]");
+            result = badRequest(views.html.badRequest.render(js, node));
         }
 
         return result;

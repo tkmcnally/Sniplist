@@ -1,0 +1,15 @@
+@(js: java.lang.Boolean, json: com.fasterxml.jackson.databind.node.ObjectNode)
+
+@content = {
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-danger">@json.get("error")</div>
+        </div>
+    </div>
+}
+
+@if(!js) {
+    @main("Error", "error")(content)
+} else {
+    @content
+}
