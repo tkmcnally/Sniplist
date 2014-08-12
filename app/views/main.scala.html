@@ -63,7 +63,7 @@
                         <a class="@subjectPresent(){dynamic-link} navbar-brand" href="@routes.Application.index()">SNIPLIST.</a>
                     </div>
                     <div class="navbar-collapse collapse navbar-right">
-                        <ul class="nav navbar-nav nav-sidebar">
+                        <ul class="nav navbar-nav">
                                 <!-- Determine which page is currently active -->
                             @subjectPresentOr() {
                                 @generators.navbarMenu(routes.SnipController.add(), "ADD SNIP", true)
