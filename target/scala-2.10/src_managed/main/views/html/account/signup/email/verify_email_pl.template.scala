@@ -51,7 +51,7 @@ Cześć """),_display_(Seq[Any](/*2.8*/name)),format.raw/*2.12*/(""",
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 19:11:08 EDT 2014
+                    DATE: Tue Aug 12 02:05:44 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/signup/email/verify_email_pl.scala.html
                     HASH: b6e8a1d47e174a44c0dc9a89580a107302780b90
                     MATRIX: 826->1|989->70|1032->79|1057->83|1218->209|1254->224

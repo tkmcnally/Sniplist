@@ -139,7 +139,7 @@ public class Snip {
     }
 
     public static List<Snip> findPopular() {
-        return MorphiaUtil.getDatastore().createQuery(Snip.class).order("-favouriteCount").asList();
+        return MorphiaUtil.getDatastore().createQuery(Snip.class).order("-favouriteCount").limit(10).asList();
     }
 
 }

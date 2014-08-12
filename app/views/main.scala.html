@@ -61,22 +61,12 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="@subjectPresent(){dynamic-link} navbar-brand" href="@routes.Application.index()">SNIPLIST.</a>
-                            <!-- @subjectPresent() {
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                    }-->
                     </div>
                     <div class="navbar-collapse collapse navbar-right">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav nav-sidebar">
                                 <!-- Determine which page is currently active -->
                             @subjectPresentOr() {
                                 @generators.navbarMenu(routes.SnipController.add(), "ADD SNIP", true)
-                                @generators.navbarMenu(routes.SnipCollectionController.mySnips(), "MY SNIPS", true)
-                                @generators.navbarMenu(routes.SniplistController.viewSniplists(), "MY SNIPLISTS", true)
                             } {
                                 @generators.navbarMenu(routes.Application.index(), "HOME", false)
                             }
@@ -90,7 +80,7 @@
                                     <li>
                                         <div class="dropdown">
                                             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                                <i class="icon-user"></i> @user.name.toUpperCase()
+                                                <i class="fa fa-user"></i> @user.name.toUpperCase()
                                             <span class="caret"></span>
                                             </a>
 
@@ -104,7 +94,6 @@
                                 }
                                 @generators.navbarMenu(routes.Application.about(), "ABOUT", true)
                             }{
-
                                 @generators.navbarMenu(routes.Application.login(), "SIGN IN", false)
                             }
 
@@ -112,10 +101,38 @@
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
-
-            <div id="wrapper-content" class="mtb">
-                @content
-        </div>
+            <div class="content mtb">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div id="global-message" class="col-md-8 alert alert-danger alert-dismissable hidden">
+                            <a id="global-message-close" class="panel-close close" data-dismiss="alert">×</a>
+                            <i id="global-message-icon" class="fa fa-check-circle"></i>
+                            <p id="global-message-text" style="display: inline;"></p>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <nav class="nav-sidebar">
+                                <ul class="nav">
+                                    <li class="active"><a class="dynamic-link" href="@routes.Application.index()">Popular</a></li>
+                                    <li class="nav-divider"></li>
+                                    <li><a class="dynamic-link" href="@routes.SnipCollectionController.mySnips()">Your Snips</a></li>
+                                    <li><a class="dynamic-link" href="@routes.SniplistCollectionController.mySniplists()">Your Sniplists</a></li>
+                                    <li><a class="dynamic-link" href="@routes.SnipCollectionController.mySnips()">Saved Snips</a></li>
+                                    <li><a class="dynamic-link" href="@routes.SniplistCollectionController.mySniplists()">Saved Sniplists</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div id="wrapper-content" class="col-sm-8">
+                            @content
+                        </div>
+                    </div>
+                </div>
+            </div>
 
                 <!-- *****************************************************************************************************************
             FOOTER
@@ -135,21 +152,21 @@
                                 <div class="hline-w"></div>
                                 <p>
                                     <a href="http://www.instagram.com">
-                                        <span class="icon-stack icon-2x">
-                                            <i class="icon-circle icon-stack-base ins-color"></i>
-                                            <i class="icon-instagram icon-light"></i>
+                                        <span class="fa-stack fa-2x">
+                                            <i class="fa fa-circle fa-stack-2x ins-color"></i>
+                                            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
                                     <a href="http://www.twitter.com">
-                                        <span class="icon-stack icon-2x">
-                                            <i class="icon-circle icon-stack-base tw-color"></i>
-                                            <i class="icon-twitter icon-light"></i>
+                                        <span class="fa-stack fa-2x">
+                                            <i class="fa fa-circle fa-stack-2x tw-color"></i>
+                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
                                     <a href="http://www.facebook.com">
-                                        <span class="icon-stack icon-2x">
-                                            <i class="icon-circle icon-stack-base fa-color"></i>
-                                            <i class="icon-facebook icon-light"></i>
+                                        <span class="fa-stack fa-2x">
+                                            <i class="fa fa-circle fa-stack-2x fb-color"></i>
+                                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
                                 </p>
@@ -197,6 +214,9 @@
                 <!-- Bootstrap core JavaScript -->
             <script src="@routes.Assets.at("js/bootstrap/bootstrap.min.js")"></script>
             <script src="@routes.Assets.at("js/bootstrap/retina-1.1.0.js")"></script>
+            <script src="@routes.Assets.at("js/bootstrap/moment.js")"></script>
+            <script src="@routes.Assets.at("js/bootstrap/bootstrap-datetimepicker.min.js")"></script>
+
             <script src="@routes.Assets.at("js/jquery/jquery.hoverdir.js")"></script>
             <script src="@routes.Assets.at("js/jquery/jquery.hoverex.min.js")"></script>
             <script src="@routes.Assets.at("js/tablecloth/jquery.prettyPhoto.js")"></script>

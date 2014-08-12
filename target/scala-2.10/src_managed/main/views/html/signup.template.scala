@@ -66,9 +66,9 @@ Seq[Any](format.raw/*1.23*/("""
                                                     <div class="row">
                                                         <div class="col-xs-12">
                                                             <ul id="social-sign-in" class="inline-block list-unstyled">
-                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*122.95*/com/*122.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google"))),format.raw/*122.173*/("""" title="Sign in with Google" rel="nofollow"><i class="icon-google-plus-sign icon-5x go-color"></i></a></li>
-                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*123.95*/com/*123.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter"))),format.raw/*123.174*/("""" title="Sign in with Twitter" rel="nofollow"><i class="icon-twitter-sign icon-5x tw-color"></i></a></li>
-                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*124.95*/com/*124.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook"))),format.raw/*124.175*/("""" title="Sign in with Facebook" rel="nofollow"><i class="icon-facebook-sign icon-5x fb-color"></i></a></li>
+                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*122.95*/com/*122.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google"))),format.raw/*122.173*/("""" title="Sign in with Google" rel="nofollow"><i class="fa fa-google-plus-square fa-5x go-color"></i></a></li>
+                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*123.95*/com/*123.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter"))),format.raw/*123.174*/("""" title="Sign in with Twitter" rel="nofollow"><i class="fa fa-twitter-square fa-5x tw-color"></i></a></li>
+                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*124.95*/com/*124.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook"))),format.raw/*124.175*/("""" title="Sign in with Facebook" rel="nofollow"><i class="fa fa-facebook-square fa-5x fb-color"></i></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -86,20 +86,20 @@ Seq[Any](format.raw/*1.23*/("""
                                                             <form id="signUpForm" method="POST" action=""""),_display_(Seq[Any](/*139.106*/routes/*139.112*/.Application.doSignup())),format.raw/*139.135*/("""" accept-charset="UTF-8">
 
                                                                 <div class="input-group">
-                                                                    <span class="input-group-addon talign-m"><i class="icon-user icon-2x"></i></span>
+                                                                    <span class="input-group-addon talign-m"><i class="fa fa-user fa-2x"></i></span>
 
                                                                     <input id="name" class="form-control input-lg" placeholder="Name" required="required" maxlength="100" type="text" name="name" value="">
                                                                 </div>
                                                                 <div class="input-group">
-                                                                    <span class="input-group-addon talign-m"><i class="icon-envelope icon-2x"></i></span>
+                                                                    <span class="input-group-addon talign-m"><i class="fa fa-envelope fa-2x"></i></span>
                                                                     <input id="email" class="form-control input-lg" placeholder="Email" required="required" maxlength="100" type="email" name="email" value="">
                                                                 </div>
                                                                 <div class="input-group">
-                                                                    <span class="input-group-addon talign-m"><i class="icon-asterisk icon-2x"></i></span>
+                                                                    <span class="input-group-addon talign-m"><i class="fa fa-asterisk fa-2x"></i></span>
                                                                     <input id="password" class="form-control input-lg" placeholder="Password" required="required" minLength="5" maxlength="60" type="password" name="password">
                                                                 </div>
                                                                 <div class="input-group  """),_display_(Seq[Any](/*154.91*/if(signupForm.error("repeatPassword") != null)/*154.137*/ {_display_(Seq[Any](format.raw/*154.139*/(""" has-error """)))})),format.raw/*154.151*/("""">
-                                                                        <span class="input-group-addon talign-m"><i class="icon-asterisk icon-2x"></i></span>
+                                                                        <span class="input-group-addon talign-m"><i class="fa fa-asterisk fa-2x"></i></span>
                                                                         <input id="repeatPassword" class="form-control input-lg" placeholder="Confirm Password" required="required" minLength="5" maxlength="60" type="password" name="repeatPassword">
 
                                                                 </div>
@@ -149,10 +149,10 @@ Seq[Any](format.raw/*1.23*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 19:11:07 EDT 2014
+                    DATE: Tue Aug 12 02:12:05 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/signup.scala.html
-                    HASH: 48b81a4986262c13d27f2e6dd63190a145487643
-                    MATRIX: 849->1|973->47|994->60|1063->22|1093->44|1122->99|1163->106|1195->130|1234->132|1420->3815|3251->5609|3264->5612|3363->5687|3604->5891|3617->5894|3717->5970|3955->6171|3968->6174|4069->6251|4784->6929|4824->6959|4865->6961|5001->7060|5022->7070|5066->7090|5168->7159|5589->7542|5606->7548|5653->7571|7400->9281|7457->9327|7499->9329|7545->9341|8133->9892|8190->9938|8232->9940|8371->10041|8497->10143|8604->10217
+                    HASH: f2b5bea8d59165bc8a71d28bb283ad54e11aceda
+                    MATRIX: 849->1|973->47|994->60|1063->22|1093->44|1122->99|1163->106|1195->130|1234->132|1420->3815|3251->5609|3264->5612|3363->5687|3605->5892|3618->5895|3718->5971|3957->6173|3970->6176|4071->6253|4787->6932|4827->6962|4868->6964|5004->7063|5025->7073|5069->7093|5171->7162|5592->7545|5609->7551|5656->7574|7400->9281|7457->9327|7499->9329|7545->9341|8132->9891|8189->9937|8231->9939|8370->10040|8496->10142|8603->10216
                     LINES: 28->1|31->5|31->5|32->1|34->4|35->5|38->8|38->8|38->8|43->96|69->122|69->122|69->122|70->123|70->123|70->123|71->124|71->124|71->124|79->132|79->132|79->132|80->133|80->133|80->133|81->134|86->139|86->139|86->139|101->154|101->154|101->154|101->154|106->159|106->159|106->159|107->160|107->160|108->161
                     -- GENERATED --
                 */

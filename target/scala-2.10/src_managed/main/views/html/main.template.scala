@@ -90,66 +90,83 @@ Seq[Any](format.raw/*1.80*/("""
                             <span class="icon-bar"></span>
                         </button>
                         <a class=""""),_display_(Seq[Any](/*63.36*/subjectPresent()/*63.52*/{_display_(Seq[Any](format.raw/*63.53*/("""dynamic-link""")))})),format.raw/*63.66*/(""" navbar-brand" href=""""),_display_(Seq[Any](/*63.88*/routes/*63.94*/.Application.index())),format.raw/*63.114*/("""">SNIPLIST.</a>
-                            <!-- """),_display_(Seq[Any](/*64.35*/subjectPresent()/*64.51*/ {_display_(Seq[Any](format.raw/*64.53*/("""
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                    """)))})),format.raw/*71.22*/("""-->
                     </div>
                     <div class="navbar-collapse collapse navbar-right">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav nav-sidebar">
                                 <!-- Determine which page is currently active -->
-                            """),_display_(Seq[Any](/*76.30*/subjectPresentOr()/*76.48*/ {_display_(Seq[Any](format.raw/*76.50*/("""
-                                """),_display_(Seq[Any](/*77.34*/generators/*77.44*/.navbarMenu(routes.SnipController.add(), "ADD SNIP", true))),format.raw/*77.102*/("""
-                                """),_display_(Seq[Any](/*78.34*/generators/*78.44*/.navbarMenu(routes.SnipCollectionController.mySnips(), "MY SNIPS", true))),format.raw/*78.116*/("""
-                                """),_display_(Seq[Any](/*79.34*/generators/*79.44*/.navbarMenu(routes.SniplistController.viewSniplists(), "MY SNIPLISTS", true))),format.raw/*79.120*/("""
-                            """)))}/*80.30*/ {_display_(Seq[Any](format.raw/*80.32*/("""
-                                """),_display_(Seq[Any](/*81.34*/generators/*81.44*/.navbarMenu(routes.Application.index(), "HOME", false))),format.raw/*81.98*/("""
-                            """)))})),format.raw/*82.30*/("""
-                            """),_display_(Seq[Any](/*83.30*/subjectNotPresent()/*83.49*/ {_display_(Seq[Any](format.raw/*83.51*/("""
-                                """),_display_(Seq[Any](/*84.34*/generators/*84.44*/.navbarMenu(routes.Application.about(), "ABOUT", false))),format.raw/*84.99*/("""
-                                """),_display_(Seq[Any](/*85.34*/generators/*85.44*/.navbarMenu(routes.Application.contact(), "CONTACT", false))),format.raw/*85.103*/("""
-                            """)))})),format.raw/*86.30*/("""
+                            """),_display_(Seq[Any](/*68.30*/subjectPresentOr()/*68.48*/ {_display_(Seq[Any](format.raw/*68.50*/("""
+                                """),_display_(Seq[Any](/*69.34*/generators/*69.44*/.navbarMenu(routes.SnipController.add(), "ADD SNIP", true))),format.raw/*69.102*/("""
+                            """)))}/*70.30*/ {_display_(Seq[Any](format.raw/*70.32*/("""
+                                """),_display_(Seq[Any](/*71.34*/generators/*71.44*/.navbarMenu(routes.Application.index(), "HOME", false))),format.raw/*71.98*/("""
+                            """)))})),format.raw/*72.30*/("""
+                            """),_display_(Seq[Any](/*73.30*/subjectNotPresent()/*73.49*/ {_display_(Seq[Any](format.raw/*73.51*/("""
+                                """),_display_(Seq[Any](/*74.34*/generators/*74.44*/.navbarMenu(routes.Application.about(), "ABOUT", false))),format.raw/*74.99*/("""
+                                """),_display_(Seq[Any](/*75.34*/generators/*75.44*/.navbarMenu(routes.Application.contact(), "CONTACT", false))),format.raw/*75.103*/("""
+                            """)))})),format.raw/*76.30*/("""
 
-                            """),_display_(Seq[Any](/*88.30*/subjectPresentOr()/*88.48*/ {_display_(Seq[Any](format.raw/*88.50*/("""
-                                """),_display_(Seq[Any](/*89.34*/defining(Application.getLocalUser(session()))/*89.79*/ { user =>_display_(Seq[Any](format.raw/*89.89*/("""
+                            """),_display_(Seq[Any](/*78.30*/subjectPresentOr()/*78.48*/ {_display_(Seq[Any](format.raw/*78.50*/("""
+                                """),_display_(Seq[Any](/*79.34*/defining(Application.getLocalUser(session()))/*79.79*/ { user =>_display_(Seq[Any](format.raw/*79.89*/("""
                                     <li>
                                         <div class="dropdown">
                                             <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                                <i class="icon-user"></i> """),_display_(Seq[Any](/*93.76*/user/*93.80*/.name.toUpperCase())),format.raw/*93.99*/("""
+                                                <i class="fa fa-user"></i> """),_display_(Seq[Any](/*83.77*/user/*83.81*/.name.toUpperCase())),format.raw/*83.100*/("""
                                             <span class="caret"></span>
                                             </a>
 
                                             <ul class="dropdown-menu">
-                                                <li><a class="dynamic-link" href=""""),_display_(Seq[Any](/*98.84*/routes/*98.90*/.Application.profile())),format.raw/*98.112*/("""">"""),_display_(Seq[Any](/*98.115*/Messages("playauthenticate.navigation.profile")/*98.162*/.toUpperCase())),format.raw/*98.176*/("""</a></li>
+                                                <li><a class="dynamic-link" href=""""),_display_(Seq[Any](/*88.84*/routes/*88.90*/.Application.profile())),format.raw/*88.112*/("""">"""),_display_(Seq[Any](/*88.115*/Messages("playauthenticate.navigation.profile")/*88.162*/.toUpperCase())),format.raw/*88.176*/("""</a></li>
                                                 <li class="divider"></li>
-                                                <li><a href=""""),_display_(Seq[Any](/*100.63*/com/*100.66*/.feth.play.module.pa.controllers.routes.Authenticate.logout())),format.raw/*100.127*/(""""><i class="icon-off"></i> """),_display_(Seq[Any](/*100.155*/Messages("playauthenticate.navigation.logout")/*100.201*/.toUpperCase())),format.raw/*100.215*/("""</a></li>
+                                                <li><a href=""""),_display_(Seq[Any](/*90.63*/com/*90.66*/.feth.play.module.pa.controllers.routes.Authenticate.logout())),format.raw/*90.127*/(""""><i class="icon-off"></i> """),_display_(Seq[Any](/*90.155*/Messages("playauthenticate.navigation.logout")/*90.201*/.toUpperCase())),format.raw/*90.215*/("""</a></li>
                                             </ul>
                                         </div>
                                     </li>
-                                """)))})),format.raw/*104.34*/("""
-                                """),_display_(Seq[Any](/*105.34*/generators/*105.44*/.navbarMenu(routes.Application.about(), "ABOUT", true))),format.raw/*105.98*/("""
-                            """)))}/*106.30*/{_display_(Seq[Any](format.raw/*106.31*/("""
-
-                                """),_display_(Seq[Any](/*108.34*/generators/*108.44*/.navbarMenu(routes.Application.login(), "SIGN IN", false))),format.raw/*108.101*/("""
-                            """)))})),format.raw/*109.30*/("""
+                                """)))})),format.raw/*94.34*/("""
+                                """),_display_(Seq[Any](/*95.34*/generators/*95.44*/.navbarMenu(routes.Application.about(), "ABOUT", true))),format.raw/*95.98*/("""
+                            """)))}/*96.30*/{_display_(Seq[Any](format.raw/*96.31*/("""
+                                """),_display_(Seq[Any](/*97.34*/generators/*97.44*/.navbarMenu(routes.Application.login(), "SIGN IN", false))),format.raw/*97.101*/("""
+                            """)))})),format.raw/*98.30*/("""
 
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
-
-            <div id="wrapper-content" class="mtb">
-                """),_display_(Seq[Any](/*117.18*/content)),format.raw/*117.25*/("""
-        </div>
+            <div class="content mtb">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div id="global-message" class="col-md-8 alert alert-danger alert-dismissable hidden">
+                            <a id="global-message-close" class="panel-close close" data-dismiss="alert">×</a>
+                            <i id="global-message-icon" class="fa fa-check-circle"></i>
+                            <p id="global-message-text" style="display: inline;"></p>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <nav class="nav-sidebar">
+                                <ul class="nav">
+                                    <li class="active"><a class="dynamic-link" href=""""),_display_(Seq[Any](/*121.87*/routes/*121.93*/.Application.index())),format.raw/*121.113*/("""">Popular</a></li>
+                                    <li class="nav-divider"></li>
+                                    <li><a class="dynamic-link" href=""""),_display_(Seq[Any](/*123.72*/routes/*123.78*/.SnipCollectionController.mySnips())),format.raw/*123.113*/("""">Your Snips</a></li>
+                                    <li><a class="dynamic-link" href=""""),_display_(Seq[Any](/*124.72*/routes/*124.78*/.SniplistCollectionController.mySniplists())),format.raw/*124.121*/("""">Your Sniplists</a></li>
+                                    <li><a class="dynamic-link" href=""""),_display_(Seq[Any](/*125.72*/routes/*125.78*/.SnipCollectionController.mySnips())),format.raw/*125.113*/("""">Saved Snips</a></li>
+                                    <li><a class="dynamic-link" href=""""),_display_(Seq[Any](/*126.72*/routes/*126.78*/.SniplistCollectionController.mySniplists())),format.raw/*126.121*/("""">Saved Sniplists</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div id="wrapper-content" class="col-sm-8">
+                            """),_display_(Seq[Any](/*131.30*/content)),format.raw/*131.37*/("""
+                        </div>
+                    </div>
+                </div>
+            </div>
 
                 <!-- *****************************************************************************************************************
             FOOTER
         ***************************************************************************************************************** -->
-            """),_display_(Seq[Any](/*123.14*/subjectNotPresent()/*123.33*/ {_display_(Seq[Any](format.raw/*123.35*/("""
+            """),_display_(Seq[Any](/*140.14*/subjectNotPresent()/*140.33*/ {_display_(Seq[Any](format.raw/*140.35*/("""
                 <!--<div id="footerwrap">-->
                     <div class="container">
                         <div class="hline bottom-buffer-sm"></div>
@@ -164,21 +181,21 @@ Seq[Any](format.raw/*1.80*/("""
                                 <div class="hline-w"></div>
                                 <p>
                                     <a href="http://www.instagram.com">
-                                        <span class="icon-stack icon-2x">
-                                            <i class="icon-circle icon-stack-base ins-color"></i>
-                                            <i class="icon-instagram icon-light"></i>
+                                        <span class="fa-stack fa-2x">
+                                            <i class="fa fa-circle fa-stack-2x ins-color"></i>
+                                            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
                                     <a href="http://www.twitter.com">
-                                        <span class="icon-stack icon-2x">
-                                            <i class="icon-circle icon-stack-base tw-color"></i>
-                                            <i class="icon-twitter icon-light"></i>
+                                        <span class="fa-stack fa-2x">
+                                            <i class="fa fa-circle fa-stack-2x tw-color"></i>
+                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
                                     <a href="http://www.facebook.com">
-                                        <span class="icon-stack icon-2x">
-                                            <i class="icon-circle icon-stack-base fa-color"></i>
-                                            <i class="icon-facebook icon-light"></i>
+                                        <span class="fa-stack fa-2x">
+                                            <i class="fa fa-circle fa-stack-2x fb-color"></i>
+                                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </a>
                                 </p>
@@ -193,8 +210,8 @@ Seq[Any](format.raw/*1.80*/("""
                         </div>
                     </div>
                <!-- </div>-->
-            """)))})),format.raw/*167.14*/("""
-            """),_display_(Seq[Any](/*168.14*/subjectPresent()/*168.30*/ {_display_(Seq[Any](format.raw/*168.32*/("""
+            """)))})),format.raw/*184.14*/("""
+            """),_display_(Seq[Any](/*185.14*/subjectPresent()/*185.30*/ {_display_(Seq[Any](format.raw/*185.32*/("""
                 <div id="sticky-footer" class="navbar navbar-default navbar-fixed-bottom">
                     <div class="container">
                         <div class="row">
@@ -208,7 +225,7 @@ Seq[Any](format.raw/*1.80*/("""
                         </div>
                     </div>
                 </div>
-            """)))})),format.raw/*182.14*/("""
+            """)))})),format.raw/*199.14*/("""
 
 
 
@@ -221,39 +238,42 @@ Seq[Any](format.raw/*1.80*/("""
             <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
                 <!-- JQRangeSlider JS -->
-            <script type="text/javascript" src=""""),_display_(Seq[Any](/*195.50*/routes/*195.56*/.Assets.at("js/jqrangeslider/jQEditRangeSlider-min.js"))),format.raw/*195.111*/(""""></script>
+            <script type="text/javascript" src=""""),_display_(Seq[Any](/*212.50*/routes/*212.56*/.Assets.at("js/jqrangeslider/jQEditRangeSlider-min.js"))),format.raw/*212.111*/(""""></script>
 
                 <!-- Bootstrap core JavaScript -->
-            <script src=""""),_display_(Seq[Any](/*198.27*/routes/*198.33*/.Assets.at("js/bootstrap/bootstrap.min.js"))),format.raw/*198.76*/(""""></script>
-            <script src=""""),_display_(Seq[Any](/*199.27*/routes/*199.33*/.Assets.at("js/bootstrap/retina-1.1.0.js"))),format.raw/*199.75*/(""""></script>
-            <script src=""""),_display_(Seq[Any](/*200.27*/routes/*200.33*/.Assets.at("js/jquery/jquery.hoverdir.js"))),format.raw/*200.75*/(""""></script>
-            <script src=""""),_display_(Seq[Any](/*201.27*/routes/*201.33*/.Assets.at("js/jquery/jquery.hoverex.min.js"))),format.raw/*201.78*/(""""></script>
-            <script src=""""),_display_(Seq[Any](/*202.27*/routes/*202.33*/.Assets.at("js/tablecloth/jquery.prettyPhoto.js"))),format.raw/*202.82*/(""""></script>
-            <script src=""""),_display_(Seq[Any](/*203.27*/routes/*203.33*/.Assets.at("js/jquery/jquery.isotope.min.js"))),format.raw/*203.78*/(""""></script>
-            <script src=""""),_display_(Seq[Any](/*204.27*/routes/*204.33*/.Assets.at("js/jquery/jquery.metadata.js"))),format.raw/*204.75*/(""""></script>
-            <script src=""""),_display_(Seq[Any](/*205.27*/routes/*205.33*/.Assets.at("js/tablecloth/jquery.tablesorter.js"))),format.raw/*205.82*/(""""></script>
-            <script src=""""),_display_(Seq[Any](/*206.27*/routes/*206.33*/.Assets.at("js/tablecloth/jquery.tablecloth.js"))),format.raw/*206.81*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*215.27*/routes/*215.33*/.Assets.at("js/bootstrap/bootstrap.min.js"))),format.raw/*215.76*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*216.27*/routes/*216.33*/.Assets.at("js/bootstrap/retina-1.1.0.js"))),format.raw/*216.75*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*217.27*/routes/*217.33*/.Assets.at("js/bootstrap/moment.js"))),format.raw/*217.69*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*218.27*/routes/*218.33*/.Assets.at("js/bootstrap/bootstrap-datetimepicker.min.js"))),format.raw/*218.91*/(""""></script>
 
-            """),_display_(Seq[Any](/*208.14*/moreScripts)),format.raw/*208.25*/("""
+            <script src=""""),_display_(Seq[Any](/*220.27*/routes/*220.33*/.Assets.at("js/jquery/jquery.hoverdir.js"))),format.raw/*220.75*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*221.27*/routes/*221.33*/.Assets.at("js/jquery/jquery.hoverex.min.js"))),format.raw/*221.78*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*222.27*/routes/*222.33*/.Assets.at("js/tablecloth/jquery.prettyPhoto.js"))),format.raw/*222.82*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*223.27*/routes/*223.33*/.Assets.at("js/jquery/jquery.isotope.min.js"))),format.raw/*223.78*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*224.27*/routes/*224.33*/.Assets.at("js/jquery/jquery.metadata.js"))),format.raw/*224.75*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*225.27*/routes/*225.33*/.Assets.at("js/tablecloth/jquery.tablesorter.js"))),format.raw/*225.82*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*226.27*/routes/*226.33*/.Assets.at("js/tablecloth/jquery.tablecloth.js"))),format.raw/*226.81*/(""""></script>
+
+            """),_display_(Seq[Any](/*228.14*/moreScripts)),format.raw/*228.25*/("""
                 <!-- Sniplist core JavaScript -->
-            <script src=""""),_display_(Seq[Any](/*210.27*/routes/*210.33*/.Assets.at("js/sniplist/addSnip.js"))),format.raw/*210.69*/(""""></script>
-            <script src=""""),_display_(Seq[Any](/*211.27*/routes/*211.33*/.Assets.at("js/sniplist/viewSnips.js"))),format.raw/*211.71*/(""""></script>
-            <script src=""""),_display_(Seq[Any](/*212.27*/routes/*212.33*/.Assets.at("js/sniplist/custom-crop-slider.js"))),format.raw/*212.80*/(""""></script>
-            <script src=""""),_display_(Seq[Any](/*213.27*/routes/*213.33*/.Assets.at("js/sniplist/viewSniplists.js"))),format.raw/*213.75*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*230.27*/routes/*230.33*/.Assets.at("js/sniplist/addSnip.js"))),format.raw/*230.69*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*231.27*/routes/*231.33*/.Assets.at("js/sniplist/viewSnips.js"))),format.raw/*231.71*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*232.27*/routes/*232.33*/.Assets.at("js/sniplist/custom-crop-slider.js"))),format.raw/*232.80*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*233.27*/routes/*233.33*/.Assets.at("js/sniplist/viewSniplists.js"))),format.raw/*233.75*/(""""></script>
 
             <!-- Play Framework JavaScript routes for AJAX calls. -->
-            <script src=""""),_display_(Seq[Any](/*216.27*/routes/*216.33*/.Application.javascriptRoutes())),format.raw/*216.64*/("""" type="text/javascript"></script>
+            <script src=""""),_display_(Seq[Any](/*236.27*/routes/*236.33*/.Application.javascriptRoutes())),format.raw/*236.64*/("""" type="text/javascript"></script>
 
                 <!-- MediaElementPlayer -->
-            <script src=""""),_display_(Seq[Any](/*219.27*/routes/*219.33*/.Assets.at("js/mediaelement/mediaelement-and-player.min.js"))),format.raw/*219.93*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*239.27*/routes/*239.33*/.Assets.at("js/mediaelement/mediaelement-and-player.min.js"))),format.raw/*239.93*/(""""></script>
 
 
 
-            <script src=""""),_display_(Seq[Any](/*223.27*/routes/*223.33*/.Assets.at("js/sniplist/dynamicAjax.js"))),format.raw/*223.73*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*243.27*/routes/*243.33*/.Assets.at("js/sniplist/dynamicAjax.js"))),format.raw/*243.73*/(""""></script>
 
 
                 <!-- BLOCK UI -->
-            <script src=""""),_display_(Seq[Any](/*227.27*/routes/*227.33*/.Assets.at("js/jquery/blockUI.js"))),format.raw/*227.67*/(""""></script>
+            <script src=""""),_display_(Seq[Any](/*247.27*/routes/*247.33*/.Assets.at("js/jquery/blockUI.js"))),format.raw/*247.67*/(""""></script>
 
 
             <script type="text/javascript" charset="utf-8">
@@ -264,97 +284,97 @@ Seq[Any](format.raw/*1.80*/("""
             var globalAudioPlayer;
 
             // Portfolio
-            (function($) """),format.raw/*238.26*/("""{"""),format.raw/*238.27*/("""
+            (function($) """),format.raw/*258.26*/("""{"""),format.raw/*258.27*/("""
             "use strict";
             var $container = $('.portfolio'),
             $items = $container.find('.portfolio-item'),
             portfolioLayout = 'fitRows';
 
-            if( $container.hasClass('portfolio-centered') ) """),format.raw/*244.61*/("""{"""),format.raw/*244.62*/("""
+            if( $container.hasClass('portfolio-centered') ) """),format.raw/*264.61*/("""{"""),format.raw/*264.62*/("""
             portfolioLayout = 'masonry';
-            """),format.raw/*246.13*/("""}"""),format.raw/*246.14*/("""
+            """),format.raw/*266.13*/("""}"""),format.raw/*266.14*/("""
 
-            /* $container.isotope("""),format.raw/*248.35*/("""{"""),format.raw/*248.36*/("""
+            /* $container.isotope("""),format.raw/*268.35*/("""{"""),format.raw/*268.36*/("""
              filter: '*',
              animationEngine: 'best-available',
              layoutMode: portfolioLayout,
-             animationOptions: """),format.raw/*252.32*/("""{"""),format.raw/*252.33*/("""
+             animationOptions: """),format.raw/*272.32*/("""{"""),format.raw/*272.33*/("""
              duration: 750,
              easing: 'linear',
              queue: false
-             """),format.raw/*256.14*/("""}"""),format.raw/*256.15*/(""",
-             masonry: """),format.raw/*257.23*/("""{"""),format.raw/*257.24*/("""
-             """),format.raw/*258.14*/("""}"""),format.raw/*258.15*/("""
-             """),format.raw/*259.14*/("""}"""),format.raw/*259.15*/(""", refreshWaypoints());
+             """),format.raw/*276.14*/("""}"""),format.raw/*276.15*/(""",
+             masonry: """),format.raw/*277.23*/("""{"""),format.raw/*277.24*/("""
+             """),format.raw/*278.14*/("""}"""),format.raw/*278.15*/("""
+             """),format.raw/*279.14*/("""}"""),format.raw/*279.15*/(""", refreshWaypoints());
              */
-            function refreshWaypoints() """),format.raw/*261.41*/("""{"""),format.raw/*261.42*/("""
-            setTimeout(function() """),format.raw/*262.35*/("""{"""),format.raw/*262.36*/("""
-            """),format.raw/*263.13*/("""}"""),format.raw/*263.14*/(""", 1000);
-            """),format.raw/*264.13*/("""}"""),format.raw/*264.14*/("""
+            function refreshWaypoints() """),format.raw/*281.41*/("""{"""),format.raw/*281.42*/("""
+            setTimeout(function() """),format.raw/*282.35*/("""{"""),format.raw/*282.36*/("""
+            """),format.raw/*283.13*/("""}"""),format.raw/*283.14*/(""", 1000);
+            """),format.raw/*284.13*/("""}"""),format.raw/*284.14*/("""
 
-            $('nav.portfolio-filter ul a').on('click', function() """),format.raw/*266.67*/("""{"""),format.raw/*266.68*/("""
+            $('nav.portfolio-filter ul a').on('click', function() """),format.raw/*286.67*/("""{"""),format.raw/*286.68*/("""
             var selector = $(this).attr('data-filter');
-            $container.isotope("""),format.raw/*268.32*/("""{"""),format.raw/*268.33*/(""" filter: selector """),format.raw/*268.51*/("""}"""),format.raw/*268.52*/(""", refreshWaypoints());
+            $container.isotope("""),format.raw/*288.32*/("""{"""),format.raw/*288.33*/(""" filter: selector """),format.raw/*288.51*/("""}"""),format.raw/*288.52*/(""", refreshWaypoints());
             $('nav.portfolio-filter ul a').removeClass('active');
             $(this).addClass('active');
             return false;
-            """),format.raw/*272.13*/("""}"""),format.raw/*272.14*/(""");
+            """),format.raw/*292.13*/("""}"""),format.raw/*292.14*/(""");
 
-            function getColumnNumber() """),format.raw/*274.40*/("""{"""),format.raw/*274.41*/("""
+            function getColumnNumber() """),format.raw/*294.40*/("""{"""),format.raw/*294.41*/("""
             var winWidth = $(window).width(),
             columnNumber = 1;
 
-            if (winWidth > 1200) """),format.raw/*278.34*/("""{"""),format.raw/*278.35*/("""
+            if (winWidth > 1200) """),format.raw/*298.34*/("""{"""),format.raw/*298.35*/("""
             columnNumber = 5;
-            """),format.raw/*280.13*/("""}"""),format.raw/*280.14*/(""" else if (winWidth > 950) """),format.raw/*280.40*/("""{"""),format.raw/*280.41*/("""
+            """),format.raw/*300.13*/("""}"""),format.raw/*300.14*/(""" else if (winWidth > 950) """),format.raw/*300.40*/("""{"""),format.raw/*300.41*/("""
             columnNumber = 4;
-            """),format.raw/*282.13*/("""}"""),format.raw/*282.14*/(""" else if (winWidth > 600) """),format.raw/*282.40*/("""{"""),format.raw/*282.41*/("""
+            """),format.raw/*302.13*/("""}"""),format.raw/*302.14*/(""" else if (winWidth > 600) """),format.raw/*302.40*/("""{"""),format.raw/*302.41*/("""
             columnNumber = 3;
-            """),format.raw/*284.13*/("""}"""),format.raw/*284.14*/(""" else if (winWidth > 400) """),format.raw/*284.40*/("""{"""),format.raw/*284.41*/("""
+            """),format.raw/*304.13*/("""}"""),format.raw/*304.14*/(""" else if (winWidth > 400) """),format.raw/*304.40*/("""{"""),format.raw/*304.41*/("""
             columnNumber = 2;
-            """),format.raw/*286.13*/("""}"""),format.raw/*286.14*/(""" else if (winWidth > 250) """),format.raw/*286.40*/("""{"""),format.raw/*286.41*/("""
+            """),format.raw/*306.13*/("""}"""),format.raw/*306.14*/(""" else if (winWidth > 250) """),format.raw/*306.40*/("""{"""),format.raw/*306.41*/("""
             columnNumber = 1;
-            """),format.raw/*288.13*/("""}"""),format.raw/*288.14*/("""
+            """),format.raw/*308.13*/("""}"""),format.raw/*308.14*/("""
             return columnNumber;
-            """),format.raw/*290.13*/("""}"""),format.raw/*290.14*/("""
+            """),format.raw/*310.13*/("""}"""),format.raw/*310.14*/("""
 
-            function setColumns() """),format.raw/*292.35*/("""{"""),format.raw/*292.36*/("""
+            function setColumns() """),format.raw/*312.35*/("""{"""),format.raw/*312.36*/("""
             var winWidth = $(window).width(),
             columnNumber = getColumnNumber(),
             itemWidth = Math.floor(winWidth / columnNumber);
 
-            $container.find('.portfolio-item').each(function() """),format.raw/*297.64*/("""{"""),format.raw/*297.65*/("""
-            $(this).css( """),format.raw/*298.26*/("""{"""),format.raw/*298.27*/("""
+            $container.find('.portfolio-item').each(function() """),format.raw/*317.64*/("""{"""),format.raw/*317.65*/("""
+            $(this).css( """),format.raw/*318.26*/("""{"""),format.raw/*318.27*/("""
             width : itemWidth + 'px'
-            """),format.raw/*300.13*/("""}"""),format.raw/*300.14*/(""");
-            """),format.raw/*301.13*/("""}"""),format.raw/*301.14*/(""");
-            """),format.raw/*302.13*/("""}"""),format.raw/*302.14*/("""
+            """),format.raw/*320.13*/("""}"""),format.raw/*320.14*/(""");
+            """),format.raw/*321.13*/("""}"""),format.raw/*321.14*/(""");
+            """),format.raw/*322.13*/("""}"""),format.raw/*322.14*/("""
 
-            function setPortfolio() """),format.raw/*304.37*/("""{"""),format.raw/*304.38*/("""
+            function setPortfolio() """),format.raw/*324.37*/("""{"""),format.raw/*324.38*/("""
             setColumns();
             $container.isotope('reLayout');
-            """),format.raw/*307.13*/("""}"""),format.raw/*307.14*/("""
+            """),format.raw/*327.13*/("""}"""),format.raw/*327.14*/("""
 
             /*
-            $container.imagesLoaded(function () """),format.raw/*310.49*/("""{"""),format.raw/*310.50*/("""
+            $container.imagesLoaded(function () """),format.raw/*330.49*/("""{"""),format.raw/*330.50*/("""
             setPortfolio();
-            """),format.raw/*312.13*/("""}"""),format.raw/*312.14*/(""");*/
+            """),format.raw/*332.13*/("""}"""),format.raw/*332.14*/(""");*/
 
-            $(window).on('resize', function () """),format.raw/*314.48*/("""{"""),format.raw/*314.49*/("""
+            $(window).on('resize', function () """),format.raw/*334.48*/("""{"""),format.raw/*334.49*/("""
             setPortfolio();
-            """),format.raw/*316.13*/("""}"""),format.raw/*316.14*/(""");
+            """),format.raw/*336.13*/("""}"""),format.raw/*336.14*/(""");
 
 
 
-            """),format.raw/*320.13*/("""}"""),format.raw/*320.14*/(""")(jQuery);
+            """),format.raw/*340.13*/("""}"""),format.raw/*340.14*/(""")(jQuery);
             </script>
 
                 <!-- Google Analytics Tracking JS -->
             <script>
-            (function(i,s,o,g,r,a,m)"""),format.raw/*325.37*/("""{"""),format.raw/*325.38*/("""i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()"""),format.raw/*325.88*/("""{"""),format.raw/*325.89*/("""
-            (i[r].q=i[r].q||[]).push(arguments)"""),format.raw/*326.48*/("""}"""),format.raw/*326.49*/(""",i[r].l=1*new Date();a=s.createElement(o),
+            (function(i,s,o,g,r,a,m)"""),format.raw/*345.37*/("""{"""),format.raw/*345.38*/("""i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()"""),format.raw/*345.88*/("""{"""),format.raw/*345.89*/("""
+            (i[r].q=i[r].q||[]).push(arguments)"""),format.raw/*346.48*/("""}"""),format.raw/*346.49*/(""",i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            """),format.raw/*328.13*/("""}"""),format.raw/*328.14*/(""")(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            """),format.raw/*348.13*/("""}"""),format.raw/*348.14*/(""")(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
             ga('create', 'UA-52100641-2', 'auto');
             ga('send', 'pageview');
@@ -374,11 +394,11 @@ Seq[Any](format.raw/*1.80*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 20:41:56 EDT 2014
+                    DATE: Tue Aug 12 03:14:12 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/main.scala.html
-                    HASH: f4d411c7f9ca78f298c531e2a41d386d9c8b4474
-                    MATRIX: 790->1|1068->79|1098->190|1171->228|1185->234|1213->241|1289->281|1316->286|1774->708|1789->714|1846->749|1958->825|1973->831|2026->862|2108->908|2123->914|2183->952|2315->1048|2330->1054|2385->1087|2519->1185|2534->1191|2583->1218|2665->1264|2680->1270|2740->1308|2881->1413|2896->1419|2948->1449|3030->1495|3045->1501|3099->1533|3234->1632|3249->1638|3311->1678|3396->1727|3411->1733|3465->1765|3555->1819|3570->1825|3633->1866|3909->2106|3924->2112|3974->2140|4716->2846|4741->2862|4780->2863|4825->2876|4883->2898|4898->2904|4941->2924|5028->2975|5053->2991|5093->2993|5535->3403|5842->3674|5869->3692|5909->3694|5980->3729|5999->3739|6080->3797|6151->3832|6170->3842|6265->3914|6336->3949|6355->3959|6454->4035|6504->4066|6544->4068|6615->4103|6634->4113|6710->4167|6773->4198|6840->4229|6868->4248|6908->4250|6979->4285|6998->4295|7075->4350|7146->4385|7165->4395|7247->4454|7310->4485|7379->4518|7406->4536|7446->4538|7517->4573|7571->4618|7619->4628|7947->4920|7960->4924|8001->4943|8319->5225|8334->5231|8379->5253|8419->5256|8476->5303|8513->5317|8698->5465|8711->5468|8796->5529|8862->5557|8919->5603|8957->5617|9176->5803|9248->5838|9268->5848|9345->5902|9396->5933|9436->5934|9510->5971|9530->5981|9611->6038|9675->6069|9912->6269|9942->6276|10295->6592|10324->6611|10365->6613|12901->9116|12953->9131|12979->9147|13020->9149|13798->9894|14335->10394|14351->10400|14430->10455|14560->10548|14576->10554|14642->10597|14718->10636|14734->10642|14799->10684|14875->10723|14891->10729|14956->10771|15032->10810|15048->10816|15116->10861|15192->10900|15208->10906|15280->10955|15356->10994|15372->11000|15440->11045|15516->11084|15532->11090|15597->11132|15673->11171|15689->11177|15761->11226|15837->11265|15853->11271|15924->11319|15989->11347|16023->11358|16139->11437|16155->11443|16214->11479|16290->11518|16306->11524|16367->11562|16443->11601|16459->11607|16529->11654|16605->11693|16621->11699|16686->11741|16835->11853|16851->11859|16905->11890|17051->11999|17067->12005|17150->12065|17232->12110|17248->12116|17311->12156|17426->12234|17442->12240|17499->12274|17765->12511|17795->12512|18062->12750|18092->12751|18177->12807|18207->12808|18274->12846|18304->12847|18485->12999|18515->13000|18647->13103|18677->13104|18731->13129|18761->13130|18805->13145|18835->13146|18879->13161|18909->13162|19019->13243|19049->13244|19114->13280|19144->13281|19187->13295|19217->13296|19268->13318|19298->13319|19397->13389|19427->13390|19546->13480|19576->13481|19623->13499|19653->13500|19853->13671|19883->13672|19957->13717|19987->13718|20131->13833|20161->13834|20235->13879|20265->13880|20320->13906|20350->13907|20424->13952|20454->13953|20509->13979|20539->13980|20613->14025|20643->14026|20698->14052|20728->14053|20802->14098|20832->14099|20887->14125|20917->14126|20991->14171|21021->14172|21098->14220|21128->14221|21195->14259|21225->14260|21477->14483|21507->14484|21563->14511|21593->14512|21674->14564|21704->14565|21749->14581|21779->14582|21824->14598|21854->14599|21923->14639|21953->14640|22068->14726|22098->14727|22195->14795|22225->14796|22297->14839|22327->14840|22411->14895|22441->14896|22513->14939|22543->14940|22594->14962|22624->14963|22803->15113|22833->15114|22912->15164|22942->15165|23020->15214|23050->15215|23228->15364|23258->15365
-                    LINES: 26->1|32->1|34->5|37->8|37->8|37->8|39->10|39->10|50->21|50->21|50->21|53->24|53->24|53->24|54->25|54->25|54->25|57->28|57->28|57->28|60->31|60->31|60->31|61->32|61->32|61->32|64->35|64->35|64->35|65->36|65->36|65->36|69->40|69->40|69->40|70->41|70->41|70->41|72->43|72->43|72->43|76->47|76->47|76->47|92->63|92->63|92->63|92->63|92->63|92->63|92->63|93->64|93->64|93->64|100->71|105->76|105->76|105->76|106->77|106->77|106->77|107->78|107->78|107->78|108->79|108->79|108->79|109->80|109->80|110->81|110->81|110->81|111->82|112->83|112->83|112->83|113->84|113->84|113->84|114->85|114->85|114->85|115->86|117->88|117->88|117->88|118->89|118->89|118->89|122->93|122->93|122->93|127->98|127->98|127->98|127->98|127->98|127->98|129->100|129->100|129->100|129->100|129->100|129->100|133->104|134->105|134->105|134->105|135->106|135->106|137->108|137->108|137->108|138->109|146->117|146->117|152->123|152->123|152->123|196->167|197->168|197->168|197->168|211->182|224->195|224->195|224->195|227->198|227->198|227->198|228->199|228->199|228->199|229->200|229->200|229->200|230->201|230->201|230->201|231->202|231->202|231->202|232->203|232->203|232->203|233->204|233->204|233->204|234->205|234->205|234->205|235->206|235->206|235->206|237->208|237->208|239->210|239->210|239->210|240->211|240->211|240->211|241->212|241->212|241->212|242->213|242->213|242->213|245->216|245->216|245->216|248->219|248->219|248->219|252->223|252->223|252->223|256->227|256->227|256->227|267->238|267->238|273->244|273->244|275->246|275->246|277->248|277->248|281->252|281->252|285->256|285->256|286->257|286->257|287->258|287->258|288->259|288->259|290->261|290->261|291->262|291->262|292->263|292->263|293->264|293->264|295->266|295->266|297->268|297->268|297->268|297->268|301->272|301->272|303->274|303->274|307->278|307->278|309->280|309->280|309->280|309->280|311->282|311->282|311->282|311->282|313->284|313->284|313->284|313->284|315->286|315->286|315->286|315->286|317->288|317->288|319->290|319->290|321->292|321->292|326->297|326->297|327->298|327->298|329->300|329->300|330->301|330->301|331->302|331->302|333->304|333->304|336->307|336->307|339->310|339->310|341->312|341->312|343->314|343->314|345->316|345->316|349->320|349->320|354->325|354->325|354->325|354->325|355->326|355->326|357->328|357->328
+                    HASH: ec7449dbd2376fc409809dafac350fe77a7e62c9
+                    MATRIX: 790->1|1068->79|1098->190|1171->228|1185->234|1213->241|1289->281|1316->286|1774->708|1789->714|1846->749|1958->825|1973->831|2026->862|2108->908|2123->914|2183->952|2315->1048|2330->1054|2385->1087|2519->1185|2534->1191|2583->1218|2665->1264|2680->1270|2740->1308|2881->1413|2896->1419|2948->1449|3030->1495|3045->1501|3099->1533|3234->1632|3249->1638|3311->1678|3396->1727|3411->1733|3465->1765|3555->1819|3570->1825|3633->1866|3909->2106|3924->2112|3974->2140|4716->2846|4741->2862|4780->2863|4825->2876|4883->2898|4898->2904|4941->2924|5272->3219|5299->3237|5339->3239|5410->3274|5429->3284|5510->3342|5560->3373|5600->3375|5671->3410|5690->3420|5766->3474|5829->3505|5896->3536|5924->3555|5964->3557|6035->3592|6054->3602|6131->3657|6202->3692|6221->3702|6303->3761|6366->3792|6435->3825|6462->3843|6502->3845|6573->3880|6627->3925|6675->3935|7004->4228|7017->4232|7059->4251|7377->4533|7392->4539|7437->4561|7477->4564|7534->4611|7571->4625|7755->4773|7767->4776|7851->4837|7916->4865|7972->4911|8009->4925|8227->5111|8298->5146|8317->5156|8393->5210|8443->5241|8482->5242|8553->5277|8572->5287|8652->5344|8715->5375|9910->6533|9926->6539|9970->6559|10165->6717|10181->6723|10240->6758|10371->6852|10387->6858|10454->6901|10589->6999|10605->7005|10664->7040|10796->7135|10812->7141|10879->7184|11149->7417|11179->7424|11620->7828|11649->7847|11690->7849|14244->10370|14296->10385|14322->10401|14363->10403|15141->11148|15678->11648|15694->11654|15773->11709|15903->11802|15919->11808|15985->11851|16061->11890|16077->11896|16142->11938|16218->11977|16234->11983|16293->12019|16369->12058|16385->12064|16466->12122|16544->12163|16560->12169|16625->12211|16701->12250|16717->12256|16785->12301|16861->12340|16877->12346|16949->12395|17025->12434|17041->12440|17109->12485|17185->12524|17201->12530|17266->12572|17342->12611|17358->12617|17430->12666|17506->12705|17522->12711|17593->12759|17658->12787|17692->12798|17808->12877|17824->12883|17883->12919|17959->12958|17975->12964|18036->13002|18112->13041|18128->13047|18198->13094|18274->13133|18290->13139|18355->13181|18504->13293|18520->13299|18574->13330|18720->13439|18736->13445|18819->13505|18901->13550|18917->13556|18980->13596|19095->13674|19111->13680|19168->13714|19434->13951|19464->13952|19731->14190|19761->14191|19846->14247|19876->14248|19943->14286|19973->14287|20154->14439|20184->14440|20316->14543|20346->14544|20400->14569|20430->14570|20474->14585|20504->14586|20548->14601|20578->14602|20688->14683|20718->14684|20783->14720|20813->14721|20856->14735|20886->14736|20937->14758|20967->14759|21066->14829|21096->14830|21215->14920|21245->14921|21292->14939|21322->14940|21522->15111|21552->15112|21626->15157|21656->15158|21800->15273|21830->15274|21904->15319|21934->15320|21989->15346|22019->15347|22093->15392|22123->15393|22178->15419|22208->15420|22282->15465|22312->15466|22367->15492|22397->15493|22471->15538|22501->15539|22556->15565|22586->15566|22660->15611|22690->15612|22767->15660|22797->15661|22864->15699|22894->15700|23146->15923|23176->15924|23232->15951|23262->15952|23343->16004|23373->16005|23418->16021|23448->16022|23493->16038|23523->16039|23592->16079|23622->16080|23737->16166|23767->16167|23864->16235|23894->16236|23966->16279|23996->16280|24080->16335|24110->16336|24182->16379|24212->16380|24263->16402|24293->16403|24472->16553|24502->16554|24581->16604|24611->16605|24689->16654|24719->16655|24897->16804|24927->16805
+                    LINES: 26->1|32->1|34->5|37->8|37->8|37->8|39->10|39->10|50->21|50->21|50->21|53->24|53->24|53->24|54->25|54->25|54->25|57->28|57->28|57->28|60->31|60->31|60->31|61->32|61->32|61->32|64->35|64->35|64->35|65->36|65->36|65->36|69->40|69->40|69->40|70->41|70->41|70->41|72->43|72->43|72->43|76->47|76->47|76->47|92->63|92->63|92->63|92->63|92->63|92->63|92->63|97->68|97->68|97->68|98->69|98->69|98->69|99->70|99->70|100->71|100->71|100->71|101->72|102->73|102->73|102->73|103->74|103->74|103->74|104->75|104->75|104->75|105->76|107->78|107->78|107->78|108->79|108->79|108->79|112->83|112->83|112->83|117->88|117->88|117->88|117->88|117->88|117->88|119->90|119->90|119->90|119->90|119->90|119->90|123->94|124->95|124->95|124->95|125->96|125->96|126->97|126->97|126->97|127->98|150->121|150->121|150->121|152->123|152->123|152->123|153->124|153->124|153->124|154->125|154->125|154->125|155->126|155->126|155->126|160->131|160->131|169->140|169->140|169->140|213->184|214->185|214->185|214->185|228->199|241->212|241->212|241->212|244->215|244->215|244->215|245->216|245->216|245->216|246->217|246->217|246->217|247->218|247->218|247->218|249->220|249->220|249->220|250->221|250->221|250->221|251->222|251->222|251->222|252->223|252->223|252->223|253->224|253->224|253->224|254->225|254->225|254->225|255->226|255->226|255->226|257->228|257->228|259->230|259->230|259->230|260->231|260->231|260->231|261->232|261->232|261->232|262->233|262->233|262->233|265->236|265->236|265->236|268->239|268->239|268->239|272->243|272->243|272->243|276->247|276->247|276->247|287->258|287->258|293->264|293->264|295->266|295->266|297->268|297->268|301->272|301->272|305->276|305->276|306->277|306->277|307->278|307->278|308->279|308->279|310->281|310->281|311->282|311->282|312->283|312->283|313->284|313->284|315->286|315->286|317->288|317->288|317->288|317->288|321->292|321->292|323->294|323->294|327->298|327->298|329->300|329->300|329->300|329->300|331->302|331->302|331->302|331->302|333->304|333->304|333->304|333->304|335->306|335->306|335->306|335->306|337->308|337->308|339->310|339->310|341->312|341->312|346->317|346->317|347->318|347->318|349->320|349->320|350->321|350->321|351->322|351->322|353->324|353->324|356->327|356->327|359->330|359->330|361->332|361->332|363->334|363->334|365->336|365->336|369->340|369->340|374->345|374->345|374->345|374->345|375->346|375->346|377->348|377->348
                     -- GENERATED --
                 */
             

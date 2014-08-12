@@ -37,8 +37,7 @@ Seq[Any](format.raw/*1.22*/("""
 
 
 """),_display_(Seq[Any](/*9.2*/main(Messages("playauthenticate.login.title"),"login")/*9.56*/ {_display_(Seq[Any](format.raw/*9.58*/("""
-"""),format.raw/*65.7*/("""
-    <div class="container mt">
+    <div class="container">
         <div class="row">
             <div class="centered">
                 <div class="col-md-12">
@@ -66,9 +65,9 @@ Seq[Any](format.raw/*1.22*/("""
                                                     <div class="row">
                                                         <div class="col-xs-12">
                                                             <ul id="social-sign-in" class="inline-block list-unstyled">
-                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*94.95*/com/*94.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google"))),format.raw/*94.173*/("""" title="Sign in with Google" rel="nofollow"><i class="icon-google-plus-sign icon-5x go-color"></i></a></li>
-                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*95.95*/com/*95.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter"))),format.raw/*95.174*/("""" title="Sign in with Twitter" rel="nofollow"><i class="icon-twitter-sign icon-5x tw-color"></i></a></li>
-                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*96.95*/com/*96.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook"))),format.raw/*96.175*/("""" title="Sign in with Facebook" rel="nofollow"><i class="icon-facebook-sign icon-5x fb-color"></i></a></li>
+                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*38.95*/com/*38.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google"))),format.raw/*38.173*/("""" title="Sign in with Google" rel="nofollow"><i class="fa fa-google-plus-square fa-5x go-color"></i></a></li>
+                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*39.95*/com/*39.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter"))),format.raw/*39.174*/("""" title="Sign in with Twitter" rel="nofollow"><i class="fa fa-twitter-square fa-5x tw-color"></i></a></li>
+                                                                <li><a target="_blank" href=""""),_display_(Seq[Any](/*40.95*/com/*40.98*/.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook"))),format.raw/*40.175*/("""" title="Sign in with Facebook" rel="nofollow"><i class="fa fa-facebook-square fa-5x fb-color"></i></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -76,36 +75,36 @@ Seq[Any](format.raw/*1.22*/("""
                                                 <div class="col-sm-6 col-xs-12">
                                                     <div class="row">
                                                         <div class="col-xs-12"><h3>Log In with E-mail</h3>
-                                                            """),_display_(Seq[Any](/*104.62*/if(loginForm.hasGlobalErrors)/*104.91*/ {_display_(Seq[Any](format.raw/*104.93*/("""
-                                                                <div class="alert alert-danger">"""),_display_(Seq[Any](/*105.98*/loginForm/*105.107*/.globalError.message)),format.raw/*105.127*/("""</div>
-                                                            """)))})),format.raw/*106.62*/("""
-                                                            """),_display_(Seq[Any](/*107.62*/if(flash.contains(Application.FLASH_ERROR_KEY))/*107.109*/ {_display_(Seq[Any](format.raw/*107.111*/("""
-                                                                <div class="alert alert-danger">"""),_display_(Seq[Any](/*108.98*/flash()/*108.105*/.get(Application.FLASH_ERROR_KEY))),format.raw/*108.138*/("""</div>
-                                                            """)))})),format.raw/*109.62*/("""
+                                                            """),_display_(Seq[Any](/*48.62*/if(loginForm.hasGlobalErrors)/*48.91*/ {_display_(Seq[Any](format.raw/*48.93*/("""
+                                                                <div class="alert alert-danger">"""),_display_(Seq[Any](/*49.98*/loginForm/*49.107*/.globalError.message)),format.raw/*49.127*/("""</div>
+                                                            """)))})),format.raw/*50.62*/("""
+                                                            """),_display_(Seq[Any](/*51.62*/if(flash.contains(Application.FLASH_ERROR_KEY))/*51.109*/ {_display_(Seq[Any](format.raw/*51.111*/("""
+                                                                <div class="alert alert-danger">"""),_display_(Seq[Any](/*52.98*/flash()/*52.105*/.get(Application.FLASH_ERROR_KEY))),format.raw/*52.138*/("""</div>
+                                                            """)))})),format.raw/*53.62*/("""
 
 
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-xs-12">
-                                                            <form id="loginForm" method="POST" action=""""),_display_(Seq[Any](/*116.105*/routes/*116.111*/.Application.doLogin())),format.raw/*116.133*/("""" accept-charset="UTF-8">
+                                                            <form id="loginForm" method="POST" action=""""),_display_(Seq[Any](/*60.105*/routes/*60.111*/.Application.doLogin())),format.raw/*60.133*/("""" accept-charset="UTF-8">
 
 
                                                                 <div class="input-group">
-                                                                    <span class="input-group-addon talign-m"><i class="icon-envelope icon-2x"></i></span>
+                                                                    <span class="input-group-addon talign-m"><i class="fa fa-envelope fa-2x"></i></span>
                                                                     <input id="email" class="form-control input-lg" placeholder="Email" required="required" maxlength="100" type="email" name="email" value="">
                                                                 </div>
-                                                                """),_display_(Seq[Any](/*123.66*/if(loginForm.error("email") != null)/*123.102*/ {_display_(Seq[Any](format.raw/*123.104*/("""
-                                                                    <span class="help-inline red">"""),_display_(Seq[Any](/*124.100*/Messages(loginForm.error("email").message, loginForm.error("email").arguments: _*))),format.raw/*124.182*/("""</span>
-                                                                """)))})),format.raw/*125.66*/("""
+                                                                """),_display_(Seq[Any](/*67.66*/if(loginForm.error("email") != null)/*67.102*/ {_display_(Seq[Any](format.raw/*67.104*/("""
+                                                                    <span class="help-inline red">"""),_display_(Seq[Any](/*68.100*/Messages(loginForm.error("email").message, loginForm.error("email").arguments: _*))),format.raw/*68.182*/("""</span>
+                                                                """)))})),format.raw/*69.66*/("""
                                                                 <div class="input-group">
-                                                                    <span class="input-group-addon talign-m"><i class="icon-asterisk icon-2x"></i></span>
+                                                                    <span class="input-group-addon talign-m"><i class="fa fa-asterisk fa-2x"></i></span>
                                                                     <input id="password" class="form-control input-lg" placeholder="Password" required="required" minLength="5" maxlength="60" type="password" name="password">
                                                                 </div>
 
-                                                                """),_display_(Seq[Any](/*131.66*/if(loginForm.error("password") != null)/*131.105*/ {_display_(Seq[Any](format.raw/*131.107*/("""
-                                                                    <span class="help-inline red">"""),_display_(Seq[Any](/*132.100*/Messages(loginForm.error("password").message, loginForm.error("password").arguments: _*))),format.raw/*132.188*/("""</span>
-                                                                """)))})),format.raw/*133.66*/("""
+                                                                """),_display_(Seq[Any](/*75.66*/if(loginForm.error("password") != null)/*75.105*/ {_display_(Seq[Any](format.raw/*75.107*/("""
+                                                                    <span class="help-inline red">"""),_display_(Seq[Any](/*76.100*/Messages(loginForm.error("password").message, loginForm.error("password").arguments: _*))),format.raw/*76.188*/("""</span>
+                                                                """)))})),format.raw/*77.66*/("""
 
                                                                 <div class="form-group">
                                                                     <button type="submit" id="btn-signin" class="btn btn-block btn-primary btn-lg">Log In</button>
@@ -146,11 +145,11 @@ Seq[Any](format.raw/*1.22*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 19:11:07 EDT 2014
+                    DATE: Tue Aug 12 02:42:43 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/login.scala.html
-                    HASH: b5c08ee8d70c81293fa8d55e68c8c3170b8c330e
-                    MATRIX: 848->1|971->52|992->65|1061->21|1091->43|1126->104|1167->111|1229->165|1268->167|1297->2440|3257->4364|3269->4367|3367->4442|3607->4646|3619->4649|3718->4725|3955->4926|3967->4929|4067->5006|4782->5684|4821->5713|4862->5715|4998->5814|5018->5823|5062->5843|5164->5912|5264->5975|5322->6022|5364->6024|5500->6123|5518->6130|5575->6163|5677->6232|6101->6618|6118->6624|6164->6646|6824->7269|6871->7305|6913->7307|7052->7408|7158->7490|7265->7564|7914->8176|7964->8215|8006->8217|8145->8318|8257->8406|8364->8480
-                    LINES: 28->1|31->6|31->6|32->1|34->4|36->6|39->9|39->9|39->9|40->65|69->94|69->94|69->94|70->95|70->95|70->95|71->96|71->96|71->96|79->104|79->104|79->104|80->105|80->105|80->105|81->106|82->107|82->107|82->107|83->108|83->108|83->108|84->109|91->116|91->116|91->116|98->123|98->123|98->123|99->124|99->124|100->125|106->131|106->131|106->131|107->132|107->132|108->133
+                    HASH: a3ee93c94ccb061f819962adbd835653f6352d2f
+                    MATRIX: 848->1|971->52|992->65|1061->21|1091->43|1126->104|1167->111|1229->165|1268->167|3225->2088|3237->2091|3335->2166|3576->2371|3588->2374|3687->2450|3925->2652|3937->2655|4037->2732|4752->3411|4790->3440|4830->3442|4965->3541|4984->3550|5027->3570|5128->3639|5227->3702|5284->3749|5325->3751|5460->3850|5477->3857|5533->3890|5634->3959|6057->4345|6073->4351|6118->4373|6776->4995|6822->5031|6863->5033|7001->5134|7106->5216|7212->5290|7859->5901|7908->5940|7949->5942|8087->6043|8198->6131|8304->6205
+                    LINES: 28->1|31->6|31->6|32->1|34->4|36->6|39->9|39->9|39->9|68->38|68->38|68->38|69->39|69->39|69->39|70->40|70->40|70->40|78->48|78->48|78->48|79->49|79->49|79->49|80->50|81->51|81->51|81->51|82->52|82->52|82->52|83->53|90->60|90->60|90->60|97->67|97->67|97->67|98->68|98->68|99->69|105->75|105->75|105->75|106->76|106->76|107->77
                     -- GENERATED --
                 */
             

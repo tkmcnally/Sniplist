@@ -28,19 +28,16 @@ object viewSnips extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appenda
 def /*3.2*/content/*3.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
 Seq[Any](format.raw/*3.13*/("""
-    <div class="container mtb">
-        <div id="global-message" class="alert alert-danger hidden">
 
-        </div>
         <div class="row">
             <div class="col-md-12">
-                <h1>Snips</h1> <h4 style="display : inline ;">by <a class="dynamic-link" href=""""),_display_(Seq[Any](/*10.97*/routes/*10.103*/.Application.getUserProfile(userSnips.user.id.toString))),format.raw/*10.158*/("""">"""),_display_(Seq[Any](/*10.161*/userSnips/*10.170*/.user.name)),format.raw/*10.180*/("""</a></h4>
+                <h1>Snips</h1> <h4 style="display : inline ;">by <a class="dynamic-link" href=""""),_display_(Seq[Any](/*7.97*/routes/*7.103*/.Application.getUserProfile(userSnips.user.id.toString))),format.raw/*7.158*/("""">"""),_display_(Seq[Any](/*7.161*/userSnips/*7.170*/.user.name)),format.raw/*7.180*/("""</a></h4>
             </div>
         </div>
         <div class="row">
 
             <div class="col-md-8">
-                """),_display_(Seq[Any](/*16.18*/views/*16.23*/.html.snip.arraySnips(true, localUser, userSnips))),format.raw/*16.72*/("""
+                """),_display_(Seq[Any](/*13.18*/views/*13.23*/.html.snip.arraySnips(true, localUser, userSnips))),format.raw/*13.72*/("""
             </div>
             <div class="col-md-4"></div>
         </div>
@@ -90,17 +87,17 @@ Seq[Any](format.raw/*3.13*/("""
                 </div>
             </div>
         </div>
-    </div>
+
 """)))};
 Seq[Any](format.raw/*1.90*/("""
 
-"""),format.raw/*67.2*/("""
+"""),format.raw/*64.2*/("""
 
 
- """),_display_(Seq[Any](/*70.3*/if(!js)/*70.10*/ {_display_(Seq[Any](format.raw/*70.12*/("""
-    """),_display_(Seq[Any](/*71.6*/main("My Snips", "mySnips")/*71.33*/(content))),format.raw/*71.42*/("""
-""")))}/*72.3*/else/*72.8*/{_display_(Seq[Any](format.raw/*72.9*/("""
-    """),_display_(Seq[Any](/*73.6*/content)),format.raw/*73.13*/("""
+ """),_display_(Seq[Any](/*67.3*/if(!js)/*67.10*/ {_display_(Seq[Any](format.raw/*67.12*/("""
+    """),_display_(Seq[Any](/*68.6*/main("My Snips", "mySnips")/*68.33*/(content))),format.raw/*68.42*/("""
+""")))}/*69.3*/else/*69.8*/{_display_(Seq[Any](format.raw/*69.9*/("""
+    """),_display_(Seq[Any](/*70.6*/content)),format.raw/*70.13*/("""
 """)))})))}
     }
     
@@ -113,11 +110,11 @@ Seq[Any](format.raw/*1.90*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 19:11:08 EDT 2014
+                    DATE: Tue Aug 12 02:56:45 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snip/viewSnips.scala.html
-                    HASH: f73dc5ac304ee3a7df802af132dbc22a5e93d363
-                    MATRIX: 828->1|993->92|1007->99|1091->103|1402->378|1418->384|1496->439|1536->442|1555->451|1588->461|1747->584|1761->589|1832->638|4018->89|4047->2785|4087->2790|4103->2797|4143->2799|4184->2805|4220->2832|4251->2841|4271->2844|4283->2849|4321->2850|4362->2856|4391->2863
-                    LINES: 26->1|28->3|28->3|30->3|37->10|37->10|37->10|37->10|37->10|37->10|43->16|43->16|43->16|95->1|97->67|100->70|100->70|100->70|101->71|101->71|101->71|102->72|102->72|102->72|103->73|103->73
+                    HASH: 9c176afa8d10b935e257e1d8c0873bc24e5ff3b6
+                    MATRIX: 828->1|993->92|1007->99|1091->103|1286->263|1301->269|1378->324|1417->327|1435->336|1467->346|1626->469|1640->474|1711->523|3887->89|3916->2660|3956->2665|3972->2672|4012->2674|4053->2680|4089->2707|4120->2716|4140->2719|4152->2724|4190->2725|4231->2731|4260->2738
+                    LINES: 26->1|28->3|28->3|30->3|34->7|34->7|34->7|34->7|34->7|34->7|40->13|40->13|40->13|92->1|94->64|97->67|97->67|97->67|98->68|98->68|98->68|99->69|99->69|99->69|100->70|100->70
                     -- GENERATED --
                 */
             

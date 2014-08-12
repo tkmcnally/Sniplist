@@ -28,39 +28,36 @@ object userProfile extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appen
 def /*3.2*/content/*3.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
 Seq[Any](format.raw/*3.13*/("""
-    <div class="container mtb">
         <div class="row inline">
-            <h1 style="display: inline-block;">"""),_display_(Seq[Any](/*6.49*/userProfile/*6.60*/.name)),format.raw/*6.65*/("""
-                """),_display_(Seq[Any](/*7.18*/if(localUser.id.eq(userProfile.id))/*7.53*/ {_display_(Seq[Any](format.raw/*7.55*/("""
-                    """),_display_(Seq[Any](/*8.22*/if(localUser.following != null && localUser.following.contains(userProfile.id))/*8.101*/ {_display_(Seq[Any](format.raw/*8.103*/("""
-                        <button type="button" class="btn btn-success follow-user-btn" value=""""),_display_(Seq[Any](/*9.95*/userProfile/*9.106*/.id.toString())),format.raw/*9.120*/("""">
+            <h1 style="display: inline-block;">"""),_display_(Seq[Any](/*5.49*/userProfile/*5.60*/.name)),format.raw/*5.65*/("""
+                """),_display_(Seq[Any](/*6.18*/if(localUser.id.eq(userProfile.id))/*6.53*/ {_display_(Seq[Any](format.raw/*6.55*/("""
+                    """),_display_(Seq[Any](/*7.22*/if(localUser.following != null && localUser.following.contains(userProfile.id))/*7.101*/ {_display_(Seq[Any](format.raw/*7.103*/("""
+                        <button type="button" class="btn btn-success follow-user-btn" value=""""),_display_(Seq[Any](/*8.95*/userProfile/*8.106*/.id.toString())),format.raw/*8.120*/("""">
                             Following</button>
-                    """)))}/*11.23*/else/*11.28*/{_display_(Seq[Any](format.raw/*11.29*/("""
-                        <button type="button" class="btn btn-primary follow-user-btn" value=""""),_display_(Seq[Any](/*12.95*/userProfile/*12.106*/.id.toString())),format.raw/*12.120*/("""">
+                    """)))}/*10.23*/else/*10.28*/{_display_(Seq[Any](format.raw/*10.29*/("""
+                        <button type="button" class="btn btn-primary follow-user-btn" value=""""),_display_(Seq[Any](/*11.95*/userProfile/*11.106*/.id.toString())),format.raw/*11.120*/("""">
                             Follow</button>
-                    """)))})),format.raw/*14.22*/("""
-                """)))})),format.raw/*15.18*/("""
+                    """)))})),format.raw/*13.22*/("""
+                """)))})),format.raw/*14.18*/("""
             </h1>
         </div>
         <div class="row">
             <h2>Snips</h2>
-            """),_display_(Seq[Any](/*20.14*/snip/*20.18*/.arraySnips(true, localUser, userSnips))),format.raw/*20.57*/("""
+            """),_display_(Seq[Any](/*19.14*/snip/*19.18*/.arraySnips(true, localUser, userSnips))),format.raw/*19.57*/("""
         </div>
         <div class="row">
             <h2>Sniplists</h2>
-            """),_display_(Seq[Any](/*24.14*/views/*24.19*/.html.sniplist.arraySniplists(true, localUser, mySnips, mySniplists, userSniplists))),format.raw/*24.102*/("""
+            """),_display_(Seq[Any](/*23.14*/views/*23.19*/.html.sniplist.arraySniplists(true, localUser, mySnips, mySniplists, userSniplists))),format.raw/*23.102*/("""
         </div>
-    </div>
-
 """)))};
 Seq[Any](format.raw/*1.230*/("""
 
-"""),format.raw/*28.2*/("""
+"""),format.raw/*25.2*/("""
 
-"""),_display_(Seq[Any](/*30.2*/if(!js)/*30.9*/ {_display_(Seq[Any](format.raw/*30.11*/("""
-    """),_display_(Seq[Any](/*31.6*/main("User Profile", "userProfile")/*31.41*/(content))),format.raw/*31.50*/("""
-""")))}/*32.3*/else/*32.8*/{_display_(Seq[Any](format.raw/*32.9*/("""
-    """),_display_(Seq[Any](/*33.6*/content)),format.raw/*33.13*/("""
+"""),_display_(Seq[Any](/*27.2*/if(!js)/*27.9*/ {_display_(Seq[Any](format.raw/*27.11*/("""
+    """),_display_(Seq[Any](/*28.6*/main("User Profile", "userProfile")/*28.41*/(content))),format.raw/*28.50*/("""
+""")))}/*29.3*/else/*29.8*/{_display_(Seq[Any](format.raw/*29.9*/("""
+    """),_display_(Seq[Any](/*30.6*/content)),format.raw/*30.13*/("""
 """)))})))}
     }
     
@@ -73,11 +70,11 @@ Seq[Any](format.raw/*1.230*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 19:11:07 EDT 2014
+                    DATE: Tue Aug 12 02:57:32 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/userProfile.scala.html
-                    HASH: e3534c9325fa7f0acbdbc88a3864530a5ad0595b
-                    MATRIX: 919->1|1224->232|1238->239|1322->243|1471->357|1490->368|1516->373|1569->391|1612->426|1651->428|1708->450|1796->529|1836->531|1966->626|1986->637|2022->651|2112->723|2125->728|2164->729|2295->824|2316->835|2353->849|2453->917|2503->935|2639->1035|2652->1039|2713->1078|2835->1164|2849->1169|2955->1252|3024->229|3053->1281|3091->1284|3106->1291|3146->1293|3187->1299|3231->1334|3262->1343|3282->1346|3294->1351|3332->1352|3373->1358|3402->1365
-                    LINES: 26->1|28->3|28->3|30->3|33->6|33->6|33->6|34->7|34->7|34->7|35->8|35->8|35->8|36->9|36->9|36->9|38->11|38->11|38->11|39->12|39->12|39->12|41->14|42->15|47->20|47->20|47->20|51->24|51->24|51->24|56->1|58->28|60->30|60->30|60->30|61->31|61->31|61->31|62->32|62->32|62->32|63->33|63->33
+                    HASH: 5a267bae11fc254c7bae780d3f046130fa954b57
+                    MATRIX: 919->1|1224->232|1238->239|1322->243|1439->325|1458->336|1484->341|1537->359|1580->394|1619->396|1676->418|1764->497|1804->499|1934->594|1954->605|1990->619|2080->691|2093->696|2132->697|2263->792|2284->803|2321->817|2421->885|2471->903|2607->1003|2620->1007|2681->1046|2803->1132|2817->1137|2923->1220|2980->229|3009->1237|3047->1240|3062->1247|3102->1249|3143->1255|3187->1290|3218->1299|3238->1302|3250->1307|3288->1308|3329->1314|3358->1321
+                    LINES: 26->1|28->3|28->3|30->3|32->5|32->5|32->5|33->6|33->6|33->6|34->7|34->7|34->7|35->8|35->8|35->8|37->10|37->10|37->10|38->11|38->11|38->11|40->13|41->14|46->19|46->19|46->19|50->23|50->23|50->23|53->1|55->25|57->27|57->27|57->27|58->28|58->28|58->28|59->29|59->29|59->29|60->30|60->30
                     -- GENERATED --
                 */
             

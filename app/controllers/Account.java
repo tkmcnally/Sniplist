@@ -14,6 +14,7 @@ import com.feth.play.module.pa.user.AuthUser;
 import org.bson.types.ObjectId;
 import play.data.Form;
 import play.data.format.Formats.NonEmpty;
+import play.data.validation.Constraints;
 import play.data.validation.Constraints.MinLength;
 import play.data.validation.Constraints.Required;
 import play.i18n.Messages;
@@ -46,6 +47,18 @@ public class Account extends Controller {
 		}
 
 	}
+
+    public static class UserSettings {
+        @Required
+        public String first_name;
+
+        public String last_name;
+
+        @Constraints.Email
+        public String email;
+
+
+    }
 
 	public static class PasswordChange {
 		@MinLength(5)

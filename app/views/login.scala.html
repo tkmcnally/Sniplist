@@ -7,63 +7,7 @@
 
 
 @main(Messages("playauthenticate.login.title"),"login") {
-@*
-    <div class="container mtb">
-        <div class="row">
-            <div class="centered">
-                <div class="col-md-6" style="padding-right:20px; border-right: 1px solid #ccc;">
-                    @if(loginForm.hasGlobalErrors) {
-                        <p>asdasda</p>
-                        <div class="alert alert-danger">@loginForm.globalError.message</div>
-
-                    }
-
-                    @if(ctx().flash().size() > 0) {
-                        <div class="alert alert-danger">
-                            @ctx().flash().get("error")
-                        </div>
-                    }
-
-
-                    <h3>Use a sniplist account</h3>
-                    @helper.form(routes.Application.doLogin) {
-
-                        @if(loginForm.hasGlobalErrors) {
-
-                            <div class="alert alert-danger">@loginForm.globalError.message</div>
-
-                        }
-
-
-                        @inputText(
-                            loginForm("email"),
-                            '_showConstraints -> false,
-                            '_label -> Messages("playauthenticate.login.email.placeholder"),
-                            'type -> "email"
-                        )
-                        @inputPassword(
-                            loginForm("password"),
-                            '_showConstraints -> false,
-                            '_label -> Messages("playauthenticate.login.password.placeholder")
-                        )
-
-                        <input type="submit" value="@Messages("playauthenticate.login.now")" class="btn btn-primary top-buffer-sm"><br/>
-                        <br/>
-                        <a href="javascript:void(0);" onclick="window.location.href = jsRoutes.controllers.Signup.forgotPassword($('#email').val() || null).absoluteURL();">@Messages("playauthenticate.login.forgot.password")</a>
-
-                    }
-
-                 </div>
-                <div class="col-md-6">
-                    <h3>Use another account</h3>
-                    @* Display list of available providers
-                    @_providerPartial(skipCurrent=false)
-                </div>
-            </div>
-        </div>
-    </div>
-    *@
-    <div class="container mt">
+    <div class="container">
         <div class="row">
             <div class="centered">
                 <div class="col-md-12">
@@ -91,9 +35,9 @@
                                                     <div class="row">
                                                         <div class="col-xs-12">
                                                             <ul id="social-sign-in" class="inline-block list-unstyled">
-                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google")" title="Sign in with Google" rel="nofollow"><i class="icon-google-plus-sign icon-5x go-color"></i></a></li>
-                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter")" title="Sign in with Twitter" rel="nofollow"><i class="icon-twitter-sign icon-5x tw-color"></i></a></li>
-                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook")" title="Sign in with Facebook" rel="nofollow"><i class="icon-facebook-sign icon-5x fb-color"></i></a></li>
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google")" title="Sign in with Google" rel="nofollow"><i class="fa fa-google-plus-square fa-5x go-color"></i></a></li>
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter")" title="Sign in with Twitter" rel="nofollow"><i class="fa fa-twitter-square fa-5x tw-color"></i></a></li>
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook")" title="Sign in with Facebook" rel="nofollow"><i class="fa fa-facebook-square fa-5x fb-color"></i></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -117,14 +61,14 @@
 
 
                                                                 <div class="input-group">
-                                                                    <span class="input-group-addon talign-m"><i class="icon-envelope icon-2x"></i></span>
+                                                                    <span class="input-group-addon talign-m"><i class="fa fa-envelope fa-2x"></i></span>
                                                                     <input id="email" class="form-control input-lg" placeholder="Email" required="required" maxlength="100" type="email" name="email" value="">
                                                                 </div>
                                                                 @if(loginForm.error("email") != null) {
                                                                     <span class="help-inline red">@Messages(loginForm.error("email").message, loginForm.error("email").arguments: _*)</span>
                                                                 }
                                                                 <div class="input-group">
-                                                                    <span class="input-group-addon talign-m"><i class="icon-asterisk icon-2x"></i></span>
+                                                                    <span class="input-group-addon talign-m"><i class="fa fa-asterisk fa-2x"></i></span>
                                                                     <input id="password" class="form-control input-lg" placeholder="Password" required="required" minLength="5" maxlength="60" type="password" name="password">
                                                                 </div>
 

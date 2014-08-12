@@ -42,7 +42,7 @@ Seq[Any](format.raw/*1.1*/("""<!-- Sniplist core JavaScript -->
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 19:11:08 EDT 2014
+                    DATE: Tue Aug 12 02:05:44 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/scripts/moreScripts.scala.html
                     HASH: 044c13d39db04f205578b0506bd2307d33148b77
                     MATRIX: 869->0|952->48|966->54|1023->90|1084->116|1098->122|1157->160|1218->186|1232->192|1300->239|1361->265|1375->271|1438->313

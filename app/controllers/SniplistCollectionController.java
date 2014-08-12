@@ -83,13 +83,15 @@ public class SniplistCollectionController extends Controller {
 
     @Restrict(@Group(Application.USER_ROLE))
     public static Result mySniplists() {
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
         final User user = Application.getLocalUser(session());
 
-        SniplistCollection mySnips = SniplistCollection.findByUser(user);
-        List<Sniplist> sniplists = Sniplist.findByUser(user);
+        SnipCollection mySnips = SnipCollection.findByUser(user);
+        SniplistCollection mySniplists = SniplistCollection.findByUser(user);
 
-        return ok();
+        return ok(views.html.sniplist.sniplists.render(js, user, mySnips, mySniplists, mySniplists));
     }
 
     @Restrict(@Group(Application.USER_ROLE))

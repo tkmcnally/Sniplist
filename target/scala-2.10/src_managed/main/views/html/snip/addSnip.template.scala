@@ -29,9 +29,7 @@ def /*3.2*/content/*3.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
 Seq[Any](format.raw/*3.13*/("""
 
-    <div class="container mtb">
         <div class="row">
-            <div id="global-message" class="alert alert-danger hidden"></div>
             <h1>Add Snip</h1>
         </div>
         <div class="row">
@@ -53,9 +51,6 @@ Seq[Any](format.raw/*3.13*/("""
             </div>
                 <div id="slider" class="slider-bar"></div>
                 <button id="play-snip-button" type="button" class="btn btn-primary btn-large bottom-buffer-sm center-block">Play Snip</button>
-
-
-
         </section>
         <div class="row">
             <div class="col-md-3"></div>
@@ -100,20 +95,15 @@ Seq[Any](format.raw/*3.13*/("""
             <input name="time_min" type="text" value="">
             <input name="time_max" type="text" value="">
         </form>
-
-
-
-
-    </div>
 """)))};
 Seq[Any](format.raw/*1.51*/("""
 
-"""),format.raw/*81.2*/("""
+"""),format.raw/*71.2*/("""
 
-"""),_display_(Seq[Any](/*83.2*/if(!js)/*83.9*/ {_display_(Seq[Any](format.raw/*83.11*/("""
-    """),_display_(Seq[Any](/*84.6*/main("Add Snip", "addSnip")/*84.33*/(content))),format.raw/*84.42*/("""
-""")))}/*85.3*/else/*85.8*/{_display_(Seq[Any](format.raw/*85.9*/("""
-    """),_display_(Seq[Any](/*86.6*/content)),format.raw/*86.13*/("""
+"""),_display_(Seq[Any](/*73.2*/if(!js)/*73.9*/ {_display_(Seq[Any](format.raw/*73.11*/("""
+    """),_display_(Seq[Any](/*74.6*/main("Add Snip", "addSnip")/*74.33*/(content))),format.raw/*74.42*/("""
+""")))}/*75.3*/else/*75.8*/{_display_(Seq[Any](format.raw/*75.9*/("""
+    """),_display_(Seq[Any](/*76.6*/content)),format.raw/*76.13*/("""
 """)))})))}
     }
     
@@ -126,11 +116,11 @@ Seq[Any](format.raw/*1.51*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 19:11:08 EDT 2014
+                    DATE: Tue Aug 12 02:41:46 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snip/addSnip.scala.html
-                    HASH: ab7fee54a1b7454afad0962453d28aab23239306
-                    MATRIX: 804->1|930->53|944->60|1028->64|4268->50|4297->3265|4335->3268|4350->3275|4390->3277|4431->3283|4467->3310|4498->3319|4518->3322|4530->3327|4568->3328|4609->3334|4638->3341
-                    LINES: 26->1|28->3|28->3|30->3|109->1|111->81|113->83|113->83|113->83|114->84|114->84|114->84|115->85|115->85|115->85|116->86|116->86
+                    HASH: e0f8d733b21cacafc081bbfded31c22b86d2623c
+                    MATRIX: 804->1|930->53|944->60|1028->64|4140->50|4169->3137|4207->3140|4222->3147|4262->3149|4303->3155|4339->3182|4370->3191|4390->3194|4402->3199|4440->3200|4481->3206|4510->3213
+                    LINES: 26->1|28->3|28->3|30->3|99->1|101->71|103->73|103->73|103->73|104->74|104->74|104->74|105->75|105->75|105->75|106->76|106->76
                     -- GENERATED --
                 */
             

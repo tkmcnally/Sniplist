@@ -65,6 +65,8 @@ function replaceContent(data, callBack) {
             viewSnipsReady();
 
             bindDynamicLinkClick();
+
+            globalMessageHide();
         },
         error: function(data) {
             $('#wrapper-content').unblock();

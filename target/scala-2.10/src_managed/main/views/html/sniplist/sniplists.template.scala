@@ -29,7 +29,7 @@ object sniplists extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appenda
 def /*4.2*/content/*4.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
 Seq[Any](format.raw/*4.13*/("""
-    <div class="container mtb">
+
         <div id="global-message" class="alert alert-danger hidden">
 
         </div>
@@ -68,7 +68,7 @@ Seq[Any](format.raw/*4.13*/("""
                 </div>
             </div>
         </div>
-    </div>
+
 """)))};
 Seq[Any](format.raw/*1.170*/("""
 """),format.raw/*3.1*/("""
@@ -90,10 +90,10 @@ Seq[Any](format.raw/*1.170*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 19:11:08 EDT 2014
+                    DATE: Tue Aug 12 02:56:24 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/sniplist/sniplists.scala.html
-                    HASH: ce1d9e8bf5b04f6abb2fa880c6deb8f90a5fd4df
-                    MATRIX: 884->1|1167->211|1181->218|1265->222|1558->479|1608->520|1648->522|2031->873|2077->883|2091->888|2196->971|3193->169|3220->209|3248->1928|3286->1931|3301->1938|3341->1940|3382->1946|3426->1981|3457->1990|3477->1993|3489->1998|3527->1999|3568->2005|3597->2012
+                    HASH: 267b089a04ab731d75304624c57c2c2107d9d30c
+                    MATRIX: 884->1|1167->211|1181->218|1265->222|1527->448|1577->489|1617->491|2000->842|2046->852|2060->857|2165->940|3152->169|3179->209|3207->1887|3245->1890|3260->1897|3300->1899|3341->1905|3385->1940|3416->1949|3436->1952|3448->1957|3486->1958|3527->1964|3556->1971
                     LINES: 26->1|29->4|29->4|31->4|41->14|41->14|41->14|49->22|50->23|50->23|50->23|73->1|74->3|75->45|77->47|77->47|77->47|78->48|78->48|78->48|79->49|79->49|79->49|80->50|80->50
                     -- GENERATED --
                 */

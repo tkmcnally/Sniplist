@@ -1,7 +1,6 @@
 @(js: java.lang.Boolean, localUser: models.User = null, mySnips: models.SnipCollection, mySniplists: models.SniplistCollection, userProfile: models.User, userSnips: models.SnipCollection, userSniplists: models.SniplistCollection)
 
 @content = {
-    <div class="container mtb">
         <div class="row inline">
             <h1 style="display: inline-block;">@userProfile.name
                 @if(localUser.id.eq(userProfile.id)) {
@@ -23,8 +22,6 @@
             <h2>Sniplists</h2>
             @views.html.sniplist.arraySniplists(true, localUser, mySnips, mySniplists, userSniplists)
         </div>
-    </div>
-
 }
 
 @if(!js) {

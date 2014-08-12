@@ -30,18 +30,22 @@ def /*3.2*/content/*3.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 Seq[Any](format.raw/*3.13*/("""
     <div class="container">
         <div class="row">
-            <div class="alert alert-danger">"""),_display_(Seq[Any](/*6.46*/json/*6.50*/.get("error"))),format.raw/*6.63*/("""</div>
+            <div class="alert alert-danger alert-dismissable">
+                <a class="panel-close close" data-dismiss="alert">×</a>
+                <i class="fa fa-exclamation-triangle"></i>
+                """),_display_(Seq[Any](/*9.18*/json/*9.22*/.get("error"))),format.raw/*9.35*/("""
+            </div>
         </div>
     </div>
 """)))};
 Seq[Any](format.raw/*1.79*/("""
 
-"""),format.raw/*9.2*/("""
+"""),format.raw/*13.2*/("""
 
-"""),_display_(Seq[Any](/*11.2*/if(!js)/*11.9*/ {_display_(Seq[Any](format.raw/*11.11*/("""
-    """),_display_(Seq[Any](/*12.6*/main("Error", "error")/*12.28*/(content))),format.raw/*12.37*/("""
-""")))}/*13.3*/else/*13.8*/{_display_(Seq[Any](format.raw/*13.9*/("""
-    """),_display_(Seq[Any](/*14.6*/content)),format.raw/*14.13*/("""
+"""),_display_(Seq[Any](/*15.2*/if(!js)/*15.9*/ {_display_(Seq[Any](format.raw/*15.11*/("""
+    """),_display_(Seq[Any](/*16.6*/main("Error", "error")/*16.28*/(content))),format.raw/*16.37*/("""
+""")))}/*17.3*/else/*17.8*/{_display_(Seq[Any](format.raw/*17.9*/("""
+    """),_display_(Seq[Any](/*18.6*/content)),format.raw/*18.13*/("""
 """)))})))}
     }
     
@@ -54,11 +58,11 @@ Seq[Any](format.raw/*1.79*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 21:04:00 EDT 2014
+                    DATE: Tue Aug 12 02:20:43 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/badRequest.scala.html
-                    HASH: fddf8398584234e44112dae7408dd249b50377ce
-                    MATRIX: 837->1|991->83|1005->90|1089->94|1227->197|1239->201|1273->214|1349->78|1379->251|1419->256|1434->263|1474->265|1516->272|1547->294|1578->303|1599->307|1611->312|1649->313|1691->320|1720->327
-                    LINES: 26->1|28->3|28->3|30->3|33->6|33->6|33->6|37->1|39->9|41->11|41->11|41->11|42->12|42->12|42->12|43->13|43->13|43->13|44->14|44->14
+                    HASH: 9ab4f602d0fa7c86f23cd1e7e78d54d14063a7f1
+                    MATRIX: 837->1|991->83|1005->90|1089->94|1396->366|1408->370|1442->383|1532->78|1563->434|1603->439|1618->446|1658->448|1700->455|1731->477|1762->486|1783->490|1795->495|1833->496|1875->503|1904->510
+                    LINES: 26->1|28->3|28->3|30->3|36->9|36->9|36->9|41->1|43->13|45->15|45->15|45->15|46->16|46->16|46->16|47->17|47->17|47->17|48->18|48->18
                     -- GENERATED --
                 */
             

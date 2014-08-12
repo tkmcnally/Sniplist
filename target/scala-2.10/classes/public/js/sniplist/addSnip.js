@@ -254,12 +254,12 @@ function saveSnip() {
             $("#global-message").removeClass("hidden");
             $("#global-message").removeClass("alert-danger");
             $("#global-message").addClass("alert-success");
-            $("#global-message").text("Your snip has been saved!");
+            $("#global-message-text").text("Your snip has been saved!");
         },
         error: function(data) {
             $("#global-message").removeClass("hidden");
             $("#global-message").addClass("alert-danger");
-            $("#global-message").text(data.error);
+            $("#global-message-text").text(data.error);
         }
     })
 }
@@ -302,6 +302,21 @@ function bindExternalPlayerButtons() {
     $(".follow-user-btn").click(function() {
        followUser($(this));
     });
+
+    /* DATE PICKER */
+    $('#birth-date-picker').datetimepicker({
+        pickTime: false
+    });
+
+    /* NAVBAR ACTIVE SELECTOR */
+    $('.nav-sidebar li').click(function(e) {
+        $('.nav-sidebar li.active').removeClass('active');
+        var $this = $(this);
+        if (!$this.hasClass('active')) {
+            $this.addClass('active');
+        }
+        e.preventDefault();
+    });
 }
 
 
@@ -309,7 +324,7 @@ function addSnipGetVideo(data) {
     if(data.error) {
         $("#global-message").removeClass("hidden");
         $("#global-message").addClass("alert-danger");
-        $("#global-message").text(data.error);
+        $("#global-message-text").text(data.error);
     } else {
         $("#global-message").addClass("hidden");
         $("#title-input").val(data.title);
@@ -436,4 +451,22 @@ function followUser(followBtn) {
             $(followBtn).html(oldBtn.html());
         }
     })
+}
+
+function globalErrorMessage(message) {
+    $("#global-message").removeClass();
+    $("#global-message").addClass("col-md-8 alert alert-danger alert-dismissable fa fa-exclamation-triangle");
+    $("#global-message-text").text(message);
+}
+
+function globalSuccessMessage(message) {
+    $("#global-message").removeClass();
+    $("#global-message").addClass("col-md-8 alert alert-success alert-dismissable hidden ");
+    $("#global-message-icon").removeClass();
+    $("#global-message-icon").addClass("fa fa-check-circle");
+    $("#global-message-text").text(message);
+}
+
+function globalMessageHide() {
+    $("#global-message").addClass("hidden");
 }

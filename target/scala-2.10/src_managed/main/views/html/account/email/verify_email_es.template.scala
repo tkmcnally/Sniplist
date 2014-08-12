@@ -50,7 +50,7 @@ Hola """),_display_(Seq[Any](/*2.7*/name)),format.raw/*2.11*/(""",
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 11 19:11:07 EDT 2014
+                    DATE: Tue Aug 12 02:05:44 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/account/email/verify_email_es.scala.html
                     HASH: 47dcb1550f899d0d54e7c99bba647038e0590933
                     MATRIX: 819->1|982->70|1024->78|1049->82|1159->157|1195->172

@@ -119,9 +119,9 @@
                                                     <div class="row">
                                                         <div class="col-xs-12">
                                                             <ul id="social-sign-in" class="inline-block list-unstyled">
-                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google")" title="Sign in with Google" rel="nofollow"><i class="icon-google-plus-sign icon-5x go-color"></i></a></li>
-                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter")" title="Sign in with Twitter" rel="nofollow"><i class="icon-twitter-sign icon-5x tw-color"></i></a></li>
-                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook")" title="Sign in with Facebook" rel="nofollow"><i class="icon-facebook-sign icon-5x fb-color"></i></a></li>
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google")" title="Sign in with Google" rel="nofollow"><i class="fa fa-google-plus-square fa-5x go-color"></i></a></li>
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter")" title="Sign in with Twitter" rel="nofollow"><i class="fa fa-twitter-square fa-5x tw-color"></i></a></li>
+                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook")" title="Sign in with Facebook" rel="nofollow"><i class="fa fa-facebook-square fa-5x fb-color"></i></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -139,20 +139,20 @@
                                                             <form id="signUpForm" method="POST" action="@routes.Application.doSignup()" accept-charset="UTF-8">
 
                                                                 <div class="input-group">
-                                                                    <span class="input-group-addon talign-m"><i class="icon-user icon-2x"></i></span>
+                                                                    <span class="input-group-addon talign-m"><i class="fa fa-user fa-2x"></i></span>
 
                                                                     <input id="name" class="form-control input-lg" placeholder="Name" required="required" maxlength="100" type="text" name="name" value="">
                                                                 </div>
                                                                 <div class="input-group">
-                                                                    <span class="input-group-addon talign-m"><i class="icon-envelope icon-2x"></i></span>
+                                                                    <span class="input-group-addon talign-m"><i class="fa fa-envelope fa-2x"></i></span>
                                                                     <input id="email" class="form-control input-lg" placeholder="Email" required="required" maxlength="100" type="email" name="email" value="">
                                                                 </div>
                                                                 <div class="input-group">
-                                                                    <span class="input-group-addon talign-m"><i class="icon-asterisk icon-2x"></i></span>
+                                                                    <span class="input-group-addon talign-m"><i class="fa fa-asterisk fa-2x"></i></span>
                                                                     <input id="password" class="form-control input-lg" placeholder="Password" required="required" minLength="5" maxlength="60" type="password" name="password">
                                                                 </div>
                                                                 <div class="input-group  @if(signupForm.error("repeatPassword") != null) { has-error }">
-                                                                        <span class="input-group-addon talign-m"><i class="icon-asterisk icon-2x"></i></span>
+                                                                        <span class="input-group-addon talign-m"><i class="fa fa-asterisk fa-2x"></i></span>
                                                                         <input id="repeatPassword" class="form-control input-lg" placeholder="Confirm Password" required="required" minLength="5" maxlength="60" type="password" name="repeatPassword">
 
                                                                 </div>

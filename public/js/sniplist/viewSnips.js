@@ -77,13 +77,13 @@ function deleteSnip(elem) {
             $("#global-message").removeClass("hidden");
             $("#global-message").removeClass("alert-danger");
             $("#global-message").addClass("alert-success");
-            $("#global-message").text(data.message);
+            $("#global-message-text").text(data.message);
             $(elem.closest("tr").remove());
         },
         error: function(data) {
             $("#global-message").removeClass("hidden");
             $("#global-message").addClass("alert-danger");
-            $("#global-message").text(data.error);
+            $("#global-message-text").text(data.error);
         }
     });
 }
@@ -100,7 +100,7 @@ function loadModalData(callBack) {
         error: function(xhr, status, error) {
             $("#modal-message").removeClass("hidden");
             $("#modal-message").addClass("alert-danger");
-            $("#modal-message").text(xhr.responseText);
+            $("#global-message-text").text(xhr.responseText);
         }
     })
 }
@@ -145,7 +145,7 @@ function getNextSnip(callBack) {
         error: function(data) {
             $("#global-message").removeClass("hidden");
             $("#global-message").addClass("alert-danger");
-            $("#global-message").text(data.error);
+            $("#global-message-text").text(data.error);
         }
     })
 

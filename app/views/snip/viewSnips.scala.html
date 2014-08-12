@@ -1,10 +1,7 @@
 @(js: java.lang.Boolean, localUser: models.User = null, userSnips: models.SnipCollection)
 
 @content = {
-    <div class="container mtb">
-        <div id="global-message" class="alert alert-danger hidden">
 
-        </div>
         <div class="row">
             <div class="col-md-12">
                 <h1>Snips</h1> <h4 style="display : inline ;">by <a class="dynamic-link" href="@routes.Application.getUserProfile(userSnips.user.id.toString)">@userSnips.user.name</a></h4>
@@ -63,7 +60,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 }
 
 
