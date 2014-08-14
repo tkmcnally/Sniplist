@@ -113,28 +113,39 @@
                         <div class="col-md-2"></div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-2">
-                            <nav class="nav-sidebar">
-                                <ul class="nav">
-                                    <li class="active"><a class="dynamic-link" href="@routes.Application.index()">Popular</a></li>
-                                    <li class="nav-divider"></li>
-                                    <li><a class="dynamic-link" href="@routes.SnipCollectionController.mySnips()">Your Snips</a></li>
-                                    <li><a class="dynamic-link" href="@routes.SniplistCollectionController.mySniplists()">Your Sniplists</a></li>
-                                    <li><a class="dynamic-link" href="@routes.SnipCollectionController.mySnips()">Saved Snips</a></li>
-                                    <li><a class="dynamic-link" href="@routes.SniplistCollectionController.mySniplists()">Saved Sniplists</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div id="wrapper-content" class="col-sm-8">
-                            @content
+                @subjectPresentOr() {
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <nav class="nav-sidebar">
+                                    <ul class="nav">
+                                        <li class="active"><a class="dynamic-link" href="@routes.Application.index()">
+                                            Popular</a></li>
+                                        <li class="nav-divider"></li>
+                                        <li><a class="dynamic-link" href="@routes.SnipCollectionController.mySnips()">
+                                            Your Snips</a></li>
+                                        <li><a class="dynamic-link" href="@routes.SniplistCollectionController.mySniplists()">
+                                            Your Sniplists</a></li>
+                                        <li><a class="dynamic-link" href="@routes.SnipCollectionController.mySnips()">
+                                            Saved Snips</a></li>
+                                        <li><a class="dynamic-link" href="@routes.SniplistCollectionController.mySniplists()">
+                                            Saved Sniplists</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div id="wrapper-content" class="col-sm-10">
+                                @content
+                            </div>
                         </div>
                     </div>
-                </div>
+                } {
+                    <div id="wrapper-content" class="container">
+                        @content
+                    </div>
+                }
             </div>
 
-                <!-- *****************************************************************************************************************
+        <!-- *****************************************************************************************************************
             FOOTER
         ***************************************************************************************************************** -->
             @subjectNotPresent() {

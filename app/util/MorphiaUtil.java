@@ -2,6 +2,7 @@ package util;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
+import com.mongodb.gridfs.GridFS;
 import models.*;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
@@ -18,6 +19,7 @@ public class MorphiaUtil {
     private static MongoClient mongoClient;
     private static MongoClientURI mongoClientURI;
     private static Morphia morphia;
+    private static GridFS gridFS;
 
 
     /**
@@ -43,6 +45,8 @@ public class MorphiaUtil {
 
             datastore.ensureIndexes();
             datastore.ensureCaps();
+
+            gridFS = new GridFS(datastore.getDB(), Constants.MongoDB.PHOTO_COLLECTION);
 
             Logger.info("Morphia connection established.");
         } catch (UnknownHostException e) {
@@ -81,6 +85,10 @@ public class MorphiaUtil {
 
     public static Datastore getDatastore() {
         return datastore;
+    }
+
+    public static GridFS getGridFS() {
+        return gridFS;
     }
 
 }

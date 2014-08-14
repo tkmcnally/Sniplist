@@ -5,18 +5,7 @@
 var globalStateId = 0;
 
 $(document).ready(function(){
-    bindDynamicLinkClick();
-
-    $(window).on('popstate', function(evt) {
-        var data = {
-            url: window.location.pathname,
-            type: 'application/javascript'
-        };
-        replaceContent(data, null);
-
-    });
-
-
+    ajaxBindings();
 
 });
 
@@ -29,13 +18,38 @@ function bindDynamicLinkClick() {
 
         var data = {
             url: url,
-            type: 'application/javascript'
+            contentType: 'application/javascript',
+            type: 'GET'
         };
         replaceContent(data, null);
 
         var stateObj = {id: 1};
 
         window.history.pushState(stateObj, "Title", url);
+    });
+
+    $(".dynamic-form").unbind();
+    $(".dynamic-form").click(function(e) {
+        e.preventDefault();
+        var formTag = $(this).closest('form');
+        var url = formTag.attr('action');
+        var formData = new FormData($("#userSettingsForm")[0]);
+        console.log(formData);
+        var data = {
+            url: url,
+            contentType: false,
+            //payload: $("#userSettingsForm").serialize(),
+            payload: formData,
+            type: 'POST'
+        };
+        replaceContent(data, function(view) {
+            loadContentContainer(view);
+        });
+
+        var stateObj = {id: 1};
+
+        window.history.pushState(stateObj, "Title", url);
+
     });
 
 }
@@ -51,32 +65,68 @@ function replaceContent(data, callBack) {
         blockMsgClass: 'loading-block'
     });
 
-    var url = data.url;
     $.ajax({
         url : data.url,
-        data : data,
-        contentType: data.type,
+        data : data.payload,
+        contentType: data.contentType,
+        type: data.type,
+        processData: false,
         success: function(data) {
-            $('#wrapper-content').unblock();
-            $("#wrapper-content").html(data);
-
-            addSnipReady();
-            viewSniplistsReady();
-            viewSnipsReady();
-
-            bindDynamicLinkClick();
-
-            globalMessageHide();
+            loadContentContainer(data);
+            if(callBack != null){
+                callBack(data);
+            }
         },
         error: function(data) {
             $('#wrapper-content').unblock();
-
-            if(!$("#global-message").length) {
-                $("#wrapper-content").prepend(data);
+            if(callBack != null){
+                callBack(data.responseText);
             }
-           /* $("#global-message").removeClass("hidden");
-            $("#global-message").addClass("alert-danger");
-            $("#global-message").text(data);*/
+        }
+    });
+}
+
+function loadContentContainer(data) {
+    $('#wrapper-content').unblock();
+    $("#wrapper-content").html(data);
+
+    addSnipReady();
+    viewSniplistsReady();
+    viewSnipsReady();
+
+    bindDynamicLinkClick();
+
+    globalMessageHide();
+
+}
+
+function ajaxBindings() {
+    bindDynamicLinkClick();
+
+    $(window).on('popstate', function(evt) {
+        var data = {
+            url: window.location.pathname,
+            contentType: 'application/javascript',
+            type: 'GET'
+        };
+        replaceContent(data, null);
+
+    });
+}
+
+function uploadPhoto(form) {
+    alert(form.attr('action'));
+    $.ajax({
+        url : form.attr('action'),
+        data : new FormData(form[0]),
+        contentType: false,
+        type: 'POST',
+        processData: false,
+        success: function(data) {
+          $('#userProfilePhoto').attr('src', data.url);
+        },
+        error: function(data) {
+           console.log(data.responseText);
         }
     });
 }

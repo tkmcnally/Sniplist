@@ -2,8 +2,9 @@
 
 @content = {
         <div class="row inline">
+            <img src="@routes.Application.getImage(String.valueOf(userProfile.photo))" class="avatar img-circle img-thumbnail" alt="avatar" width="100" height="100">
             <h1 style="display: inline-block;">@userProfile.name
-                @if(localUser.id.eq(userProfile.id)) {
+                @if(!localUser.id.equals(userProfile.id)) {
                     @if(localUser.following != null && localUser.following.contains(userProfile.id)) {
                         <button type="button" class="btn btn-success follow-user-btn" value="@userProfile.id.toString()">
                             Following</button>

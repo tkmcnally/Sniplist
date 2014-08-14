@@ -8,6 +8,7 @@ GET         /restricted                              controllers.Application.res
 GET         /assets/javascript/routes.js             controllers.Application.jsRoutes
 
 GET         /profile                                 controllers.Application.profile
+POST        /profile                                 controllers.Application.updateUserSettings
 
 GET         /about                                   controllers.Application.about
 
@@ -22,12 +23,16 @@ GET         /u/:id                                   controllers.Application.get
 
 GET         /follow/:id                              controllers.Application.toggleFollow(id: String)
 
+GET         /img/:id                                 controllers.Application.getImage(id: String)
+
+POST        /user/updateUserPhoto                    controllers.Application.updateUserPhoto
 
 GET         /logout                                  com.feth.play.module.pa.controllers.Authenticate.logout
 GET         /authenticate/:provider                  com.feth.play.module.pa.controllers.Authenticate.authenticate(provider: String)
 
 GET         /signup                                  controllers.Application.signup
 POST        /signup                                  controllers.Application.doSignup
+
 
 GET         /accounts/unverified                     controllers.Signup.unverified
 GET         /authenticate/:provider/denied           controllers.Signup.oAuthDenied(provider: String)

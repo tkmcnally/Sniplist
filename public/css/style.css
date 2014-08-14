@@ -730,6 +730,10 @@ body {
     margin-top: 5px;
 }
 
+#signUpForm .signUpInline {
+    padding-right: 0px !important;
+}
+
 #signUpForm button {
     margin-top: 5px;
 }

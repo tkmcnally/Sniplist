@@ -10,7 +10,7 @@
         <div class="row">
             <h2>Following @followingList.size user(s)</h2>
             @for(fUser <- followingList) {
-                <a class="dynamic-link" href="@routes.Application.getUserProfile(fUser.id.toString)">@fUser.name</a>
+                <img src="@routes.Application.getImage(String.valueOf(fUser.photo))" class="avatar img-circle img-thumbnail" alt="avatar" width="100" height="100"><a class="dynamic-link" href="@routes.Application.getUserProfile(fUser.id.toString)">@fUser.name</a>
             }
         </div>
         <div class="row">

@@ -7,22 +7,16 @@
 
 
 @main(Messages("playauthenticate.login.title"),"login") {
-    <div class="container">
-        <div class="row">
-            <div class="centered">
-                <div class="col-md-12">
-                    <div id="contentContainer" class="container">
 
-                        <div class="row">
                             <div id="realContent" class="col-xs-12">
                                 <div class="row">
-                                    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-sm-offset-0">
+                                    <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-xs-12 col-sm-offset-0">
                                         <h1>Sign In</h1>
                                     </div>
 
                                 </div>
                                 <div class="row">
-                                    <section class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-sm-offset-0">
+                                    <section class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-xs-12 col-sm-offset-0">
                                         <div class="well well-lg">
                                             <div class="row">
                                                 <div class="col-sm-6 col-xs-12">
@@ -35,9 +29,9 @@
                                                     <div class="row">
                                                         <div class="col-xs-12">
                                                             <ul id="social-sign-in" class="inline-block list-unstyled">
-                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google")" title="Sign in with Google" rel="nofollow"><i class="fa fa-google-plus-square fa-5x go-color"></i></a></li>
-                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter")" title="Sign in with Twitter" rel="nofollow"><i class="fa fa-twitter-square fa-5x tw-color"></i></a></li>
-                                                                <li><a target="_blank" href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook")" title="Sign in with Facebook" rel="nofollow"><i class="fa fa-facebook-square fa-5x fb-color"></i></a></li>
+                                                                <li><a href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("google")" title="Sign in with Google" rel="nofollow"><i class="fa fa-google-plus-square fa-5x go-color"></i></a></li>
+                                                                <li><a href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("twitter")" title="Sign in with Twitter" rel="nofollow"><i class="fa fa-twitter-square fa-5x tw-color"></i></a></li>
+                                                                <li><a href="@com.feth.play.module.pa.controllers.routes.Authenticate.authenticate("facebook")" title="Sign in with Facebook" rel="nofollow"><i class="fa fa-facebook-square fa-5x fb-color"></i></a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -81,6 +75,9 @@
                                                                 </div>
                                                             </form>
                                                             <div class="form-group">
+                                                                <div class="topCushion">Not a member? <a href="@routes.Application.signup()">Sign up</a></div>
+                                                            </div>
+                                                            <div class="form-group">
                                                                 <div class="topCushion"><a href="#login">Forgot your password?</a></div>
                                                             </div>
                                                         </div><!-- end of column -->
@@ -91,12 +88,8 @@
                                     </section>
                                 </div><!-- end of row -->
                             </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </div>
-    </div>
+
+
 
 }

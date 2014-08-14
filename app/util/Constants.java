@@ -48,6 +48,14 @@ public class Constants {
 
     public static class LastFM {
         public static final String APIKEY = "lastfm.api.key";
+
         public static final String USERNAME = "lastfm.api.username";
+    }
+
+    public static class MongoDB {
+
+        public static final String PHOTO_COLLECTION = "photo";
+
+        public static final String DEFAULT_OBJECT_ID = "000000000000000000000000";
     }
 }

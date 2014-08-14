@@ -317,7 +317,12 @@ function bindExternalPlayerButtons() {
         }
         e.preventDefault();
     });
+
+    $('#userPhotoInput').change(function(e) {
+        uploadPhoto($(this).closest('form'));
+    });
 }
+
 
 
 function addSnipGetVideo(data) {
@@ -461,7 +466,7 @@ function globalErrorMessage(message) {
 
 function globalSuccessMessage(message) {
     $("#global-message").removeClass();
-    $("#global-message").addClass("col-md-8 alert alert-success alert-dismissable hidden ");
+    $("#global-message").addClass("col-md-8 alert alert-success alert-dismissable");
     $("#global-message-icon").removeClass();
     $("#global-message-icon").addClass("fa fa-check-circle");
     $("#global-message-text").text(message);

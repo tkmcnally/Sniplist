@@ -9,19 +9,29 @@ import com.feth.play.module.pa.user.AuthUserIdentity;
 import com.feth.play.module.pa.user.EmailIdentity;
 import com.feth.play.module.pa.user.NameIdentity;
 import com.feth.play.module.pa.user.FirstLastNameIdentity;
+import com.mongodb.gridfs.GridFS;
+import com.mongodb.gridfs.GridFSInputFile;
+import controllers.Application;
+import data.validation.SniplistConstraints;
+import data.validation.impl.DateValidator;
 import models.TokenAction.Type;
 import org.bson.types.ObjectId;
 
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
 import org.mongodb.morphia.query.Query;
+import play.data.Form;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
 
 
+import java.io.File;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.*;
 
 import org.mongodb.morphia.annotations.Entity;
+import providers.MyUsernamePasswordAuthUser;
 import util.Constants;
 import util.MorphiaUtil;
 
@@ -51,6 +61,9 @@ public class User implements Subject {
 
     public String lastName;
 
+    @Formats.DateTime(pattern = "MM-dd-YYYY")
+    public Date birthDate;
+
     @Formats.DateTime(pattern = "yyyy-MM-dd HH:mm:ss")
     public Date lastLogin;
 
@@ -67,9 +80,7 @@ public class User implements Subject {
 
     public List<ObjectId> following;
 
-
-
-
+    public ObjectId photo;
 
 
     public static boolean existsByAuthUserIdentity(
@@ -134,6 +145,7 @@ public class User implements Subject {
         // user.permissions.add(UserPermission.findByValue("printers.edit"));
         user.active = true;
         user.lastLogin = new Date();
+        user.photo = new ObjectId(Constants.MongoDB.DEFAULT_OBJECT_ID);
         user.linkedAccounts = Collections.singletonList(LinkedAccount
                 .create(user, authUser));
 
@@ -151,6 +163,7 @@ public class User implements Subject {
             final String name = identity.getName();
             if (name != null) {
                 user.name = name;
+                user.firstName = name;
             }
         }
 
@@ -337,6 +350,66 @@ public class User implements Subject {
         return false;
     }
 
+    public static void updateSettings(final User user, final Form<Application.UserSettings> filledForm) {
+        user.firstName = filledForm.data().get("first_name");
+        user.lastName = filledForm.data().get("last_name");
+        user.email = filledForm.data().get("email");
+        try {
+            user.birthDate = DateValidator.stringToDate(filledForm.data().get("birth_date"));
+        } catch (ParseException e) {}
 
+
+        String password = filledForm.data().get("password");
+        String repeatPassword = filledForm.data().get("repeatPassword");
+        if(password != null && repeatPassword != null) {
+            if(!password.isEmpty() && !repeatPassword.isEmpty() && password.equals(repeatPassword)) {
+                user.changePassword(new MyUsernamePasswordAuthUser(filledForm.data().get("password")),true);
+            }
+        }
+
+        MorphiaUtil.getDatastore().save(user);
+    }
+
+    public static boolean updatePhoto(final User user, final File file, final String fileName, final String contentType) {
+        boolean updateSuccess = false;
+        GridFS gridFSPhoto = MorphiaUtil.getGridFS();
+        try {
+            ObjectId existingPhotoId = user.photo;
+            ObjectId photoId = new ObjectId();
+            user.photo = photoId;
+            MorphiaUtil.getDatastore().save(user);
+
+            GridFSInputFile gridFSInputFile = gridFSPhoto.createFile(file);
+            gridFSInputFile.setId(photoId);
+            if(fileName != null) {
+                gridFSInputFile.setFilename(fileName);
+            } else {
+                gridFSInputFile.setFilename("unknown");
+            }
+            if(contentType != null) {
+                gridFSInputFile.setContentType(contentType);
+            } else {
+                gridFSInputFile.setContentType("image/png");
+            }
+            gridFSInputFile.save();
+
+            deleteExistingPhoto(existingPhotoId);
+
+            updateSuccess = true;
+        } catch (IOException e) {}
+
+        return updateSuccess;
+    }
+
+    public static boolean deleteExistingPhoto(final ObjectId photoId) {
+        boolean deleted = false;
+        GridFS gridFSPhoto = MorphiaUtil.getGridFS();
+        if(!Constants.MongoDB.DEFAULT_OBJECT_ID.equals(photoId.toString())) {
+            gridFSPhoto.remove(photoId);
+            deleted = true;
+        }
+
+        return deleted;
+    }
 
 }

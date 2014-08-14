@@ -22,6 +22,8 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import providers.MyUsernamePasswordAuthProvider;
 import providers.MyUsernamePasswordAuthUser;
+import scala.App;
+import util.SniplistUtil;
 import views.html.account.*;
 import views.html.account.link;
 
@@ -47,18 +49,6 @@ public class Account extends Controller {
 		}
 
 	}
-
-    public static class UserSettings {
-        @Required
-        public String first_name;
-
-        public String last_name;
-
-        @Constraints.Email
-        public String email;
-
-
-    }
 
 	public static class PasswordChange {
 		@MinLength(5)
@@ -262,5 +252,7 @@ public class Account extends Controller {
         com.feth.play.module.pa.controllers.Authenticate.logout();
         return redirect(routes.Application.index());
     }
+
+
 
 }

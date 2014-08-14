@@ -1,16 +1,26 @@
 package controllers;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
+import be.objectify.deadbolt.java.actions.SubjectPresent;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.mongodb.gridfs.GridFS;
+import com.mongodb.gridfs.GridFSDBFile;
+import data.validation.SniplistConstraints;
 import models.*;
+import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
 import play.Routes;
+import play.data.DynamicForm;
 import play.data.Form;
+import play.data.validation.Constraints;
+import play.i18n.Messages;
 import play.mvc.*;
 import play.mvc.Http.Session;
 import play.mvc.Result;
@@ -19,6 +29,8 @@ import providers.MyUsernamePasswordAuthProvider.MyLogin;
 import providers.MyUsernamePasswordAuthProvider.MySignup;
 
 import util.Constants;
+import util.MorphiaUtil;
+import util.SniplistUtil;
 import views.html.*;
 import be.objectify.deadbolt.java.actions.Group;
 import be.objectify.deadbolt.java.actions.Restrict;
@@ -27,12 +39,75 @@ import com.feth.play.module.pa.PlayAuthenticate;
 import com.feth.play.module.pa.providers.password.UsernamePasswordAuthProvider;
 import com.feth.play.module.pa.user.AuthUser;
 
+import static play.data.Form.form;
+
 public class Application extends Controller {
+
+
+    public static class UserSettings {
+
+        @Constraints.Required
+        public String first_name;
+
+        public String last_name;
+
+        @Constraints.Required
+        @Constraints.Email
+        public String email;
+
+        @Constraints.Required
+        @SniplistConstraints.Date
+        public String birth_date;
+
+        @Constraints.MinLength(5)
+        public String password;
+
+        @Constraints.MinLength(5)
+        public String repeatPassword;
+
+        public String validate() {
+
+            String validationMsg = null;
+            if(password != null && repeatPassword != null) {
+                if (!password.equals(repeatPassword)) {
+                    validationMsg = Messages.get("playauthenticate.change_password.error.passwords_not_same");
+                }
+            } else if(password != null || repeatPassword != null) {
+                validationMsg = Messages.get("playauthenticate.change_password.error.passwords_not_same");
+            }
+
+            return validationMsg;
+        }
+
+        public void bindFromUser(final User user) {
+            this.first_name = user.firstName;
+            this.last_name = user.lastName;
+            this.email = user.email;
+            if(user.birthDate != null) {
+                this.birth_date = SniplistUtil.dateToSimpleString(user.birthDate);
+            }
+        }
+
+        public Map<String, String> toMap() {
+            Map<String, String> settingsMap = new HashMap<String,String>();
+            UserSettings s = this;
+            for(Field f : s.getClass().getFields()) {
+                try {
+                    settingsMap.put(f.getName(), (f.get(s) == null) ? "" : f.get(s).toString());
+                } catch (IllegalAccessException e) {
+                    settingsMap.clear();
+                }
+            }
+            return settingsMap;
+        }
+    }
 
 	public static final String FLASH_MESSAGE_KEY = "message";
 	public static final String FLASH_ERROR_KEY = "error";
 	public static final String USER_ROLE = "user";
-	
+
+    private static final Form<UserSettings> USER_SETTINGS_FORM = form(UserSettings.class);
+
 	public static Result index() {
         boolean js = "application/javascript".equals(request().getHeader("content-type"));
         final User localUser = Application.getLocalUser(session());
@@ -89,7 +164,13 @@ public class Application extends Controller {
         boolean js = "application/javascript".equals(request().getHeader("content-type"));
 
 		final User localUser = getLocalUser(session());
-		return ok(profile.render(js, localUser));
+
+        UserSettings userSettings = new UserSettings();
+        userSettings.bindFromUser(localUser);
+
+        final Form<DynamicForm.Dynamic> userSettingsForm = form().bind(userSettings.toMap());
+
+		return ok(profile.render(js, userSettingsForm, localUser));
 	}
 
 	public static Result login() {
@@ -101,11 +182,9 @@ public class Application extends Controller {
 		final Form<MyLogin> filledForm = MyUsernamePasswordAuthProvider.LOGIN_FORM
 				.bindFromRequest();
 		if (filledForm.hasErrors()) {
-            System.out.println("!" + filledForm.errors());
 			// User did not fill everything properly
 			return badRequest(login.render(filledForm));
 		} else {
-            System.out.println("2" + filledForm.errors());
 			// Everything was filled
 			return UsernamePasswordAuthProvider.handleLogin(ctx());
 		}
@@ -225,6 +304,88 @@ public class Application extends Controller {
 	public static String formatTimestamp(final long t) {
 		return new SimpleDateFormat("yyyy-dd-MM HH:mm:ss").format(new Date(t));
 	}
+
+    @SubjectPresent
+    public static Result updateUserSettings() {
+
+        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
+        play.mvc.Http.MultipartFormData body = request().body().asMultipartFormData();
+
+        Result result = internalServerError();
+        final User localUser = Application.getLocalUser(session());
+        final Form<UserSettings> filledForm = USER_SETTINGS_FORM.bindFromRequest();
+        if(!filledForm.hasErrors()) {
+            User.updateSettings(localUser, filledForm);
+        }
+        result = ok(views.html.profile.render(true, filledForm, localUser));
+
+        return result;
+    }
+
+    @SubjectPresent
+    @BodyParser.Of(value = BodyParser.MultipartFormData.class, maxLength = 3000 * 1024)
+    public static Result updateUserPhoto() {
+        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
+
+        Result result = internalServerError();
+        final User localUser = Application.getLocalUser(session());
+        final Form<UserSettings> filledForm = USER_SETTINGS_FORM.bindFromRequest();
+
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+
+        if(!request().body().isMaxSizeExceeded()){
+            play.mvc.Http.MultipartFormData body = request().body().asMultipartFormData();
+            Http.MultipartFormData.FilePart picture = body.getFile("profilePhoto");
+            if (picture != null) {
+
+                String fileName = picture.getFilename();
+                String contentType = picture.getContentType();
+                File file = picture.getFile();
+                User.updatePhoto(localUser, file, fileName, contentType);
+            }
+            node.put("message","Photo updated!");
+            node.put("url","" + routes.Application.getImage(localUser.photo.toString()));
+            result = ok(node);
+        } else {
+            node.put("error","You cannot upload more than 3MB.");
+            result = ok(node);
+        }
+
+        return result;
+    }
+
+    public static Result getImage(final String imageId) {
+        Result result = internalServerError();
+
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectNode node = mapper.createObjectNode();
+        node.put("error", "Invalid Image ID!");
+        result = badRequest(node);
+       if(imageId != null && !imageId.isEmpty()) {
+           byte[] rawImage = getRawImage(imageId);
+           if (rawImage != null) {
+               result = ok(rawImage).as("image");
+           }
+       }
+        return result;
+    }
+
+    public static byte[] getRawImage(final String imageId) {
+        byte[] rawImage = null;
+        GridFS gridFSPhoto = MorphiaUtil.getGridFS();
+        GridFSDBFile gridFSDBFile = gridFSPhoto.findOne(new ObjectId(imageId));
+
+        ByteArrayOutputStream bOS = new ByteArrayOutputStream();
+        try {
+            gridFSDBFile.writeTo(bOS);
+            rawImage = bOS.toByteArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return rawImage;
+    }
+
 
     public static Result javascriptRoutes() {
         response().setContentType("text/javascript");

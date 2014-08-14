@@ -1,4 +1,4 @@
-@(js: java.lang.Boolean, localUser: models.User = null)
+@(js: java.lang.Boolean, settingsForm: Form[_], localUser: models.User = null)
 @import com.feth.play.module.pa.views.html._
 
 
@@ -69,79 +69,91 @@
 
         <h1>Edit Profile</h1>
         <div class="row">
+            <form id="userPhotoForm" method="POST" class="form-horizontal" role="form" action="@routes.Application.updateUserPhoto" accept-charset="UTF-8" enctype="multipart/form-data">
                 <!-- left column -->
-            <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="text-center">
-                    <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
-                    <h6>Upload a different photo...</h6>
-                    <input type="file" class="text-center center-block well well-sm form-control">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="text-center">
+                        <img id="userProfilePhoto" src="@routes.Application.getImage(String.valueOf(localUser.photo))" class="avatar img-circle img-thumbnail" alt="avatar" width="150" height="150">
+                        <h6>Upload a different photo...</h6>
+                        <input id="userPhotoInput" name="profilePhoto" type="file" class="text-center center-block well well-sm form-control">
+                    </div>
                 </div>
-            </div>
-                <!-- edit form column -->
-            <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-                <h3>Personal info</h3>
-                <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">First name:</label>
-                        <div class="col-lg-8">
-                            <input class="form-control" value="Jane" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">Last name:</label>
-                        <div class="col-lg-8">
-                            <input class="form-control" value="Bishop" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">Email:</label>
-                        <div class="col-lg-8">
-                            <input class="form-control" value="janesemail@@gmail.com" type="text">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-lg-3 control-label">Date of Birth:</label>
-                        <div class="col-lg-8">
-                            <div class='input-group date' id='birth-date-picker'>
-                                <input type='text' class="form-control" disabled/>
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                                </span>
+            </form>
+
+            <!-- edit form column -->
+                <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+                    @if(settingsForm.hasGlobalErrors || settingsForm.hasErrors) {
+                        <div id="form-error" class="alert alert-danger alert-dismissable">
+                            <a id="form-message-close" class="panel-close close" data-dismiss="alert">×</a>
+                            <i id="form-message-icon" class="fa fa-exclamation-triangle"></i>
+                            <div id="form-message-text" style="display: inline;">
+                                @for(key <- settingsForm.errors().keySet) {
+                                    @Messages("sniplist.key." + key) @if(key.length != 0){:} @Messages(settingsForm.error(key).message, settingsForm.error(key).arguments: _*)<br>
+                                }
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Username:</label>
-                        <div class="col-md-8">
-                            <input class="form-control" value="janeuser" type="text">
+                    }
+                    <h3>Personal info</h3>
+                    <form id="userSettingsForm" method="POST" class="form-horizontal" role="form" action="@routes.Application.updateUserSettings" accept-charset="UTF-8" enctype="multipart/form-data">
+                        <div class="form-group @if(settingsForm.error("first_name") != null){has-error}">
+                            <label class="col-lg-3 control-label">First name:</label>
+                            <div class="col-lg-8">
+                                <input name="first_name" class="form-control" type="text" value="@settingsForm.data.get("first_name")">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Password:</label>
-                        <div class="col-md-8">
-                            <input class="form-control" value="11111122333" type="password">
+                        <div class="form-group @if(settingsForm.error("last_name") != null){has-error}">
+                            <label class="col-lg-3 control-label">Last name:</label>
+                            <div class="col-lg-8">
+                                <input name="last_name" class="form-control" type="text" value="@settingsForm.data.get("last_name")">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">Confirm password:</label>
-                        <div class="col-md-8">
-                            <input class="form-control" value="11111122333" type="password">
+                        <div class="form-group @if(settingsForm.error("email") != null){has-error}">
+                            <label class="col-lg-3 control-label">Email:</label>
+                            <div class="col-lg-8">
+                                <input name="email" class="form-control" type="text" value="@settingsForm.data.get("email")">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label"></label>
-                        <div class="col-md-8">
-                            <input class="btn btn-primary" value="Save Changes" type="button">
-                            <span></span>
-                            <input class="btn btn-default" value="Cancel" type="reset">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
 
+                        <div class="form-group @if(settingsForm.error("birth_date") != null){has-error}">
+                            <label class="col-lg-3 control-label">Date of Birth:</label>
+                                <div class="col-lg-8">
+                                    <div class='input-group date' id='birth-date-picker'>
+                                        <input name="birth_date" type='text' class="form-control" readonly="readonly" value="@settingsForm.data.get("birth_date")">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                        </div>
+                        @if(localUser.getProviders.contains("password")) {
+                            <div class="form-group @if(settingsForm.error("password") != null){has-error}">
+                                <label class="col-md-3 control-label">Password:</label>
+                                <div class="col-md-8">
+                                    <input name="password" class="form-control" value="" type="password">
+                                </div>
+
+                            </div>
+                            <div class="form-group @if(settingsForm.error("repeatPassword") != null){has-error}">
+                                <label class="col-md-3 control-label">Confirm password:</label>
+                                    <div class="col-md-8">
+                                    <input name="repeatPassword" class="form-control" value="" type="password">
+                                </div>
+                            </div>
+                        }
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"></label>
+                            <div class="col-md-8">
+                                <input class="dynamic-form btn btn-primary" value="Save Changes" type="submit">
+                                <span></span>
+                                <input class="btn btn-default" value="Cancel" type="reset">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
 }
-    @if(!js) {
-        @main("Profile", "profile")(content2)
-    } else {
-        @content2
-    }
+
+@if(!js) {
+    @main("Profile", "profile")(content2)
+} else {
+    @content2
+}
