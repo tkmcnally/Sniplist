@@ -120,6 +120,7 @@ function addSnipReady() {
                     false
                 );
 
+
                 getVideo("https://www.youtube.com/watch?v=BB7R0ZY9w94", addSnipGetVideo);
             }
         });
@@ -164,11 +165,6 @@ function addSnipReady() {
                     },
                     false
                 );
-
-                $(".mejs-info .favourite-snip").click(function() {
-                    favouriteSnip($(''));
-                });
-
             }
         });
     }
@@ -313,6 +309,15 @@ function loadSnip(data, autoPlay) {
 
         $('#watch-youtube').click(function () {
             window.open('http://www.youtube.com/watch/' + data.video_id);
+        });
+
+        $(".favourite-snip").unbind();
+
+        $(".favourite-snip").click(function() {
+            if($(this).hasClass('fav')) {
+                favouriteSnip($(this).attr(attrSnipId));
+            }
+            $(this).toggleClass('red');
         });
 
         $("#live-meta-info").removeClass('hidden');
