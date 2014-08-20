@@ -33,7 +33,7 @@ function bindDynamicLinkClick() {
         e.preventDefault();
         var formTag = $(this).closest('form');
         var url = formTag.attr('action');
-        var formData = new FormData($("#userSettingsForm")[0]);
+        var formData = new FormData($(this).closest('form')[0]);
         console.log(formData);
         var data = {
             url: url,
@@ -63,6 +63,14 @@ function replaceContent(data, callBack) {
         },
         showOverlay: false,
         blockMsgClass: 'loading-block'
+    });
+
+    $("li a").filter(function (){
+        if($(this).href == data.url) {
+            $(this).parent().addClass('active');
+        } else {
+            $(this).parent().removeClass('active');
+        }
     });
 
     $.ajax({
@@ -114,19 +122,25 @@ function ajaxBindings() {
     });
 }
 
-function uploadPhoto(form) {
-    alert(form.attr('action'));
+function uploadPhoto(form, callBack) {
+
     $.ajax({
         url : form.attr('action'),
         data : new FormData(form[0]),
         contentType: false,
         type: 'POST',
         processData: false,
+        dataType: 'json',
         success: function(data) {
           $('#userProfilePhoto').attr('src', data.url);
+            if(callBack != null) {
+                callBack();
+            }
+
         },
         error: function(data) {
-           console.log(data.responseText);
+           $('#form-error').removeClass("hidden");
+           $('#form-message-text').html(JSON.parse(data.responseText).error);
         }
     });
 }

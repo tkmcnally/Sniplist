@@ -84,26 +84,31 @@ Seq[Any](format.raw/*3.13*/("""
             <div class="col-md-3"></div>
             <div class="centered col-md-6 top-buffer-sm">
                 <button id="save_snip_btn" type="button" class="btn btn-primary">Save Snip</button>
+                <form id="hidden-add-snip-form" action=""""),_display_(Seq[Any](/*60.58*/routes/*60.64*/.SnipController.createSnip())),format.raw/*60.92*/("""" enctype="multipart/form-data">
+                    <div class="hidden">
+                        <input name="snip_title" type="text" value="">
+                        <input name="snip_video_id" type="text" value="">
+                        <input name="snip_artist" type="text" value="">
+                        <input name="snip_album" type="text" value="">
+                        <input name="time_min" type="text" value="">
+                        <input name="time_max" type="text" value="">
+                    </div>
+
+                </form>
+
             </div>
             <div class="col-md-3"></div>
         </div>
-        <form id="hidden-add-snip-form" class="hidden" enctype="multipart/form-data">
-            <input name="snip_title" type="text" value="">
-            <input name="snip_video_id" type="text" value="">
-            <input name="snip_artist" type="text" value="">
-            <input name="snip_album" type="text" value="">
-            <input name="time_min" type="text" value="">
-            <input name="time_max" type="text" value="">
-        </form>
+
 """)))};
 Seq[Any](format.raw/*1.51*/("""
 
-"""),format.raw/*71.2*/("""
+"""),format.raw/*76.2*/("""
 
-"""),_display_(Seq[Any](/*73.2*/if(!js)/*73.9*/ {_display_(Seq[Any](format.raw/*73.11*/("""
-    """),_display_(Seq[Any](/*74.6*/main("Add Snip", "addSnip")/*74.33*/(content))),format.raw/*74.42*/("""
-""")))}/*75.3*/else/*75.8*/{_display_(Seq[Any](format.raw/*75.9*/("""
-    """),_display_(Seq[Any](/*76.6*/content)),format.raw/*76.13*/("""
+"""),_display_(Seq[Any](/*78.2*/if(!js)/*78.9*/ {_display_(Seq[Any](format.raw/*78.11*/("""
+    """),_display_(Seq[Any](/*79.6*/main("Add Snip", "addSnip")/*79.33*/(content))),format.raw/*79.42*/("""
+""")))}/*80.3*/else/*80.8*/{_display_(Seq[Any](format.raw/*80.9*/("""
+    """),_display_(Seq[Any](/*81.6*/content)),format.raw/*81.13*/("""
 """)))})))}
     }
     
@@ -116,11 +121,11 @@ Seq[Any](format.raw/*1.51*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Aug 12 02:41:46 EDT 2014
+                    DATE: Sat Aug 16 17:55:01 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/snip/addSnip.scala.html
-                    HASH: e0f8d733b21cacafc081bbfded31c22b86d2623c
-                    MATRIX: 804->1|930->53|944->60|1028->64|4140->50|4169->3137|4207->3140|4222->3147|4262->3149|4303->3155|4339->3182|4370->3191|4390->3194|4402->3199|4440->3200|4481->3206|4510->3213
-                    LINES: 26->1|28->3|28->3|30->3|99->1|101->71|103->73|103->73|103->73|104->74|104->74|104->74|105->75|105->75|105->75|106->76|106->76
+                    HASH: d31c64661595ee0a425db053bfcd9cbf8f880459
+                    MATRIX: 804->1|930->53|944->60|1028->64|3662->2662|3677->2668|3727->2696|4396->50|4425->3326|4463->3329|4478->3336|4518->3338|4559->3344|4595->3371|4626->3380|4646->3383|4658->3388|4696->3389|4737->3395|4766->3402
+                    LINES: 26->1|28->3|28->3|30->3|87->60|87->60|87->60|104->1|106->76|108->78|108->78|108->78|109->79|109->79|109->79|110->80|110->80|110->80|111->81|111->81
                     -- GENERATED --
                 */
             

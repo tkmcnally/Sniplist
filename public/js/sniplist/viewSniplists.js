@@ -36,9 +36,13 @@ function createSnipList() {
             loadSnipLists(localUser);
         },
         error: function(xhr, status, error) {
+            /*
             $("#global-message").removeClass("hidden");
             $("#global-message").addClass("alert-danger");
-            $("#global-message").text(xhr.responseText);
+            $("#global-message").text(JSON.parse(xhr.responseText).error);
+            */
+            globalErrorMessage(JSON.parse(xhr.responseText).error);
+
         }
     });
 }
@@ -120,7 +124,9 @@ function initialize() {
     });
 
     $('.remove-snip-from-sniplist').click(function(e) {
-        deleteSnipFromSnipList($(this).closest('table').attr('id'), $(this).attr('value'));
+        var snipId = $(this).attr(attrSnipId);
+        var sniplistId = $(this).closest('.playlist-container').attr(attrSniplistId);
+        deleteSnipFromSnipList(sniplistId, snipId);
     });
 
     //Dismiss popup whenever clicking outside
@@ -133,13 +139,6 @@ function initialize() {
         }
     });
 
-    $(".favourite-sniplist").click(function() {
-        favouriteSniplist($(this).closest('table').attr('id'));
-    });
-
-    $(".favourite-snip").click(function() {
-        favouriteSnip($(this).closest("tr").find(".snip-id").attr("value"));
-    });
 
 
 }

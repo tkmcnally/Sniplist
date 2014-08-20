@@ -1,5 +1,6 @@
 package service.api.impl;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -7,12 +8,14 @@ import com.google.api.services.youtube.model.SearchListResponse;
 import com.google.api.services.youtube.model.SearchResult;
 import com.google.api.services.youtube.model.Video;
 import com.google.api.services.youtube.model.VideoListResponse;
+import play.Logger;
 import service.api.VideoAPI;
 import service.api.YoutubeAuth;
 import util.Constants;
 import com.google.api.services.youtube.YouTube;
 
 import java.io.IOException;
+import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +37,6 @@ public class YoutubeVideoAPI {
     public static List<?> executeSearch(String url) {
 
         List<?> results = new ArrayList();
-
         try {
 
             // This object is used to make YouTube Data API requests. The last
@@ -62,10 +64,12 @@ public class YoutubeVideoAPI {
             //Search query is user's url.
             search.setQ(url);
 
+
             // Call the API and print results.
             SearchListResponse searchResponse = search.execute();
             List<SearchResult> searchResultList = searchResponse.getItems();
             results = searchResultList;
+
 
         } catch (GoogleJsonResponseException e) {
             e.printStackTrace();
@@ -93,12 +97,12 @@ public class YoutubeVideoAPI {
                 }
             }).setApplicationName("Sniplist").build();
 
-            YouTube.Videos.List search = youtube.videos().list("id,contentDetails");
+            YouTube.Videos.List search = youtube.videos().list("id,contentDetails,topicDetails");
 
             search.setKey(API_KEY);
 
             // Specify return fields.
-            search.setFields("items/contentDetails");
+            search.setFields("items(contentDetails,topicDetails/topicIds)");
 
             //Search query is user's url.
             search.setId(id);
@@ -118,4 +122,5 @@ public class YoutubeVideoAPI {
 
         return results;
     }
+
 }

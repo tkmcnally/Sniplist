@@ -31,8 +31,11 @@ function addToSniplist(snipList, snip) {
 
 function bindTableButtons() {
     $('.dropdown-delete-snip').click(function(e) {
+        var elem = $(this);
         e.preventDefault();
-        deleteSnip($(this));
+        deleteSnip(elem.attr(attrSnipId), function() {
+            elem.closest('tr').remove();
+        });
     });
 
     $('.add-to-playlist-a').click(function(e) {
@@ -69,21 +72,17 @@ function bindTableButtons() {
 }
 
 
-function deleteSnip(elem) {
+function deleteSnip(snipId, callBack) {
 
-    var snip = elem.closest("tr").find(".snip-id" ).attr("value");
-    jsRoutes.controllers.SnipCollectionController.removeSnip(snip).ajax({
+    jsRoutes.controllers.SnipCollectionController.removeSnip(snipId).ajax({
         success: function(data) {
-            $("#global-message").removeClass("hidden");
-            $("#global-message").removeClass("alert-danger");
-            $("#global-message").addClass("alert-success");
-            $("#global-message-text").text(data.message);
-            $(elem.closest("tr").remove());
+            globalSuccessMessage(data.message);
+            if(callBack) {
+                callBack();
+            }
         },
-        error: function(data) {
-            $("#global-message").removeClass("hidden");
-            $("#global-message").addClass("alert-danger");
-            $("#global-message-text").text(data.error);
+        error: function(xhr, status, error) {
+            globalErrorMessage(JSON.parse(xhr.responseText));
         }
     });
 }
@@ -119,34 +118,68 @@ function favouriteSnip(snip) {
         success: function(data) {
         },
         error: function(xhr, status, error) {
+
         }
     })
 }
 
 function getNextSnip(callBack) {
+    if(typeof(Storage) !== 'undefined') {
 
-    var live_list_id = $("#live-snip-list-id").text();
-    var id = $("#live-snip-id").text();
-    var type = $("#live-list-type").text();
-    var d = {
-                playlistType: type,
-                list_id: live_list_id,
-                snip_id: id
-            };
-    jsRoutes.controllers.SniplistCollectionController.getNextSnip().ajax({
-        type :  "POST",
-        cache: false,
-        contentType: 'application/json',
-        processData: false,
-        data: JSON.stringify(d),
-        success: function(data) {
-            callBack(data);
-        },
-        error: function(data) {
-            $("#global-message").removeClass("hidden");
-            $("#global-message").addClass("alert-danger");
-            $("#global-message-text").text(data.error);
+        var playlistId = localStorage["playlist-id"];
+        var array = JSON.parse(localStorage[playlistId]);
+        var snipIndex = array.indexOf($("#live-meta-info").attr(attrSnipId));
+        if(snipIndex < array.length - 1) {
+            snipIndex++;
+        } else {
+            snipIndex = 0;
         }
-    })
+        var bool;
+        if(snipIndex == 0) {
+            bool = false;
+        } else {
+            bool = true;
+        }
+        var data = {
+            snip_id: array[snipIndex],
+            list_id: playlistId,
+            index: snipIndex,
+            autoPlay: bool
+        };
+        callBack(data);
 
+    } else {
+        console.log("This browser does not support LocalStorage. Playlist autoplay disabled.");
+        return;
+    }
+}
+
+
+function storePlaylist(snip) {
+
+    if(typeof(Storage) !== 'undefined') {
+        var sniplistId = $(snip).closest('.playlist-container').attr(attrSniplistId);
+        var snipIdArray = getSniplistSnips(snip);
+
+        localStorage.clear();
+        localStorage["playlist-id"] = sniplistId;
+        localStorage[sniplistId] = JSON.stringify(snipIdArray);
+
+        $("#live-meta-info").attr(attrSniplistId, sniplistId);
+
+    } else {
+        console.log("This browser does not support LocalStorage. Playlist autoplay disabled.");
+    }
+}
+
+function getSniplistSnips(snipList) {
+    var sniplistId = snipList.closest('.playlist-container');
+    var snipElements = sniplistId.find(".play-snippet");
+    var snipIdArray = new Array;
+
+    snipElements.each(function (){
+        snipIdArray.push($(this).attr(attrSnipId));
+    });
+
+    return snipIdArray;
 }

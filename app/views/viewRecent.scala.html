@@ -1,0 +1,56 @@
+@(js: java.lang.Boolean, localUser: models.User, followingList: List[models.User], recentSnips: List[models.Snip], recentSniplists: List[models.Sniplist])
+@import java.math.BigInteger; var i=0;
+@import util.SniplistUtil;
+    @content = {
+
+        <div class="row">
+            <h1>Recent</h1>
+            <div class="hline"></div>
+        </div>
+        <div class="row">
+            <h2>Recent Snips</h2>
+            <div class="playlist-container" data-sniplist-id="recent-snips">
+                @for(snip <- recentSnips) {
+                    @(i += 1)
+                        <!-- Snip Track Wrapper -->
+                    <div class="col-md-2 snip-module">
+                        <div class="action-controls">
+                            <i class="fa fa-heart @if(localUser.favouriteSnips.contains(snip.id.toString)){red} @if(!localUser.id.equals(snip.user.id)){fav} favourite-snip" data-snip-id="@snip.id"></i>&nbsp@snip.favouriteCount<br><i>@SniplistUtil.timeElapsed(snip.creation_date)</i>
+
+                        </div>
+                        <div class="album-overlay-wrapper">
+
+                            @if(snip.thumbnail_url != null) {
+                                <img width="100" height="100" class="img-thumbnail" src="@snip.thumbnail_url"/>
+                            } else {
+                                <img width="100" height="100" class="img-thumbnail" src="http://media.virbcdn.com/cdn_images/crop_300x300/cd/default_song_album.jpg"/>
+                            }
+                        <div class="action-controls">
+                            <i class="fa fa-play fa-2x fa-inverse play-snippet" data-snip-id="@snip.id"></i>
+                        </div>
+                        </div>
+                        <p>@snip.song_name <br> by @snip.artist_name <br> <a class="dynamic-link" href="@routes.Application.getUserProfile(snip.user.id.toString)">@snip.user.name</a></p>
+                    </div>
+                    @if(i % 6 == 0) {
+                        </div>
+                        <div class="row">
+                    }
+                }
+            </div>
+        </div>
+        <div class="row">
+            <h2>Recent Sniplists</h2>
+            @for(sniplist <- recentSniplists) {
+                <i class="fa fa-heart red"></i>&nbsp@sniplist.favouriteCount <br><i>@SniplistUtil.timeElapsed(sniplist.creation_date)</i><br>
+                <p><a class="dynamic-link" href="@routes.SniplistController.viewSniplistById(sniplist.id.toString)">@sniplist.name</a> by <a class="dynamic-link" href="@routes.Application.getUserProfile(sniplist.id.toString)">@sniplist.user.name</a> </p>
+            }
+        </div>
+
+    }
+
+
+@if(!js) {
+    @main("Recent", "recent")(content)
+} else {
+    @content
+}

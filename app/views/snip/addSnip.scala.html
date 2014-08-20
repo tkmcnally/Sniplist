@@ -57,17 +57,22 @@
             <div class="col-md-3"></div>
             <div class="centered col-md-6 top-buffer-sm">
                 <button id="save_snip_btn" type="button" class="btn btn-primary">Save Snip</button>
+                <form id="hidden-add-snip-form" action="@routes.SnipController.createSnip()" enctype="multipart/form-data">
+                    <div class="hidden">
+                        <input name="snip_title" type="text" value="">
+                        <input name="snip_video_id" type="text" value="">
+                        <input name="snip_artist" type="text" value="">
+                        <input name="snip_album" type="text" value="">
+                        <input name="time_min" type="text" value="">
+                        <input name="time_max" type="text" value="">
+                    </div>
+
+                </form>
+
             </div>
             <div class="col-md-3"></div>
         </div>
-        <form id="hidden-add-snip-form" class="hidden" enctype="multipart/form-data">
-            <input name="snip_title" type="text" value="">
-            <input name="snip_video_id" type="text" value="">
-            <input name="snip_artist" type="text" value="">
-            <input name="snip_album" type="text" value="">
-            <input name="time_min" type="text" value="">
-            <input name="time_max" type="text" value="">
-        </form>
+
 }
 
 @if(!js) {

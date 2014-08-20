@@ -8,6 +8,7 @@ import models.*;
 import play.mvc.Controller;
 import play.mvc.Result;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,17 +26,16 @@ public class SnipCollectionController extends Controller {
 
         Result result = internalServerError();
 
-        Snip snip = Snip.findById(id).get();
+        Snip snip = Snip.findById(id);
         SnipCollection snipCollection = SnipCollection.findByUser(user);
         if(snip != null && snipCollection != null) {
 
-            boolean removed = SnipCollection.removeSnip(snipCollection, snip);
-
+            boolean removed = Snip.deleteSnip(user, snip);
             if(removed) {
-                node.put("message", "Snip '" + snip.song_name + "' has been removed from your collection!");
+                node.put("message", "Snip '" + snip.song_name + "' has been deleted!");
                 result = ok(node);
             } else {
-                node.put("error", "Snip '" + snip.song_name + "' could not be found in your collection!");
+                node.put("error", "Snip '" + snip.song_name + "' could not be deleted!");
                 result = badRequest(node);
             }
         } else {
@@ -56,7 +56,7 @@ public class SnipCollectionController extends Controller {
 
         Result result = internalServerError();
 
-        Snip snip = Snip.findById(id).get();
+        Snip snip = Snip.findById(id);
         SnipCollection snipCollection = SnipCollection.findByUser(user);
 
         if(snip != null && snipCollection != null) {
@@ -84,13 +84,39 @@ public class SnipCollectionController extends Controller {
         boolean js = "application/javascript".equals(request().getHeader("content-type"));
 
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
-        final User user = Application.getLocalUser(session());
+        final User localUser = Application.getLocalUser(session());
 
-        SnipCollection snipCollection = SnipCollection.findByUser(user);
-        List<Sniplist> sniplists = Sniplist.findByUser(user);
+        SnipCollection snipCollection = SnipCollection.findByUser(localUser);
+        List<Snip> savedSniplists = new ArrayList<Snip>();
+        savedSniplists.addAll(snipCollection.savedSnips);
+        for(Snip s: savedSniplists) {
+            if(!s.user.id.equals(localUser.id)) {
+                snipCollection.savedSnips.remove(s);
+            }
+        }
 
-        return ok(views.html.snip.viewSnips.render(js, user, snipCollection));
+        return ok(views.html.snip.viewSnips.render(js, localUser, snipCollection));
     }
+
+    @Restrict(@Group(Application.USER_ROLE))
+    public static Result favouritedSnips() {
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+
+        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
+        final User localUser = Application.getLocalUser(session());
+
+        SnipCollection snipCollection = SnipCollection.findByUser(localUser);
+        List<Snip> savedSniplists = new ArrayList<Snip>();
+        savedSniplists.addAll(snipCollection.savedSnips);
+        for(Snip s: savedSniplists) {
+            if(s.user.id.equals(localUser.id)) {
+                snipCollection.savedSnips.remove(s);
+            }
+        }
+
+        return ok(views.html.snip.viewSnips.render(js, localUser, snipCollection));
+    }
+
 
 
 
@@ -105,7 +131,7 @@ public class SnipCollectionController extends Controller {
 
         Result result = internalServerError();
 
-        Snip snip = Snip.findById(id).get();
+        Snip snip = Snip.findById(id);
         SnipCollection snipCollection = SnipCollection.findByUser(user);
 
         if(snip != null && snipCollection != null) {

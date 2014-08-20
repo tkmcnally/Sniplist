@@ -16,6 +16,7 @@ import data.validation.SniplistConstraints;
 import models.*;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
+import play.Logger;
 import play.Routes;
 import play.data.DynamicForm;
 import play.data.Form;
@@ -100,6 +101,54 @@ public class Application extends Controller {
             }
             return settingsMap;
         }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
+
+        public String getFirst_name() {
+            return first_name;
+        }
+
+        public void setFirst_name(String first_name) {
+            this.first_name = first_name;
+        }
+
+        public String getLast_name() {
+            return last_name;
+        }
+
+        public void setLast_name(String last_name) {
+            this.last_name = last_name;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getBirth_date() {
+            return birth_date;
+        }
+
+        public void setBirth_date(String birth_date) {
+            this.birth_date = birth_date;
+        }
+
+        public String getRepeatPassword() {
+            return repeatPassword;
+        }
+
+        public void setRepeatPassword(String repeatPassword) {
+            this.repeatPassword = repeatPassword;
+        }
     }
 
 	public static final String FLASH_MESSAGE_KEY = "message";
@@ -109,6 +158,47 @@ public class Application extends Controller {
     private static final Form<UserSettings> USER_SETTINGS_FORM = form(UserSettings.class);
 
 	public static Result index() {
+        final User localUser = Application.getLocalUser(session());
+        Result result = internalServerError();
+        if(localUser != null) {
+            result = popular();
+        } else {
+            result = ok(splash.render());
+        }
+
+        return result;
+	}
+
+    @Restrict(@Group(Application.USER_ROLE))
+    public static Result popular() {
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+        final User localUser = Application.getLocalUser(session());
+        Result result = internalServerError();
+        if(localUser != null) {
+            List<User> following = new ArrayList<User>();
+            if(localUser.following != null) {
+                for (ObjectId oid : localUser.following) {
+                    following.add(User.findById(oid.toString()));
+                }
+            }
+            List<Snip> topSnips = Snip.findPopular();
+            List<Sniplist> topSniplists = Sniplist.findPopular();
+
+
+            localUser.populateFavouriteSnips(SnipCollection.findByUser(localUser));
+
+            localUser.populateFavouriteSniplists(SniplistCollection.findByUser(localUser));
+
+            result = ok(viewPopular.render(js, localUser, following, topSnips, topSniplists));
+        } else {
+            result = ok(splash.render());
+        }
+
+        return result;
+    }
+
+    @Restrict(@Group(Application.USER_ROLE))
+    public static Result recent() {
         boolean js = "application/javascript".equals(request().getHeader("content-type"));
         final User localUser = Application.getLocalUser(session());
 
@@ -121,16 +211,19 @@ public class Application extends Controller {
                 }
             }
 
-            List<Snip> topSnips = Snip.findPopular();
-            List<Sniplist> topSniplists = Sniplist.findPopular();
+            List<Snip> recentSnips = Snip.findRecent();
+            List<Sniplist> recentSniplists = Sniplist.findRecent();
 
-            result = ok(home.render(js, localUser, following, topSnips, topSniplists));
+            localUser.populateFavouriteSnips(SnipCollection.findByUser(localUser));
+            localUser.populateFavouriteSniplists(SniplistCollection.findByUser(localUser));
+
+            result = ok(viewRecent.render(js, localUser, following, recentSnips, recentSniplists));
         } else {
             result = ok(splash.render());
         }
 
         return result;
-	}
+    }
 
     public static Result about() {
 
@@ -329,7 +422,6 @@ public class Application extends Controller {
 
         Result result = internalServerError();
         final User localUser = Application.getLocalUser(session());
-        final Form<UserSettings> filledForm = USER_SETTINGS_FORM.bindFromRequest();
 
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode node = mapper.createObjectNode();
@@ -348,8 +440,9 @@ public class Application extends Controller {
             node.put("url","" + routes.Application.getImage(localUser.photo.toString()));
             result = ok(node);
         } else {
-            node.put("error","You cannot upload more than 3MB.");
-            result = ok(node);
+            node.put("error","You cannot upload an image larger than 3MB.");
+            result = status(422, node);
+
         }
 
         return result;
@@ -394,7 +487,7 @@ public class Application extends Controller {
                         controllers.routes.javascript.SnipController.getVideo(),
                         controllers.routes.javascript.SnipController.createSnip(),
                         controllers.routes.javascript.SnipController.getSnip(),
-                        controllers.routes.javascript.SnipController.getPopularSnips(),
+                        //controllers.routes.javascript.SnipController.getPopularSnips(),
                         controllers.routes.javascript.SnipCollectionController.removeSnip(),
                         controllers.routes.javascript.SnipCollectionController.saveSnip(),
                         controllers.routes.javascript.SnipCollectionController.toggleSnip(),
@@ -408,7 +501,7 @@ public class Application extends Controller {
                         controllers.routes.javascript.SniplistController.loadSnipListByUser(),
                         controllers.routes.javascript.SniplistController.deleteFromSnipList(),
                         controllers.routes.javascript.SniplistController.viewSnipListsLocalUser(),
-                        controllers.routes.javascript.SniplistController.getPopularSniplists(),
+                       // controllers.routes.javascript.SniplistController.getPopularSniplists(),
                         controllers.routes.javascript.SnipCollectionController.mySnips(),
                         controllers.routes.javascript.Application.getUserProfile(),
                         controllers.routes.javascript.Application.getUsersFollowing(),

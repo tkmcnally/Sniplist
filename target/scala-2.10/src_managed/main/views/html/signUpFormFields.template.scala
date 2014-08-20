@@ -72,7 +72,7 @@ Seq[Any](format.raw/*1.51*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Aug 12 02:05:44 EDT 2014
+                    DATE: Sat Aug 16 17:21:55 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/signUpFormFields.scala.html
                     HASH: a061ec964c98f1364c8c3bafef22167a5130553a
                     MATRIX: 867->1|1018->74|1039->87|1108->50|1136->69|1167->126|1204->129|1346->250|1384->253|1568->416|1606->419|1740->532|1778->535

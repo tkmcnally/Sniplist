@@ -20,6 +20,7 @@ import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
 import org.mongodb.morphia.query.Query;
+import play.Logger;
 import play.data.Form;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
@@ -34,6 +35,8 @@ import org.mongodb.morphia.annotations.Entity;
 import providers.MyUsernamePasswordAuthUser;
 import util.Constants;
 import util.MorphiaUtil;
+
+import javax.persistence.Transient;
 
 /**
  * Initial version based on work by Steve Chaloner (steve@objectify.be) for
@@ -79,6 +82,12 @@ public class User implements Subject {
     public List<LinkedAccount> linkedAccounts;
 
     public List<ObjectId> following;
+
+    @Transient
+    public List<String> favouriteSnips;
+
+    @Transient
+    public List<String> favouriteSniplists;
 
     public ObjectId photo;
 
@@ -410,6 +419,44 @@ public class User implements Subject {
         }
 
         return deleted;
+    }
+
+    public void populateFavouriteSnips(final SnipCollection snipCollection) {
+        List<String> temp = new ArrayList<String>();
+        if(snipCollection.savedSnips != null) {
+            for (Snip s : snipCollection.savedSnips) {
+                temp.add(s.id.toString());
+            }
+        }
+        favouriteSnips = temp;
+    }
+
+    public void populateFavouriteSniplists(final SniplistCollection sniplistCollection) {
+        List<String> temp = new ArrayList<String>();
+        if(sniplistCollection.savedSniplists != null) {
+            for (Sniplist s : sniplistCollection.savedSniplists) {
+                temp.add(s.id.toString());
+            }
+        }
+        favouriteSniplists = temp;
+    }
+
+    public void populateFavouriteSnips(final List<Snip> snipCollection) {
+        List<String> temp = new ArrayList<String>();
+        for(Snip s: snipCollection) {
+            temp.add(s.id.toString());
+        }
+
+        favouriteSnips = temp;
+    }
+
+    public void populateFavouriteSniplists(final List<Sniplist> sniplistCollection) {
+        List<String> temp = new ArrayList<String>();
+        for(Sniplist s: sniplistCollection) {
+            temp.add(s.id.toString());
+        }
+
+        favouriteSniplists = temp;
     }
 
 }

@@ -2,10 +2,6 @@
 @import java.math.BigInteger; var i=0;
 
 @content = {
-
-        <div id="global-message" class="alert alert-danger hidden">
-
-        </div>
         <div class="row">
             <div class="col-md-12">
                 <h1>SnipLists</h1>
@@ -21,7 +17,7 @@
             </div>
         }
         @views.html.sniplist.arraySniplists(true, localUser, mySnips, mySniplists, userSniplists)
-    </div>
+
 
     <!-- Modal -->
     <div class="modal fade" id="share-link-modal" tabindex="-1" role="dialog" aria-labelledby="shareLinkModal" aria-hidden="true">

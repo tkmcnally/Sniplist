@@ -11,6 +11,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import util.Constants;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,7 +29,7 @@ public class SniplistCollectionController extends Controller {
 
         Result result = internalServerError();
 
-        Sniplist sniplist = Sniplist.findById(id).get();
+        Sniplist sniplist = Sniplist.findById(id);
         SniplistCollection sniplistCollection = SniplistCollection.findByUser(user);
         if(sniplist != null && sniplistCollection != null) {
 
@@ -59,7 +60,7 @@ public class SniplistCollectionController extends Controller {
 
         Result result = internalServerError();
 
-        Sniplist sniplist = Sniplist.findById(id).get();
+        Sniplist sniplist = Sniplist.findById(id);
         SniplistCollection sniplistCollection = SniplistCollection.findByUser(user);
 
         if(sniplist != null && sniplistCollection != null) {
@@ -86,13 +87,42 @@ public class SniplistCollectionController extends Controller {
         boolean js = "application/javascript".equals(request().getHeader("content-type"));
 
         com.feth.play.module.pa.controllers.Authenticate.noCache(response());
-        final User user = Application.getLocalUser(session());
+        final User localUser = Application.getLocalUser(session());
 
-        SnipCollection mySnips = SnipCollection.findByUser(user);
-        SniplistCollection mySniplists = SniplistCollection.findByUser(user);
+        SnipCollection mySnips = SnipCollection.findByUser(localUser);
+        SniplistCollection mySniplists = SniplistCollection.findByUser(localUser);
+        List<Sniplist> savedSniplists = new ArrayList<Sniplist>();
+        savedSniplists.addAll(mySniplists.savedSniplists);
+        for(Sniplist s: savedSniplists) {
+            if(!s.user.id.equals(localUser.id)) {
+                mySniplists.savedSniplists.remove(s);
+            }
+        }
 
-        return ok(views.html.sniplist.sniplists.render(js, user, mySnips, mySniplists, mySniplists));
+        return ok(views.html.sniplist.sniplists.render(js, localUser, mySnips, mySniplists, mySniplists));
     }
+
+
+    @Restrict(@Group(Application.USER_ROLE))
+    public static Result favouritedSniplists() {
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+
+        com.feth.play.module.pa.controllers.Authenticate.noCache(response());
+        final User localUser = Application.getLocalUser(session());
+
+        SnipCollection mySnips = SnipCollection.findByUser(localUser);
+        SniplistCollection mySniplists = SniplistCollection.findByUser(localUser);
+        List<Sniplist> savedSniplists = new ArrayList<Sniplist>();
+        savedSniplists.addAll(mySniplists.savedSniplists);
+        for(Sniplist s: savedSniplists) {
+            if(s.user.id.equals(localUser.id)) {
+                mySniplists.savedSniplists.remove(s);
+            }
+        }
+
+        return ok(views.html.sniplist.sniplists.render(js, localUser, mySnips, mySniplists, mySniplists));
+    }
+
 
     @Restrict(@Group(Application.USER_ROLE))
     public static Result toggleSniplist(final String id) {
@@ -104,7 +134,7 @@ public class SniplistCollectionController extends Controller {
 
         Result result = internalServerError();
 
-        Sniplist sniplist = Sniplist.findById(id).get();
+        Sniplist sniplist = Sniplist.findById(id);
         SniplistCollection sniplistCollection = SniplistCollection.findByUser(user);
 
         if(sniplist != null && sniplistCollection != null) {
@@ -136,12 +166,12 @@ public class SniplistCollectionController extends Controller {
 
 
         Snip nextSnip = null;
-        Snip snip = Snip.findById(json.findPath("snip_id").textValue()).get();
+        Snip snip = Snip.findById(json.findPath("snip_id").textValue());
         int index = 100;
         User owner = null;
         String sniplist_name = null;
         if(Constants.Snips.SNIPLIST.equals(playlistType)) {
-            Sniplist sniplist = Sniplist.findById(json.findPath("list_id").textValue()).get();
+            Sniplist sniplist = Sniplist.findById(json.findPath("list_id").textValue());
 
 
             for(Snip s: sniplist.snips) {

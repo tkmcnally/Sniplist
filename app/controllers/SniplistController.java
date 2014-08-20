@@ -5,9 +5,11 @@ import be.objectify.deadbolt.java.actions.Restrict;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import models.*;
+import play.Logger;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import util.MorphiaUtil;
 
 import java.util.List;
 
@@ -22,6 +24,14 @@ public class SniplistController extends Controller {
     private static final Form<MySnipList> MY_SNIPLIST_FORM = form(MySnipList.class);
 
     public static class MySnipList {
+
+        public String getSniplist_name() {
+            return sniplist_name;
+        }
+
+        public void setSniplist_name(String sniplist_name) {
+            this.sniplist_name = sniplist_name;
+        }
 
         public String sniplist_name;
 
@@ -117,8 +127,8 @@ public class SniplistController extends Controller {
 
         Result result = internalServerError();
 
-        Snip snip = Snip.findById(snip_id).get();
-        Sniplist sniplist = Sniplist.findById(snipList_id).get();
+        Snip snip = Snip.findById(snip_id);
+        Sniplist sniplist = Sniplist.findById(snipList_id);
 
         if (snip == null || sniplist == null) {
             node.put("error", "Invalid Snip/SnipList Id.");
@@ -184,10 +194,11 @@ public class SniplistController extends Controller {
 
         Result result = internalServerError();
 
-        Snip snip = Snip.findById(snip_id).get();
-        Sniplist sniplist = Sniplist.findById(snipList_id).get();
+        Snip snip = Snip.findById(snip_id);
+        Sniplist sniplist = Sniplist.findById(snipList_id);
 
         if (snip == null || sniplist == null) {
+            Logger.info(snip + "  + " + sniplist);
             node.put("error", "Invalid Snip/SnipList Id.");
             result = badRequest(node);
         } else if (!Sniplist.isOwner(user, sniplist)) {
@@ -195,7 +206,8 @@ public class SniplistController extends Controller {
             result = badRequest(node);
         } else {
             Sniplist.deleteSnipFromSnipList(sniplist, snip);
-            result = ok();
+            node.put("message", "'" + snip.song_name + "'" + " has been removed from " + sniplist.name + ".");
+            result = ok(node);
         }
 
         return result;
@@ -211,13 +223,13 @@ public class SniplistController extends Controller {
         Result result = internalServerError();
 
         SniplistCollection sniplistCollection = SniplistCollection.findByUser(user);
+
         SniplistCollection filtered = SniplistCollection.copy(sniplistCollection);
         for(Sniplist sl: sniplistCollection.savedSniplists) {
             if(!user.id.equals(sl.user.id)) {
                 filtered.savedSniplists.remove(sl);
             }
         }
-
         if (sniplistCollection != null) {
             result = ok(views.html.sniplist.addSnipToList.render(filtered));
         }
@@ -229,7 +241,7 @@ public class SniplistController extends Controller {
     public static Result viewSniplistById(final String id) {
         boolean js = "application/javascript".equals(request().getHeader("content-type"));
         final User user = Application.getLocalUser(session());
-        Sniplist sniplist = Sniplist.findById(id).get();
+        Sniplist sniplist = Sniplist.findById(id);
 
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode node = mapper.createObjectNode();
@@ -245,7 +257,7 @@ public class SniplistController extends Controller {
         return result;
     }
 
-    @Restrict(@Group(Application.USER_ROLE))
+  /*  @Restrict(@Group(Application.USER_ROLE))
     public static Result getPopularSniplists() {
         boolean js = "application/javascript".equals(request().getHeader("content-type"));
         final User localUser = Application.getLocalUser(session());
@@ -262,6 +274,25 @@ public class SniplistController extends Controller {
 
         return result;
     }
+
+    @Restrict(@Group(Application.USER_ROLE))
+    public static Result getRecentSniplists() {
+        boolean js = "application/javascript".equals(request().getHeader("content-type"));
+        final User localUser = Application.getLocalUser(session());
+
+        Result result = internalServerError();
+
+        List<Sniplist> topList = Sniplist.findRecent();
+
+        if(topList != null) {
+            result = ok(views.html.sniplist.recent.render(js, localUser, topList));
+        } else {
+            result = badRequest();
+        }
+
+        return result;
+    }
+*/
 
 
 }

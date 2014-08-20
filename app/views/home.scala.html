@@ -19,7 +19,14 @@
                 @(i += 1)
                 <div class="col-md-2">
                     <i class="fa fa-heart red"></i>&nbsp@snip.favouriteCount<br>
-                    <img class="img-thumbnail" src="@snip.thumbnail_url"/>
+                    <div class="albumPlayOverlay">
+                        @if(snip.thumbnail_url != null) {
+                            <img class="img-thumbnail" src="@snip.thumbnail_url"/>
+                        } else {
+                            <img class="img-thumbnail" src="http://media.virbcdn.com/cdn_images/crop_300x300/cd/default_song_album.jpg"/>
+                        }
+                        <i class="fa fa-play"></i>
+                        </div>
                     <p>@snip.song_name <br> by @snip.artist_name <br> <a class="dynamic-link" href="@routes.Application.getUserProfile(snip.user.id.toString)">@snip.user.name</a></p>
                 </div>
                 @if(i % 6 == 0) {

@@ -33,6 +33,10 @@ GET         /authenticate/:provider                  com.feth.play.module.pa.con
 GET         /signup                                  controllers.Application.signup
 POST        /signup                                  controllers.Application.doSignup
 
+GET         /popular                                 controllers.Application.popular()
+
+GET         /recent                                  controllers.Application.recent()
+
 
 GET         /accounts/unverified                     controllers.Signup.unverified
 GET         /authenticate/:provider/denied           controllers.Signup.oAuthDenied(provider: String)
@@ -65,8 +69,6 @@ POST        /login/password/forgot                   controllers.Signup.doForgot
 
 GET         /snips/getSnip                           controllers.SnipController.getSnip(id: String)
 
-GET         /snips/getPopular                        controllers.SnipController.getPopularSnips()
-
 GET         /snips/add                               controllers.SnipController.add()
 
 POST        /snips/add/getVideo                      controllers.SnipController.getVideo(songUrl: String)
@@ -81,6 +83,8 @@ GET         /:id/snips                               controllers.SnipCollectionC
 
 GET         /snips                                   controllers.SnipCollectionController.mySnips()
 
+GET         /snips/favourited                        controllers.SnipCollectionController.favouritedSnips()
+
 POST        /snips/removeSnip                        controllers.SnipCollectionController.removeSnip(id: String)
 
 POST        /snips/saveSnip                          controllers.SnipCollectionController.saveSnip(id: String)
@@ -90,6 +94,8 @@ POST        /snips/toggleSnip                        controllers.SnipCollectionC
 
 
 GET         /sniplists/                              controllers.SniplistCollectionController.mySniplists()
+
+GET         /sniplists/favourited                    controllers.SniplistCollectionController.favouritedSniplists()
 
 POST        /sniplists/removeSniplist                controllers.SniplistCollectionController.removeSniplist(id: String)
 
@@ -102,9 +108,6 @@ POST        /sniplists/getNextSnip                   controllers.SniplistCollect
 
 
 GET         /l/:id                                   controllers.SniplistController.viewSniplistById(id: String)
-
-GET         /sniplists/getPopular                    controllers.SniplistController.getPopularSniplists()
-
 
 GET         /:id/sniplists                           controllers.SniplistController.viewSniplistsByUser(id: String)
 

@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import controllers.SnipController;
 import de.umass.lastfm.Album;
 import de.umass.lastfm.ImageSize;
@@ -65,14 +66,26 @@ public class Snip {
     public boolean localUserFavourited;
 
 
-    public static void deleteById(final String id) {
-        MorphiaUtil.getDatastore().delete(findById(id));
+    public static boolean deleteSnip(final User user, final Snip snip) {
+        boolean deleted = false;
+        if(isOwner(user, snip)) {
+            MorphiaUtil.getDatastore().delete(findById(String.valueOf(snip.id)));
+            deleted = true;
+        } else {
+            deleted = false;
+        }
+        return deleted;
     }
 
-    public static Query<Snip> findById(final String id) {
+    public static Snip findById(final String id) {
         ObjectId oid = new ObjectId(id);
         Query<Snip> q = MorphiaUtil.getDatastore().find(Snip.class).field("id").equal(oid);
-        return q;
+        return q.get();
+    }
+
+    public static Snip findById(final ObjectId id) {
+        Query<Snip> q = MorphiaUtil.getDatastore().find(Snip.class).field("id").equal(id);
+        return q.get();
     }
 
     public static Snip create(final SnipController.MySnip snipForm,  final User user) {
@@ -114,8 +127,20 @@ public class Snip {
         return snip;
     }
 
+    public static Snip mapperLastFM(final ObjectNode track) {
+        Snip snip = new Snip();
+        if(track != null) {
+            snip.song_name = String.valueOf(track.get("name"));
+            snip.mb_id = String.valueOf(track.get("id"));
+            snip.artist_name = String.valueOf(track.get("artist"));
+            snip.album_name = String.valueOf(track.get("album"));
+            snip.thumbnail_url = String.valueOf(track.get("thumbnail"));
+        }
+
+        return snip;
+    }
+
     public static boolean isOwner(final User user, final Snip snip) {
-        //Query<Snip> q = MorphiaUtil.getDatastore().find(Snip.class).field("id").equal(snip.id).field("user").equal(user);
 
         boolean owned = false;
         if(user != null && snip != null) {
@@ -140,6 +165,10 @@ public class Snip {
 
     public static List<Snip> findPopular() {
         return MorphiaUtil.getDatastore().createQuery(Snip.class).order("-favouriteCount").limit(10).asList();
+    }
+
+    public static List<Snip> findRecent() {
+        return MorphiaUtil.getDatastore().createQuery(Snip.class).order("-creation_date").limit(10).asList();
     }
 
 }

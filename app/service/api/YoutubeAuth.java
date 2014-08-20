@@ -13,6 +13,7 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.store.DataStore;
 import com.google.api.client.util.store.FileDataStoreFactory;
+import play.Logger;
 import util.Constants;
 
 import javax.xml.ws.http.HTTPBinding;
@@ -38,7 +39,7 @@ public class YoutubeAuth  {
     private static final String ip_addr = play.Play.application().configuration().getString(Constants.Configuration.AMAZON_EC2_IP);
     private static final int port = play.Play.application().configuration().getInt(Constants.Configuration.AMAZON_EC2_PORT);
 
-    public static final Proxy proxy = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress(ip_addr,port));
+    public static final Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(ip_addr,port));
 
     public static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport.Builder().setProxy(proxy).build();
 

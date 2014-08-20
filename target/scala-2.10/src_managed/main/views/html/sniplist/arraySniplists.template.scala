@@ -30,87 +30,89 @@ object arraySniplists extends BaseScalaTemplate[play.api.templates.HtmlFormat.Ap
 Seq[Any](format.raw/*1.170*/("""
 """),format.raw/*3.1*/("""
 
-      <div id="sniplist-array" value=""""),_display_(Seq[Any](/*5.40*/localUser/*5.49*/.id)),format.raw/*5.52*/("""">
-        <div class="row ">
-        """),_display_(Seq[Any](/*7.10*/if(userSniplists != null)/*7.35*/ {_display_(Seq[Any](format.raw/*7.37*/("""
-            """),_display_(Seq[Any](/*8.14*/for(sniplist <- userSniplists.savedSniplists) yield /*8.59*/ {_display_(Seq[Any](format.raw/*8.61*/("""
-                """),_display_(Seq[Any](/*9.18*/(i += 1))),format.raw/*9.26*/("""
-                <div class="col-lg-6">
-                    <table class="table table-default table-bordered table-striped"  value="sniplist" id=""""),_display_(Seq[Any](/*11.108*/sniplist/*11.116*/.id)),format.raw/*11.119*/("""" >
-                        <thead>
+<div id="sniplist-array" value=""""),_display_(Seq[Any](/*5.34*/localUser/*5.43*/.id)),format.raw/*5.46*/("""">
+    <div class="row ">
+    """),_display_(Seq[Any](/*7.6*/if(userSniplists != null)/*7.31*/ {_display_(Seq[Any](format.raw/*7.33*/("""
+        """),_display_(Seq[Any](/*8.10*/for(sniplist <- userSniplists.savedSniplists) yield /*8.55*/ {_display_(Seq[Any](format.raw/*8.57*/("""
+            """),_display_(Seq[Any](/*9.14*/(i += 1))),format.raw/*9.22*/("""
+            <div class="col-lg-6">
+                <div class="playlist-container" data-sniplist-id=""""),_display_(Seq[Any](/*11.68*/sniplist/*11.76*/.id)),format.raw/*11.79*/("""">
+                <table class="table table-default table-bordered table-striped"  value="sniplist">
+                    <thead>
+                        <tr>
+                            <th title="Name" colspan="5" align="right"><h4 style="display: inline;"><a href=""""),_display_(Seq[Any](/*15.111*/routes/*15.117*/.SniplistController.viewSniplistById(sniplist.id.toString))),format.raw/*15.175*/("""" class="dynamic-link"> """),_display_(Seq[Any](/*15.200*/sniplist/*15.208*/.name)),format.raw/*15.213*/(""" </a></h4>
+
+                                <p style="display: inline;">by </p><a class="dynamic-link" href=""""),_display_(Seq[Any](/*17.99*/routes/*17.105*/.Application.getUserProfile(sniplist.user.id.toString))),format.raw/*17.159*/("""" style="display: inline;">"""),_display_(Seq[Any](/*17.187*/sniplist/*17.195*/.user.name)),format.raw/*17.205*/("""</a> <span class="alert-danger badge">"""),_display_(Seq[Any](/*17.244*/sniplist/*17.252*/.favouriteCount)),format.raw/*17.267*/("""</span>
+
+                                """),_display_(Seq[Any](/*19.34*/if(localUser.id != userSniplists.user.id)/*19.75*/ {_display_(Seq[Any](format.raw/*19.77*/("""
+                                    """),_display_(Seq[Any](/*20.38*/if(SniplistCollection.isFavourited(mySniplists, sniplist))/*20.96*/ {_display_(Seq[Any](format.raw/*20.98*/("""
+                                        <span style="float : right ; cursor : pointer ;" class="glyphicon glyphicon-heart favourite-sniplist red"></span>
+                                    """)))}/*22.39*/else/*22.44*/{_display_(Seq[Any](format.raw/*22.45*/("""
+                                        <span style="float : right ; cursor : pointer ;" class="glyphicon glyphicon-heart favourite-sniplist black"></span>
+                                    """)))})),format.raw/*24.38*/("""
+                                """)))}/*25.35*/else/*25.40*/{_display_(Seq[Any](format.raw/*25.41*/("""
+                                    <span style="float: right; text-align: right; cursor: pointer" class="glyphicon glyphicon-remove remove remove-playlist"></span>
+                                """)))})),format.raw/*27.34*/("""
+
+                                <a class="share-link-a" href="" align="left" data-toggle="modal" data-target="#share-link-modal" value=""""),_display_(Seq[Any](/*29.138*/routes/*29.144*/.SniplistController.viewSniplistById(sniplist.id.toString))),format.raw/*29.202*/("""">
+                                    <span style="cursor : pointer" class="glyphicon glyphicon-share"></span>
+                                </a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th title="Song" align="right">Song</th>
+                            <th title="Artist" align="right">Artist</th>
+                            <th title="Album" align="right">Album</th>
+                            <th class=""""),format.raw/*38.40*/("""{"""),format.raw/*38.41*/("""sorter: false"""),format.raw/*38.54*/("""}"""),format.raw/*38.55*/("""" title="Play" align="right">Play</th>
+
+                            """),_display_(Seq[Any](/*40.30*/if(localUser.id == userSniplists.user.id)/*40.71*/ {_display_(Seq[Any](format.raw/*40.73*/("""
+                                <th title="Remove"></th>
+                            """)))}/*42.31*/else/*42.36*/{_display_(Seq[Any](format.raw/*42.37*/("""
+                                <th title="Favourite"></th>
+                            """)))})),format.raw/*44.30*/("""
+                        </tr>
+                    </thead>
+                    <tbody>
+                    """),_display_(Seq[Any](/*48.22*/for(snip <- sniplist.snips) yield /*48.49*/ {_display_(Seq[Any](format.raw/*48.51*/("""
+                        <div class="snip-module">
                             <tr>
-                                <th title="Name" colspan="5" align="right"><h4 style="display: inline;"><a href=""""),_display_(Seq[Any](/*14.115*/routes/*14.121*/.SniplistController.viewSniplistById(sniplist.id.toString))),format.raw/*14.179*/("""" class="dynamic-link"> """),_display_(Seq[Any](/*14.204*/sniplist/*14.212*/.name)),format.raw/*14.217*/(""" </a></h4>
-
-                                    <p style="display: inline;">by </p><a class="dynamic-link" href=""""),_display_(Seq[Any](/*16.103*/routes/*16.109*/.Application.getUserProfile(sniplist.user.id.toString))),format.raw/*16.163*/("""" style="display: inline;">"""),_display_(Seq[Any](/*16.191*/sniplist/*16.199*/.user.name)),format.raw/*16.209*/("""</a> <span class="alert-danger badge">"""),_display_(Seq[Any](/*16.248*/sniplist/*16.256*/.favouriteCount)),format.raw/*16.271*/("""</span>
-
-                                    """),_display_(Seq[Any](/*18.38*/if(localUser.id != userSniplists.user.id)/*18.79*/ {_display_(Seq[Any](format.raw/*18.81*/("""
-                                        """),_display_(Seq[Any](/*19.42*/if(SniplistCollection.isFavourited(mySniplists, sniplist))/*19.100*/ {_display_(Seq[Any](format.raw/*19.102*/("""
-                                            <span style="float : right ; cursor : pointer ;" class="glyphicon glyphicon-heart favourite-sniplist red"></span>
-                                        """)))}/*21.43*/else/*21.48*/{_display_(Seq[Any](format.raw/*21.49*/("""
-                                            <span style="float : right ; cursor : pointer ;" class="glyphicon glyphicon-heart favourite-sniplist black"></span>
-                                        """)))})),format.raw/*23.42*/("""
-                                    """)))}/*24.39*/else/*24.44*/{_display_(Seq[Any](format.raw/*24.45*/("""
-                                        <span style="float: right; text-align: right; cursor: pointer" class="glyphicon glyphicon-remove remove remove-playlist"></span>
-                                    """)))})),format.raw/*26.38*/("""
-
-                                    <a class="share-link-a" href="" align="left" data-toggle="modal" data-target="#share-link-modal" value=""""),_display_(Seq[Any](/*28.142*/routes/*28.148*/.SniplistController.viewSniplistById(sniplist.id.toString))),format.raw/*28.206*/("""">
-                                        <span style="cursor : pointer" class="glyphicon glyphicon-share"></span>
-                                    </a>
-                                </th>
-
-                            </tr>
-                            <tr>
-                                <th title="Song" align="right">Song</th>
-                                <th title="Artist" align="right">Artist</th>
-                                <th title="Album" align="right">Album</th>
-                                <th class=""""),format.raw/*38.44*/("""{"""),format.raw/*38.45*/("""sorter: false"""),format.raw/*38.58*/("""}"""),format.raw/*38.59*/("""" title="Play" align="right">Play</th>
-
-                                """),_display_(Seq[Any](/*40.34*/if(localUser.id == userSniplists.user.id)/*40.75*/ {_display_(Seq[Any](format.raw/*40.77*/("""
-                                    <th title="Remove"></th>
-                                """)))}/*42.35*/else/*42.40*/{_display_(Seq[Any](format.raw/*42.41*/("""
-                                    <th title="Favourite"></th>
-                                """)))})),format.raw/*44.34*/("""
-                            </tr>
-                        </thead>
-                        <tbody>
-                        """),_display_(Seq[Any](/*48.26*/for(snip <- sniplist.snips) yield /*48.53*/ {_display_(Seq[Any](format.raw/*48.55*/("""
-                            <tr>
-                                <td align="left" class="left snip-title">"""),_display_(Seq[Any](/*50.75*/snip/*50.79*/.song_name)),format.raw/*50.89*/("""</td>
-                                <td align="left" class="left snip-artist">"""),_display_(Seq[Any](/*51.76*/snip/*51.80*/.artist_name)),format.raw/*51.92*/("""</td>
-                                <td align="left" class="left snip-album">"""),_display_(Seq[Any](/*52.75*/snip/*52.79*/.album_name)),format.raw/*52.90*/("""</td>
+                                <td align="left" class="left snip-title">"""),_display_(Seq[Any](/*51.75*/snip/*51.79*/.song_name)),format.raw/*51.89*/("""</td>
+                                <td align="left" class="left snip-artist">"""),_display_(Seq[Any](/*52.76*/snip/*52.80*/.artist_name)),format.raw/*52.92*/("""</td>
+                                <td align="left" class="left snip-album">"""),_display_(Seq[Any](/*53.75*/snip/*53.79*/.album_name)),format.raw/*53.90*/("""</td>
                                 <td align="center" class="center">
-                                    <span style="cursor:pointer" class="glyphicon glyphicon-play play-snip-table play-snippet"></span>
+                                    <div class="action-controls">
+                                        <i class="fa fa-play fa-2x play-snippet green" data-snip-id=""""),_display_(Seq[Any](/*56.103*/snip/*56.107*/.id)),format.raw/*56.110*/(""""></i>
+                                    </div>
                                 </td>
                                 <td class="center">
-                                """),_display_(Seq[Any](/*57.34*/if(localUser.id == sniplist.user.id)/*57.70*/ {_display_(Seq[Any](format.raw/*57.72*/("""
-                                    <span style="cursor : pointer" class="glyphicon remove glyphicon-remove remove-snip-from-sniplist" value=""""),_display_(Seq[Any](/*58.144*/snip/*58.148*/.id)),format.raw/*58.151*/(""""></span>
-                                """)))}/*59.35*/else/*59.40*/{_display_(Seq[Any](format.raw/*59.41*/("""
-                                    """),_display_(Seq[Any](/*60.38*/if(SnipCollection.isFavourited(mySnips, snip))/*60.84*/ {_display_(Seq[Any](format.raw/*60.86*/("""
-                                        <span style="cursor : pointer ;" class="glyphicon glyphicon-heart favourite-snip red"></span>
-                                    """)))}/*62.39*/else/*62.44*/{_display_(Seq[Any](format.raw/*62.45*/("""
-                                        <span style="cursor : pointer ;" class="glyphicon glyphicon-heart favourite-snip black"></span>
-                                    """)))})),format.raw/*64.38*/("""
-                                """)))})),format.raw/*65.34*/("""
+                                """),_display_(Seq[Any](/*60.34*/if(localUser.id == sniplist.user.id)/*60.70*/ {_display_(Seq[Any](format.raw/*60.72*/("""
+                                    <i style="cursor : pointer" class="glyphicon remove glyphicon-remove remove-snip-from-sniplist" data-snip-id=""""),_display_(Seq[Any](/*61.148*/snip/*61.152*/.id)),format.raw/*61.155*/(""""></i>
+                                """)))}/*62.35*/else/*62.40*/{_display_(Seq[Any](format.raw/*62.41*/("""
+                                    <div class="action-controls">
+                                        <i class="fa fa-heart """),_display_(Seq[Any](/*64.64*/if(SnipCollection.isFavourited(mySnips, snip))/*64.110*/{_display_(Seq[Any](format.raw/*64.111*/("""red""")))})),format.raw/*64.115*/(""" """),_display_(Seq[Any](/*64.117*/if(!localUser.id.equals(snip.user.id))/*64.155*/{_display_(Seq[Any](format.raw/*64.156*/("""fav""")))})),format.raw/*64.160*/(""" favourite-snip" data-snip-id=""""),_display_(Seq[Any](/*64.192*/snip/*64.196*/.id)),format.raw/*64.199*/(""""></i>
+                                    </div>
+                                """)))})),format.raw/*66.34*/("""
                                 </td>
-                                <td class="hidden snip-id" value=""""),_display_(Seq[Any](/*67.68*/snip/*67.72*/.id)),format.raw/*67.75*/("""" ></td>
-                                <td class="hidden snip-video-id" value=""""),_display_(Seq[Any](/*68.74*/snip/*68.78*/.url)),format.raw/*68.82*/(""""></td>
-                                <td class="hidden snip-video-startTime" value=""""),_display_(Seq[Any](/*69.81*/snip/*69.85*/.time_min)),format.raw/*69.94*/(""""></td>
-                                <td class="hidden snip-video-endTime" value=""""),_display_(Seq[Any](/*70.79*/snip/*70.83*/.time_max)),format.raw/*70.92*/(""""></td>
+                                <td class="hidden snip-id" value=""""),_display_(Seq[Any](/*68.68*/snip/*68.72*/.id)),format.raw/*68.75*/("""" ></td>
+                                <td class="hidden snip-video-id" value=""""),_display_(Seq[Any](/*69.74*/snip/*69.78*/.url)),format.raw/*69.82*/(""""></td>
+                                <td class="hidden snip-video-startTime" value=""""),_display_(Seq[Any](/*70.81*/snip/*70.85*/.time_min)),format.raw/*70.94*/(""""></td>
+                                <td class="hidden snip-video-endTime" value=""""),_display_(Seq[Any](/*71.79*/snip/*71.83*/.time_max)),format.raw/*71.92*/(""""></td>
                             </tr>
-                        """)))})),format.raw/*72.26*/("""
-                        </tbody>
+                        </div>
+                    """)))})),format.raw/*74.22*/("""
+                    </tbody>
 
-                    </table>
+                </table>
+            </div>
+            """),_display_(Seq[Any](/*79.14*/if(i % 2 == 0)/*79.28*/ {_display_(Seq[Any](format.raw/*79.30*/("""
                 </div>
-                """),_display_(Seq[Any](/*77.18*/if(i % 2 == 0)/*77.32*/ {_display_(Seq[Any](format.raw/*77.34*/("""
-                </div>
-        <div class="row">
-        """)))})),format.raw/*80.10*/("""
-        """)))})),format.raw/*81.10*/("""
-        </div>
+                <div class="row">
+            """)))})),format.raw/*82.14*/("""
         """)))})),format.raw/*83.10*/("""
-
     </div>
+    """)))})),format.raw/*85.6*/("""
+    </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="share-link-modal" tabindex="-1" role="dialog" aria-labelledby="shareLinkModal" aria-hidden="true">
@@ -143,11 +145,11 @@ Seq[Any](format.raw/*1.170*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Aug 12 02:05:45 EDT 2014
+                    DATE: Wed Aug 20 13:47:06 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/sniplist/arraySniplists.scala.html
-                    HASH: a843ae8c30495280128c6fe3f9efbdb3716bd6cf
-                    MATRIX: 889->1|1190->169|1217->209|1293->250|1310->259|1334->262|1408->301|1441->326|1480->328|1529->342|1589->387|1628->389|1681->407|1710->415|1894->562|1912->570|1938->573|2158->756|2174->762|2255->820|2317->845|2335->853|2363->858|2514->972|2530->978|2607->1032|2672->1060|2690->1068|2723->1078|2799->1117|2817->1125|2855->1140|2937->1186|2987->1227|3027->1229|3105->1271|3173->1329|3214->1331|3433->1532|3446->1537|3485->1538|3719->1740|3776->1779|3789->1784|3828->1785|4067->1992|4247->2135|4263->2141|4344->2199|4903->2730|4932->2731|4973->2744|5002->2745|5111->2818|5161->2859|5201->2861|5315->2957|5328->2962|5367->2963|5497->3061|5658->3186|5701->3213|5741->3215|5885->3323|5898->3327|5930->3337|6047->3418|6060->3422|6094->3434|6210->3514|6223->3518|6256->3529|6623->3860|6668->3896|6708->3898|6889->4042|6903->4046|6929->4049|6991->4093|7004->4098|7043->4099|7117->4137|7172->4183|7212->4185|7403->4358|7416->4363|7455->4364|7661->4538|7727->4572|7869->4678|7882->4682|7907->4685|8025->4767|8038->4771|8064->4775|8188->4863|8201->4867|8232->4876|8354->4962|8367->4966|8398->4975|8497->5042|8637->5146|8660->5160|8700->5162|8791->5221|8833->5231|8890->5256
-                    LINES: 26->1|30->1|31->3|33->5|33->5|33->5|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|39->11|39->11|39->11|42->14|42->14|42->14|42->14|42->14|42->14|44->16|44->16|44->16|44->16|44->16|44->16|44->16|44->16|44->16|46->18|46->18|46->18|47->19|47->19|47->19|49->21|49->21|49->21|51->23|52->24|52->24|52->24|54->26|56->28|56->28|56->28|66->38|66->38|66->38|66->38|68->40|68->40|68->40|70->42|70->42|70->42|72->44|76->48|76->48|76->48|78->50|78->50|78->50|79->51|79->51|79->51|80->52|80->52|80->52|85->57|85->57|85->57|86->58|86->58|86->58|87->59|87->59|87->59|88->60|88->60|88->60|90->62|90->62|90->62|92->64|93->65|95->67|95->67|95->67|96->68|96->68|96->68|97->69|97->69|97->69|98->70|98->70|98->70|100->72|105->77|105->77|105->77|108->80|109->81|111->83
+                    HASH: 958f160096d349d8f7ef9787c2c4813d68e06511
+                    MATRIX: 889->1|1190->169|1217->209|1287->244|1304->253|1328->256|1393->287|1426->312|1465->314|1510->324|1570->369|1609->371|1658->385|1687->393|1826->496|1843->504|1868->507|2174->776|2190->782|2271->840|2333->865|2351->873|2379->878|2525->988|2541->994|2618->1048|2683->1076|2701->1084|2734->1094|2810->1133|2828->1141|2866->1156|2944->1198|2994->1239|3034->1241|3108->1279|3175->1337|3215->1339|3426->1532|3439->1537|3478->1538|3704->1732|3757->1767|3770->1772|3809->1773|4040->1972|4216->2111|4232->2117|4313->2175|4835->2669|4864->2670|4905->2683|4934->2684|5039->2753|5089->2794|5129->2796|5235->2884|5248->2889|5287->2890|5409->2980|5554->3089|5597->3116|5637->3118|5831->3276|5844->3280|5876->3290|5993->3371|6006->3375|6040->3387|6156->3467|6169->3471|6202->3482|6480->3723|6494->3727|6520->3730|6729->3903|6774->3939|6814->3941|6999->4089|7013->4093|7039->4096|7098->4137|7111->4142|7150->4143|7316->4273|7372->4319|7412->4320|7449->4324|7488->4326|7536->4364|7576->4365|7613->4369|7682->4401|7696->4405|7722->4408|7837->4491|7979->4597|7992->4601|8017->4604|8135->4686|8148->4690|8174->4694|8298->4782|8311->4786|8342->4795|8464->4881|8477->4885|8508->4894|8634->4988|8758->5076|8781->5090|8821->5092|8924->5163|8966->5173|9014->5190
+                    LINES: 26->1|30->1|31->3|33->5|33->5|33->5|35->7|35->7|35->7|36->8|36->8|36->8|37->9|37->9|39->11|39->11|39->11|43->15|43->15|43->15|43->15|43->15|43->15|45->17|45->17|45->17|45->17|45->17|45->17|45->17|45->17|45->17|47->19|47->19|47->19|48->20|48->20|48->20|50->22|50->22|50->22|52->24|53->25|53->25|53->25|55->27|57->29|57->29|57->29|66->38|66->38|66->38|66->38|68->40|68->40|68->40|70->42|70->42|70->42|72->44|76->48|76->48|76->48|79->51|79->51|79->51|80->52|80->52|80->52|81->53|81->53|81->53|84->56|84->56|84->56|88->60|88->60|88->60|89->61|89->61|89->61|90->62|90->62|90->62|92->64|92->64|92->64|92->64|92->64|92->64|92->64|92->64|92->64|92->64|92->64|94->66|96->68|96->68|96->68|97->69|97->69|97->69|98->70|98->70|98->70|99->71|99->71|99->71|102->74|107->79|107->79|107->79|110->82|111->83|113->85
                     -- GENERATED --
                 */
             

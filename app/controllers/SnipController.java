@@ -2,6 +2,7 @@ package controllers;
 
 import be.objectify.deadbolt.java.actions.Group;
 import be.objectify.deadbolt.java.actions.Restrict;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.api.services.youtube.model.SearchResult;
@@ -13,9 +14,11 @@ import play.data.Form;
 import play.data.validation.Constraints;
 import play.mvc.Controller;
 import play.mvc.Result;
+import service.api.impl.FreebaseAPI;
 import service.api.impl.LastFMAPI;
 import service.api.impl.YoutubeVideoAPI;
 
+import java.io.IOException;
 import java.util.*;
 
 import util.SniplistUtil;
@@ -38,6 +41,62 @@ public class SnipController extends Controller {
         public String snip_video_id;
 
         public String snip_artist;
+
+        public String getSnip_artist() {
+            return snip_artist;
+        }
+
+        public void setSnip_artist(String snip_artist) {
+            this.snip_artist = snip_artist;
+        }
+
+        public String getSnip_title() {
+            return snip_title;
+        }
+
+        public void setSnip_title(String snip_title) {
+            this.snip_title = snip_title;
+        }
+
+        public String getSnip_video_id() {
+            return snip_video_id;
+        }
+
+        public void setSnip_video_id(String snip_video_id) {
+            this.snip_video_id = snip_video_id;
+        }
+
+        public String getSnip_album() {
+            return snip_album;
+        }
+
+        public void setSnip_album(String snip_album) {
+            this.snip_album = snip_album;
+        }
+
+        public String getTime_min() {
+            return time_min;
+        }
+
+        public void setTime_min(String time_min) {
+            this.time_min = time_min;
+        }
+
+        public String getTime_max() {
+            return time_max;
+        }
+
+        public void setTime_max(String time_max) {
+            this.time_max = time_max;
+        }
+
+        public String getThumbnail_url() {
+            return thumbnail_url;
+        }
+
+        public void setThumbnail_url(String thumbnail_url) {
+            this.thumbnail_url = thumbnail_url;
+        }
 
         public String snip_album;
 
@@ -104,8 +163,17 @@ public class SnipController extends Controller {
             List<Video> videos = (List<Video>) YoutubeVideoAPI.executeVideoSearch(result.getId().getVideoId());
 
             Video video = videos.get(0);
+            ObjectNode videoNode = null;
+            try {
+                videoNode = FreebaseAPI.getInfo(video);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-            Snip snip = LastFMAPI.executeSearch(result.getSnippet().getTitle(), "");
+            Snip snip = new Snip();
+            if(videoNode != null) {
+                snip = LastFMAPI.executeSearch(String.valueOf(videoNode.get("title")), String.valueOf(videoNode.get("artist")));
+            }
 
 
 
@@ -117,7 +185,6 @@ public class SnipController extends Controller {
             node.put("video_id", result.getId().getVideoId());
             node.put("duration", SniplistUtil.isoToSeconds(video.getContentDetails().getDuration()));
             node.put("thumbnail_url", snip.thumbnail_url);
-
 
             responseResult = ok(node);
 
@@ -134,12 +201,12 @@ public class SnipController extends Controller {
 
         SnipCollection snipCollection = SnipCollection.findByUser(user);
 
-        Snip snip = Snip.findById(id).get();
+        Snip snip = Snip.findById(id);
 
         Result result = badRequest();
         if(snip != null) {
             boolean isFavourited = SnipCollection.isFavourited(snipCollection, snip);
-
+            boolean isOwned = user.id.equals(snip.user.id);
 
             node.put("title", snip.song_name);
             node.put("artist", snip.artist_name);
@@ -149,6 +216,7 @@ public class SnipController extends Controller {
             node.put("start_time", snip.time_min);
             node.put("end_time", snip.time_max);
             node.put("favourite", isFavourited);
+            node.put("owned", isOwned);
 
             result = ok(node);
         } else {
@@ -163,7 +231,7 @@ public class SnipController extends Controller {
     @Restrict(@Group(Application.USER_ROLE))
     public static Result viewSnipById(final String id) {
         final User user = Application.getLocalUser(session());
-        Snip snip = Snip.findById(id).get();
+        Snip snip = Snip.findById(id);
 
         ObjectMapper mapper = new ObjectMapper();
         ObjectNode node = mapper.createObjectNode();
@@ -178,24 +246,4 @@ public class SnipController extends Controller {
 
         return result;
     }
-
-
-    @Restrict(@Group(Application.USER_ROLE))
-    public static Result getPopularSnips() {
-        boolean js = "application/javascript".equals(request().getHeader("content-type"));
-        final User localUser = Application.getLocalUser(session());
-
-        Result result = internalServerError();
-
-        List<Snip> topList = Snip.findPopular();
-
-        if(topList != null) {
-            result = ok(views.html.snip.popular.render(js, localUser, topList));
-        } else {
-            result = badRequest();
-        }
-
-        return result;
-    }
-
 }

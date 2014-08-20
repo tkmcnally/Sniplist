@@ -75,24 +75,29 @@
                     <div class="text-center">
                         <img id="userProfilePhoto" src="@routes.Application.getImage(String.valueOf(localUser.photo))" class="avatar img-circle img-thumbnail" alt="avatar" width="150" height="150">
                         <h6>Upload a different photo...</h6>
-                        <input id="userPhotoInput" name="profilePhoto" type="file" class="text-center center-block well well-sm form-control">
+                        <button id="uploadButton" type="button" class="btn btn-primary btn-file" data-loading-text="Loading...">
+                            Upload
+                        </button>
+                        <input id="userPhotoInput" name="profilePhoto" type="file" style="visibility: hidden;" class="text-center center-block well well-sm form-control">
                     </div>
                 </div>
             </form>
 
             <!-- edit form column -->
                 <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-                    @if(settingsForm.hasGlobalErrors || settingsForm.hasErrors) {
-                        <div id="form-error" class="alert alert-danger alert-dismissable">
+
+                        <div id="form-error" class="alert alert-danger alert-dismissable hidden">
                             <a id="form-message-close" class="panel-close close" data-dismiss="alert">×</a>
                             <i id="form-message-icon" class="fa fa-exclamation-triangle"></i>
                             <div id="form-message-text" style="display: inline;">
-                                @for(key <- settingsForm.errors().keySet) {
-                                    @Messages("sniplist.key." + key) @if(key.length != 0){:} @Messages(settingsForm.error(key).message, settingsForm.error(key).arguments: _*)<br>
+                                @if(settingsForm.hasGlobalErrors || settingsForm.hasErrors) {
+                                    @for(key <- settingsForm.errors().keySet) {
+                                        @Messages("sniplist.key." + key) @if(key.length != 0){:} @Messages(settingsForm.error(key).message, settingsForm.error(key).arguments: _*)<br>
+                                    }
                                 }
                             </div>
                         </div>
-                    }
+
                     <h3>Personal info</h3>
                     <form id="userSettingsForm" method="POST" class="form-horizontal" role="form" action="@routes.Application.updateUserSettings" accept-charset="UTF-8" enctype="multipart/form-data">
                         <div class="form-group @if(settingsForm.error("first_name") != null){has-error}">

@@ -3,11 +3,16 @@ package util;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.gridfs.GridFS;
+import com.mongodb.gridfs.GridFSInputFile;
 import models.*;
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 import play.Logger;
+import play.api.Play;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.UnknownHostException;
 
 /**
@@ -47,6 +52,8 @@ public class MorphiaUtil {
             datastore.ensureCaps();
 
             gridFS = new GridFS(datastore.getDB(), Constants.MongoDB.PHOTO_COLLECTION);
+
+            initializeGridFSDefaults();
 
             Logger.info("Morphia connection established.");
         } catch (UnknownHostException e) {
@@ -89,6 +96,28 @@ public class MorphiaUtil {
 
     public static GridFS getGridFS() {
         return gridFS;
+    }
+
+
+    public static void initializeGridFSDefaults() {
+
+        File file = Play.getFile("public/img/defaultUserAvatar.jpg", Play.current());
+        GridFSInputFile gridFSInputFile = null;
+        try {
+            gridFSInputFile = gridFS.createFile(file);
+            gridFSInputFile.setId(new ObjectId(Constants.MongoDB.DEFAULT_OBJECT_ID));
+            if(file.getName() != null) {
+                gridFSInputFile.setFilename(file.getName());
+            } else {
+                gridFSInputFile.setFilename("unknown");
+            }
+            if(gridFS.find(new ObjectId(Constants.MongoDB.DEFAULT_OBJECT_ID)) != null){
+                gridFS.remove(new ObjectId(Constants.MongoDB.DEFAULT_OBJECT_ID));
+            }
+            gridFSInputFile.save();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

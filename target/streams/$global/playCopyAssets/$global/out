@@ -1,6 +1,7 @@
 [0m[[0mdebug[0m] [0mCopy play resource mappings: [0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\audio-sniplist-skin.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\audio-sniplist-skin.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\audio-style.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\audio-style.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\bootstrap-datetimepicker.min.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\bootstrap-datetimepicker.min.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\bootstrap-tables.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\bootstrap-tables.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\bootstrap.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\bootstrap.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\bootstrap.css.map,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\bootstrap.css.map)[0m
@@ -32,6 +33,7 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\asc.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\asc.gif)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\asc_light.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\asc_light.gif)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\contact.jpg,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\contact.jpg)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\defaultUserAvatar.jpg,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\defaultUserAvatar.jpg)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\desc.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\desc.gif)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\desc_light.gif,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\desc_light.gif)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\favicon.ico,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\favicon.ico)[0m

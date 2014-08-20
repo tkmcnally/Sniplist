@@ -29,16 +29,12 @@ object sniplists extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appenda
 def /*4.2*/content/*4.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
 
 Seq[Any](format.raw/*4.13*/("""
-
-        <div id="global-message" class="alert alert-danger hidden">
-
-        </div>
         <div class="row">
             <div class="col-md-12">
                 <h1>SnipLists</h1>
             </div>
         </div>
-        """),_display_(Seq[Any](/*14.10*/if(localUser.id == userSniplists.user.id)/*14.51*/ {_display_(Seq[Any](format.raw/*14.53*/("""
+        """),_display_(Seq[Any](/*10.10*/if(localUser.id == userSniplists.user.id)/*10.51*/ {_display_(Seq[Any](format.raw/*10.53*/("""
             <div class="row">
                 <div class="col-md-12" style="padding-bottom : 10px ;">
                     <button id="new-playlist" type="button" class="btn btn-primary" data-toggle="popover" data-placement="right">
@@ -46,9 +42,9 @@ Seq[Any](format.raw/*4.13*/("""
                     </button>
                 </div>
             </div>
-        """)))})),format.raw/*22.10*/("""
-        """),_display_(Seq[Any](/*23.10*/views/*23.15*/.html.sniplist.arraySniplists(true, localUser, mySnips, mySniplists, userSniplists))),format.raw/*23.98*/("""
-    </div>
+        """)))})),format.raw/*18.10*/("""
+        """),_display_(Seq[Any](/*19.10*/views/*19.15*/.html.sniplist.arraySniplists(true, localUser, mySnips, mySniplists, userSniplists))),format.raw/*19.98*/("""
+
 
     <!-- Modal -->
     <div class="modal fade" id="share-link-modal" tabindex="-1" role="dialog" aria-labelledby="shareLinkModal" aria-hidden="true">
@@ -72,12 +68,12 @@ Seq[Any](format.raw/*4.13*/("""
 """)))};
 Seq[Any](format.raw/*1.170*/("""
 """),format.raw/*3.1*/("""
-"""),format.raw/*45.2*/("""
+"""),format.raw/*41.2*/("""
 
-"""),_display_(Seq[Any](/*47.2*/if(!js)/*47.9*/ {_display_(Seq[Any](format.raw/*47.11*/("""
-    """),_display_(Seq[Any](/*48.6*/main("My SnipLists", "mySnipLists")/*48.41*/(content))),format.raw/*48.50*/("""
-""")))}/*49.3*/else/*49.8*/{_display_(Seq[Any](format.raw/*49.9*/("""
-    """),_display_(Seq[Any](/*50.6*/content)),format.raw/*50.13*/("""
+"""),_display_(Seq[Any](/*43.2*/if(!js)/*43.9*/ {_display_(Seq[Any](format.raw/*43.11*/("""
+    """),_display_(Seq[Any](/*44.6*/main("My SnipLists", "mySnipLists")/*44.41*/(content))),format.raw/*44.50*/("""
+""")))}/*45.3*/else/*45.8*/{_display_(Seq[Any](format.raw/*45.9*/("""
+    """),_display_(Seq[Any](/*46.6*/content)),format.raw/*46.13*/("""
 """)))})))}
     }
     
@@ -90,11 +86,11 @@ Seq[Any](format.raw/*1.170*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Tue Aug 12 02:56:24 EDT 2014
+                    DATE: Mon Aug 18 13:38:26 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/sniplist/sniplists.scala.html
-                    HASH: 267b089a04ab731d75304624c57c2c2107d9d30c
-                    MATRIX: 884->1|1167->211|1181->218|1265->222|1527->448|1577->489|1617->491|2000->842|2046->852|2060->857|2165->940|3152->169|3179->209|3207->1887|3245->1890|3260->1897|3300->1899|3341->1905|3385->1940|3416->1949|3436->1952|3448->1957|3486->1958|3527->1964|3556->1971
-                    LINES: 26->1|29->4|29->4|31->4|41->14|41->14|41->14|49->22|50->23|50->23|50->23|73->1|74->3|75->45|77->47|77->47|77->47|78->48|78->48|78->48|79->49|79->49|79->49|80->50|80->50
+                    HASH: e35eaf53cb711191e85d2e8c0e8f0cb5d9041d59
+                    MATRIX: 884->1|1167->211|1181->218|1265->222|1442->363|1492->404|1532->406|1915->757|1961->767|1975->772|2080->855|3057->169|3084->209|3112->1792|3150->1795|3165->1802|3205->1804|3246->1810|3290->1845|3321->1854|3341->1857|3353->1862|3391->1863|3432->1869|3461->1876
+                    LINES: 26->1|29->4|29->4|31->4|37->10|37->10|37->10|45->18|46->19|46->19|46->19|69->1|70->3|71->41|73->43|73->43|73->43|74->44|74->44|74->44|75->45|75->45|75->45|76->46|76->46
                     -- GENERATED --
                 */
             

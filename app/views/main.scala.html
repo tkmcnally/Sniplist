@@ -22,6 +22,7 @@
 
                 <!-- Bootstrap core CSS -->
             <link href="@routes.Assets.at("css/bootstrap.css")" rel="stylesheet">
+            <link href="@routes.Assets.at("css/bootstrap-datetimepicker.min.css")" rel="stylesheet">
             <link href="@routes.Assets.at("css/font-awesome.min.css")" rel="stylesheet">
 
                 <!-- Social Media Icon CSS -->
@@ -119,16 +120,18 @@
                             <div class="col-sm-2">
                                 <nav class="nav-sidebar">
                                     <ul class="nav">
-                                        <li class="active"><a class="dynamic-link" href="@routes.Application.index()">
+                                        <li><a class="dynamic-link" href="@routes.Application.popular()">
                                             Popular</a></li>
+                                        <li><a class="dynamic-link" href="@routes.Application.recent()">
+                                            Recent</a></li>
                                         <li class="nav-divider"></li>
                                         <li><a class="dynamic-link" href="@routes.SnipCollectionController.mySnips()">
                                             Your Snips</a></li>
                                         <li><a class="dynamic-link" href="@routes.SniplistCollectionController.mySniplists()">
                                             Your Sniplists</a></li>
-                                        <li><a class="dynamic-link" href="@routes.SnipCollectionController.mySnips()">
+                                        <li><a class="dynamic-link" href="@routes.SnipCollectionController.favouritedSnips()">
                                             Saved Snips</a></li>
-                                        <li><a class="dynamic-link" href="@routes.SniplistCollectionController.mySniplists()">
+                                        <li><a class="dynamic-link" href="@routes.SniplistCollectionController.favouritedSniplists()">
                                             Saved Sniplists</a></li>
                                     </ul>
                                 </nav>
@@ -222,11 +225,7 @@
                 <!-- JQRangeSlider JS -->
             <script type="text/javascript" src="@routes.Assets.at("js/jqrangeslider/jQEditRangeSlider-min.js")"></script>
 
-                <!-- Bootstrap core JavaScript -->
-            <script src="@routes.Assets.at("js/bootstrap/bootstrap.min.js")"></script>
-            <script src="@routes.Assets.at("js/bootstrap/retina-1.1.0.js")"></script>
-            <script src="@routes.Assets.at("js/bootstrap/moment.js")"></script>
-            <script src="@routes.Assets.at("js/bootstrap/bootstrap-datetimepicker.min.js")"></script>
+
 
             <script src="@routes.Assets.at("js/jquery/jquery.hoverdir.js")"></script>
             <script src="@routes.Assets.at("js/jquery/jquery.hoverex.min.js")"></script>
@@ -235,6 +234,12 @@
             <script src="@routes.Assets.at("js/jquery/jquery.metadata.js")"></script>
             <script src="@routes.Assets.at("js/tablecloth/jquery.tablesorter.js")"></script>
             <script src="@routes.Assets.at("js/tablecloth/jquery.tablecloth.js")"></script>
+
+                <!-- Bootstrap core JavaScript -->
+            <script src="@routes.Assets.at("js/bootstrap/bootstrap.min.js")"></script>
+            <script src="@routes.Assets.at("js/bootstrap/retina-1.1.0.js")"></script>
+            <script src="@routes.Assets.at("js/bootstrap/moment.js")"></script>
+            <script src="@routes.Assets.at("js/bootstrap/bootstrap-datetimepicker.min.js")"></script>
 
             @moreScripts
                 <!-- Sniplist core JavaScript -->

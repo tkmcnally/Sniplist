@@ -615,10 +615,6 @@ body {
     border-color: black;
 }
 
-.favourite-snip:hover {
-    color: gray;
-}
-
 .remove:hover {
     color: red;
 }
@@ -651,12 +647,12 @@ body {
 }
 
 
-.favourite-sniplist:hover {
-    color: grey;
+.fav {
+    cursor: pointer;
 }
 
-.mejs-controls  button {
 
+.mejs-controls  button {
     -webkit-transition: .2s all;
 }
 
@@ -851,4 +847,53 @@ SIDENAV
     -webkit-border-radius: 0 4px 4px 0;
     -moz-border-radius: 0 4px 4px 0;
     border-radius: 0 4px 4px 0;
+}
+
+/****************************
+FORM INPUT - PROFILE
+****************************/
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+/*************************
+ALBUM OVER LAY - PLAY BUTTON
+*************************/
+.album-overlay-wrapper {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.album-overlay-wrapper .action-controls {
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 100px;
+    width: 100%;
+}
+
+.play-snippet {
+    cursor: pointer;
+}
+
+.action-controls .green {
+    color: green;
 }

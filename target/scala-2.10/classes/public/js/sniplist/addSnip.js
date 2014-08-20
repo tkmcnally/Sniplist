@@ -2,6 +2,9 @@
  * Created by Thomas on 6/26/2014.
  */
 
+var attrSnipId = "data-snip-id";
+var attrSniplistId = "data-sniplist-id";
+
 //DO when the document is loaded.
 $(document).ready(addSnipReady);
 
@@ -57,10 +60,25 @@ function addSnipReady() {
         var
         // create the loop button
             info =
-                $('<div class="mejs-info hidden">' +
-                    '<div class="row"> <div class="col-md-10"> <h2 id="mejs-snip-title"></h2> </div> <div class="col-md-2"> <span style="cursor: pointer" class="glyphicon glyphicon-heart favourite-snip"></span> </div> </div>' +
-                    '<div class="row"><div class="col-md-10"><h4 id="mejs-snip-artist"></h4></div>' +
-                    '<div class="col-md-2"><h4 id="mejs-snip-curr-time" style="float: right"></h4></div></div> <div id="live-snip-list-id" value="" hidden></div> <div id="live-list-type" value="" hidden></div><div id="live-snip-id" value="" hidden></div> <div id="live-snip-video-id" value="" hidden></div> <div id="live-snip-start-time" value="" hidden></div><div id="live-snip-end-time" value="" hidden></div></div>' +
+                $(  '<div id="live-meta-info" class="mejs-info hidden" data-snip-id="" data-sniplist-id="">' +
+                        '<div class="row"> ' +
+                            '<div class="col-md-10"> ' +
+                                '<h2 id="mejs-snip-title">' +
+                                '</h2> ' +
+                            '</div> ' +
+                            '<div class="col-md-2"> ' +
+                                '<i class="fa fa-heart favourite-snip" data-snip-id=""></i>' +
+                            '</div> ' +
+                        '</div>' +
+                        '<div class="row">' +
+                            '<div class="col-md-10">' +
+                                '<h4 id="mejs-snip-artist"></h4>' +
+                            '</div>' +
+                            '<div class="col-md-2">' +
+                                '<h4 id="mejs-snip-curr-time" style="float: right">' +
+                                '</h4>' +
+                            '</div>' +
+                        '</div>' +
                     '</div>')
                     // append it to the toolbar
                     .appendTo(controls)
@@ -142,59 +160,13 @@ function addSnipReady() {
 
 
                 mediaElement.addEventListener('ended', function (e) {
-
-
-                        getNextSnip(function(data) {
-                            loadVideo(data, data.autoPlay);
-                        });
-
-                       /* var video_id;
-                        var start_time;
-                        var end_time;
-
-                        var current_row;
-
-                        var live_list_id = $("#live-snip-list-id").text();
-                        var id = $("#live-snip-id").text();
-
-                        var table = $("table").filter(function() {
-                            return $(this).attr('value') == live_list_id;
-                        });
-
-                        var table_row = table.find(".snip-id").filter(function() {
-                            return $(this).attr('value') == id;
-                        });
-
-                        if(table_row.parent("tr").next("tr").length) {
-                            current_row = table_row.parent("tr").next("tr");
-                            video_id = current_row.find(".snip-id").attr('value');
-                            start_time = current_row.find(".snip-video-startTime").attr('value');
-                            end_time = current_row.find(".snip-video-endTime").attr('value');
-
-                            getSnip(video_id, loadVideo, true);
-
-
-                        } else {
-                            current_row = table.find("tr");
-                            video_id = current_row.find(".snip-id").attr("value");
-
-                            getSnip(video_id, loadVideo, false);
-
-                        }
-                    */
-
-
+                        getNextSnip(loadNextSnip);
                     },
                     false
                 );
 
                 $(".mejs-info .favourite-snip").click(function() {
-
-
-
-
-
-                    favouriteSnip($("#live-snip-id").text());
+                    favouriteSnip($(''));
                 });
 
             }
@@ -205,13 +177,24 @@ function addSnipReady() {
 
 }
 
+function loadNextSnip(data) {
+    getSnip(data.snip_id, loadSnip, data.autoPlay);
+
+}
+
 function getVideo(songUrl, callBack) {
     jsRoutes.controllers.SnipController.getVideo(songUrl).ajax({
         success: function(data) {
-            callBack(data);
+            if(callBack) {
+                callBack(data);
+            } else {
+                return data;
+            }
         },
         error: function(data) {
-            callBack(data);
+            if(callBack) {
+                callBack(data);
+            }
         }
     })
 }
@@ -219,10 +202,15 @@ function getVideo(songUrl, callBack) {
 function getSnip(snipId, callBack, autoPlay) {
     jsRoutes.controllers.SnipController.getSnip(snipId).ajax({
         success: function(data) {
-            callBack(data, autoPlay);
+                callBack(data, autoPlay);
+
         },
         error: function(data) {
-            callBack(data, autoPlay);
+            if(callBack) {
+                callBack(data);
+            } else {
+                return data;
+            }
         }
     })
 }
@@ -264,67 +252,6 @@ function saveSnip() {
     })
 }
 
-
-function bindExternalPlayerButtons() {
-
-    // [Add Snip] - Enter trigger for URL input box.
-    $('#url-input').keypress(function(e) {
-        if( e.which == 13) {
-            getVideo($(this).val(), addSnipGetVideo);
-        }
-    });
-
-    // [Add Snip] - Button click trigger for URL input box.
-    $('#url-input-btn').click(function() {
-        getVideo($('#url-input').val(), addSnipGetVideo);
-    });
-
-    // [Add Snip] - Button click trigger to Save Snip.
-    $('#save_snip_btn').click(function() {
-        saveSnip();
-    });
-
-    // [Add Snip] - Button click trigger to seek to beginning of range slider.
-    $('#play-snip-button').click(function() {
-        globalPlayer.setCurrentTime(parseInt($("input[name=time_min]").val()));
-        globalPlayer.play();
-    });
-
-    // [
-    $(".play-snippet").click(function() {
-        var snipId = $(this).closest("tr").find(".snip-id").attr("value");
-        $("#live-snip-list-id").text($(this).closest("table").attr('id'));
-        $("#live-list-type").text($(this).closest("table").attr('value'));
-        getSnip(snipId, loadVideo, true);
-
-    });
-
-    $(".follow-user-btn").click(function() {
-       followUser($(this));
-    });
-
-    /* DATE PICKER */
-    $('#birth-date-picker').datetimepicker({
-        pickTime: false
-    });
-
-    /* NAVBAR ACTIVE SELECTOR */
-    $('.nav-sidebar li').click(function(e) {
-        $('.nav-sidebar li.active').removeClass('active');
-        var $this = $(this);
-        if (!$this.hasClass('active')) {
-            $this.addClass('active');
-        }
-        e.preventDefault();
-    });
-
-    $('#userPhotoInput').change(function(e) {
-        uploadPhoto($(this).closest('form'));
-    });
-}
-
-
-
 function addSnipGetVideo(data) {
     if(data.error) {
         $("#global-message").removeClass("hidden");
@@ -339,6 +266,8 @@ function addSnipGetVideo(data) {
 
         $("input[name=snip_title]").val(data.title);
         $("input[name=snip_video_id]").val(data.video_id);
+        $("input[name=snip_artist]").val(data.artist);
+        $("input[name=snip_album]").val(data.album);
 
         $("#slider").rangeSlider("option", "bounds", {min: 0, max: data.duration});
         $("#slider").resize();
@@ -349,11 +278,27 @@ function addSnipGetVideo(data) {
 
 
 // [Main] - Set new source for audio player and autoPlay.
-function loadVideo(data, autoPlay) {
+function loadSnip(data, autoPlay) {
+    var liveSnip = $("#live-meta-info");
+    if(data.snip_id != liveSnip.attr(attrSnipId)) {
 
-    if(data.snip_id != $("#live-snip-id").text()) {
+        $("#mejs-snip-title").text(data.title);
+        $("#mejs-snip-artist").text(data.artist);
 
+        $("#live-meta-info").attr(attrSnipId, data.snip_id);
+        if(data.owned == false) {
+            alert(data.owned)
+            $("#live-meta-info").find('.favourite-snip').addClass('fav');
+        }
+        $("#live-meta-info").find('.favourite-snip').attr(attrSnipId, data.snip_id);
 
+        if (data && data.favourite == true) {
+            $(".mejs-info .favourite-snip").addClass('red');
+            $(".mejs-info .favourite-snip").removeClass('black');
+        } else {
+            $(".mejs-info .favourite-snip").removeClass('red');
+            $(".mejs-info .favourite-snip").addClass('black');
+        }
 
         globalAudioPlayer.media.pluginApi.cueVideoById({
             videoId: data.video_id,
@@ -367,27 +312,11 @@ function loadVideo(data, autoPlay) {
             globalAudioPlayer.play();
         }
 
-        $("#mejs-snip-title").text(data.title);
-        $("#mejs-snip-artist").text(data.artist);
-        // $("#live-snip-id").text(snipId);
-        $("#live-snip-id").text(data.snip_id);
-        $("#live-snip-video-id").text(data.video_id);
-        $("#live-snip-start-time").text(data.start_time);
-        $("#live-snip-end-time").text(data.end_time);
-
         $('#watch-youtube').click(function () {
             window.open('http://www.youtube.com/watch/' + data.video_id);
         });
 
-        if (data && data.favourite == true) {
-            $(".mejs-info .favourite-snip").addClass('red');
-            $(".mejs-info .favourite-snip").removeClass('black');
-        } else {
-            $(".mejs-info .favourite-snip").removeClass('red');
-            $(".mejs-info .favourite-snip").addClass('black');
-        }
-
-        $(".mejs-info").removeClass('hidden');
+        $("#live-meta-info").removeClass('hidden');
 
     } else {
         if( globalAudioPlayer.media.paused == true) {
@@ -400,29 +329,14 @@ function loadVideo(data, autoPlay) {
 }
 
 function setPlayButtonView() {
-    var snip_id = $("#live-snip-id").text();
-    var snip_list_id = $("#live-snip-list-id").text();
-    /*
-    var table = $("table").filter(function() {
-        return $(this).attr('id') == snip_list_id;
-    });
-
-    var table_row = $("table").find(".snip-id").filter(function() {
-        return $(this).attr('value') == snip_id;
-    });
-
-    $(".play-snippet").each(function( index ) {
-        $(this).addClass("glyphicon-play");
-        $(this).removeClass("glyphicon-pause");
-    });
-*/
+    var snip_id = $("#live-meta-info");
     $('.play-snippet').each(function(){
-        if( $(this).parent().parent().find('.snip-id').attr('value') == snip_id) {
-            $(this).toggleClass('glyphicon-play');
-            $(this).toggleClass('glyphicon-pause');
+        if( $(this).attr(attrSnipId) == snip_id.attr(attrSnipId)) {
+            $(this).toggleClass('fa-play');
+            $(this).toggleClass('fa-pause');
         } else {
-            $(this).addClass("glyphicon-play");
-            $(this).removeClass('glyphicon-pause');
+            $(this).addClass("fa-play");
+            $(this).removeClass('fa-pause');
         }
     });
 
@@ -459,19 +373,114 @@ function followUser(followBtn) {
 }
 
 function globalErrorMessage(message) {
-    $("#global-message").removeClass();
-    $("#global-message").addClass("col-md-8 alert alert-danger alert-dismissable fa fa-exclamation-triangle");
+    $("#global-message").removeAttr('class');
+    $("#global-message").addClass("col-md-8 alert alert-danger alert-dismissable");
+    $("#global-message-icon").removeAttr('class');
+    $("#global-message-icon").addClass('fa fa-exclamation-triangle');
     $("#global-message-text").text(message);
 }
 
 function globalSuccessMessage(message) {
-    $("#global-message").removeClass();
+    $("#global-message").removeAttr('class');
     $("#global-message").addClass("col-md-8 alert alert-success alert-dismissable");
-    $("#global-message-icon").removeClass();
+    $("#global-message-icon").removeAttr('class');
     $("#global-message-icon").addClass("fa fa-check-circle");
     $("#global-message-text").text(message);
 }
 
 function globalMessageHide() {
     $("#global-message").addClass("hidden");
+}
+
+
+
+
+function bindExternalPlayerButtons() {
+
+    // [Add Snip] - Enter trigger for URL input box.
+    $('#url-input').keypress(function(e) {
+        if( e.which == 13) {
+            getVideo($(this).val(), addSnipGetVideo);
+        }
+    });
+
+    // [Add Snip] - Button click trigger for URL input box.
+    $('#url-input-btn').click(function() {
+        getVideo($('#url-input').val(), addSnipGetVideo);
+    });
+
+     //[Add Snip] - Button click trigger to Save Snip.
+     $('#save_snip_btn').click(function() {
+        saveSnip();
+     });
+
+    // [Add Snip] - Button click trigger to seek to beginning of range slider.
+    $('#play-snip-button').click(function() {
+        globalPlayer.setCurrentTime(parseInt($("input[name=time_min]").val()));
+        globalPlayer.play();
+    });
+
+    $(".follow-user-btn").click(function() {
+        followUser($(this));
+    });
+
+    /* DATE PICKER */
+    $('#birth-date-picker').datetimepicker({
+        pickTime: false
+    });
+
+    /* NAVBAR ACTIVE SELECTOR */
+    $('.nav-sidebar li').click(function(e) {
+        $('.nav-sidebar li.active').removeClass('active');
+        var $this = $(this);
+        if (!$this.hasClass('active')) {
+            $this.addClass('active');
+        }
+        e.preventDefault();
+    });
+
+    $("#uploadButton").click(function() {
+        $('#userPhotoInput').click();
+    });
+
+    $('#userPhotoInput').change(function(e) {
+        $("#uploadButton").button('loading');
+        uploadPhoto($(this).closest('form'), function() {
+            $("#uploadButton").button('reset');
+        });
+
+    });
+
+
+    // [PLAY SNIP]
+    $(".play-snippet").click(function() {
+        var snipId = $(this).attr(attrSnipId);
+        var sniplistId = $(this).closest('.playlist-container').attr(attrSniplistId);
+
+        storePlaylist($(this));
+        getSnip(snipId, function(data) {
+            loadSnip(data, true);
+        });
+    });
+
+
+    $(".fav").hover(function() {
+        $(this).toggleClass("red");
+    });
+
+    $(".favourite-sniplist").click(function() {
+        if($(this).hasClass('fav')) {
+            favouriteSniplist($(this).attr(attrSniplistId));
+        }
+        $(this).toggleClass('red');
+    });
+
+    $(".favourite-snip").click(function() {
+        if($(this).hasClass('fav')) {
+            favouriteSnip($(this).attr(attrSnipId));
+        }
+        $(this).toggleClass('red');
+    });
+
+
 }
