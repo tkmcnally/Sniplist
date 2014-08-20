@@ -99,7 +99,7 @@ public class SniplistCollectionController extends Controller {
             }
         }
 
-        return ok(views.html.sniplist.sniplists.render(js, localUser, mySnips, mySniplists, mySniplists));
+        return ok(views.html.sniplist.sniplists.render(js, true, localUser, mySnips, mySniplists, mySniplists));
     }
 
 
@@ -120,7 +120,7 @@ public class SniplistCollectionController extends Controller {
             }
         }
 
-        return ok(views.html.sniplist.sniplists.render(js, localUser, mySnips, mySniplists, mySniplists));
+        return ok(views.html.sniplist.sniplists.render(js, false, localUser, mySnips, mySniplists, mySniplists));
     }
 
 

@@ -1,4 +1,4 @@
-@(js: java.lang.Boolean, localUser: models.User = null, mySnips: models.SnipCollection, mySniplists: models.SniplistCollection, userSniplists: models.SniplistCollection)
+@(js: java.lang.Boolean, owned: java.lang.Boolean, localUser: models.User = null, mySnips: models.SnipCollection, mySniplists: models.SniplistCollection, userSniplists: models.SniplistCollection)
 @import java.math.BigInteger; var i=0;
 
 @content = {
@@ -7,7 +7,7 @@
                 <h1>SnipLists</h1>
             </div>
         </div>
-        @if(localUser.id == userSniplists.user.id) {
+        @if(owned) {
             <div class="row">
                 <div class="col-md-12" style="padding-bottom : 10px ;">
                     <button id="new-playlist" type="button" class="btn btn-primary" data-toggle="popover" data-placement="right">
@@ -37,6 +37,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
 }
 

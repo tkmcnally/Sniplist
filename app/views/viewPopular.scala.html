@@ -50,7 +50,7 @@
                 <div class="action-controls">
                     <i class="fa fa-heart fav favourite-sniplist red" data-sniplist-id="@sniplist.id"></i>&nbsp@sniplist.favouriteCount<br>
                 </div>
-                <p><a class="dynamic-link" href="@routes.SniplistController.viewSniplistById(sniplist.id.toString)">@sniplist.name</a> by <a class="dynamic-link" href="@routes.Application.getUserProfile(sniplist.id.toString)">@sniplist.user.name</a> </p>
+                <p><a class="dynamic-link" href="@routes.SniplistController.viewSniplistById(sniplist.id.toString)">@sniplist.name</a> by <a class="dynamic-link" href="@routes.Application.getUserProfile(sniplist.user.id.toString)">@sniplist.user.name</a> </p>
             }
         </div>
 

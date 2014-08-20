@@ -68,12 +68,16 @@ public class SniplistController extends Controller {
 
         Result result = internalServerError();
         if (user != null) {
+            boolean owner = user.id.equals(localUser.id);
+
             SniplistCollection userSniplists = SniplistCollection.findByUser(user);
             SniplistCollection sniplistCollection = SniplistCollection.findByUser(localUser);
 
             SnipCollection snipCollection = SnipCollection.findByUser(localUser);
 
-            result = ok(views.html.sniplist.sniplists.render(js, localUser, snipCollection, sniplistCollection, userSniplists));
+
+
+            result = ok(views.html.sniplist.sniplists.render(js, owner, localUser, snipCollection, sniplistCollection, userSniplists));
         } else {
             node.put("error", "Invalid user id!");
             result = badRequest(node);

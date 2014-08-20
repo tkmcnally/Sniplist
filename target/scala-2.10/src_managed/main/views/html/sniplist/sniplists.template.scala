@@ -20,10 +20,10 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object sniplists extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template5[java.lang.Boolean,models.User,models.SnipCollection,models.SniplistCollection,models.SniplistCollection,play.api.templates.HtmlFormat.Appendable] {
+object sniplists extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template6[java.lang.Boolean,java.lang.Boolean,models.User,models.SnipCollection,models.SniplistCollection,models.SniplistCollection,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(js: java.lang.Boolean, localUser: models.User = null, mySnips: models.SnipCollection, mySniplists: models.SniplistCollection, userSniplists: models.SniplistCollection):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(js: java.lang.Boolean, owned: java.lang.Boolean, localUser: models.User = null, mySnips: models.SnipCollection, mySniplists: models.SniplistCollection, userSniplists: models.SniplistCollection):play.api.templates.HtmlFormat.Appendable = {
         _display_ {import java.math.BigInteger; var i=0;
 
 def /*4.2*/content/*4.9*/:play.api.templates.HtmlFormat.Appendable = {_display_(
@@ -34,7 +34,7 @@ Seq[Any](format.raw/*4.13*/("""
                 <h1>SnipLists</h1>
             </div>
         </div>
-        """),_display_(Seq[Any](/*10.10*/if(localUser.id == userSniplists.user.id)/*10.51*/ {_display_(Seq[Any](format.raw/*10.53*/("""
+        """),_display_(Seq[Any](/*10.10*/if(owned)/*10.19*/ {_display_(Seq[Any](format.raw/*10.21*/("""
             <div class="row">
                 <div class="col-md-12" style="padding-bottom : 10px ;">
                     <button id="new-playlist" type="button" class="btn btn-primary" data-toggle="popover" data-placement="right">
@@ -64,33 +64,34 @@ Seq[Any](format.raw/*4.13*/("""
                 </div>
             </div>
         </div>
+    </div>
 
 """)))};
-Seq[Any](format.raw/*1.170*/("""
+Seq[Any](format.raw/*1.196*/("""
 """),format.raw/*3.1*/("""
-"""),format.raw/*41.2*/("""
+"""),format.raw/*42.2*/("""
 
-"""),_display_(Seq[Any](/*43.2*/if(!js)/*43.9*/ {_display_(Seq[Any](format.raw/*43.11*/("""
-    """),_display_(Seq[Any](/*44.6*/main("My SnipLists", "mySnipLists")/*44.41*/(content))),format.raw/*44.50*/("""
-""")))}/*45.3*/else/*45.8*/{_display_(Seq[Any](format.raw/*45.9*/("""
-    """),_display_(Seq[Any](/*46.6*/content)),format.raw/*46.13*/("""
+"""),_display_(Seq[Any](/*44.2*/if(!js)/*44.9*/ {_display_(Seq[Any](format.raw/*44.11*/("""
+    """),_display_(Seq[Any](/*45.6*/main("My SnipLists", "mySnipLists")/*45.41*/(content))),format.raw/*45.50*/("""
+""")))}/*46.3*/else/*46.8*/{_display_(Seq[Any](format.raw/*46.9*/("""
+    """),_display_(Seq[Any](/*47.6*/content)),format.raw/*47.13*/("""
 """)))})))}
     }
     
-    def render(js:java.lang.Boolean,localUser:models.User,mySnips:models.SnipCollection,mySniplists:models.SniplistCollection,userSniplists:models.SniplistCollection): play.api.templates.HtmlFormat.Appendable = apply(js,localUser,mySnips,mySniplists,userSniplists)
+    def render(js:java.lang.Boolean,owned:java.lang.Boolean,localUser:models.User,mySnips:models.SnipCollection,mySniplists:models.SniplistCollection,userSniplists:models.SniplistCollection): play.api.templates.HtmlFormat.Appendable = apply(js,owned,localUser,mySnips,mySniplists,userSniplists)
     
-    def f:((java.lang.Boolean,models.User,models.SnipCollection,models.SniplistCollection,models.SniplistCollection) => play.api.templates.HtmlFormat.Appendable) = (js,localUser,mySnips,mySniplists,userSniplists) => apply(js,localUser,mySnips,mySniplists,userSniplists)
+    def f:((java.lang.Boolean,java.lang.Boolean,models.User,models.SnipCollection,models.SniplistCollection,models.SniplistCollection) => play.api.templates.HtmlFormat.Appendable) = (js,owned,localUser,mySnips,mySniplists,userSniplists) => apply(js,owned,localUser,mySnips,mySniplists,userSniplists)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Mon Aug 18 13:38:26 EDT 2014
+                    DATE: Wed Aug 20 17:28:17 EDT 2014
                     SOURCE: C:/Projects/Sniplist/app/views/sniplist/sniplists.scala.html
-                    HASH: e35eaf53cb711191e85d2e8c0e8f0cb5d9041d59
-                    MATRIX: 884->1|1167->211|1181->218|1265->222|1442->363|1492->404|1532->406|1915->757|1961->767|1975->772|2080->855|3057->169|3084->209|3112->1792|3150->1795|3165->1802|3205->1804|3246->1810|3290->1845|3321->1854|3341->1857|3353->1862|3391->1863|3432->1869|3461->1876
-                    LINES: 26->1|29->4|29->4|31->4|37->10|37->10|37->10|45->18|46->19|46->19|46->19|69->1|70->3|71->41|73->43|73->43|73->43|74->44|74->44|74->44|75->45|75->45|75->45|76->46|76->46
+                    HASH: fb2a9680324c67c6193d6066e35f9a845e946279
+                    MATRIX: 902->1|1211->237|1225->244|1309->248|1486->389|1504->398|1544->400|1927->751|1973->761|1987->766|2092->849|3080->195|3107->235|3135->1797|3173->1800|3188->1807|3228->1809|3269->1815|3313->1850|3344->1859|3364->1862|3376->1867|3414->1868|3455->1874|3484->1881
+                    LINES: 26->1|29->4|29->4|31->4|37->10|37->10|37->10|45->18|46->19|46->19|46->19|70->1|71->3|72->42|74->44|74->44|74->44|75->45|75->45|75->45|76->46|76->46|76->46|77->47|77->47
                     -- GENERATED --
                 */
             
