@@ -287,7 +287,6 @@ function loadSnip(data, autoPlay) {
 
         $("#live-meta-info").attr(attrSnipId, data.snip_id);
         if(data.owned == false) {
-            alert(data.owned)
             $("#live-meta-info").find('.favourite-snip').addClass('fav');
         }
         $("#live-meta-info").find('.favourite-snip').attr(attrSnipId, data.snip_id);

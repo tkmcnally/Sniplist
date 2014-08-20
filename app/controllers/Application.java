@@ -274,6 +274,7 @@ public class Application extends Controller {
 		com.feth.play.module.pa.controllers.Authenticate.noCache(response());
 		final Form<MyLogin> filledForm = MyUsernamePasswordAuthProvider.LOGIN_FORM
 				.bindFromRequest();
+        Logger.info(filledForm.toString());
 		if (filledForm.hasErrors()) {
 			// User did not fill everything properly
 			return badRequest(login.render(filledForm));
