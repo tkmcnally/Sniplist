@@ -164,11 +164,6 @@ function addSnipReady() {
                     },
                     false
                 );
-
-                $(".mejs-info .favourite-snip").click(function() {
-                    favouriteSnip($(''));
-                });
-
             }
         });
     }
