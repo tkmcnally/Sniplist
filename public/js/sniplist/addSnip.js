@@ -120,6 +120,13 @@ function addSnipReady() {
                     false
                 );
 
+                $(".mejs-info .favourite-snip").click(function() {
+                    if($(this).hasClass('fav')) {
+                        favouriteSnip($(this).attr(attrSnipId));
+                    }
+                    $(this).toggleClass('red');
+                });
+
                 getVideo("https://www.youtube.com/watch?v=BB7R0ZY9w94", addSnipGetVideo);
             }
         });
