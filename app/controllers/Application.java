@@ -163,7 +163,7 @@ public class Application extends Controller {
         if(localUser != null) {
             result = popular();
         } else {
-            result = ok(splash.render());
+            result = ok(landingPage.render());
         }
 
         return result;

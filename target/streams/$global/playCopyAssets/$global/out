@@ -9,6 +9,7 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\font-awesome.min.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\font-awesome.min.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\hoverex-all.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\hoverex-all.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\iThing.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\iThing.css)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\landingPage.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\landingPage.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\mediaelementplayer.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\mediaelementplayer.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\mejs-skins.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\mejs-skins.css)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\css\prettify.css,C:\Projects\Sniplist\target\scala-2.10\classes\public\css\prettify.css)[0m
@@ -61,6 +62,10 @@
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\icons\untappd-24x24.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\icons\untappd-24x24.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\icons\vk-24x24.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\icons\vk-24x24.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\icons\xing-24x24.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\icons\xing-24x24.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\landingPage\fb.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\landingPage\fb.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\landingPage\stock-workdesk.jpg,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\landingPage\stock-workdesk.jpg)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\landingPage\thumb_logo.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\landingPage\thumb_logo.png)[0m
+[0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\landingPage\tw.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\landingPage\tw.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\audio.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\audio.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\background.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\background.png)[0m
 [0m[[0mdebug[0m] [0m	(C:\Projects\Sniplist\public\img\mediaelement\bigplay.fw.png,C:\Projects\Sniplist\target\scala-2.10\classes\public\img\mediaelement\bigplay.fw.png)[0m
